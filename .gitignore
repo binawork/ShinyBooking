@@ -5,6 +5,10 @@ appsettings.Development.json
 appsettings.json
 .idea
 
+.idea/
+
+.idea/.gitignore
+
 # User-specific files
 *.suo
 *.user

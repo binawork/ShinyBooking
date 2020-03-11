@@ -76,8 +76,12 @@ namespace ShinyBooking.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email };
-                var result = await _userManager.CreateAsync(user, Input.Password);
-                if (result.Succeeded)
+                var addUserResult = await _userManager.CreateAsync(user, Input.Password);
+                
+                if (addUserResult.Succeeded)
+                    await _userManager.AddToRoleAsync(user, "Member");
+                
+                if (addUserResult.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
 
@@ -102,7 +106,7 @@ namespace ShinyBooking.Areas.Identity.Pages.Account
                         return LocalRedirect(returnUrl);
                     }
                 }
-                foreach (var error in result.Errors)
+                foreach (var error in addUserResult.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
