@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ShinyBooking.DTO;
 
 namespace ShinyBooking.Data
 {
@@ -17,5 +18,8 @@ namespace ShinyBooking.Data
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
+
+        public DbSet<Test> Tests { get; set; }
+        
     }
 }
