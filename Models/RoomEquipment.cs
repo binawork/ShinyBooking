@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace ShinyBooking.Models
 {
-    public class RoomsEquipments
+    public class RoomEquipment
     {
-        public int EquipmentId { get; set; }
+        public string EquipmentId { get; set; }
 
         public Equipment Equipment { get; set; }
 
-        public int RoomId { get; set; }
+        public string RoomId { get; set; }
 
         public Room Room { get; set; }
     }
