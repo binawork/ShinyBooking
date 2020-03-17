@@ -18,6 +18,8 @@ namespace ShinyBooking.Data
         public DbSet<Equipment> Equipments { get; set; }
         public DbSet<RoomEquipment> RoomEquipments { get; set; }
 
+        public DbSet<Photo> Photos { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

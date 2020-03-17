@@ -332,7 +332,7 @@ namespace ShinyBooking.Data.Migrations
 
                     b.HasIndex("RoomId");
 
-                    b.ToTable("Photo");
+                    b.ToTable("Photos");
                 });
 
             modelBuilder.Entity("ShinyBooking.Models.Room", b =>

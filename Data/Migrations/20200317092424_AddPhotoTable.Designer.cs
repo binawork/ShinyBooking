@@ -10,7 +10,7 @@ using ShinyBooking.Data;
 namespace ShinyBooking.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200317085904_AddPhotoTable")]
+    [Migration("20200317092424_AddPhotoTable")]
     partial class AddPhotoTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -334,7 +334,7 @@ namespace ShinyBooking.Data.Migrations
 
                     b.HasIndex("RoomId");
 
-                    b.ToTable("Photo");
+                    b.ToTable("Photos");
                 });
 
             modelBuilder.Entity("ShinyBooking.Models.Room", b =>

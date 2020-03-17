@@ -7,7 +7,7 @@ namespace ShinyBooking.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Photo",
+                name: "Photos",
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
@@ -17,9 +17,9 @@ namespace ShinyBooking.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Photo", x => x.Id);
+                    table.PrimaryKey("PK_Photos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Photo_Rooms_RoomId",
+                        name: "FK_Photos_Rooms_RoomId",
                         column: x => x.RoomId,
                         principalTable: "Rooms",
                         principalColumn: "Id",
@@ -27,15 +27,15 @@ namespace ShinyBooking.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Photo_RoomId",
-                table: "Photo",
+                name: "IX_Photos_RoomId",
+                table: "Photos",
                 column: "RoomId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Photo");
+                name: "Photos");
         }
     }
 }
