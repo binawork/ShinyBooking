@@ -34,6 +34,11 @@ namespace ShinyBooking.Data
                 .HasOne<Equipment>(re => re.Equipment)
                 .WithMany(r => r.RoomEquipments)
                 .HasForeignKey(re => re.EquipmentId);
+
+            modelBuilder.Entity<Photo>()
+                .HasOne<Room>(p => p.Room)
+                .WithMany(r => r.Photos)
+                .HasForeignKey(p => p.RoomId);
         }
     }
 }

@@ -21,6 +21,7 @@ namespace ShinyBooking.Models
         public double Price { get; set; }
         public int Area { get; set; }
         public int Capacity { get; set; }
+        public IList<Photo> Photos { get; set; }
 
         public IList<RoomEquipment> RoomEquipments { get; set; }
     }
