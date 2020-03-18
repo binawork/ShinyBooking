@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ShinyBooking.Models
+﻿namespace ShinyBooking.Models
 {
     public class RoomEquipment
     {

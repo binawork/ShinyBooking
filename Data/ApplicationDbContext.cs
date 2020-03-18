@@ -55,6 +55,21 @@ namespace ShinyBooking.Data
                 .WithMany(r => r.RoomActivities)
                 .HasForeignKey(re => re.ActivitiesId);
 
+            //Modelbuilder for n to n relations Room <-> AmenitiesForDisabled
+            modelBuilder.Entity<RoomAmenitiesForDisabled>()
+                .HasKey(re => new {re.RoomId, re.AmenitiesForDisabledId});
+
+            modelBuilder.Entity<RoomAmenitiesForDisabled>()
+                .HasOne<Room>(re => re.Room)
+                .WithMany(r => r.RoomAmenitiesForDisabled)
+                .HasForeignKey(re => re.RoomId);
+            
+            modelBuilder.Entity<RoomAmenitiesForDisabled>()
+                .HasOne<AmenitiesForDisabled>(re => re.AmenitiesForDisabled)
+                .WithMany(r => r.RoomAmenitiesForDisabled)
+                .HasForeignKey(re => re.AmenitiesForDisabledId);
+
+
             //Modelbuilder for 1 to n relations for base Photo
             modelBuilder.Entity<Photo>()
                 .HasOne<Room>(p => p.Room)
