@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShinyBooking.Data;
+using ShinyBooking.Dto;
 using ShinyBooking.Models;
 
 namespace ShinyBooking.Controllers
@@ -25,9 +26,40 @@ namespace ShinyBooking.Controllers
         [HttpGet]
         public async Task<IActionResult> GetRooms()
         {
-            var rooms = await  _context.Photos.ToListAsync();
+            var rooms = await _context.Rooms
+                .Include(r => r.Photos)
+                .Include(r => r.RoomEquipments)
+                .ThenInclude(re => re.Equipment).ToListAsync();
             
-            return Ok(rooms);
+            var roomsForReturn = new List<RoomForReturnListOfRoomsDto>();
+
+            foreach (var room in rooms)
+            {
+                var roomForReturn = new RoomForReturnListOfRoomsDto
+                {
+                    Id = room.Id,
+                    Name = room.Name,
+                    Rating = room.Rating,
+                    Price = room.Price,
+                    Area = room.Area,
+                    Capacity = room.Capacity,
+                    MainPhotoUrl = room.Photos.FirstOrDefault( p => p.IsMain)?.PhotoUrl,
+                };
+
+
+                var equipments = room.RoomEquipments.Select(re => re.Equipment);
+                foreach (var equipment in equipments)
+                {
+                    var equipmentForReturn = new EquipmentForReturnDto
+                    {
+                        Id = equipment.Id,
+                        Name = equipment.Name
+                    };
+                    roomForReturn.EquipmentsForReturnListDto.Add(equipmentForReturn);
+                }
+                roomsForReturn.Add(roomForReturn);
+            }
+            return Ok(roomsForReturn);
         }
 
         // GET: api/Rooms/5
