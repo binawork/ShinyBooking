@@ -41,6 +41,10 @@ namespace ShinyBooking.Models
         [Range(0, int.MaxValue, ErrorMessage = " Capacity must be greater than 0")]
         public int Capacity { get; set; }
 
+        [Range(0, int.MaxValue, ErrorMessage = " Parking Spaces must be greater than 0")]
+        public int ParkingSpaces { get; set; }
+
+
         [Required]
         public IList<Photo> Photos { get; set; }
 
