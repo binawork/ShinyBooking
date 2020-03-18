@@ -1,0 +1,20 @@
+<app-filters-bar></app-filters-bar>
+
+<div class="container">
+  <section class="section-padding">
+    <div class="section-title text-center mb-5">
+      <h2>Rooms for rent</h2>
+      <p>Jakiś opis pewnie będzie czy coś</p>
+    </div>
+
+      <ng-container *ngFor="let room of roomList; let i = index">
+        <div *ngIf="i%3 == 0" class="row">
+          <app-room-card class="col col-lg-4 col-md-4" [room]="room"></app-room-card>
+          <app-room-card class="col col-lg-4 col-md-4" *ngIf="i + 1 < roomList.length" [room]="roomList[i + 1]"></app-room-card>
+          <app-room-card class="col col-lg-4 col-md-4" *ngIf="i + 2 < roomList.length" [room]="roomList[i + 2]"></app-room-card>
+        </div>
+      </ng-container>
+  </section>
+</div>
+
+

@@ -37,6 +37,12 @@
     <Compile Remove="Data\Migrations\20200317085904_AddPhotoTable.Designer.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\rooms" />
+    <Folder Include="ClientApp\src\app\_interfaces" />
+    <Folder Include="ClientApp\src\app\_services" />
+  </ItemGroup>
+
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
