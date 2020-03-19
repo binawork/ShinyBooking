@@ -28,6 +28,7 @@ namespace ShinyBooking.Controllers
         {
             var rooms = await _context.Rooms
                 .Include(r => r.Photos)
+                .Include(r => r.RoomAddress)
                 .Include(r => r.RoomEquipments)
                 .ThenInclude(re => re.Equipment).ToListAsync();
             
@@ -35,6 +36,17 @@ namespace ShinyBooking.Controllers
 
             foreach (var room in rooms)
             {
+                var address = new RoomAddressForReturnDto
+                {
+                    Id = room.RoomAddress.Id,
+                    ApartmentNumber = room.RoomAddress.ApartmentNumber,
+                    BuildingNumber = room.RoomAddress.BuildingNumber,
+                    City = room.RoomAddress.City,
+                    Country = room.RoomAddress.Country,
+                    PostalCode = room.RoomAddress.PostalCode,
+                    Street = room.RoomAddress.Street
+                };
+                
                 var roomForReturn = new RoomForReturnListOfRoomsDto
                 {
                     Id = room.Id,
@@ -44,9 +56,11 @@ namespace ShinyBooking.Controllers
                     Area = room.Area,
                     Capacity = room.Capacity,
                     MainPhotoUrl = room.Photos.FirstOrDefault( p => p.IsMain)?.PhotoUrl,
+                    AddressForReturnDto = address
                 };
 
 
+                
                 var equipments = room.RoomEquipments.Select(re => re.Equipment);
                 foreach (var equipment in equipments)
                 {

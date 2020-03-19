@@ -50,9 +50,5 @@ namespace ShinyBooking.Models
         public string EmailAddress {get; set;}
 
         public string WebPage {get; set;}
-
-
-
-
     }
 }
