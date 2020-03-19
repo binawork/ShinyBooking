@@ -5,7 +5,7 @@ namespace ShinyBooking.Models
 {
     public class Room
     {
-        public int Id { get; set; }\\test
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public double Rating { get; set; }
