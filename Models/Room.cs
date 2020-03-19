@@ -24,10 +24,8 @@ namespace ShinyBooking.Models
         [StringLength(255, ErrorMessage = "Description is required", MinimumLength = 2)]
         public string Description { get; set; }
 
-        [Required]
-        [StringLength(255, ErrorMessage = "Description of Possible Room Arrangemets is required", MinimumLength = 2)]
+        [StringLength(255)]
         public string RoomArrangementsCapabilitiesDescription { get; set; }
-
 
         [Required]
         [Range(0, double.MaxValue, ErrorMessage = " Price must be greater than 0")]
@@ -44,7 +42,6 @@ namespace ShinyBooking.Models
         [Range(0, int.MaxValue, ErrorMessage = " Parking Spaces must be greater than 0")]
         public int ParkingSpaces { get; set; }
 
-
         [Required]
         public IList<Photo> Photos { get; set; }
 
@@ -52,6 +49,6 @@ namespace ShinyBooking.Models
 
         public IList<RoomAmenitiesForDisabled> RoomAmenitiesForDisabled { get; set; }
 
-        public IList<RoomActivities> RoomActivities {get; set;}
+        public IList<RoomActivities> RoomActivities { get; set; }
     }
 }
