@@ -1,44 +1,87 @@
 <header>
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
-  >
+  <nav class="navbar navbar-expand-lg navbar-light bg-light on-top">
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">ShinyBooking</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target=".navbar-collapse"
-        aria-label="Toggle navigation"
-        [attr.aria-expanded]="isExpanded"
-        (click)="toggle()"
-      >
+      <a class="navbar-brand text-success logo" href="index.html"><i class="mdi mdi-home-map-marker"></i> <strong>Shiny</strong>Booking</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
-        [ngClass]="{ show: isExpanded }"
-      >
-        <app-login-menu></app-login-menu>
-        <ul class="navbar-nav flex-grow">
-          <li
-            class="nav-item"
-            [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 margin-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              HOME
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="index1.html">Home With Search</a>
+              <a class="dropdown-item" href="index2.html">Home With Map</a>
+              <a class="dropdown-item" href="index3.html">Home With Property Info</a>
+            </div>
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/counter']"
-              >Counter</a
-            >
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Properties
+            </a>
+            <div class="dropdown-menu" aria-labelledby="2">
+              <a class="dropdown-item" href="properties-grid.html">Properties Grid</a>
+              <a class="dropdown-item" href="properties-list.html">Properties List</a>
+              <a class="dropdown-item" href="property-single-slider.html">Property Single Slider</a>
+              <a class="dropdown-item" href="property-single-gallery.html">Property Single Gallery</a>
+            </div>
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
-              >Fetch data</a
-            >
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Agency
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="agency-list.html">Agency List</a>
+              <a class="dropdown-item" href="agency-profile.html">Agency Profile</a>
+              <a class="dropdown-item" href="agents.html">Agents</a>
+              <a class="dropdown-item" href="agent-profile.html">Agent Profile</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Blog
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="blog.html">Blog</a>
+              <a class="dropdown-item" href="blog-single.html">Blog Single</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              My Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="user-profile.html">User Profile</a>
+              <a class="dropdown-item" href="social-profiles.html">Social Profiles</a>
+              <a class="dropdown-item" href="my-properties.html">My Properties</a>
+              <a class="dropdown-item" href="favorite-properties.html">Favorite Properties</a>
+              <a class="dropdown-item" href="add-property.html">Add Property</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pages
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="about.html">About Us</a>
+              <a class="dropdown-item" href="faq.html">FAQ</a>
+              <a class="dropdown-item" href="contact.html">Contact</a>
+              <a class="dropdown-item" href="not-found.html">404 Page</a>
+            </div>
           </li>
         </ul>
+        <div class="my-2 my-lg-0">
+          <ul class="list-inline main-nav-right">
+            <li class="list-inline-item">
+              <a class="btn btn-link btn-sm" href="login.html">Sign In</a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-success btn-sm" href="register.html">Sign Up</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>

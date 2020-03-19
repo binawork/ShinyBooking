@@ -28,6 +28,7 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Content Remove="$(SpaRoot)**" />
+    <Content Include="ClientApp\src\assets\img\background-roomsList.jpg" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
@@ -35,6 +36,12 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20200317085904_AddPhotoTable.cs" />
     <Compile Remove="Data\Migrations\20200317085904_AddPhotoTable.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\rooms" />
+    <Folder Include="ClientApp\src\app\_interfaces" />
+    <Folder Include="ClientApp\src\app\_services" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
