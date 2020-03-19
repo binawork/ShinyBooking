@@ -1,4 +1,5 @@
 import {Equipment} from "./equipment";
+import {RoomAddress} from "./room-address";
 
 export interface Room {
   id?: string;
@@ -9,4 +10,5 @@ export interface Room {
   capacity?: number;
   mainPhotoUrl?: number;
   equipmentsForReturnListDto?: Array<Equipment>;
+  addressForReturnDto?: RoomAddress;
 }

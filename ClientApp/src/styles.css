@@ -1,3 +1,5 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 /*
 Template Name: Osahan Land - Bootstrap 4 Light Real Estate Theme
 Author: Askbootstrap
@@ -207,7 +209,7 @@ label {
   border-radius: 0;
 }
 .section-padding {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 .text-success {
   color: #64ddba !important;
@@ -264,7 +266,7 @@ a.text-success:focus, a.text-success:hover {
 nav.navbar {
   background: #fff none repeat scroll 0 0 !important;
   padding: 0;
-  box-shadow:0 5px 3px rgba(218, 235, 255, 0.51);
+  /*box-shadow:0 5px 3px rgba(218, 235, 255, 0.51);*/
 }
 nav.navbar .navbar-nav .nav-link {
   font-weight: bold;
@@ -310,7 +312,7 @@ nav.navbar .navbar-nav .nav-link {
   line-height: 58px;
   position: absolute;
   text-align: center;
-  width: 15px;
+  width: 41px;
   z-index: 9;
 }
 .slider-form .input-group-addon .mdi {
@@ -333,7 +335,7 @@ nav.navbar .navbar-nav .nav-link {
 }
 .slider-form .btn {
   font-size: 13px;
-  padding: 18px 8px;
+  padding: 18px 8px 17px 8px;
 }
 .inner-page-form .input-group{
   padding: 1px;
@@ -634,7 +636,7 @@ nav.navbar .navbar-nav .nav-link {
     max-width: 100%;
   }
   .section-padding {
-    padding: 50px 0;
+    padding: 40px 0;
   }
   nav.navbar {
     padding: 10px 15px;
@@ -771,7 +773,7 @@ nav.navbar .navbar-nav .nav-link {
     padding: 18px;
   }
   .section-padding {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 }
 @media (min-width: 1024px) and (max-width: 1200px) {

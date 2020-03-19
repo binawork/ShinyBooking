@@ -50,5 +50,7 @@ namespace ShinyBooking.Models
         public IList<RoomAmenitiesForDisabled> RoomAmenitiesForDisabled { get; set; }
 
         public IList<RoomActivities> RoomActivities { get; set; }
+        
+        public RoomAddress RoomAddress { get; set; }
     }
 }

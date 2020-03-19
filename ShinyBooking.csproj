@@ -28,7 +28,28 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Content Remove="$(SpaRoot)**" />
+    <Content Include="ClientApp\src\assets\icons\css\materialdesignicons.css" />
+    <Content Include="ClientApp\src\assets\icons\css\materialdesignicons.css.map" />
+    <Content Include="ClientApp\src\assets\icons\css\materialdesignicons.min.css" />
+    <Content Include="ClientApp\src\assets\icons\css\materialdesignicons.min.css.map" />
+    <Content Include="ClientApp\src\assets\icons\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="ClientApp\src\assets\icons\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="ClientApp\src\assets\icons\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="ClientApp\src\assets\icons\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="ClientApp\src\assets\icons\fonts\materialdesignicons-webfont.woff2" />
     <Content Include="ClientApp\src\assets\img\background-roomsList.jpg" />
+    <Content Include="ClientApp\src\assets\jquery\jquery.js" />
+    <Content Include="ClientApp\src\assets\jquery\jquery.min.js" />
+    <Content Include="ClientApp\src\assets\jquery\jquery.min.map" />
+    <Content Include="ClientApp\src\assets\jquery\jquery.slim.js" />
+    <Content Include="ClientApp\src\assets\jquery\jquery.slim.min.js" />
+    <Content Include="ClientApp\src\assets\jquery\jquery.slim.min.map" />
+    <Content Include="ClientApp\src\assets\js\contact_me.js" />
+    <Content Include="ClientApp\src\assets\js\custom.js" />
+    <Content Include="ClientApp\src\assets\js\jqBootstrapValidation.js" />
+    <Content Include="ClientApp\src\assets\select2\css\select2-bootstrap.css" />
+    <Content Include="ClientApp\src\assets\select2\css\select2.min.css" />
+    <Content Include="ClientApp\src\assets\select2\js\select2.min.js" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
