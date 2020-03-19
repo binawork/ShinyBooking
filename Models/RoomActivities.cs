@@ -1,10 +1,10 @@
 ﻿namespace ShinyBooking.Models
 {
-    public class RoomEquipment
+    public class RoomActivities
     {
-        public string EquipmentId { get; set; }
+        public string ActivitiesId { get; set; }
 
-        public Equipment Equipment { get; set; }
+        public Activities Activities{ get; set; }
 
         public string RoomId { get; set; }
 
