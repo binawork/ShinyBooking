@@ -28,7 +28,7 @@ namespace ShinyBooking.Models
 
         public string Country { get; set; }
 
-        public string PostalCode { get; set; }
+        public int PostalCode { get; set; }
 
         public Room Room { get; set; }
 
