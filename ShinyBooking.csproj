@@ -3,18 +3,30 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+        <StartupObject></StartupObject>
     </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Migrations\20200324131814_dupa.cs" />
+      <Compile Remove="Migrations\20200324131814_dupa.Designer.cs" />
+    </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.2" />
       <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.2" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.2" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="ClientApp" />
+      <Folder Include="Migrations\" />
     </ItemGroup>
 
 

@@ -4,6 +4,7 @@ appsettings.json
 
 .idea/
 
+ClientApp/dist
 
 
 # Created by https://www.gitignore.io/api/rider,angular,visualstudio
