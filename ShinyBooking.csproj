@@ -1,96 +1,33 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
-    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
-    <IsPackable>false</IsPackable>
-    <SpaRoot>ClientApp\</SpaRoot>
-    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+        <StartupObject></StartupObject>
+    </PropertyGroup>
 
-    <!-- Set this to true if you enable server-side prerendering -->
-    <BuildServerSideRenderer>false</BuildServerSideRenderer>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="3.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <!-- Don't publish the SPA source files, but do show them in the project files list -->
-    <Content Remove="$(SpaRoot)**" />
-    <Content Include="ClientApp\src\assets\icons\css\materialdesignicons.css" />
-    <Content Include="ClientApp\src\assets\icons\css\materialdesignicons.css.map" />
-    <Content Include="ClientApp\src\assets\icons\css\materialdesignicons.min.css" />
-    <Content Include="ClientApp\src\assets\icons\css\materialdesignicons.min.css.map" />
-    <Content Include="ClientApp\src\assets\icons\fonts\materialdesignicons-webfont.eot" />
-    <Content Include="ClientApp\src\assets\icons\fonts\materialdesignicons-webfont.svg" />
-    <Content Include="ClientApp\src\assets\icons\fonts\materialdesignicons-webfont.ttf" />
-    <Content Include="ClientApp\src\assets\icons\fonts\materialdesignicons-webfont.woff" />
-    <Content Include="ClientApp\src\assets\icons\fonts\materialdesignicons-webfont.woff2" />
-    <Content Include="ClientApp\src\assets\img\background-roomsList.jpg" />
-    <Content Include="ClientApp\src\assets\jquery\jquery.js" />
-    <Content Include="ClientApp\src\assets\jquery\jquery.min.js" />
-    <Content Include="ClientApp\src\assets\jquery\jquery.min.map" />
-    <Content Include="ClientApp\src\assets\jquery\jquery.slim.js" />
-    <Content Include="ClientApp\src\assets\jquery\jquery.slim.min.js" />
-    <Content Include="ClientApp\src\assets\jquery\jquery.slim.min.map" />
-    <Content Include="ClientApp\src\assets\js\contact_me.js" />
-    <Content Include="ClientApp\src\assets\js\custom.js" />
-    <Content Include="ClientApp\src\assets\js\jqBootstrapValidation.js" />
-    <Content Include="ClientApp\src\assets\select2\css\select2-bootstrap.css" />
-    <Content Include="ClientApp\src\assets\select2\css\select2.min.css" />
-    <Content Include="ClientApp\src\assets\select2\js\select2.min.js" />
-    <None Remove="$(SpaRoot)**" />
-    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Data\Migrations\20200317085904_AddPhotoTable.cs" />
-    <Compile Remove="Data\Migrations\20200317085904_AddPhotoTable.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ClientApp\src\app\rooms" />
-    <Folder Include="ClientApp\src\app\_interfaces" />
-    <Folder Include="ClientApp\src\app\_services" />
-  </ItemGroup>
-
-  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
-    <!-- Ensure Node.js is installed -->
-    <Exec Command="node --version" ContinueOnError="true">
-      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
-    </Exec>
-    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
-    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
-    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
-  </Target>
-
-  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
-    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
-    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
-    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --prod" />
-    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr -- --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
-
-    <!-- Include the newly-built files in the publish output -->
     <ItemGroup>
-      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
-      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-        <RelativePath>%(DistFiles.Identity)</RelativePath>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      </ResolvedFileToPublish>
+      <Compile Remove="Migrations\20200324131814_dupa.cs" />
+      <Compile Remove="Migrations\20200324131814_dupa.Designer.cs" />
     </ItemGroup>
-  </Target>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.2" />
+      <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="ClientApp" />
+      <Folder Include="Migrations\" />
+    </ItemGroup>
+
 
 </Project>
