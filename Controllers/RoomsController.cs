@@ -28,9 +28,9 @@ namespace ShinyBooking.Controllers
         {
             var rooms = await _context.Rooms
                 .Include(r => r.RoomAmenitiesForDisabled)
-                .ThenInclude(am=> am.AmenitiesForDisabled)//new
+                .ThenInclude(am=> am.AmenitiesForDisabled)
                 .Include(r => r.RoomActivities)
-                .ThenInclude(ra => ra.Activities) //new
+                .ThenInclude(ra => ra.Activities) 
                 .Include(r => r.Photos)
                 .Include(r => r.RoomAddress)
                 .Include(r => r.RoomEquipments)
@@ -48,7 +48,14 @@ namespace ShinyBooking.Controllers
                     City = room.RoomAddress.City,
                     Country = room.RoomAddress.Country,
                     PostalCode = room.RoomAddress.PostalCode,
-                    Street = room.RoomAddress.Street
+                    Street = room.RoomAddress.Street,
+                    OtherAddressInformation = room.RoomAddress.OtherAddressInformation,
+                    PhoneNumber1 = room.RoomAddress.PhoneNumber1,
+                    PhoneNumber2 = room.RoomAddress.PhoneNumber2,
+                    EmailAddress = room.RoomAddress.EmailAddress,
+                    WebPage = room.RoomAddress.WebPage,
+                    Directions = room.RoomAddress.Directions
+
                 };
                 
                 var roomForReturn = new RoomForReturnListOfRoomsDto
@@ -64,7 +71,7 @@ namespace ShinyBooking.Controllers
                     
                 };
 
-                                //add equipment to returned room object
+                //add equipment to returned room object
                 var equipments = room.RoomEquipments.Select(re => re.Equipment);
                 foreach (var equipment in equipments)
                 {
@@ -87,11 +94,6 @@ namespace ShinyBooking.Controllers
                     roomForReturn.AmenitiesForDisabledDto.Add(amenitiesForReturn);
                 }
  
-                
-
-                
-
-                               //does not work yet
                var activites = room.RoomActivities.Select(ra => ra.Activities);
                 foreach (var activity in activites)
                 {
