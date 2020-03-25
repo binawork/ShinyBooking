@@ -27,6 +27,8 @@ namespace ShinyBooking.Controllers
         public async Task<IActionResult> GetRooms()
         {
             var rooms = await _context.Rooms
+                .Include(r => r.RoomAmenitiesForDisabled)//new
+                .Include(r => r.RoomActivities) //new
                 .Include(r => r.Photos)
                 .Include(r => r.RoomAddress)
                 .Include(r => r.RoomEquipments)

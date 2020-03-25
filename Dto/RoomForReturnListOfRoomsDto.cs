@@ -20,5 +20,7 @@ namespace ShinyBooking.Dto
         public string MainPhotoUrl { get; set; }
         public IList<EquipmentForReturnDto> EquipmentsForReturnListDto { get; set; }
         public RoomAddressForReturnDto AddressForReturnDto { get; set; }
+        public IList<ActivitiesForReturnDto> ActivitiesForReturnDto {get; set;}
+        public IList<AmenitiesForDisabledDto> AmenitiesForDisabledDto {get; set;}
     }
 }
