@@ -87,7 +87,8 @@ namespace ShinyBooking.Controllers
                 return NotFound();
             }
 
-            return BadRequest();
+            return Ok(room);
+            
         }
 
         // PUT: api/Rooms/5
