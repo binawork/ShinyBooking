@@ -29,5 +29,9 @@
       <Folder Include="Migrations\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="ClientApp\dist\appsettings.json" />
+    </ItemGroup>
+
 
 </Project>
