@@ -1,13 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShinyBooking.Data;
 using ShinyBooking.Dto;
 using ShinyBooking.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ShinyBooking.Controllers
 {
@@ -28,14 +26,14 @@ namespace ShinyBooking.Controllers
         {
             var rooms = await _context.Rooms
                 .Include(r => r.RoomAmenitiesForDisabled)
-                .ThenInclude(am=> am.AmenitiesForDisabled)
+                .ThenInclude(am => am.AmenitiesForDisabled)
                 .Include(r => r.RoomActivities)
-                .ThenInclude(ra => ra.Activities) 
+                .ThenInclude(ra => ra.Activities)
                 .Include(r => r.Photos)
                 .Include(r => r.RoomAddress)
                 .Include(r => r.RoomEquipments)
                 .ThenInclude(re => re.Equipment).ToListAsync();
-            
+
             var roomsForReturn = new List<RoomForReturnListOfRoomsDto>();
 
             foreach (var room in rooms)
@@ -55,9 +53,8 @@ namespace ShinyBooking.Controllers
                     EmailAddress = room.RoomAddress.EmailAddress,
                     WebPage = room.RoomAddress.WebPage,
                     Directions = room.RoomAddress.Directions
-
                 };
-                
+
                 var roomForReturn = new RoomForReturnListOfRoomsDto
                 {
                     Id = room.Id,
@@ -66,9 +63,8 @@ namespace ShinyBooking.Controllers
                     Price = room.Price,
                     Area = room.Area,
                     Capacity = room.Capacity,
-                    MainPhotoUrl = room.Photos.FirstOrDefault( p => p.IsMain)?.PhotoUrl,
+                    MainPhotoUrl = room.Photos.FirstOrDefault(p => p.IsMain)?.PhotoUrl,
                     AddressForReturnDto = address
-                    
                 };
 
                 //add equipment to returned room object
@@ -93,8 +89,8 @@ namespace ShinyBooking.Controllers
                     };
                     roomForReturn.AmenitiesForDisabledDto.Add(amenitiesForReturn);
                 }
- 
-               var activites = room.RoomActivities.Select(ra => ra.Activities);
+
+                var activites = room.RoomActivities.Select(ra => ra.Activities);
                 foreach (var activity in activites)
                 {
                     var activityForReturn = new ActivitiesForReturnDto
@@ -107,23 +103,86 @@ namespace ShinyBooking.Controllers
                 roomsForReturn.Add(roomForReturn);
             }
 
-
             return Ok(roomsForReturn);
         }
 
         // GET: api/Rooms/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetRoom(string id)
+        public async Task<IActionResult> GetRoom(string? id)
         {
-            var room = await _context.Rooms.FindAsync(id);
+            var room = await _context.Rooms
+                .Include(r => r.RoomAmenitiesForDisabled)
+                .ThenInclude(am => am.AmenitiesForDisabled)
+                .Include(r => r.RoomActivities)
+                .ThenInclude(ra => ra.Activities)
+                .Include(r => r.Photos)
+                .Include(r => r.RoomAddress)
+                .Include(r => r.RoomEquipments)
+                .ThenInclude(re => re.Equipment)
+                .FirstOrDefaultAsync(i => i.Id == id)
+                ;
 
-            if (room == null)
+            var address = new RoomAddressForReturnDto
             {
-                return NotFound();
-            }
+                Id = room.RoomAddress.Id,
+                ApartmentNumber = room.RoomAddress.ApartmentNumber,
+                BuildingNumber = room.RoomAddress.BuildingNumber,
+                City = room.RoomAddress.City,
+                Country = room.RoomAddress.Country,
+                PostalCode = room.RoomAddress.PostalCode,
+                Street = room.RoomAddress.Street,
+                OtherAddressInformation = room.RoomAddress.OtherAddressInformation,
+                PhoneNumber1 = room.RoomAddress.PhoneNumber1,
+                PhoneNumber2 = room.RoomAddress.PhoneNumber2,
+                EmailAddress = room.RoomAddress.EmailAddress,
+                WebPage = room.RoomAddress.WebPage,
+                Directions = room.RoomAddress.Directions
+            };
+            var roomForReturn = new RoomForReturnListOfRoomsDto
+            {
+                Id = room.Id,
+                Name = room.Name,
+                Rating = room.Rating,
+                Price = room.Price,
+                Area = room.Area,
+                Capacity = room.Capacity,
+                MainPhotoUrl = room.Photos.FirstOrDefault(p => p.IsMain)?.PhotoUrl,
+                AddressForReturnDto = address
+            };
+                            var equipments = room.RoomEquipments.Select(re => re.Equipment);
+                foreach (var equipment in equipments)
+                {
+                    var equipmentForReturn = new EquipmentForReturnDto
+                    {
+                        Id = equipment.Id,
+                        Name = equipment.Name
+                    };
+                    roomForReturn.EquipmentsForReturnListDto.Add(equipmentForReturn);
+                }
 
-            return Ok(room);
-            
+                var amenities = room.RoomAmenitiesForDisabled.Select(am => am.AmenitiesForDisabled);
+                foreach (var amenity in amenities)
+                {
+                    var amenitiesForReturn = new AmenitiesForDisabledDto
+                    {
+                        Id = amenity.Id,
+                        Name = amenity.Name
+                    };
+                    roomForReturn.AmenitiesForDisabledDto.Add(amenitiesForReturn);
+                }
+
+                var activites = room.RoomActivities.Select(ra => ra.Activities);
+                foreach (var activity in activites)
+                {
+                    var activityForReturn = new ActivitiesForReturnDto
+                    {
+                        Id = activity.Id,
+                        Name = activity.Name
+                    };
+                    roomForReturn.ActivitiesForReturnDto.Add(activityForReturn);
+                }
+
+            return Ok(roomForReturn);
         }
 
         // PUT: api/Rooms/5
