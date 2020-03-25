@@ -11,6 +11,7 @@ import {RoomService} from "./_services/room.service";
 import {NavMenuComponent} from "./nav-menu/nav-menu.component";
 import {RoomCard} from "./rooms/room-card/room-card.component";
 import {FiltersBarComponent} from "./filters-bar/filters-bar.component";
+import { RoomDetailsComponent } from './rooms/room-details/room-details.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {FiltersBarComponent} from "./filters-bar/filters-bar.component";
     RoomCard,
     RoomListComponent,
     FiltersBarComponent,
+    RoomDetailsComponent,
 
   ],
   imports: [
@@ -28,6 +30,7 @@ import {FiltersBarComponent} from "./filters-bar/filters-bar.component";
 
     RouterModule.forRoot([
       {path: '', component: RoomListComponent, pathMatch: 'full'},
+      {path: 'room-list', component: RoomListComponent, pathMatch: 'full'},
     ])
   ],
   providers: [
