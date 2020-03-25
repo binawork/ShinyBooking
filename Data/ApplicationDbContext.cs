@@ -15,6 +15,8 @@ namespace ShinyBooking.Data
         public DbSet<Equipment> Equipments { get; set; }
         public DbSet<RoomEquipment> RoomEquipments { get; set; }
 
+        public DbSet<RoomAmenitiesForDisabled> RoomAmenitiesForDisabled {get;set;}
+        public DbSet<RoomActivities> RoomActivities {get; set;}
         public DbSet<Photo> Photos { get; set; }
 
         public DbSet<RoomAddress> RoomAddresses { get; set; }

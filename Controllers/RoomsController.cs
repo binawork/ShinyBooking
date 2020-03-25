@@ -27,8 +27,10 @@ namespace ShinyBooking.Controllers
         public async Task<IActionResult> GetRooms()
         {
             var rooms = await _context.Rooms
-                .Include(r => r.RoomAmenitiesForDisabled)//new
-                .Include(r => r.RoomActivities) //new
+                .Include(r => r.RoomAmenitiesForDisabled)
+                .ThenInclude(am=> am.AmenitiesForDisabled)//new
+                .Include(r => r.RoomActivities)
+                .ThenInclude(ra => ra.Activities) //new
                 .Include(r => r.Photos)
                 .Include(r => r.RoomAddress)
                 .Include(r => r.RoomEquipments)
@@ -59,10 +61,10 @@ namespace ShinyBooking.Controllers
                     Capacity = room.Capacity,
                     MainPhotoUrl = room.Photos.FirstOrDefault( p => p.IsMain)?.PhotoUrl,
                     AddressForReturnDto = address
+                    
                 };
 
-
-                
+                                //add equipment to returned room object
                 var equipments = room.RoomEquipments.Select(re => re.Equipment);
                 foreach (var equipment in equipments)
                 {
@@ -73,8 +75,37 @@ namespace ShinyBooking.Controllers
                     };
                     roomForReturn.EquipmentsForReturnListDto.Add(equipmentForReturn);
                 }
+
+                var amenities = room.RoomAmenitiesForDisabled.Select(am => am.AmenitiesForDisabled);
+                foreach (var amenity in amenities)
+                {
+                    var amenitiesForReturn = new AmenitiesForDisabledDto
+                    {
+                        Id = amenity.Id,
+                        Name = amenity.Name
+                    };
+                    roomForReturn.AmenitiesForDisabledDto.Add(amenitiesForReturn);
+                }
+ 
+                
+
+                
+
+                               //does not work yet
+               var activites = room.RoomActivities.Select(ra => ra.Activities);
+                foreach (var activity in activites)
+                {
+                    var activityForReturn = new ActivitiesForReturnDto
+                    {
+                        Id = activity.Id,
+                        Name = activity.Name
+                    };
+                    roomForReturn.ActivitiesForReturnDto.Add(activityForReturn);
+                }
                 roomsForReturn.Add(roomForReturn);
             }
+
+
             return Ok(roomsForReturn);
         }
 

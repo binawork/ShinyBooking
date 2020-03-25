@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
-using ShinyBooking.Models;
 
 namespace ShinyBooking.Dto
 {
     public class RoomForReturnListOfRoomsDto
     {
-
         public RoomForReturnListOfRoomsDto()
         {
             EquipmentsForReturnListDto = new List<EquipmentForReturnDto>();
+            ActivitiesForReturnDto = new List<ActivitiesForReturnDto>();
+            AmenitiesForDisabledDto = new List<AmenitiesForDisabledDto>();
         }
-        
+
         public string Id { get; set; }
         public string Name { get; set; }
         public double Rating { get; set; }
@@ -20,7 +20,7 @@ namespace ShinyBooking.Dto
         public string MainPhotoUrl { get; set; }
         public IList<EquipmentForReturnDto> EquipmentsForReturnListDto { get; set; }
         public RoomAddressForReturnDto AddressForReturnDto { get; set; }
-        public IList<ActivitiesForReturnDto> ActivitiesForReturnDto {get; set;}
-        public IList<AmenitiesForDisabledDto> AmenitiesForDisabledDto {get; set;}
+        public IList<ActivitiesForReturnDto> ActivitiesForReturnDto { get; set; }
+        public IList<AmenitiesForDisabledDto> AmenitiesForDisabledDto { get; set; }
     }
 }
