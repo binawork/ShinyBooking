@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShinyBooking.Data;
 
-namespace ShinyBooking.Data.Migrations
+namespace ShinyBooking.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200324170430_FixMigrations")]
-    partial class FixMigrations
+    [Migration("20200326142222_RemoveTestColmn")]
+    partial class RemoveTestColmn
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -114,9 +114,6 @@ namespace ShinyBooking.Data.Migrations
                     b.Property<string>("RoomArrangementsCapabilitiesDescription")
                         .HasColumnType("nvarchar(255)")
                         .HasMaxLength(255);
-
-                    b.Property<int>("Test")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
