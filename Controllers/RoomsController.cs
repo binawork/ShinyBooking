@@ -64,7 +64,7 @@ namespace ShinyBooking.Controllers
                     Area = room.Area,
                     Capacity = room.Capacity,
                     MainPhotoUrl = room.Photos.FirstOrDefault(p => p.IsMain)?.PhotoUrl,
-                    AddressForReturnDto = address
+                    RoomAddress = address
                 };
 
                 //add equipment to returned room object
@@ -76,30 +76,10 @@ namespace ShinyBooking.Controllers
                         Id = equipment.Id,
                         Name = equipment.Name
                     };
-                    roomForReturn.EquipmentsForReturnListDto.Add(equipmentForReturn);
+                    roomForReturn.Equipments.Add(equipmentForReturn);
                 }
 
-                var amenities = room.RoomAmenitiesForDisabled.Select(am => am.AmenitiesForDisabled);
-                foreach (var amenity in amenities)
-                {
-                    var amenitiesForReturn = new AmenitiesForDisabledDto
-                    {
-                        Id = amenity.Id,
-                        Name = amenity.Name
-                    };
-                    roomForReturn.AmenitiesForDisabledDto.Add(amenitiesForReturn);
-                }
-
-                var activites = room.RoomActivities.Select(ra => ra.Activities);
-                foreach (var activity in activites)
-                {
-                    var activityForReturn = new ActivitiesForReturnDto
-                    {
-                        Id = activity.Id,
-                        Name = activity.Name
-                    };
-                    roomForReturn.ActivitiesForReturnDto.Add(activityForReturn);
-                }
+                
                 roomsForReturn.Add(roomForReturn);
             }
 
@@ -138,18 +118,34 @@ namespace ShinyBooking.Controllers
                 WebPage = room.RoomAddress.WebPage,
                 Directions = room.RoomAddress.Directions
             };
-            var roomForReturn = new RoomForReturnListOfRoomsDto
+            var roomForReturn = new RoomForReturnRoomDetailsDto
             {
                 Id = room.Id,
                 Name = room.Name,
                 Rating = room.Rating,
+                Description = room.Description,
+                RoomArrangementsCapabilitiesDescription = room.RoomArrangementsCapabilitiesDescription,
                 Price = room.Price,
                 Area = room.Area,
                 Capacity = room.Capacity,
-                MainPhotoUrl = room.Photos.FirstOrDefault(p => p.IsMain)?.PhotoUrl,
-                AddressForReturnDto = address
+                ParkingSpace = room.ParkingSpace,
+               
+                RoomAddress = address
             };
-                            var equipments = room.RoomEquipments.Select(re => re.Equipment);
+               
+                var photos = room.Photos;
+                foreach (var photo in photos)
+                {
+                    var PhotosForReturn = new PhotosForReturnDto
+                    {
+                        Id = photo.Id,
+                        PhotoUrl = photo.PhotoUrl
+                    };
+                    roomForReturn.Photos.Add(PhotosForReturn);
+                }
+            
+            
+                var equipments = room.RoomEquipments.Select(re => re.Equipment);
                 foreach (var equipment in equipments)
                 {
                     var equipmentForReturn = new EquipmentForReturnDto
@@ -157,7 +153,7 @@ namespace ShinyBooking.Controllers
                         Id = equipment.Id,
                         Name = equipment.Name
                     };
-                    roomForReturn.EquipmentsForReturnListDto.Add(equipmentForReturn);
+                    roomForReturn.Equipments.Add(equipmentForReturn);
                 }
 
                 var amenities = room.RoomAmenitiesForDisabled.Select(am => am.AmenitiesForDisabled);
@@ -168,7 +164,7 @@ namespace ShinyBooking.Controllers
                         Id = amenity.Id,
                         Name = amenity.Name
                     };
-                    roomForReturn.AmenitiesForDisabledDto.Add(amenitiesForReturn);
+                    roomForReturn.AmenitiesForDisabled.Add(amenitiesForReturn);
                 }
 
                 var activites = room.RoomActivities.Select(ra => ra.Activities);
@@ -179,7 +175,7 @@ namespace ShinyBooking.Controllers
                         Id = activity.Id,
                         Name = activity.Name
                     };
-                    roomForReturn.ActivitiesForReturnDto.Add(activityForReturn);
+                    roomForReturn.Activities.Add(activityForReturn);
                 }
 
             return Ok(roomForReturn);
