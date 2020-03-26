@@ -128,6 +128,9 @@ namespace ShinyBooking.Controllers
         [HttpPost]
         public async Task<ActionResult<Room>> PostRoom(Room room)
         {
+            if (!ModelState.IsValid)
+                return BadRequest("Invalid data");
+
             _context.Rooms.Add(room);
             try
             {
