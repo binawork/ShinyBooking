@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ShinyBooking.Models
@@ -30,12 +31,13 @@ namespace ShinyBooking.Models
 
         public int PostalCode { get; set; }
 
-        public Room Room { get; set; }
-
-        public string RoomId { get; set; }
-
+        public IList<Room> Rooms { get; set; }
+        
         public string Directions { get; set; }
 
+        
+        
+        // TO DO Everything under this comment should be moved somewhere else imo Phone number is not a part of address
         [Required(ErrorMessage = "Phone Number is Required")]
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber1 { get; set; }

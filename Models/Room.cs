@@ -40,9 +40,7 @@ namespace ShinyBooking.Models
         public int Capacity { get; set; }
 
         public bool ParkingSpace { get; set; }
-
-        public int Test { get; set; }
-
+        
         [Required]
         public IList<Photo> Photos { get; set; }
 
@@ -53,5 +51,7 @@ namespace ShinyBooking.Models
         public IList<RoomActivities> RoomActivities { get; set; }
         
         public RoomAddress RoomAddress { get; set; }
+        
+        public string RoomAddressId {get; set;}
     }
 }

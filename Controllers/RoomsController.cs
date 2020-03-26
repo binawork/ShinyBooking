@@ -94,13 +94,40 @@ namespace ShinyBooking.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRoom(string id, Room room)
+        public async Task<IActionResult> PutRoom(string id, RoomFromEditFormDto room)
         {
             if (id != room.Id)
             {
                 return BadRequest();
-            }
+            } 
+            
+            
+            var existingRoom = _context.Rooms.FirstOrDefault(r => r.Id == id);
 
+                if (existingRoom != null)
+                {
+                    existingRoom.Name = room.Name;
+                    existingRoom.Description = room.Description;
+                    existingRoom.Capacity = room.Capacity;
+                    existingRoom.Area = room.Area;
+                    existingRoom.RoomArrangementsCapabilitiesDescription = room.RoomArrangementsCapabilitiesDescription;
+                    existingRoom.Price = room.Price;
+                    existingRoom.ParkingSpace = room.ParkingSpace;
+                    existingRoom.Photos = room.Photos;
+                    existingRoom.RoomEquipments = room.RoomEquipments;
+                    existingRoom.RoomAmenitiesForDisabled = room.RoomAmenitiesForDisabled;
+                    existingRoom.RoomActivities = room.RoomActivities;
+                    existingRoom.RoomAddress.Street = room.RoomAddress.Street;
+                    existingRoom.RoomAddress.EmailAddress = room.RoomAddress.EmailAddress;
+                    existingRoom.RoomAddress.PhoneNumber1 = room.RoomAddress.PhoneNumber1;
+                    
+                    _context.SaveChanges();
+                }
+                else
+                { 
+                    return NotFound();
+                }
+                
             _context.Entry(room).State = EntityState.Modified;
 
             try
@@ -119,7 +146,7 @@ namespace ShinyBooking.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok();
         }
 
         // POST: api/Rooms
