@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Room} from "../../_interfaces/room";
+import {RoomForList} from "../../_interfaces/room-for-list";
 
 @Component({
   selector: 'app-room-card',
@@ -8,7 +8,7 @@ import {Room} from "../../_interfaces/room";
 })
 export class RoomCard implements OnInit {
   @Input()
-  public room: Room;
+  public room: RoomForList;
 
   constructor() { }
 

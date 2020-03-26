@@ -12,6 +12,8 @@ import {NavMenuComponent} from "./nav-menu/nav-menu.component";
 import {RoomCard} from "./rooms/room-card/room-card.component";
 import {FiltersBarComponent} from "./filters-bar/filters-bar.component";
 import { RoomDetailsComponent } from './rooms/room-details/room-details.component';
+import {RoomDetailsResolver} from "./_resolvers/room-details.resolver";
+import {NgxGalleryModule} from "@kolkov/ngx-gallery";
 
 @NgModule({
   declarations: [
@@ -26,15 +28,19 @@ import { RoomDetailsComponent } from './rooms/room-details/room-details.componen
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgxGalleryModule,
     FormsModule,
+
 
     RouterModule.forRoot([
       {path: '', component: RoomListComponent, pathMatch: 'full'},
-      {path: 'room-list', component: RoomListComponent, pathMatch: 'full'},
+      {path: 'rooms', component: RoomListComponent, pathMatch: 'full'},
+      {path: 'rooms/:id', component: RoomDetailsComponent, resolve: {room: RoomDetailsResolver}},
     ])
   ],
   providers: [
-    RoomService
+    RoomService,
+    RoomDetailsResolver
   ],
   bootstrap: [AppComponent]
 })

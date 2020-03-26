@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Room} from "../../_interfaces/room";
 import {RoomService} from "../../_services/room.service";
+import {RoomForList} from "../../_interfaces/room-for-list";
 
 @Component({
   selector: 'app-room-list',
@@ -8,7 +8,7 @@ import {RoomService} from "../../_services/room.service";
   styleUrls: ['./room-list.component.css']
 })
 export class RoomListComponent implements OnInit {
-  roomList: Array<Room>;
+  roomList: Array<RoomForList>;
   constructor(private roomService: RoomService) { }
 
   ngOnInit() {

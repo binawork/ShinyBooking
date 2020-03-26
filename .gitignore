@@ -1,9 +1,5 @@
 ﻿appsettings.Development.json
 appsettings.json
-.idea
-
-.idea/
-
 
 # Created by https://www.gitignore.io/api/rider,angular,visualstudio
 # Edit at https://www.gitignore.io/?templates=rider,angular,visualstudio

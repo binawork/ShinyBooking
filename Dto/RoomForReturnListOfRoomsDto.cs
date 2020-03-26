@@ -8,7 +8,7 @@ namespace ShinyBooking.Dto
 
         public RoomForReturnListOfRoomsDto()
         {
-            EquipmentsForReturnListDto = new List<EquipmentForReturnDto>();
+            Equipments = new List<EquipmentForReturnDto>();
         }
         
         public string Id { get; set; }
@@ -18,7 +18,7 @@ namespace ShinyBooking.Dto
         public int Area { get; set; }
         public int Capacity { get; set; }
         public string MainPhotoUrl { get; set; }
-        public IList<EquipmentForReturnDto> EquipmentsForReturnListDto { get; set; }
-        public RoomAddressForReturnDto AddressForReturnDto { get; set; }
+        public IList<EquipmentForReturnDto> Equipments { get; set; }
+        public RoomAddressForReturnDto RoomAddress { get; set; }
     }
 }

@@ -43,7 +43,7 @@ namespace ShinyBooking.Models
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber2 { get; set; }
 
-        [Required(ErrorMessage = "Email Address is Required")]
+        [Required(ErrorMessage = "Email RoomAddress is Required")]
         [DataType(DataType.EmailAddress)]
         public string EmailAddress { get; set; }
 

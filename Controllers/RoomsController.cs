@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,10 +17,12 @@ namespace ShinyBooking.Controllers
     public class RoomsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public RoomsController(ApplicationDbContext context)
+        public RoomsController(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Rooms
@@ -56,7 +59,7 @@ namespace ShinyBooking.Controllers
                     Area = room.Area,
                     Capacity = room.Capacity,
                     MainPhotoUrl = room.Photos.FirstOrDefault( p => p.IsMain)?.PhotoUrl,
-                    AddressForReturnDto = address
+                    RoomAddress = address
                 };
 
 
@@ -69,7 +72,7 @@ namespace ShinyBooking.Controllers
                         Id = equipment.Id,
                         Name = equipment.Name
                     };
-                    roomForReturn.EquipmentsForReturnListDto.Add(equipmentForReturn);
+                    roomForReturn.Equipments.Add(equipmentForReturn);
                 }
                 roomsForReturn.Add(roomForReturn);
             }
@@ -80,14 +83,25 @@ namespace ShinyBooking.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRoom(string id)
         {
-            var room = await _context.Rooms.FindAsync(id);
+            var room = await _context.Rooms
+                .Include(r => r.Photos)
+                .Include(r => r.RoomAddress)
+                .Include(r => r.RoomEquipments)
+                .ThenInclude(re => re.Equipment)
+                .Include( r => r.RoomActivities)
+                .ThenInclude(ra => ra.Activities)
+                .Include(r => r.RoomAmenitiesForDisabled)
+                .ThenInclude(ram => ram.AmenitiesForDisabled)
+                .FirstOrDefaultAsync(r => r.Id == id);
 
             if (room == null)
             {
                 return NotFound();
             }
-
-            return BadRequest();
+            
+            var roomToReturn = _mapper.Map<RoomForReturnDetailsDto>(room);
+            
+            return Ok(roomToReturn);
         }
 
         // PUT: api/Rooms/5

@@ -1,12 +1,12 @@
 <div class="card">
-    <a href="#">
+    <a href="#" [routerLink]="['/rooms/', room.id]">
       <img class="card-img-top"
            src="{{room.mainPhotoUrl}}"
            alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{room.name}}</h5>
         <h6 class="card-subtitle mb-2 text-muted">
-          <i class="mdi mdi-home-map-marker"></i> {{room.addressForReturnDto?.street | titlecase}} {{room.addressForReturnDto?.buildingNumber}}, {{room.addressForReturnDto.postalCode}}, {{room.addressForReturnDto.city}}, {{room.addressForReturnDto.country}}
+          <i class="mdi mdi-home-map-marker"></i> {{room.roomAddress?.street | titlecase}} {{room.roomAddress?.buildingNumber}}, {{room.roomAddress.postalCode}}, {{room.roomAddress.city}}, {{room.roomAddress.country}}
         </h6>
         <h2 class="text-success mb-0 mt-3">
           ${{room.price}} <small>/day</small>

@@ -1,0 +1,20 @@
+.on-top{
+  z-index: 100;
+}
+
+.size {
+  width: 100px;
+  height: 100px;
+}
+.ngx-gallery {
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 500px;
+   height: 400px;
+   border-color: #4a89ff;
+}
+.gallery-wrapper {
+  height: 450px;
+  min-height: 450px;
+  text-align: center;
+}
