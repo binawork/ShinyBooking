@@ -27,6 +27,11 @@ Version: 1.0
 */
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900|Roboto+Condensed:300,300i,400,400i,700,700i');
 /* Body */
+
+html {
+  overflow-y: scroll;
+}
+
 body {
   background-color: #F2F6FF;
   font-size: 13px;
@@ -175,6 +180,7 @@ b, strong {
   padding-bottom:0px;
 }
 .map-slider-form {
+  min-height: 146px;
   background: #efefef none repeat scroll 0 0;
   left: auto !important;
   padding: 15px 0;

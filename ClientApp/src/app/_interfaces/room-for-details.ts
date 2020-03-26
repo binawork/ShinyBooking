@@ -17,5 +17,5 @@ export interface RoomForDetails {
   photos?: Array<Photo>
   equipments?: Array<Equipment>;
   amenitiesForDisabled?: Array<amenityForDisabled>;
-  addressForReturnDto?: RoomAddress;
+  roomAddress?: RoomAddress;
 }
