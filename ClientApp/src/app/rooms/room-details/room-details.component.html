@@ -1,3 +1,21 @@
+<section class="osahan-slider">
+  <div class="slider-form inner-page-form map-slider-form">
+    <div class="overlay"></div>
+    <div class="container pt-3">
+      <div class="row">
+        <div class="col-lg-8 col-md-8">
+          <h1 class="text-white">{{room.name}}</h1>
+          <h6 class="text-white"><i class="mdi mdi-home-map-marker"></i> {{room.roomAddress.postalCode}} {{room.roomAddress.buildingNumber}}, {{room.roomAddress.street}}, {{room.roomAddress.city}}, {{room.roomAddress.country}}</h6>
+        </div>
+        <div class="col-lg-4 col-md-4 text-right">
+          <h6 class="text-white mt-2">For Rent</h6>
+          <h2 class="text-success">${{room.price}} <small>/day</small></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section-padding">
   <div class="container">
     <div class="row">
@@ -12,55 +30,7 @@
         <div class="card padding-card">
           <div class="card-body">
             <h5 class="card-title mb-3">Description</h5>
-            <div class="row">
-              <div class="col-lg-4 col-md-4">
-                <div class="list-icon">
-                  <i class="mdi mdi-move-resize-variant"></i>
-                  <strong>Area:</strong>
-                  <p></p>
-                  <p class="mb-0">1270 aq ft</p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4">
-                <div class="list-icon">
-                  <i class="mdi mdi-sofa"></i>
-                  <strong>Beds:</strong>
-                  <p class="mb-0">4 Bedrooms</p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4">
-                <div class="list-icon">
-                  <i class="mdi mdi-hot-tub"></i>
-                  <strong>Baths:</strong>
-                  <p class="mb-0">2 Bathrooms</p>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-4 col-md-4">
-                <div class="list-icon">
-                  <i class="mdi mdi-garage"></i>
-                  <strong>Rooms:</strong>
-                  <p class="mb-0">6 Rooms</p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4">
-                <div class="list-icon">
-                  <i class="mdi mdi-floor-plan"></i>
-                  <strong>Floors:</strong>
-                  <p class="mb-0">4 Floors</p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4">
-                <div class="list-icon">
-                  <i class="mdi mdi-car-convertible"></i>
-                  <strong>Garage:</strong>
-                  <p class="mb-0">2 Garages</p>
-                </div>
-              </div>
-            </div>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,</p>
-            <p class="mb-0">is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
+            <p>{{room.description}}</p>
           </div>
         </div>
         <div class="card padding-card">
@@ -98,28 +68,6 @@
                 </ul>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="card padding-card">
-          <div class="card-body">
-            <h5 class="card-title mb-3">Location</h5>
-            <div class="row mb-3">
-              <div class="col-lg-6 col-md-6">
-                <p><strong class="text-dark">Address :</strong> 1200 Petersham Town</p>
-                <p><strong class="text-dark">State :</strong> Newcastle</p>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                <p><strong class="text-dark">City :</strong> Sydney</p>
-                <p><strong class="text-dark">Zip/Postal Code  :</strong> 54330</p>
-              </div>
-            </div>
-            <div id="map"></div>
-          </div>
-        </div>
-        <div class="card padding-card">
-          <div class="card-body">
-            <h5 class="card-title mb-4">Video</h5>
-            <a href="#"><img class="rounded img-fluid" src="img/video.jpg" alt="Card image cap"></a>
           </div>
         </div>
         <div class="card padding-card reviews-card">
@@ -229,20 +177,18 @@
       <div class="col-lg-4 col-md-4">
         <div class="card sidebar-card">
           <div class="card-body">
-            <h5 class="card-title mb-4">About Agent</h5>
+            <h5 class="card-title mb-4">Contact:</h5>
             <div id="featured-properties">
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <div class="card card-list">
-                    <a href="#">
-                      <img class="card-img-top" src="img/agent.jpg" alt="Card image cap">
+                      <img class="card-img-top owner-size" src="https://res.cloudinary.com/abbw/image/upload/v1585246000/3_gysdj7.jpg" alt="Card image cap">
                       <div class="card-body pb-0">
                         <h5 class="card-title mb-4">Gurdeep Osahan</h5>
                         <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-phone"></i> (950) 491-570-180</h6>
-                        <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-email"></i> support@example.com</h6>
-                        <h6 class="card-subtitle text-muted"><i class="mdi mdi-link"></i> www.askbootstrap.com</h6>
+                        <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-email"></i> placeholder@a.b</h6>
+                        <h6 class="card-subtitle text-muted"><i class="mdi mdi-link"></i> shinybooking.azurewebsites.net/</h6>
                       </div>
-                    </a>
                   </div>
                 </div>
               </div>
@@ -251,7 +197,7 @@
         </div>
         <div class="card sidebar-card">
           <div class="card-body">
-            <h5 class="card-title mb-4">Request a Showing</h5>
+            <h5 class="card-title mb-4">Send message</h5>
             <form name="sentMessage">
               <div class="control-group form-group">
                 <div class="controls">
@@ -278,81 +224,6 @@
                 </div>
               </div>
               <button type="submit" class="btn btn-success btn-block">SEND REQUEST</button>
-            </form>
-          </div>
-        </div>
-        <div class="card sidebar-card">
-          <div class="card-body">
-            <h5 class="card-title mb-4">Featured Properties</h5>
-            <div id="featured-properties" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#featured-properties" data-slide-to="0" class="active"></li>
-                <li data-target="#featured-properties" data-slide-to="1"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="card card-list">
-                    <a href="#">
-                      <span class="badge badge-success">For Sale</span>
-                      <img class="card-img-top" src="img/list/1.png" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">House in Kent Street</h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><i class="mdi mdi-home-map-marker"></i> 127 Kent Sreet, Sydny, NEW 2000</h6>
-                        <h2 class="text-success mb-0 mt-3">
-                          $130,000 <small>/month</small>
-                        </h2>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="card card-list">
-                    <a href="#">
-                      <span class="badge badge-secondary">For Rent</span>
-                      <img class="card-img-top" src="img/list/2.png" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Family House in Hudson</h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><i class="mdi mdi-home-map-marker"></i> Hoboken, NJ, USA</h6>
-                        <h2 class="text-success mb-0 mt-3">
-                          $127,000 <small>/month</small>
-                        </h2>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card sidebar-card">
-          <div class="card-body">
-            <h5 class="card-title mb-4">Mortage Calculator</h5>
-            <form name="sentMessage">
-              <div class="control-group form-group">
-                <div class="controls">
-                  <label>Sale Price <span class="text-danger">*</span></label>
-                  <input type="text" placeholder="$" class="form-control" required>
-                </div>
-              </div>
-              <div class="control-group form-group">
-                <div class="controls">
-                  <label>Down payment <span class="text-danger">*</span></label>
-                  <input type="text" placeholder="$"  class="form-control" required>
-                </div>
-              </div>
-              <div class="control-group form-group">
-                <div class="controls">
-                  <label>Term <span class="text-danger">*</span></label>
-                  <input type="text" placeholder="Years"  class="form-control" required>
-                </div>
-              </div>
-              <div class="control-group form-group">
-                <div class="controls">
-                  <label>Interest Rate <span class="text-danger">*</span></label>
-                  <input type="text" placeholder="%" class="form-control" required>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-success btn-block">CALCULATE</button>
             </form>
           </div>
         </div>
