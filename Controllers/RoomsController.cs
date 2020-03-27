@@ -217,19 +217,35 @@ namespace ShinyBooking.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Room>> PostRoom(Room room)
+        public async Task<ActionResult<Room>> PostRoom(RoomToAddDto roomToAdd)
         {
-            if (!ModelState.IsValid)
+
+
+            var newRoom = new Room
+            {
+                Id = roomToAdd.Id,
+                Name = roomToAdd.Name,
+                Area = roomToAdd.Area,
+                Capacity = roomToAdd.Capacity,
+                Description = roomToAdd.Description,
+                ParkingSpace = roomToAdd.ParkingSpace,
+                Photos = roomToAdd.Photos,
+                Price = roomToAdd.Price,
+                Rating = 1,
+                RoomActivities = roomToAdd.RoomActivities,
+                RoomAddress = roomToAdd.RoomAddress
+            };
+                if (!ModelState.IsValid)
                 return BadRequest("Invalid data");
 
-            _context.Rooms.Add(room);
+            _context.Rooms.Add(newRoom);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (RoomExists(room.Id))
+                if (RoomExists(newRoom.Id))
                 {
                     return Conflict();
                 }
@@ -239,7 +255,7 @@ namespace ShinyBooking.Controllers
                 }
             }
 
-            return CreatedAtAction("GetRoom", new { id = room.Id }, room);
+            return CreatedAtAction("GetRoom", new { id = newRoom.Id }, newRoom);
         }
 
         // DELETE: api/Rooms/5

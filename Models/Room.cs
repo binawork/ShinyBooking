@@ -41,7 +41,7 @@ namespace ShinyBooking.Models
 
         public bool ParkingSpace { get; set; }
 
-        public int Test { get; set; }
+       
 
         [Required]
         public IList<Photo> Photos { get; set; }
