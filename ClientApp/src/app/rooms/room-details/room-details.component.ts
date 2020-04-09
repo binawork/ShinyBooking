@@ -35,15 +35,15 @@ export class RoomDetailsComponent implements OnInit {
     this.galleryImages = this.getImages();
   }
 
-  getImages(){
+  getImages() {
     const imageUrls = [];
     for (let photo of this.room.photos){
-      imageUrls.push(            {
+      imageUrls.push({        
         small: photo.photoUrl,
         medium: photo.photoUrl,
         big: photo.photoUrl,
         description: photo.id
-      })
+      });
     }
     console.log(imageUrls);
     return imageUrls;

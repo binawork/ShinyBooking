@@ -1,12 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShinyBooking.Data;
 using ShinyBooking.Dto;
 using ShinyBooking.Models;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ShinyBooking.Controllers
 {
@@ -28,15 +30,11 @@ namespace ShinyBooking.Controllers
         public async Task<IActionResult> GetRooms()
         {
             var rooms = await _context.Rooms
-                .Include(r => r.RoomAmenitiesForDisabled)
-                .ThenInclude(am => am.AmenitiesForDisabled)
-                .Include(r => r.RoomActivities)
-                .ThenInclude(ra => ra.Activities)
                 .Include(r => r.Photos)
                 .Include(r => r.RoomAddress)
                 .Include(r => r.RoomEquipments)
                 .ThenInclude(re => re.Equipment).ToListAsync();
-
+            
             var roomsForReturn = new List<RoomForReturnListOfRoomsDto>();
 
             foreach (var room in rooms)
@@ -49,15 +47,9 @@ namespace ShinyBooking.Controllers
                     City = room.RoomAddress.City,
                     Country = room.RoomAddress.Country,
                     PostalCode = room.RoomAddress.PostalCode,
-                    Street = room.RoomAddress.Street,
-                    OtherAddressInformation = room.RoomAddress.OtherAddressInformation,
-                    PhoneNumber1 = room.RoomAddress.PhoneNumber1,
-                    PhoneNumber2 = room.RoomAddress.PhoneNumber2,
-                    EmailAddress = room.RoomAddress.EmailAddress,
-                    WebPage = room.RoomAddress.WebPage,
-                    Directions = room.RoomAddress.Directions
+                    Street = room.RoomAddress.Street
                 };
-
+                
                 var roomForReturn = new RoomForReturnListOfRoomsDto
                 {
                     Id = room.Id,
@@ -66,11 +58,12 @@ namespace ShinyBooking.Controllers
                     Price = room.Price,
                     Area = room.Area,
                     Capacity = room.Capacity,
-                    MainPhotoUrl = room.Photos.FirstOrDefault(p => p.IsMain)?.PhotoUrl,
+                    MainPhotoUrl = room.Photos.FirstOrDefault( p => p.IsMain)?.PhotoUrl,
                     RoomAddress = address
                 };
 
-                //add equipment to returned room object
+
+                
                 var equipments = room.RoomEquipments.Select(re => re.Equipment);
                 foreach (var equipment in equipments)
                 {
@@ -81,17 +74,14 @@ namespace ShinyBooking.Controllers
                     };
                     roomForReturn.Equipments.Add(equipmentForReturn);
                 }
-
-                
                 roomsForReturn.Add(roomForReturn);
             }
-
             return Ok(roomsForReturn);
         }
 
         // GET: api/Rooms/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetRoom(string? id)
+        public async Task<IActionResult> GetRoom(string id)
         {
             var room = await _context.Rooms
                 .Include(r => r.Photos)
@@ -103,99 +93,62 @@ namespace ShinyBooking.Controllers
                 .Include(r => r.RoomAmenitiesForDisabled)
                 .ThenInclude(ram => ram.AmenitiesForDisabled)
                 .FirstOrDefaultAsync(r => r.Id == id);
-                ;
 
-            var address = new RoomAddressForReturnDto
+            if (room == null)
             {
-                Id = room.RoomAddress.Id,
-                ApartmentNumber = room.RoomAddress.ApartmentNumber,
-                BuildingNumber = room.RoomAddress.BuildingNumber,
-                City = room.RoomAddress.City,
-                Country = room.RoomAddress.Country,
-                PostalCode = room.RoomAddress.PostalCode,
-                Street = room.RoomAddress.Street,
-                OtherAddressInformation = room.RoomAddress.OtherAddressInformation,
-                PhoneNumber1 = room.RoomAddress.PhoneNumber1,
-                PhoneNumber2 = room.RoomAddress.PhoneNumber2,
-                EmailAddress = room.RoomAddress.EmailAddress,
-                WebPage = room.RoomAddress.WebPage,
-                Directions = room.RoomAddress.Directions
-            };
-            var roomForReturn = new RoomForReturnRoomDetailsDto
-            {
-                Id = room.Id,
-                Name = room.Name,
-                Rating = room.Rating,
-                Description = room.Description,
-                RoomArrangementsCapabilitiesDescription = room.RoomArrangementsCapabilitiesDescription,
-                Price = room.Price,
-                Area = room.Area,
-                Capacity = room.Capacity,
-                ParkingSpace = room.ParkingSpace,
-               
-                RoomAddress = address
-            };
-               
-                var photos = room.Photos;
-                foreach (var photo in photos)
-                {
-                    var PhotosForReturn = new PhotosForReturnDto
-                    {
-                        Id = photo.Id,
-                        PhotoUrl = photo.PhotoUrl
-                    };
-                    roomForReturn.Photos.Add(PhotosForReturn);
-                }
+                return NotFound();
+            }
             
             var roomToReturn = _mapper.Map<RoomForReturnDetailsDto>(room);
             
             return Ok(roomToReturn);
-                {
-                    var equipmentForReturn = new EquipmentForReturnDto
-                    {
-                        Id = equipment.Id,
-                        Name = equipment.Name
-                    };
-                    roomForReturn.Equipments.Add(equipmentForReturn);
-                }
-
-                var amenities = room.RoomAmenitiesForDisabled.Select(am => am.AmenitiesForDisabled);
-                foreach (var amenity in amenities)
-                {
-                    var amenitiesForReturn = new AmenitiesForDisabledDto
-                    {
-                        Id = amenity.Id,
-                        Name = amenity.Name
-                    };
-                    roomForReturn.AmenitiesForDisabled.Add(amenitiesForReturn);
-                }
-
-                var activites = room.RoomActivities.Select(ra => ra.Activities);
-                foreach (var activity in activites)
-                {
-                    var activityForReturn = new ActivitiesForReturnDto
-                    {
-                        Id = activity.Id,
-                        Name = activity.Name
-                    };
-                    roomForReturn.Activities.Add(activityForReturn);
-                }
-
-            return Ok(roomForReturn);
         }
 
         // PUT: api/Rooms/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRoom(string id, Room room)
+        public async Task<IActionResult> PutRoom(string id, RoomFromEditFormDto room)
         {
             if (id != room.Id)
             {
                 return BadRequest();
-            }
-
-            _context.Entry(room).State = EntityState.Modified;
+            } 
+            
+            var existingRoom = _context.Rooms.FirstOrDefault(r => r.Id == id);
+            var existingAddress = _context.RoomAddresses.FirstOrDefault(ra => ra.RoomId == id);
+           
+                if (existingRoom != null)
+                {
+                    existingRoom.Name = room.Name;
+                    existingRoom.Description = room.Description;
+                    existingRoom.Capacity = room.Capacity;
+                    existingRoom.Area = room.Area;
+                    existingRoom.RoomArrangementsCapabilitiesDescription = room.RoomArrangementsCapabilitiesDescription;
+                    existingRoom.Price = room.Price;
+                    existingRoom.ParkingSpace = room.ParkingSpace;
+                    existingRoom.Photos = room.Photos;
+                    existingRoom.RoomEquipments = room.RoomEquipments;
+                    existingRoom.RoomAmenitiesForDisabled = room.RoomAmenitiesForDisabled;
+                    existingRoom.RoomActivities = room.RoomActivities;
+                
+                    existingAddress.PhoneNumber1 = room.RoomAddress.PhoneNumber1;
+                existingAddress.PhoneNumber2 = room.RoomAddress.PhoneNumber2;
+                existingAddress.PostalCode = room.RoomAddress.PostalCode;
+                existingAddress.Street = room.RoomAddress.Street;
+                existingAddress.BuildingNumber = room.RoomAddress.BuildingNumber;
+                existingAddress.ApartmentNumber = room.RoomAddress.ApartmentNumber;
+                existingAddress.EmailAddress = room.RoomAddress.EmailAddress;
+              
+                    
+                    _context.SaveChanges();
+                }
+                else
+                { 
+                    return NotFound();
+                }
+                
+            _context.Entry(existingRoom).State = EntityState.Modified;
 
             try
             {
@@ -213,8 +166,9 @@ namespace ShinyBooking.Controllers
                 }
             }
 
-            return NoContent();
+            return CreatedAtAction("GetRoom", new { id = room.Id }, room);
         }
+
 
         // POST: api/Rooms
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
