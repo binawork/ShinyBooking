@@ -1,12 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RoomForList} from "../../_interfaces/room-for-list";
+import {RoomForList} from '../../shared/room-for-list.model';
 
 @Component({
   selector: 'app-room-card',
   templateUrl: './room-card.component.html',
   styleUrls: ['./room-card.component.css']
 })
-export class RoomCard implements OnInit {
+export class RoomCardComponent implements OnInit {
   @Input()
   public room: RoomForList;
 

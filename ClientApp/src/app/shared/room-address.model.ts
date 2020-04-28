@@ -1,4 +1,4 @@
-export interface RoomAddress {
+export class RoomAddress {
   id?: string;
   street?: string;
   buildingNumber?: number;

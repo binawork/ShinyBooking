@@ -1,7 +1,7 @@
-import {RoomAddress} from "./room-address";
-import {Equipment} from "./equipmen";
+import {RoomAddress} from './room-address.model';
+import {Equipment} from './equipment.model';
 
-export interface RoomForList {
+export class RoomForList {
   id?: string;
   name?: string;
   rating?: number;
