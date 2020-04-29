@@ -2,13 +2,14 @@
 import {ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot} from '@angular/router';
 import {RoomForDetails} from '../shared/room-for-details.model';
 import {Observable, of} from 'rxjs';
-import {RoomService} from '../_services/room.service';
+import {RoomService} from '../rooms/room.service';
 import {catchError} from 'rxjs/operators';
 
 @Injectable()
 export class RoomDetailsResolver implements Resolve<RoomForDetails> {
 
-  constructor(private roomService: RoomService, private router: Router) {
+  constructor(private roomService: RoomService,
+              private router: Router) {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):

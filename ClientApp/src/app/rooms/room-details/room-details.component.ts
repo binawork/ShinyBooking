@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {RoomService} from '../../_services/room.service';
+import {Component, OnInit} from '@angular/core';
+import {RoomService} from '../room.service';
 import {ActivatedRoute} from '@angular/router';
 import {RoomForDetails} from '../../shared/room-for-details.model';
 import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from '@kolkov/ngx-gallery';
@@ -14,7 +14,9 @@ export class RoomDetailsComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
-  constructor( private roomService: RoomService, private router: ActivatedRoute ) {}
+  constructor(private roomService: RoomService,
+              private router: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
 
