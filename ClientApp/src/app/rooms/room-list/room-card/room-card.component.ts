@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RoomForList} from '../../shared/room-for-list.model';
+import {RoomForList} from '../../../shared/room-for-list.model';
 
 @Component({
   selector: 'app-room-card',

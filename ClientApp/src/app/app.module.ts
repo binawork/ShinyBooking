@@ -9,11 +9,12 @@ import {AppComponent} from './app.component';
 import {RoomListComponent} from './rooms/room-list/room-list.component';
 import {RoomService} from './rooms/room.service';
 import {NavMenuComponent} from './nav-menu/nav-menu.component';
-import {RoomCardComponent} from './rooms/room-card/room-card.component';
+import {RoomCardComponent} from './rooms/room-list/room-card/room-card.component';
 import {FiltersBarComponent} from './filters-bar/filters-bar.component';
 import {RoomDetailsComponent} from './rooms/room-details/room-details.component';
 import {RoomDetailsResolver} from './_resolvers/room-details.resolver';
 import {NgxGalleryModule} from '@kolkov/ngx-gallery';
+import { RoomAddComponent } from './rooms/room-add/room-add.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {NgxGalleryModule} from '@kolkov/ngx-gallery';
     RoomListComponent,
     FiltersBarComponent,
     RoomDetailsComponent,
+    RoomAddComponent,
 
   ],
   imports: [
