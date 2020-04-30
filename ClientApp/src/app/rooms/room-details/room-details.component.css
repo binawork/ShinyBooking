@@ -24,3 +24,11 @@
   width: 240px;
   max-height: 300px;
 }
+
+.ul-inline {
+  display: inline;
+}
+
+.li-inline{
+  display: inline;
+}

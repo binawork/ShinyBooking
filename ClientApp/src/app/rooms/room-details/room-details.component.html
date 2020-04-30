@@ -5,10 +5,12 @@
       <li data-target="#osahanslider" data-slide-to="1"></li>
     </ol>
     <div class="carousel-inner" role="listbox">
-      <div class="carousel-item active" style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/L1010935.jpg')">
+      <div class="carousel-item active"
+           style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/L1010935.jpg')">
         <div class=""></div>
       </div>
-      <div class="carousel-item" style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/XT1X1882.jpg')">
+      <div class="carousel-item"
+           style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/XT1X1882.jpg')">
         <div class=""></div>
       </div>
     </div>
@@ -25,29 +27,31 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-8">
-          <h1 class="text-white">Tamco - cowork for arts and crafts</h1>
-          <h6 class="text-white"><i class="mdi mdi-home-map-marker"></i>Tamka 40, Warsaw, Poland</h6>
+          <h1 class="text-white">{{ room.name }}</h1>
+          <h6 class="text-white"><i
+            class="mdi mdi-home-map-marker"></i>{{ room.roomAddress.street }} {{ room.roomAddress.buildingNumber }}
+            , {{ room.roomAddress.city }}, {{ room.roomAddress.country }}</h6>
         </div>
         <div class="col-lg-4 col-md-4 text-right">
           <h6 class="text-white mt-2">Price</h6>
-          <h2 class="text-success">249 eur <small>/day</small></h2>
+          <h2 class="text-success">{{ room.price }} eur <small>/day</small></h2>
         </div>
       </div>
       <hr>
-      <div class="row">
-        <div class="col-lg-8 col-md-8">
-          <p class="mt-1 mb-0 text-white"><strong>Booking ID</strong> : 533566 &nbsp;&nbsp; <strong>Add to favorites</strong> <i class="mdi mdi-heart text-white"></i></p>
-        </div>
-        <div class="col-lg-4 col-md-4 text-right">
-          <div class="footer-social">
-            <span class="text-white">Share :</span> &nbsp;
-            <a href="#"><i class="mdi mdi-facebook"></i></a>
-            <a href="#"><i class="mdi mdi-twitter"></i></a>
-            <a href="#"><i class="mdi mdi-instagram"></i></a>
-            <a href="#"><i class="mdi mdi-google"></i></a>
-          </div>
-        </div>
-      </div>
+      <!--      <div class="row">
+              <div class="col-lg-8 col-md-8">
+                <p class="mt-1 mb-0 text-white"><strong>Booking ID</strong> : 533566 &nbsp;&nbsp; <strong>Add to favorites</strong> <i class="mdi mdi-heart text-white"></i></p>
+              </div>
+              <div class="col-lg-4 col-md-4 text-right">
+                <div class="footer-social">
+                  <span class="text-white">Share :</span> &nbsp;
+                  <a href="#"><i class="mdi mdi-facebook"></i></a>
+                  <a href="#"><i class="mdi mdi-twitter"></i></a>
+                  <a href="#"><i class="mdi mdi-instagram"></i></a>
+                  <a href="#"><i class="mdi mdi-google"></i></a>
+                </div>
+              </div>
+            </div>-->
     </div>
   </div>
 </section>
@@ -65,14 +69,14 @@
                 <div class="list-icon">
                   <i class="mdi mdi-move-resize-variant"></i>
                   <strong>Area:</strong>
-                  <p class="mb-0">60 m2</p>
+                  <p class="mb-0">{{ room.area }} m2</p>
                 </div>
               </div>
               <div class="col-lg-4 col-md-4">
                 <div class="list-icon">
                   <i class="mdi mdi-account-multiple"></i>
                   <strong>People</strong>
-                  <p class="mb-0">10</p>
+                  <p class="mb-0">{{ room.capacity }}</p>
                 </div>
               </div>
               <!--
@@ -91,8 +95,8 @@
               <div class="col-lg-4 col-md-4">
                 <div class="list-icon">
                   <i class="mdi mdi-garage"></i>
-                  <strong>Rooms:</strong>
-                  <p class="mb-0">6 Rooms</p>
+                  <strong>Rating:</strong>
+                  <p class="mb-0">{{ room.rating }}</p>
                 </div>
               </div>
 
@@ -110,44 +114,30 @@
                 <div class="list-icon">
                   <i class="mdi mdi-car-convertible"></i>
                   <strong>Parking Space:</strong>
-                  <p class="mb-0">No</p>
+                  <p class="mb-0" *ngIf="!room.parkingSpace">No</p>
+                  <p class="mb-0" *ngIf="room.parkingSpace">Yes</p>
                 </div>
               </div>
 
             </div>
             <p><b>Description</b></p>
-            <p>TamCo jest pracownią w której mieszają się wszelkie techniki rzemieślnicze. Tutaj obok siebie pracują kaletnicy, stolarze, projektanci, architekci, introligatorzy czy nożownicy 🙂
-
-              To miejsce które 7 dni w tygodniu wypełnione jest kreatywną energią. Od poniedziałku do piątku każdy z nas zajmuje się swoją zwykłą działalnością. Weekendy to czas nauki. Dzielimy się swoim doświadczeniem i wiedzą organizując warsztaty z ręcznego wykonywania noży, szycia książek/albumów/zeszytów oraz z ręcznego szycia portfeli.
-
-              Każdy kto tu wchodzi musi się liczyć z tym że będzie chciał tu wrócić aby ponownie zaczerpnąć tej pozytywnej energii.</p>
+            <p>{{ room.description }}</p>
           </div>
         </div>
         <div class="card padding-card">
           <div class="card-body">
-            <h5 class="card-title mb-3">RoomActivities</h5>
-            <div class="row">
-              <div class="col-lg-4 col-md-4">
-                <ul class="sidebar-card-list">
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Art classes</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Programming classes</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Children</a></li>
-                </ul>
+            <h5 class="card-title mb-3">Equipment</h5>
+            <ng-container *ngFor="let equipmentItem of room.equipments; let i=index">
+              <div *ngIf="i%3 == 0" class="row">
+                <div class="col-lg-4 col-md-4">
+                  <ul class="sidebar-card-list" class="ul-inline">
+                    <li class="li-inline"><a href="#"><span class="mdi mdi-checkbox-marked-outline text-success"></span>{{room.equipments[i].name}}</a></li>
+                    <li class="li-inline"><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success" *ngIf="i+1 < room.equipments.length"></i>{{ room.equipments[i+1].name }}</a></li>
+                    <li class="li-inline"><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success" *ngIf="i+2 < room.equipments.length"></i>{{ room.equipments[i+2].name }}</a></li>
+                  </ul>
+                </div>
               </div>
-              <div class="col-lg-4 col-md-4">
-                <ul class="sidebar-card-list">
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Art classes</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Programming classes</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Children</a></li>
-                </ul>
-              </div>
-              <div class="col-lg-4 col-md-4">
-                <ul class="sidebar-card-list">
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-danger"></i>Dancing / sport classes</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-danger"></i>Cooking classess</a></li>
-                </ul>
-              </div>
-            </div>
+            </ng-container>
           </div>
         </div>
         <div class="card padding-card">
@@ -157,20 +147,23 @@
               <div class="col-lg-4 col-md-4">
                 <ul class="sidebar-card-list">
                   <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Art classes</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Programming classes</a></li>
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Programming classes</a>
+                  </li>
                   <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Children</a></li>
                 </ul>
               </div>
               <div class="col-lg-4 col-md-4">
                 <ul class="sidebar-card-list">
                   <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Art classes</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Programming classes</a></li>
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Programming classes</a>
+                  </li>
                   <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Children</a></li>
                 </ul>
               </div>
               <div class="col-lg-4 col-md-4">
                 <ul class="sidebar-card-list">
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-danger"></i>Dancing / sport classes</a></li>
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-danger"></i>Dancing / sport classes</a>
+                  </li>
                   <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-danger"></i>Cooking classess</a></li>
                 </ul>
               </div>
@@ -184,20 +177,23 @@
               <div class="col-lg-4 col-md-4">
                 <ul class="sidebar-card-list">
                   <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Art classes</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Programming classes</a></li>
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Programming classes</a>
+                  </li>
                   <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Children</a></li>
                 </ul>
               </div>
               <div class="col-lg-4 col-md-4">
                 <ul class="sidebar-card-list">
                   <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Art classes</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Programming classes</a></li>
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Programming classes</a>
+                  </li>
                   <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Children</a></li>
                 </ul>
               </div>
               <div class="col-lg-4 col-md-4">
                 <ul class="sidebar-card-list">
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-danger"></i>Dancing / sport classes</a></li>
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-danger"></i>Dancing / sport classes</a>
+                  </li>
                   <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-danger"></i>Cooking classess</a></li>
                 </ul>
               </div>
@@ -214,9 +210,11 @@
               </div>
               <div class="col-lg-6 col-md-6">
                 <p><strong class="text-dark">City :</strong> Warsaw</p>
-                <p><strong class="text-dark">Zip/Postal Code  :</strong> 00-355</p>
-                <p><strong class="text-dark">Country  :</strong> Poland</p>
-                <p><strong class="text-dark">Additional information</strong> Take subway or Uber. It is impossible to park on Tamka Street. You will find us between hotel and Biedronka building. Look for brutalistic looking stairway.</p>
+                <p><strong class="text-dark">Zip/Postal Code :</strong> 00-355</p>
+                <p><strong class="text-dark">Country :</strong> Poland</p>
+                <p><strong class="text-dark">Additional information</strong> Take subway or Uber. It is impossible to
+                  park on Tamka Street. You will find us between hotel and Biedronka building. Look for brutalistic
+                  looking stairway.</p>
               </div>
             </div>
             <div id="map"></div>
@@ -225,7 +223,10 @@
         <div class="card padding-card">
           <div class="card-body">
             <h5 class="card-title mb-4">Video</h5>
-            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FProjektPracownie%2Fvideos%2F683858069093851%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+            <iframe
+              src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FProjektPracownie%2Fvideos%2F683858069093851%2F&show_text=0&width=560"
+              width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+              allowTransparency="true" allowFullScreen="true"></iframe>
           </div>
         </div>
         <!--
@@ -346,11 +347,14 @@
                 <div class="carousel-item active">
                   <div class="card card-list">
                     <a href="#">
-                      <img class="card-img-top" src="https://lh3.googleusercontent.com/V1tdIDQwQVJWx0Of77pNMn6HWFUvogLmMISileNBvaIeugYw-082P6VSFPcxV7lO8ycZnemBWsGIkEO-QtnigQoea9YJ2K7og0b8AWbmt7D6Y3y0bj9K3hhAEu9eq-Xr3lmPkOBlHWo7Vl6B0n6Xl_ALAbgfczeQT8NBtb1OpMITaV3UVXW3rImxmPEX7HRNZRizqtpymGFCZLiLcjtd7_3IfxwHN9B_FSOamuk262fXh-gDn1pt17XXYaNyPYfu4qxjfFdsNEmD28ga9d-Ij04YlTXHUcNQOV8C1_z0OQgAA4Y2FlKDHQkCO8rPgVEdJ_h5K8JUu-SL7svL6kb4CE0wuqeyk3xs5dxOt5qlUBSEiEcsvICjacK0f3pJ-ezrDGaFvzh1C3Zl1NnSdACI1rAzIK_BxTEdlVobzsOMQ_w7u04Xq-TaKSPtHti0vCA7avdSZKF013WW1J_Pe_0WGZ3GN2h17gjgJwWlkkqvfdK0ZjgKKa2AfRp1fmVUda5FsmpqLamG8-xBYC2LS33iqZVhYOUbbyBmGyupOW1ZJeKpIl0lkoekJLrPpstG7wm3foXb_lCVpFGwAoEWmtfmnaT-Z3UeJGix7vZDsLbQcCQ2XjR260-7DhRJkjGfmeRPEwYHiFhmf4zu2p5cfA_b5yRbYKyE7dmWyUPkgk6gopFqmMdMqlvnO2odKzOnp1CdmlQG=w1538-h797-ft" alt="Card image cap">
+                      <img class="card-img-top"
+                           src="https://lh3.googleusercontent.com/V1tdIDQwQVJWx0Of77pNMn6HWFUvogLmMISileNBvaIeugYw-082P6VSFPcxV7lO8ycZnemBWsGIkEO-QtnigQoea9YJ2K7og0b8AWbmt7D6Y3y0bj9K3hhAEu9eq-Xr3lmPkOBlHWo7Vl6B0n6Xl_ALAbgfczeQT8NBtb1OpMITaV3UVXW3rImxmPEX7HRNZRizqtpymGFCZLiLcjtd7_3IfxwHN9B_FSOamuk262fXh-gDn1pt17XXYaNyPYfu4qxjfFdsNEmD28ga9d-Ij04YlTXHUcNQOV8C1_z0OQgAA4Y2FlKDHQkCO8rPgVEdJ_h5K8JUu-SL7svL6kb4CE0wuqeyk3xs5dxOt5qlUBSEiEcsvICjacK0f3pJ-ezrDGaFvzh1C3Zl1NnSdACI1rAzIK_BxTEdlVobzsOMQ_w7u04Xq-TaKSPtHti0vCA7avdSZKF013WW1J_Pe_0WGZ3GN2h17gjgJwWlkkqvfdK0ZjgKKa2AfRp1fmVUda5FsmpqLamG8-xBYC2LS33iqZVhYOUbbyBmGyupOW1ZJeKpIl0lkoekJLrPpstG7wm3foXb_lCVpFGwAoEWmtfmnaT-Z3UeJGix7vZDsLbQcCQ2XjR260-7DhRJkjGfmeRPEwYHiFhmf4zu2p5cfA_b5yRbYKyE7dmWyUPkgk6gopFqmMdMqlvnO2odKzOnp1CdmlQG=w1538-h797-ft"
+                           alt="Card image cap">
                       <div class="card-body pb-0">
                         <h5 class="card-title mb-4">Wiktor Świątkowski</h5>
                         <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-phone"></i> +48 796187210</h6>
-                        <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-email"></i> sklejkaiprzyjaciele@gmail.com</h6>
+                        <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-email"></i>
+                          sklejkaiprzyjaciele@gmail.com</h6>
                         <h6 class="card-subtitle text-muted"><i class="mdi mdi-link"></i> http://tamco.pl/</h6>
                       </div>
                     </a>
