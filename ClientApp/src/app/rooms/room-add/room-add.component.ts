@@ -16,10 +16,13 @@ export class RoomAddComponent implements OnInit {
   ngOnInit(): void {
     this.roomForm = new FormGroup({
       id: new FormControl('id123', Validators.required),
-      area: new FormControl('44', [Validators.required, Validators.pattern(/^[1-9]+[0-9]*/)]),
+      area: new FormControl(44, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*/)]),
       name: new FormControl('Test', Validators.required),
       description: new FormControl('Dsadasdasds', Validators.required),
-      capacity: new FormControl('5', [Validators.required, Validators.pattern(/^[1-9]+[0-9]*/)]),
+      capacity: new FormControl(5, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*/)]),
+      parkingSpace: new FormControl(false),
+      roomArrangementsCapabilitiesDescription: new FormControl(null, Validators.required),
+      price: new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*/)]),
     });
 
 

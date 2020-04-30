@@ -24,7 +24,7 @@
                     <input class="form-control"
                            formControlName="name"
                            id="title"
-                           placeholder="Enter Full Name"
+                           placeholder="This title will be shown in the rooms list"
                            type="text"
                     >
                   </div>
@@ -49,6 +49,17 @@
                       >
                     </label>
                   </div>
+                  <div class="form-group col-md-4">
+                    <label>Price per day <span class="text-danger">*</span>
+                      <input class="form-control"
+                             formControlName="price"
+                             min="0"
+                             step="10"
+                             placeholder="PLN"
+                             type="number"
+                      >
+                    </label>
+                  </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12">
@@ -57,6 +68,36 @@
                         <textarea
                           class="form-control"
                           formControlName="description"
+                          style="min-width: 100%; max-width: 100%;"
+                        ></textarea>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="card property-features-add padding-card">
+                  <div class="card-body">
+                    <h5 class="card-title mb-4">Property Features</h5>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="custom-control custom-checkbox">
+                          <input class="custom-control-input"
+                                 formControlName="parkingSpace"
+                                 id="parkingSpaceCheckbox"
+                                 type="checkbox">
+                          <label class="custom-control-label" for="parkingSpaceCheckbox">Parking Space</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="col-md-12">Room Arrangement Capabilities<span class="text-danger">*</span>
+                        <textarea
+                          class="form-control"
+                          formControlName="roomArrangementsCapabilitiesDescription"
+                          placeholder="Please describe how room can be arranged"
                           style="min-width: 100%; max-width: 100%;"
                         ></textarea>
                       </label>
