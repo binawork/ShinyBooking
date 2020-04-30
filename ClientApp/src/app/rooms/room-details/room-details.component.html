@@ -131,7 +131,7 @@
               <div *ngIf="i%3 == 0" class="row">
                 <div class="col-lg-4 col-md-4">
                   <ul class="sidebar-card-list" class="ul-inline">
-                    <li class="li-inline"><a href="#"><span class="mdi mdi-checkbox-marked-outline text-success"></span>{{room.equipments[i].name}}</a></li>
+                    <li class="li-inline"><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>{{room.equipments[i].name}}</a></li>
                     <li class="li-inline"><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success" *ngIf="i+1 < room.equipments.length"></i>{{ room.equipments[i+1].name }}</a></li>
                     <li class="li-inline"><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success" *ngIf="i+2 < room.equipments.length"></i>{{ room.equipments[i+2].name }}</a></li>
                   </ul>
