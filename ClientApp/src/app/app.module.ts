@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 
 
@@ -14,7 +14,7 @@ import {FiltersBarComponent} from './filters-bar/filters-bar.component';
 import {RoomDetailsComponent} from './rooms/room-details/room-details.component';
 import {RoomDetailsResolver} from './_resolvers/room-details.resolver';
 import {NgxGalleryModule} from '@kolkov/ngx-gallery';
-import { RoomAddComponent } from './rooms/room-add/room-add.component';
+import {RoomAddComponent} from './rooms/room-add/room-add.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +37,10 @@ import { RoomAddComponent } from './rooms/room-add/room-add.component';
     RouterModule.forRoot([
       {path: '', component: RoomListComponent, pathMatch: 'full'},
       {path: 'rooms', component: RoomListComponent, pathMatch: 'full'},
+      {path: 'rooms/new', component: RoomAddComponent},
       {path: 'rooms/:id', component: RoomDetailsComponent, resolve: {room: RoomDetailsResolver}},
-    ])
+    ]),
+    ReactiveFormsModule
   ],
   providers: [
     RoomService,
