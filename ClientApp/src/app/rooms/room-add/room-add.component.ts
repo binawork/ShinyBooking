@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
+import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-room-add',
@@ -10,19 +10,19 @@ export class RoomAddComponent implements OnInit {
 
   roomForm: FormGroup;
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
   }
 
   ngOnInit(): void {
-    this.roomForm = new FormGroup({
-      id: new FormControl('id123', Validators.required),
-      area: new FormControl(44, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*/)]),
-      name: new FormControl('Test', Validators.required),
-      description: new FormControl('Dsadasdasds', Validators.required),
-      capacity: new FormControl(5, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*/)]),
-      parkingSpace: new FormControl(false),
-      roomArrangementsCapabilitiesDescription: new FormControl(null, Validators.required),
-      price: new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*/)]),
+    this.roomForm = this.fb.group({
+      id: ['id123', Validators.required],
+      area: [44, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*/)]],
+      name: ['Test', Validators.required],
+      description: ['Test description', Validators.required],
+      capacity: [5, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*/)]],
+      parkingSpace: [false],
+      roomArrangementsCapabilitiesDescription: [null, Validators.required],
+      price: [null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*/)]],
     });
 
 
