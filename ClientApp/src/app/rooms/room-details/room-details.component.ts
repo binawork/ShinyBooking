@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RoomService} from "../../_services/room.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {RoomForDetails} from "../../_interfaces/room-for-details";
 import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from "@kolkov/ngx-gallery";
 
@@ -13,11 +13,9 @@ export class RoomDetailsComponent implements OnInit {
   room: RoomForDetails;
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
-
-  constructor( private roomService: RoomService, private router: ActivatedRoute ) {}
+  constructor( private roomService: RoomService, private router: ActivatedRoute, private routerr: Router ) {}
 
   ngOnInit(): void {
-
     this.router.data.subscribe(data => {
       this.room = data['room'];
     });
@@ -38,7 +36,7 @@ export class RoomDetailsComponent implements OnInit {
   getImages() {
     const imageUrls = [];
     for (let photo of this.room.photos){
-      imageUrls.push({        
+      imageUrls.push({
         small: photo.photoUrl,
         medium: photo.photoUrl,
         big: photo.photoUrl,

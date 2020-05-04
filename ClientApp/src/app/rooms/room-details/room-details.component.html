@@ -6,11 +6,13 @@
     </ol>
     <div class="carousel-inner" role="listbox">
       <div class="carousel-item active"
-           style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/L1010935.jpg')">
+           [ngStyle]="{'background-image':'url(' + galleryImages[0].medium + ')', 'background-position': 'center center'}">
+      >
         <div class=""></div>
       </div>
-      <div class="carousel-item"
-           style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/XT1X1882.jpg')">
+      <div *ngFor="let image of galleryImages" class="carousel-item"
+           [ngStyle]="{'background-image':'url(' + image.medium + ')', 'background-position': 'center center'}">
+      <!--           style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/XT1X1882.jpg')">-->
         <div class=""></div>
       </div>
     </div>
@@ -136,9 +138,9 @@
                   <span class="col-lg-3 col-md-3 col-sm-2"><span
                     class="mdi mdi-checkbox-marked-outline text-success"></span>{{room.equipments[i].name}}</span>
                   <span class="col-lg-3 col-md-3 col-sm-2"><span class="mdi mdi-checkbox-marked-outline text-success"
-                              *ngIf="i+1 < room.equipments.length"></span>{{ room.equipments[i + 1].name }}</span>
+                                                                 *ngIf="i+1 < room.equipments.length"></span>{{ room.equipments[i + 1].name }}</span>
                   <span class="col-lg-3 col-md-3 col-sm-2"><span class="mdi mdi-checkbox-marked-outline text-success"
-                              *ngIf="i+2 < room.equipments.length"></span>{{ room.equipments[i + 2].name }}</span>
+                                                                 *ngIf="i+2 < room.equipments.length"></span>{{ room.equipments[i + 2].name }}</span>
                 </div>
 
               </div>
@@ -211,30 +213,30 @@
             <div class="row mb-3">
               <div class="col-lg-6 col-md-6">
                 <p><strong class="text-dark">Street:</strong> {{ room.roomAddress.street }} </p>
-<!--                <p><strong class="text-dark">Apt / Suite / Other:</strong> Pawilon KŁOSY</p>-->
+                <!--                <p><strong class="text-dark">Apt / Suite / Other:</strong> Pawilon KŁOSY</p>-->
                 <p><strong class="text-dark">Building number:</strong> {{ room.roomAddress.buildingNumber }} </p>
               </div>
               <div class="col-lg-6 col-md-6">
                 <p><strong class="text-dark">City :</strong> {{ room.roomAddress.city }}</p>
                 <p><strong class="text-dark">Zip/Postal Code :</strong> {{ room.roomAddress.postalCode }} </p>
                 <p><strong class="text-dark">Country :</strong> {{ room.roomAddress.country }} </p>
-<!--                <p><strong class="text-dark">Additional information</strong> Take subway or Uber. It is impossible to-->
-<!--                  park on Tamka Street. You will find us between hotel and Biedronka building. Look for brutalistic-->
-<!--                  looking stairway.</p>-->
+                <!--                <p><strong class="text-dark">Additional information</strong> Take subway or Uber. It is impossible to-->
+                <!--                  park on Tamka Street. You will find us between hotel and Biedronka building. Look for brutalistic-->
+                <!--                  looking stairway.</p>-->
               </div>
             </div>
-<!--            <div id="map"></div>-->
+            <!--            <div id="map"></div>-->
           </div>
         </div>
-<!--        <div class="card padding-card">-->
-<!--          <div class="card-body">-->
-<!--            <h5 class="card-title mb-4">Video</h5>-->
-<!--            <iframe-->
-<!--              src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FProjektPracownie%2Fvideos%2F683858069093851%2F&show_text=0&width=560"-->
-<!--              width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0"-->
-<!--              allowTransparency="true" allowFullScreen="true"></iframe>-->
-<!--          </div>-->
-<!--        </div>-->
+        <!--        <div class="card padding-card">-->
+        <!--          <div class="card-body">-->
+        <!--            <h5 class="card-title mb-4">Video</h5>-->
+        <!--            <iframe-->
+        <!--              src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FProjektPracownie%2Fvideos%2F683858069093851%2F&show_text=0&width=560"-->
+        <!--              width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0"-->
+        <!--              allowTransparency="true" allowFullScreen="true"></iframe>-->
+        <!--          </div>-->
+        <!--        </div>-->
         <!--
         <div class="card padding-card reviews-card">
            <div class="card-body">
@@ -487,7 +489,8 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-md-3">
-        <h4 class="mb-5"><a class="text-success logo" href="index.html"><i class="mdi mdi-home-map-marker"></i> <strong>Shiny</strong>Booking</a></h4>
+        <h4 class="mb-5"><a class="text-success logo" href="index.html"><i class="mdi mdi-home-map-marker"></i> <strong>Shiny</strong>Booking</a>
+        </h4>
         <!-- <p>86 Petersham town, New South wales<br>Waedll Steet, Australia PA 6550</p>
         <p class="mb-0"><a class="text-dark" href="#">+61 525 240 310</a></p>
         <p class="mb-0"><a class="text-success" href="#">iamosahan@gmail.com</a></p>
@@ -502,11 +505,13 @@
         </ul>
       </div>
       <div class="col-lg-2 col-md-2">
-        <h6 class="mb-4">PIZZA DREAMS</h6>
+        <h6 class="mb-4">BINA</h6>
         <ul>
           <li><a href="https://github.com/maciejjankowski/pizzadreams">About us</a></li>
           <li><a href="https://github.com/maciejjankowski/pizzadreams/wiki/Projects">Projects</a></li>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScDTujh8LOhypLDzJVvZvBDUsUpdzOwZkCekJIuqfqkOo2ONQ/viewform">Join us</a></li>
+          <li><a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScDTujh8LOhypLDzJVvZvBDUsUpdzOwZkCekJIuqfqkOo2ONQ/viewform">Join
+            us</a></li>
 
         </ul>
       </div>
@@ -531,10 +536,10 @@
 <!-- End Footer -->
 <!-- Copyright -->
 <section class="pt-4 pb-4 text-center">
-  <p class="mt-0 mb-0">© Copyright 2020 Shiny Booking Team & Pizza Dreams. All Rights Reserved</p>
+  <p class="mt-0 mb-0">© Copyright 2020 Shiny Booking Team & Bina. All Rights Reserved</p>
   <small class="mt-0 mb-0">
-    Made with <i class="mdi mdi-heart text-danger"></i>	by
-    <a class="text-dark" target="_blank" href="http://pizzadreamssoftware.com//">Pizza Dreams</a>
+    Made with <i class="mdi mdi-heart text-danger"></i> by
+    <a class="text-dark" target="_blank" href="http://pizzadreamssoftware.com//">Bina</a>
   </small>
 </section>
 <!-- End Copyright -->
@@ -700,11 +705,12 @@
       map: map,
       icon: image
     });
-    marker.addListener('click', function() {
+    marker.addListener('click', function () {
       infowindow.open(map, marker);
     });
   }
 
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUsOUkZbTEwLxeUN5Qfag6Vr5BjngCGMY&callback=initMap"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUsOUkZbTEwLxeUN5Qfag6Vr5BjngCGMY&callback=initMap"></script>
 
