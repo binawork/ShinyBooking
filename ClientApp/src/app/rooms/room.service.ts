@@ -35,7 +35,7 @@ export class RoomService {
   }
 
   getAmenitiesForDisabled(): AmenityForDisabled[] {
-    return this.amenitiesForDisabled;
+    return this.amenitiesForDisabled.slice(); // slice() so original object will be unchanged
   }
 }
 

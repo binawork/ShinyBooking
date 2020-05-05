@@ -26,7 +26,6 @@ export class RoomAddComponent implements OnInit {
       ...x,
       isChecked: false
     }));
-    console.log(this.amenitiesForDisabled);
 
     this.addressForm = this.fb.group({
       apartmentNumber: [44, [Validators.pattern, Validators.min(1)]],
@@ -65,7 +64,8 @@ export class RoomAddComponent implements OnInit {
     this.roomForm.value.amenities.map(amenity => {
       delete amenity.isChecked;
     });
-    console.log(this.roomForm);
-    console.dir(this.roomForm.value);
+    console.dir(this.roomForm.value.amenities);
+    this.amenitiesForDisabled = this.roomService.getAmenitiesForDisabled();
+    this.roomForm.value.amenities = this.amenitiesCheckboxData.slice();
   }
 }
