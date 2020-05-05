@@ -14,6 +14,6 @@ namespace ShinyBooking.Models
         public string Locale {get; set;}
         public string Gender {get; set;}
         //test
-        public string Gendera {get; set;}
+       
     }
 }
