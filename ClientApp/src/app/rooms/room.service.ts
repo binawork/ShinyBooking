@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {RoomForList} from '../shared/room-for-list.model';
 import {AmenityForDisabled} from './amenity-for-disabled.model';
+import {Equipment} from './equipment.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,15 @@ export class RoomService {
     new AmenityForDisabled('refreshable braille display'),
     new AmenityForDisabled('screen reader'),
   ];
+  private readonly equipment = [
+    new Equipment('dryer'),
+    new Equipment('dish washer'),
+    new Equipment('projector'),
+    new Equipment('whiteboard'),
+    new Equipment('sewing machine'),
+    new Equipment('coffee machine'),
+  ];
+
   private readonly baseUrl: string;
 
   constructor(private http: HttpClient,
@@ -36,6 +46,10 @@ export class RoomService {
 
   getAmenitiesForDisabled(): AmenityForDisabled[] {
     return this.amenitiesForDisabled.slice(); // slice() so original object will be unchanged
+  }
+
+  getEquipment(): Equipment[] {
+    return this.equipment.slice();
   }
 }
 

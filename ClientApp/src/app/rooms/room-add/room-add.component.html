@@ -97,6 +97,16 @@
                           <label class="custom-control-label" for="{{amenity.id}}">{{amenity.name | titlecase}}</label>
                         </div>
                       </div>
+                      <div *ngFor="let equipment of this.equipmentCheckboxData" class="col-md-4">
+                        <div class="custom-control custom-checkbox">
+                          <input [(ngModel)]="equipment.isChecked"
+                                 [ngModelOptions]="{standalone: true}"
+                                 class="custom-control-input"
+                                 id="{{equipment.id}}"
+                                 type="checkbox">
+                          <label class="custom-control-label" for="{{equipment.id}}">{{equipment.name | titlecase}}</label>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

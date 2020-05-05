@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormControl, Validators, FormBuilder, FormArray} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RoomService} from '../room.service';
-import {AmenityForDisabled} from '../amenity-for-disabled.model';
 
 @Component({
   selector: 'app-room-add',
@@ -11,8 +10,8 @@ import {AmenityForDisabled} from '../amenity-for-disabled.model';
 export class RoomAddComponent implements OnInit {
   readonly postalCodeRegex: RegExp = /^[0-9]{2}-[0-9]{3}$/;
   readonly numberRegex: RegExp = /^[1-9]+[0-9]*$/;
-  amenitiesForDisabled: AmenityForDisabled[];
   amenitiesCheckboxData: { name: string; id: string; isChecked: boolean }[];
+  equipmentCheckboxData: { name: string; id: string; isChecked: boolean }[];
   roomForm: FormGroup;
   addressForm: FormGroup;
 
@@ -21,9 +20,12 @@ export class RoomAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.amenitiesForDisabled = this.roomService.getAmenitiesForDisabled();
-    this.amenitiesCheckboxData = this.amenitiesForDisabled.map(x => ({
+    this.amenitiesCheckboxData = this.roomService.getAmenitiesForDisabled().map(x => ({
       ...x,
+      isChecked: false
+    }));
+    this.equipmentCheckboxData = this.roomService.getEquipment().map(equipment => ({
+      ...equipment,
       isChecked: false
     }));
 
@@ -50,6 +52,7 @@ export class RoomAddComponent implements OnInit {
       price: [80, [Validators.required, Validators.pattern(this.numberRegex)]],
       roomAddress: this.addressForm,
       amenities: [this.amenitiesCheckboxData],
+      equipment: [this.equipmentCheckboxData],
     });
 
 
@@ -58,14 +61,20 @@ export class RoomAddComponent implements OnInit {
 
   onSubmit() {
     console.log('Form submitted');
-    // filter amenities, so there will be only checked ones
+    // filter amenities and equipment, so there will be only checked ones
     this.roomForm.value.amenities = this.roomForm.value.amenities.filter(amenity => amenity.isChecked === true);
+    this.roomForm.value.equipment = this.roomForm.value.equipment.filter(equipment => equipment.isChecked === true);
     // remove field "isChecked"
-    this.roomForm.value.amenities.map(amenity => {
-      delete amenity.isChecked;
-    });
+    this.roomForm.value.amenities.map(amenity => delete amenity.isChecked);
+    this.roomForm.value.equipment.map(equipment => delete equipment.isChecked);
     console.dir(this.roomForm.value.amenities);
-    this.amenitiesForDisabled = this.roomService.getAmenitiesForDisabled();
+    console.dir(this.roomForm.value.equipment);
+
+    this.resetForm();
+  }
+
+  resetForm() {
     this.roomForm.value.amenities = this.amenitiesCheckboxData.slice();
+    this.roomForm.value.equipment = this.equipmentCheckboxData.slice();
   }
 }
