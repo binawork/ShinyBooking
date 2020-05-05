@@ -6,16 +6,29 @@ import {RoomAddress} from './room-address.model';
 
 export class RoomForDetails {
   id?: string;
-  amenitiesForDisabled?: Array<AmenityForDisabled>;
-  area?: number;
-  capacity?: number;
-  name?: string;
-  description?: string;
-  equipments?: Array<Equipment>;
-  parkingSpace?: boolean;
+  // amenitiesForDisabled?: Array<AmenityForDisabled>;
+  // area?: number;
+  // capacity?: number;
+  // name?: string;
+  // description?: string;
+  // equipments?: Array<Equipment>;
+  // parkingSpace?: boolean;
   photos?: Array<Photo>;
   price?: number;
   rating?: number;
-  roomAddress?: RoomAddress;
-  roomArrangementsCapabilitiesDescription?: string;
+  // roomAddress?: RoomAddress;
+  // roomArrangementsCapabilitiesDescription?: string;
+
+  constructor(
+    public amenitiesForDisabled: AmenityForDisabled[],
+    public area: number,
+    public capacity: number,
+    public name: string,
+    public description: string,
+    public equipments: Equipment[],
+    public parkingSpace: boolean,
+    public roomAddress: RoomAddress,
+    public roomArrangementsCapabilitiesDescription: string,
+  ) {
+  }
 }

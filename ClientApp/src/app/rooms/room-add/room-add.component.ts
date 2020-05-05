@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RoomService} from '../room.service';
+import {RoomForDetails} from '../../shared/room-for-details.model';
+import {RoomAddress} from '../../shared/room-address.model';
 
 @Component({
   selector: 'app-room-add',
@@ -55,7 +57,6 @@ export class RoomAddComponent implements OnInit {
       equipment: [this.equipmentCheckboxData],
     });
 
-
     this.roomForm.valueChanges.subscribe(console.log);
   }
 
@@ -67,9 +68,26 @@ export class RoomAddComponent implements OnInit {
     // remove field "isChecked"
     this.roomForm.value.amenities.map(amenity => delete amenity.isChecked);
     this.roomForm.value.equipment.map(equipment => delete equipment.isChecked);
-    console.dir(this.roomForm.value.amenities);
-    console.dir(this.roomForm.value.equipment);
-
+    let value = this.addressForm.value;
+    const address = new RoomAddress(value.buildingNumber,
+      value.city,
+      value.country,
+      value.postalCode,
+    );
+    value = this.roomForm.value;
+    const newRoom = new RoomForDetails(
+      value.amenities,
+      value.area,
+      value.capacity,
+      value.name,
+      value.description,
+      value.equipment,
+      value.parkingSpace,
+      address,
+      value.roomArrangementsCapabilitiesDescription,
+    );
+    console.log('New room:');
+    console.log(newRoom);
     this.resetForm();
   }
 

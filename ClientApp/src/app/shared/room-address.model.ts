@@ -1,9 +1,12 @@
 export class RoomAddress {
-  id?: string;
-  apartmentNumber?: number;
-  buildingNumber: number;
-  city: string;
-  country: string;
-  postalCode: number;
-  street?: string;
+  constructor(
+    public buildingNumber: number,
+    public city: string,
+    public country: string,
+    public postalCode: number,
+    public id: string = null,
+    public apartmentNumber: number = null,
+    public street: string = null,
+  ) {
+  }
 }
