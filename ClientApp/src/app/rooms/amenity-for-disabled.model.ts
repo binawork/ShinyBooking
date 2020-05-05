@@ -1,4 +1,9 @@
 ﻿export class AmenityForDisabled {
-  id?: string;
-  name?: string;
+  public id: string;
+
+  constructor(
+    public name: string,
+  ) {
+    this.id = name;
+  }
 }

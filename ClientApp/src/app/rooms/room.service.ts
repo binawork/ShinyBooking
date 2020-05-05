@@ -3,12 +3,21 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {RoomForList} from '../shared/room-for-list.model';
+import {AmenityForDisabled} from './amenity-for-disabled.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoomService {
 
+  private readonly amenitiesForDisabled = [
+    new AmenityForDisabled('reserved parking'),
+    new AmenityForDisabled('zero-step entries'),
+    new AmenityForDisabled('width doors'),
+    new AmenityForDisabled('virtual keyboard'),
+    new AmenityForDisabled('refreshable braille display'),
+    new AmenityForDisabled('screen reader'),
+  ];
   private readonly baseUrl: string;
 
   constructor(private http: HttpClient,
@@ -23,6 +32,10 @@ export class RoomService {
 
   getRoom(id): Observable<RoomForList> {
     return this.http.get<RoomForList>(this.baseUrl + '/api/rooms/' + id);
+  }
+
+  getAmenitiesForDisabled(): AmenityForDisabled[] {
+    return this.amenitiesForDisabled;
   }
 }
 

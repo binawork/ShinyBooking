@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
+import {FormGroup, FormControl, Validators, FormBuilder, FormArray} from '@angular/forms';
+import {RoomService} from '../room.service';
+import {AmenityForDisabled} from '../amenity-for-disabled.model';
 
 @Component({
   selector: 'app-room-add',
@@ -9,16 +11,23 @@ import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 export class RoomAddComponent implements OnInit {
   readonly postalCodeRegex: RegExp = /^[0-9]{2}-[0-9]{3}$/;
   readonly numberRegex: RegExp = /^[1-9]+[0-9]*$/;
-
-
+  amenitiesForDisabled: AmenityForDisabled[];
+  amenitiesCheckboxData: { name: string; id: string; isChecked: boolean }[];
   roomForm: FormGroup;
   addressForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              ) {
+              private roomService: RoomService) {
   }
 
   ngOnInit(): void {
+    this.amenitiesForDisabled = this.roomService.getAmenitiesForDisabled();
+    this.amenitiesCheckboxData = this.amenitiesForDisabled.map(x => ({
+      ...x,
+      isChecked: false
+    }));
+    console.log(this.amenitiesForDisabled);
+
     this.addressForm = this.fb.group({
       apartmentNumber: [44, [Validators.pattern, Validators.min(1)]],
       buildingNumber: [3, [Validators.required, Validators.pattern, Validators.min(1)]],
@@ -41,6 +50,7 @@ export class RoomAddComponent implements OnInit {
       roomArrangementsCapabilitiesDescription: ['Sample', Validators.required],
       price: [80, [Validators.required, Validators.pattern(this.numberRegex)]],
       roomAddress: this.addressForm,
+      amenities: [this.amenitiesCheckboxData],
     });
 
 
@@ -49,6 +59,12 @@ export class RoomAddComponent implements OnInit {
 
   onSubmit() {
     console.log('Form submitted');
+    // filter amenities, so there will be only checked ones
+    this.roomForm.value.amenities = this.roomForm.value.amenities.filter(amenity => amenity.isChecked === true);
+    // remove field "isChecked"
+    this.roomForm.value.amenities.map(amenity => {
+      delete amenity.isChecked;
+    });
     console.log(this.roomForm);
     console.dir(this.roomForm.value);
   }
