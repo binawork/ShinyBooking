@@ -2,6 +2,7 @@
 using AutoMapper;
 using ShinyBooking.Dto;
 using ShinyBooking.Models;
+using ShinyBooking.ViewModels;
 
 namespace ShinyBooking.Helpers.Automapper
 {
@@ -21,6 +22,7 @@ namespace ShinyBooking.Helpers.Automapper
             CreateMap<AmenitiesForDisabled, AmenitiesForDisabledDto>();
             CreateMap<Activities, ActivitiesForReturnDto>();
             CreateMap<RoomAddress, RoomAddressForReturnDto>();
+            CreateMap<RegistrationViewModel, ApplicationUser>();
         }
     }
 }
