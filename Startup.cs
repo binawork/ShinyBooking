@@ -20,8 +20,8 @@ namespace ShinyBooking
 {
     public class Startup
     {
-        private const string SecretKey = "fhTvPaZQ4pZiKYwMpLIBjKDcPUSqWB";
-        private readonly SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SecretKey));
+        private static string _secretKey = null;
+        private SymmetricSecurityKey _signingKey;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -32,6 +32,8 @@ namespace ShinyBooking
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+             _secretKey = Configuration["SecretKey:SecretKey"];
+            _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_secretKey));
             // Get options from app settings
             var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
 
