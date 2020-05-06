@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {RoomService} from "../../_services/room.service";
-import {RoomForList} from "../../_interfaces/room-for-list";
+import {Component, OnInit} from '@angular/core';
+import {RoomService} from '../room.service';
+import {RoomForList} from '../../shared/room-for-list.model';
 
 @Component({
   selector: 'app-room-list',
@@ -9,13 +9,15 @@ import {RoomForList} from "../../_interfaces/room-for-list";
 })
 export class RoomListComponent implements OnInit {
   roomList: Array<RoomForList>;
-  constructor(private roomService: RoomService) { }
+
+  constructor(private roomService: RoomService) {
+  }
 
   ngOnInit() {
     this.roomService.getRooms().subscribe(rooms => {
       this.roomList = rooms;
       console.log(rooms);
-    })
+    });
   }
 
 }
