@@ -60,6 +60,8 @@ export class RoomAddComponent implements OnInit {
     this.roomForm.valueChanges.subscribe(console.log);
   }
 
+  // todo nagłówek dla amenities i eq i zrozdzielenie sekcji
+  // todo pln na euro
   onSubmit() {
     console.log('Form submitted');
     // filter amenities and equipment, so there will be only checked ones
