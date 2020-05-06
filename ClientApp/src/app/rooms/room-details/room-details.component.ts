@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {RoomService} from "../../_services/room.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {RoomForDetails} from "../../_interfaces/room-for-details";
-import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from "@kolkov/ngx-gallery";
-import {Equipment} from "../../_interfaces/equipmen";
+import {ActivatedRoute, Router} from '@angular/router';
+import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from '@kolkov/ngx-gallery';
+import {RoomService} from '../room.service';
+import {RoomForDetails} from '../../shared/room-for-details.model';
 
 @Component({
   selector: 'app-room-details',
@@ -21,10 +20,10 @@ export class RoomDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.router.data.subscribe(data => {
-      this.room = data['room'];
+      this.room = data.room;
       this.equipmentColumnsForView = this.createEquipmentRowsForView();
-      console.log(this.equipmentColumnsForView[0][0])
-      console.log('CHECK!')
+      console.log(this.equipmentColumnsForView[0][0]);
+      console.log('CHECK!');
     });
 
     this.galleryOptions = [
@@ -42,7 +41,7 @@ export class RoomDetailsComponent implements OnInit {
 
   getImages() {
     const imageUrls = [];
-    for (let photo of this.room.photos) {
+    for (const photo of this.room.photos) {
       imageUrls.push({
         small: photo.photoUrl,
         medium: photo.photoUrl,
@@ -65,18 +64,18 @@ export class RoomDetailsComponent implements OnInit {
   // }
 
   createEquipmentRowsForView() {
-    let columnsArray = Array<Array<String>>(3);
-    columnsArray[0] = new Array<String>()
-    columnsArray[1] = new Array<String>()
-    columnsArray[2] = new Array<String>()
-    let eqs = this.room.equipments;
+    const columnsArray = Array<Array<String>>(3);
+    columnsArray[0] = new Array<String>();
+    columnsArray[1] = new Array<String>();
+    columnsArray[2] = new Array<String>();
+    const eqs = this.room.equipments;
     for (let i = 0; i < columnsArray.length; i++) {
       let counter = i;
-      while(counter < eqs.length) {
-        columnsArray[i].push(eqs[counter].name)
-        counter += 3
+      while (counter < eqs.length) {
+        columnsArray[i].push(eqs[counter].name);
+        counter += 3;
       }
     }
-    return columnsArray
+    return columnsArray;
   }
 }
