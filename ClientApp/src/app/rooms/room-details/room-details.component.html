@@ -1,194 +1,390 @@
+<!--<section class="osahan-slider">
+  <div id="osahanslider" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#osahanslider" data-slide-to="0" class="active"></li>
+      <li data-target="#osahanslider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active"
+           [ngStyle]="{'background-image':'url(' + galleryImages[0].medium + ')', 'background-position': 'center center'}">
+      >
+        <div class=""></div>
+      </div>
+      <div *ngFor="let image of galleryImages" class="carousel-item"
+           [ngStyle]="{'background-image':'url(' + image.medium + ')', 'background-position': 'center center'}">
+      &lt;!&ndash;           style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/XT1X1882.jpg')">&ndash;&gt;
+        <div class=""></div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#osahanslider" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#osahanslider" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>-->
 <section class="osahan-slider">
-  <div class="slider-form inner-page-form map-slider-form">
-    <div class="overlay"></div>
-    <div class="container pt-3">
+  <div id="osahanslider" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#osahanslider" data-slide-to="0" class="active"></li>
+      <li data-target="#osahanslider" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active" style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/L1010935.jpg')">
+        <div class=""></div>
+      </div>
+      <div class="carousel-item" style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/XT1X1882.jpg')">
+        <div class=""></div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#osahanslider" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#osahanslider" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <div class="property-single-title">
+    <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-8">
-          <h1 class="text-white">{{room.name}}</h1>
-          <h6 class="text-white"><i class="mdi mdi-home-map-marker"></i> {{room.roomAddress.postalCode}} {{room.roomAddress.buildingNumber}}, {{room.roomAddress.street}}, {{room.roomAddress.city}}, {{room.roomAddress.country}}</h6>
+          <h1 class="text-white">{{ room.name }}</h1>
+          <h6 class="text-white"><i
+            class="mdi mdi-home-map-marker"></i>{{ room.roomAddress.street }} {{ room.roomAddress.buildingNumber }}
+            , {{ room.roomAddress.city }}, {{ room.roomAddress.country }}</h6>
         </div>
         <div class="col-lg-4 col-md-4 text-right">
-          <h6 class="text-white mt-2">For Rent</h6>
-          <h2 class="text-success">${{room.price}} <small>/day</small></h2>
+          <h6 class="text-white mt-2">Price</h6>
+          <h2 class="text-success">{{ room.price }} eur <small>/day</small></h2>
         </div>
       </div>
+      <hr>
+      <!--      <div class="row">
+              <div class="col-lg-8 col-md-8">
+                <p class="mt-1 mb-0 text-white"><strong>Booking ID</strong> : 533566 &nbsp;&nbsp; <strong>Add to favorites</strong> <i class="mdi mdi-heart text-white"></i></p>
+              </div>
+              <div class="col-lg-4 col-md-4 text-right">
+                <div class="footer-social">
+                  <span class="text-white">Share :</span> &nbsp;
+                  <a href="#"><i class="mdi mdi-facebook"></i></a>
+                  <a href="#"><i class="mdi mdi-twitter"></i></a>
+                  <a href="#"><i class="mdi mdi-instagram"></i></a>
+                  <a href="#"><i class="mdi mdi-google"></i></a>
+                </div>
+              </div>
+            </div>-->
     </div>
   </div>
 </section>
-
+<!-- End Property Single Slider header -->
+<!-- Property Single Slider -->
 <section class="section-padding">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-8">
-        <div class="card">
-          <div class="card-body osahan-slider pl-0 pr-0 pt-0 pb-0">
-            <div class="gallery-wrapper">
-              <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
-            </div>
-          </div>
-        </div>
         <div class="card padding-card">
           <div class="card-body">
             <h5 class="card-title mb-3">Description</h5>
-            <p>{{room.description}}</p>
+            <div class="row">
+              <div class="col-lg-4 col-md-4">
+                <div class="list-icon">
+                  <i class="mdi mdi-move-resize-variant"></i>
+                  <strong>Area:</strong>
+                  <p class="mb-0">{{ room.area }} m2</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="list-icon">
+                  <i class="mdi mdi-account-multiple"></i>
+                  <strong>People</strong>
+                  <p class="mb-0">{{ room.capacity }}</p>
+                </div>
+              </div>
+              <!--
+<div class="col-lg-4 col-md-4">
+<div class="list-icon">
+<i class="mdi mdi-hot-tub"></i>
+<strong>Baths:</strong>
+<p class="mb-0">2 Bathrooms</p>
+</div>
+</div>
+-->
+            </div>
+
+            <div class="row">
+
+              <div class="col-lg-4 col-md-4">
+                <div class="list-icon">
+                  <i class="mdi mdi-garage"></i>
+                  <strong>Rating:</strong>
+                  <p class="mb-0">{{ room.rating }}</p>
+                </div>
+              </div>
+
+              <!--
+              <div class="col-lg-4 col-md-4">
+                 <div class="list-icon">
+                    <i class="mdi mdi-floor-plan"></i>
+                    <strong>Floors:</strong>
+                    <p class="mb-0">4 Floors</p>
+                 </div>
+              </div>
+               -->
+
+              <div class="col-lg-4 col-md-4">
+                <div class="list-icon">
+                  <i class="mdi mdi-car-convertible"></i>
+                  <strong>Parking Space:</strong>
+                  <p class="mb-0" *ngIf="!room.parkingSpace">No</p>
+                  <p class="mb-0" *ngIf="room.parkingSpace">Yes</p>
+                </div>
+              </div>
+
+            </div>
+            <p><b>Description</b></p>
+            <p>{{ room.description }}</p>
+            <p><b>Room Arrangements Capabilities</b></p>
+            <p>{{ room.roomArrangementsCapabilitiesDescription }}</p>
           </div>
         </div>
         <div class="card padding-card">
           <div class="card-body">
-            <h5 class="card-title mb-3">Features</h5>
+            <h5 class="card-title mb-3">Equipment</h5>
+            <ng-container *ngFor="let equipmentItem of room.equipments; let i=index">
+              <div *ngIf="i%3 == 0" class="row">
+
+                <div class="sidebar-card-list">
+                  <span class="col-lg-3 col-md-3 col-sm-2"><span
+                    class="mdi mdi-checkbox-marked-outline text-success"></span>{{room.equipments[i].name}}</span>
+                  <span class="col-lg-3 col-md-3 col-sm-2"><span class="mdi mdi-checkbox-marked-outline text-success"
+                                                                 *ngIf="i+1 < room.equipments.length"></span>{{ room.equipments[i + 1].name }}</span>
+                  <span class="col-lg-3 col-md-3 col-sm-2"><span class="mdi mdi-checkbox-marked-outline text-success"
+                                                                 *ngIf="i+2 < room.equipments.length"></span>{{ room.equipments[i + 2].name }}</span>
+                </div>
+
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="card padding-card">
+          <div class="card-body">
+            <h5 class="card-title mb-3">Eqiupment {{equipmentColumnsForView[0][0]}}</h5>
             <div class="row">
               <div class="col-lg-4 col-md-4">
                 <ul class="sidebar-card-list">
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> In-room tea and coffee</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> Writing desk</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> Personal safe</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> Minibar</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> Refrigerator</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> Electronic key card access</a></li>
+                  <li *ngFor="let equipment of equipmentColumnsForView[0]; index as i"><a href="#">
+                    <i class="mdi mdi-checkbox-marked-outline text-success"></i>{{equipmentColumnsForView[0][i]}}</a></li>
                 </ul>
               </div>
               <div class="col-lg-4 col-md-4">
                 <ul class="sidebar-card-list">
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> Refrigerator</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> Electronic key card access</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> In-room tea and coffee</a></li>
-                  <li><a href="#"><i class="mdi mdi-close-box-outline text-danger"></i> Writing desk</a></li>
-                  <li><a href="#"><i class="mdi mdi-close-box-outline text-danger"></i> Personal safe</a></li>
-                  <li><a href="#"><i class="mdi mdi-close-box-outline text-danger"></i> Minibar</a></li>
+                  <li *ngFor="let equipment of equipmentColumnsForView[1]"><a href="#">
+                    <i class="mdi mdi-checkbox-marked-outline text-success"></i>AAA</a></li>
                 </ul>
               </div>
               <div class="col-lg-4 col-md-4">
                 <ul class="sidebar-card-list">
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> Personal safe</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> Minibar</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> Refrigerator</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> In-room tea and coffee</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> Writing desk</a></li>
-                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i> Electronic key card access</a></li>
+                  <li *ngFor="let equipment of equipmentColumnsForView[2]"><a href="#">
+                    <i class="mdi mdi-checkbox-marked-outline text-success"></i>{{ equipment }}</a>
+                  </li>
                 </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card padding-card reviews-card">
-          <div class="card-body">
-            <h5 class="card-title mb-4">3 Reviews</h5>
-            <div class="media mb-4">
-              <img class="d-flex mr-3 rounded-circle" src="img/user/1.jpg" alt="">
-              <div class="media-body">
-                <h5 class="mt-0">Stave Martin <small>Feb 12, 2018</small>
-                  <span class="star-rating float-right">
-                                 <i class="mdi mdi-star text-warning"></i>
-                                 <i class="mdi mdi-star text-warning"></i>
-                                 <i class="mdi mdi-star text-warning"></i>
-                                 <i class="mdi mdi-star-half text-warning"></i>
-                                 <i class="mdi mdi-star-half text-warning"></i><small class="text-success">5/2</small>
-                                 </span>
-                </h5>
-                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-              </div>
-            </div>
-            <div class="media">
-              <img class="d-flex mr-3 rounded-circle" src="img/user/2.jpg" alt="">
-              <div class="media-body">
-                <h5 class="mt-0">Mark Smith <small>Feb 09, 2018</small> <span class="star-rating float-right">
-                                 <i class="mdi mdi-star text-warning"></i>
-                                 <i class="mdi mdi-star-half text-warning"></i>
-                                 <i class="mdi mdi-star-half text-warning"></i>
-                                 <i class="mdi mdi-star-half text-warning"></i>
-                                 <i class="mdi mdi-star-half text-warning"></i><small class="text-success">5/1</small>
-                                 </span>
-                </h5>
-                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                <div class="media mt-4">
-                  <img class="d-flex mr-3 rounded-circle" src="img/user/3.jpg" alt="">
-                  <div class="media-body">
-                    <h5 class="mt-0">Ryan Printz <small>Nov 13, 2018</small> <span class="star-rating float-right">
-                                       <i class="mdi mdi-star text-warning"></i>
-                                       <i class="mdi mdi-star text-warning"></i>
-                                       <i class="mdi mdi-star-half text-warning"></i>
-                                       <i class="mdi mdi-star-half text-warning"></i>
-                                       <i class="mdi mdi-star-half text-warning"></i><small class="text-success">5/5</small>
-                                       </span>
-                    </h5>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="media mt-4">
-              <img class="d-flex mr-3 rounded-circle" src="img/user/4.jpg" alt="">
-              <div class="media-body">
-                <h5 class="mt-0">Stave Mark <small>Feb 12, 2018</small>
-                  <span class="star-rating float-right">
-                                 <i class="mdi mdi-star text-warning"></i>
-                                 <i class="mdi mdi-star text-warning"></i>
-                                 <i class="mdi mdi-star text-warning"></i>
-                                 <i class="mdi mdi-star-half text-warning"></i>
-                                 <i class="mdi mdi-star-half text-warning"></i><small class="text-success">5/2</small>
-                                 </span>
-                </h5>
-                <p class="mb-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
               </div>
             </div>
           </div>
         </div>
         <div class="card padding-card">
           <div class="card-body">
-            <h5 class="card-title mb-4">Leave a Review</h5>
-            <form name="sentMessage">
-              <div class="row">
-                <div class="control-group form-group col-lg-4 col-md-4">
-                  <div class="controls">
-                    <label>Your Name <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" required>
-                  </div>
-                </div>
-                <div class="control-group form-group col-lg-4 col-md-4">
-                  <div class="controls">
-                    <label>Your Email <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" required>
-                  </div>
-                </div>
-                <div class="control-group form-group col-lg-4 col-md-4">
-                  <div class="controls">
-                    <label>Rating <span class="text-danger">*</span></label>
-                    <select class="form-control custom-select">
-                      <option>1 Star</option>
-                      <option>2 Star</option>
-                      <option>3 Star</option>
-                      <option>4 Star</option>
-                      <option>5 Star</option>
-                    </select>
-                  </div>
-                </div>
+            <h5 class="card-title mb-3">Accessibility</h5>
+            <div class="row">
+              <div class="col-lg-4 col-md-4">
+                <ul class="sidebar-card-list">
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Art classes</a></li>
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Programming classes</a>
+                  </li>
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Children</a></li>
+                </ul>
               </div>
-              <div class="control-group form-group">
-                <div class="controls">
-                  <label>Review <span class="text-danger">*</span></label>
-                  <textarea rows="10" cols="100" class="form-control"></textarea>
-                </div>
+              <div class="col-lg-4 col-md-4">
+                <ul class="sidebar-card-list">
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Art classes</a></li>
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Programming classes</a>
+                  </li>
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-success"></i>Children</a></li>
+                </ul>
               </div>
-              <button type="submit" class="btn btn-success">Send Message</button>
-            </form>
+              <div class="col-lg-4 col-md-4">
+                <ul class="sidebar-card-list">
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-danger"></i>Dancing / sport classes</a>
+                  </li>
+                  <li><a href="#"><i class="mdi mdi-checkbox-marked-outline text-danger"></i>Cooking classess</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="card padding-card">
+          <div class="card-body">
+            <h5 class="card-title mb-3">Location</h5>
+            <div class="row mb-3">
+              <div class="col-lg-6 col-md-6">
+                <p><strong class="text-dark">Street:</strong> {{ room.roomAddress.street }} </p>
+                <!--                <p><strong class="text-dark">Apt / Suite / Other:</strong> Pawilon KŁOSY</p>-->
+                <p><strong class="text-dark">Building number:</strong> {{ room.roomAddress.buildingNumber }} </p>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <p><strong class="text-dark">City :</strong> {{ room.roomAddress.city }}</p>
+                <p><strong class="text-dark">Zip/Postal Code :</strong> {{ room.roomAddress.postalCode }} </p>
+                <p><strong class="text-dark">Country :</strong> {{ room.roomAddress.country }} </p>
+                <!--                <p><strong class="text-dark">Additional information</strong> Take subway or Uber. It is impossible to-->
+                <!--                  park on Tamka Street. You will find us between hotel and Biedronka building. Look for brutalistic-->
+                <!--                  looking stairway.</p>-->
+              </div>
+            </div>
+            <!--            <div id="map"></div>-->
+          </div>
+        </div>
+        <!--        <div class="card padding-card">-->
+        <!--          <div class="card-body">-->
+        <!--            <h5 class="card-title mb-4">Video</h5>-->
+        <!--            <iframe-->
+        <!--              src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FProjektPracownie%2Fvideos%2F683858069093851%2F&show_text=0&width=560"-->
+        <!--              width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0"-->
+        <!--              allowTransparency="true" allowFullScreen="true"></iframe>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--
+        <div class="card padding-card reviews-card">
+           <div class="card-body">
+              <h5 class="card-title mb-4">3 Reviews</h5>
+              <div class="media mb-4">
+                 <img class="d-flex mr-3 rounded-circle" src="img/user/1.jpg" alt="">
+                 <div class="media-body">
+                    <h5 class="mt-0">Stave Martin <small>Feb 12, 2018</small>
+                       <span class="star-rating float-right">
+                       <i class="mdi mdi-star text-warning"></i>
+                       <i class="mdi mdi-star text-warning"></i>
+                       <i class="mdi mdi-star text-warning"></i>
+                       <i class="mdi mdi-star-half text-warning"></i>
+                       <i class="mdi mdi-star-half text-warning"></i><small class="text-success">5/2</small>
+                       </span>
+                    </h5>
+                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                 </div>
+              </div>
+              <div class="media">
+                 <img class="d-flex mr-3 rounded-circle" src="img/user/2.jpg" alt="">
+                 <div class="media-body">
+                    <h5 class="mt-0">Mark Smith <small>Feb 09, 2018</small> <span class="star-rating float-right">
+                       <i class="mdi mdi-star text-warning"></i>
+                       <i class="mdi mdi-star-half text-warning"></i>
+                       <i class="mdi mdi-star-half text-warning"></i>
+                       <i class="mdi mdi-star-half text-warning"></i>
+                       <i class="mdi mdi-star-half text-warning"></i><small class="text-success">5/1</small>
+                       </span>
+                    </h5>
+                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                    <div class="media mt-4">
+                       <img class="d-flex mr-3 rounded-circle" src="img/user/3.jpg" alt="">
+                       <div class="media-body">
+                          <h5 class="mt-0">Ryan Printz <small>Nov 13, 2018</small> <span class="star-rating float-right">
+                             <i class="mdi mdi-star text-warning"></i>
+                             <i class="mdi mdi-star text-warning"></i>
+                             <i class="mdi mdi-star-half text-warning"></i>
+                             <i class="mdi mdi-star-half text-warning"></i>
+                             <i class="mdi mdi-star-half text-warning"></i><small class="text-success">5/5</small>
+                             </span>
+                          </h5>
+                          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="media mt-4">
+                 <img class="d-flex mr-3 rounded-circle" src="img/user/4.jpg" alt="">
+                 <div class="media-body">
+                    <h5 class="mt-0">Stave Mark <small>Feb 12, 2018</small>
+                       <span class="star-rating float-right">
+                       <i class="mdi mdi-star text-warning"></i>
+                       <i class="mdi mdi-star text-warning"></i>
+                       <i class="mdi mdi-star text-warning"></i>
+                       <i class="mdi mdi-star-half text-warning"></i>
+                       <i class="mdi mdi-star-half text-warning"></i><small class="text-success">5/2</small>
+                       </span>
+                    </h5>
+                    <p class="mb-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                 </div>
+              </div>
+           </div>
+        </div>
+     -->
+        <!--
+           <div class="card padding-card">
+              <div class="card-body">
+                 <h5 class="card-title mb-4">Leave a Review</h5>
+                 <form name="sentMessage">
+                    <div class="row">
+                       <div class="control-group form-group col-lg-4 col-md-4">
+                          <div class="controls">
+                             <label>Your Name <span class="text-danger">*</span></label>
+                             <input type="text" class="form-control" required>
+                          </div>
+                       </div>
+                       <div class="control-group form-group col-lg-4 col-md-4">
+                          <div class="controls">
+                             <label>Your Email <span class="text-danger">*</span></label>
+                             <input type="email" class="form-control" required>
+                          </div>
+                       </div>
+                       <div class="control-group form-group col-lg-4 col-md-4">
+                          <div class="controls">
+                             <label>Rating <span class="text-danger">*</span></label>
+                             <select class="form-control custom-select">
+                                <option>1 Star</option>
+                                <option>2 Star</option>
+                                <option>3 Star</option>
+                                <option>4 Star</option>
+                                <option>5 Star</option>
+                             </select>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="control-group form-group">
+                       <div class="controls">
+                          <label>Review <span class="text-danger">*</span></label>
+                          <textarea rows="10" cols="100" class="form-control"></textarea>
+                       </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Send Message</button>
+                 </form>
+              </div>
+           </div>
+        -->
+        <!---->
       </div>
       <div class="col-lg-4 col-md-4">
         <div class="card sidebar-card">
           <div class="card-body">
-            <h5 class="card-title mb-4">Contact:</h5>
+            <h5 class="card-title mb-4">Contact Information</h5>
             <div id="featured-properties">
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <div class="card card-list">
-                      <img class="card-img-top owner-size" src="https://res.cloudinary.com/abbw/image/upload/v1585246000/3_gysdj7.jpg" alt="Card image cap">
+                    <a href="#">
+                      <img class="card-img-top"
+                           src="https://lh3.googleusercontent.com/V1tdIDQwQVJWx0Of77pNMn6HWFUvogLmMISileNBvaIeugYw-082P6VSFPcxV7lO8ycZnemBWsGIkEO-QtnigQoea9YJ2K7og0b8AWbmt7D6Y3y0bj9K3hhAEu9eq-Xr3lmPkOBlHWo7Vl6B0n6Xl_ALAbgfczeQT8NBtb1OpMITaV3UVXW3rImxmPEX7HRNZRizqtpymGFCZLiLcjtd7_3IfxwHN9B_FSOamuk262fXh-gDn1pt17XXYaNyPYfu4qxjfFdsNEmD28ga9d-Ij04YlTXHUcNQOV8C1_z0OQgAA4Y2FlKDHQkCO8rPgVEdJ_h5K8JUu-SL7svL6kb4CE0wuqeyk3xs5dxOt5qlUBSEiEcsvICjacK0f3pJ-ezrDGaFvzh1C3Zl1NnSdACI1rAzIK_BxTEdlVobzsOMQ_w7u04Xq-TaKSPtHti0vCA7avdSZKF013WW1J_Pe_0WGZ3GN2h17gjgJwWlkkqvfdK0ZjgKKa2AfRp1fmVUda5FsmpqLamG8-xBYC2LS33iqZVhYOUbbyBmGyupOW1ZJeKpIl0lkoekJLrPpstG7wm3foXb_lCVpFGwAoEWmtfmnaT-Z3UeJGix7vZDsLbQcCQ2XjR260-7DhRJkjGfmeRPEwYHiFhmf4zu2p5cfA_b5yRbYKyE7dmWyUPkgk6gopFqmMdMqlvnO2odKzOnp1CdmlQG=w1538-h797-ft"
+                           alt="Card image cap">
                       <div class="card-body pb-0">
-                        <h5 class="card-title mb-4">Gurdeep Osahan</h5>
-                        <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-phone"></i> (950) 491-570-180</h6>
-                        <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-email"></i> placeholder@a.b</h6>
-                        <h6 class="card-subtitle text-muted"><i class="mdi mdi-link"></i> shinybooking.azurewebsites.net/</h6>
+                        <h5 class="card-title mb-4">Wiktor Świątkowski</h5>
+                        <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-phone"></i> +48 796187210</h6>
+                        <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-email"></i>
+                          sklejkaiprzyjaciele@gmail.com</h6>
+                        <h6 class="card-subtitle text-muted"><i class="mdi mdi-link"></i> http://tamco.pl/</h6>
                       </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -196,38 +392,344 @@
           </div>
         </div>
         <div class="card sidebar-card">
-          <div class="card-body">
-            <h5 class="card-title mb-4">Send message</h5>
-            <form name="sentMessage">
-              <div class="control-group form-group">
-                <div class="controls">
-                  <label>Your Name <span class="text-danger">*</span></label>
-                  <input type="text" placeholder="Enter Your Name" class="form-control" required>
+          <!-- <div class="card-body">
+             <h5 class="card-title mb-4">Request a Showing</h5>
+             <form name="sentMessage">
+                <div class="control-group form-group">
+                   <div class="controls">
+                      <label>Your Name <span class="text-danger">*</span></label>
+                      <input type="text" placeholder="Enter Your Name" class="form-control" required>
+                   </div>
                 </div>
-              </div>
-              <div class="control-group form-group">
-                <div class="controls">
-                  <label>Your Email <span class="text-danger">*</span></label>
-                  <input type="text" placeholder="Enter Your Email"  class="form-control" required>
+                <div class="control-group form-group">
+                   <div class="controls">
+                      <label>Your Email <span class="text-danger">*</span></label>
+                      <input type="text" placeholder="Enter Your Email"  class="form-control" required>
+                   </div>
                 </div>
-              </div>
-              <div class="control-group form-group">
-                <div class="controls">
-                  <label>Phone <span class="text-danger">*</span></label>
-                  <input type="text" placeholder="Enter Phone Number"  class="form-control" required>
+                <div class="control-group form-group">
+                   <div class="controls">
+                      <label>Phone <span class="text-danger">*</span></label>
+                      <input type="text" placeholder="Enter Phone Number"  class="form-control" required>
+                   </div>
                 </div>
-              </div>
-              <div class="control-group form-group">
-                <div class="controls">
-                  <label>Message <span class="text-danger">*</span></label>
-                  <textarea rows="5" cols="50" class="form-control"></textarea>
+                <div class="control-group form-group">
+                   <div class="controls">
+                      <label>Message <span class="text-danger">*</span></label>
+                      <textarea rows="5" cols="50" class="form-control"></textarea>
+                   </div>
                 </div>
-              </div>
-              <button type="submit" class="btn btn-success btn-block">SEND REQUEST</button>
-            </form>
-          </div>
+                <button type="submit" class="btn btn-success btn-block">SEND REQUEST</button>
+             </form>
+          </div> -->
+        </div>
+        <div class="card sidebar-card">
+          <!-- <div class="card-body">
+             <h5 class="card-title mb-4">Featured Properties</h5>
+             <div id="featured-properties" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                   <li data-target="#featured-properties" data-slide-to="0" class="active"></li>
+                   <li data-target="#featured-properties" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner">
+                   <div class="carousel-item active">
+                      <div class="card card-list">
+                         <a href="#">
+                            <span class="badge badge-success">For Sale</span>
+                            <img class="card-img-top" src="img/list/1.png" alt="Card image cap">
+                            <div class="card-body">
+                               <h5 class="card-title">House in Kent Street</h5>
+                               <h6 class="card-subtitle mb-2 text-muted"><i class="mdi mdi-home-map-marker"></i> 127 Kent Sreet, Sydny, NEW 2000</h6>
+                               <h2 class="text-success mb-0 mt-3">
+                                  $130,000 <small>/month</small>
+                               </h2>
+                            </div>
+                         </a>
+                      </div>
+                   </div>
+                   <div class="carousel-item">
+                      <div class="card card-list">
+                         <a href="#">
+                            <span class="badge badge-secondary">For Rent</span>
+                            <img class="card-img-top" src="img/list/2.png" alt="Card image cap">
+                            <div class="card-body">
+                               <h5 class="card-title">Family House in Hudson</h5>
+                               <h6 class="card-subtitle mb-2 text-muted"><i class="mdi mdi-home-map-marker"></i> Hoboken, NJ, USA</h6>
+                               <h2 class="text-success mb-0 mt-3">
+                                  $127,000 <small>/month</small>
+                               </h2>
+                            </div>
+                         </a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div> -->
+        </div>
+        <div class="card sidebar-card">
+          <!-- <div class="card-body">
+             <h5 class="card-title mb-4">Mortage Calculator</h5>
+             <form name="sentMessage">
+                <div class="control-group form-group">
+                   <div class="controls">
+                      <label>Sale Price <span class="text-danger">*</span></label>
+                      <input type="text" placeholder="$" class="form-control" required>
+                   </div>
+                </div>
+                <div class="control-group form-group">
+                   <div class="controls">
+                      <label>Down payment <span class="text-danger">*</span></label>
+                      <input type="text" placeholder="$"  class="form-control" required>
+                   </div>
+                </div>
+                <div class="control-group form-group">
+                   <div class="controls">
+                      <label>Term <span class="text-danger">*</span></label>
+                      <input type="text" placeholder="Years"  class="form-control" required>
+                   </div>
+                </div>
+                <div class="control-group form-group">
+                   <div class="controls">
+                      <label>Interest Rate <span class="text-danger">*</span></label>
+                      <input type="text" placeholder="%" class="form-control" required>
+                   </div>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">CALCULATE</button>
+             </form>
+          </div> -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section-padding footer bg-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-3">
+        <h4 class="mb-5"><a class="text-success logo" href="index.html"><i class="mdi mdi-home-map-marker"></i> <strong>Shiny</strong>Booking</a>
+        </h4>
+        <!-- <p>86 Petersham town, New South wales<br>Waedll Steet, Australia PA 6550</p>
+        <p class="mb-0"><a class="text-dark" href="#">+61 525 240 310</a></p>
+        <p class="mb-0"><a class="text-success" href="#">iamosahan@gmail.com</a></p>
+        <p class="mb-0"><a class="text-info" href="#">www.askbootstrap.com</a></p> -->
+      </div>
+      <div class="col-lg-2 col-md-2">
+        <h6 class="mb-4">SHINY BOOKING</h6>
+        <ul>
+          <li><a href="https://dev.azure.com/ShinyBooking/ShinyBooking">Azure</a></li>
+          <li><a href="https://github.com/maciejjankowski/pd-shiny-booking">GitHub</a></li>
+
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-2">
+        <h6 class="mb-4">BINA</h6>
+        <ul>
+          <li><a href="https://github.com/maciejjankowski/pizzadreams">About us</a></li>
+          <li><a href="https://github.com/maciejjankowski/pizzadreams/wiki/Projects">Projects</a></li>
+          <li><a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScDTujh8LOhypLDzJVvZvBDUsUpdzOwZkCekJIuqfqkOo2ONQ/viewform">Join
+            us</a></li>
+
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-4">
+        <!-- <h6 class="mb-4">NEWSLETTER</h6>
+        <div class="input-group">
+           <input type="text" class="form-control" placeholder="Email Address..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+           <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button"><i class="mdi mdi-arrow-right"></i></button>
+           </div>
+        </div> -->
+        <h6 class="mb-4">GET IN TOUCH</h6>
+        <div class="footer-social">
+          <a href="https://github.com/maciejjankowski/pizzadreams"><i class="mdi mdi-github-circle"></i></a>
+          <a href="https://www.facebook.com/pizzadreamssoftware/"><i class="mdi mdi-facebook"></i></a>
         </div>
       </div>
     </div>
   </div>
 </section>
+-->
+<!-- End Footer -->
+<!-- Copyright -->
+<section class="pt-4 pb-4 text-center">
+  <p class="mt-0 mb-0">© Copyright 2020 Shiny Booking Team & Bina. All Rights Reserved</p>
+  <small class="mt-0 mb-0">
+    Made with <i class="mdi mdi-heart text-danger"></i> by
+    <a class="text-dark" target="_blank" href="http://pizzadreamssoftware.com//">Bina</a>
+  </small>
+</section>
+<!-- End Copyright -->
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Contact form JavaScript -->
+<!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+<!-- select2 Js -->
+<script src="vendor/select2/js/select2.min.js"></script>
+<!-- Custom -->
+<script src="js/custom.js"></script>
+<!-- Google Map Api -->
+<script>
+  function initMap() {
+    var warsaw = {
+      lat: 52.229,
+      lng: 21.012
+    };
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 3,
+      center: warsaw,
+      styles: [{
+        elementType: 'geometry',
+        stylers: [{
+          color: '#64DDBA'
+        }]
+      },
+        {
+          elementType: 'labels.text.stroke',
+          stylers: [{
+            color: '#64DDBA'
+          }]
+        },
+        {
+          elementType: 'labels.text.fill',
+          stylers: [{
+            color: '#34495E'
+          }]
+        },
+        {
+          featureType: 'administrative.locality',
+          elementType: 'labels.text.fill',
+          stylers: [{
+            color: '#8A8A8A'
+          }]
+        },
+        {
+          featureType: 'poi',
+          elementType: 'labels.text.fill',
+          stylers: [{
+            color: '#8A8A8A'
+          }]
+        },
+        {
+          featureType: 'poi.park',
+          elementType: 'geometry',
+          stylers: [{
+            color: '#263c3f'
+          }]
+        },
+        {
+          featureType: 'poi.park',
+          elementType: 'labels.text.fill',
+          stylers: [{
+            color: '#6b9a76'
+          }]
+        },
+        {
+          featureType: 'road',
+          elementType: 'geometry',
+          stylers: [{
+            color: '#ABABAB'
+          }]
+        },
+        {
+          featureType: 'road',
+          elementType: 'geometry.stroke',
+          stylers: [{
+            color: '#212a37'
+          }]
+        },
+        {
+          featureType: 'road',
+          elementType: 'labels.text.fill',
+          stylers: [{
+            color: '#9ca5b3'
+          }]
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'geometry',
+          stylers: [{
+            color: '#34495E'
+          }]
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'geometry.stroke',
+          stylers: [{
+            color: '#1f2835'
+          }]
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'labels.text.fill',
+          stylers: [{
+            color: '#f3d19c'
+          }]
+        },
+        {
+          featureType: 'transit',
+          elementType: 'geometry',
+          stylers: [{
+            color: '#2f3948'
+          }]
+        },
+        {
+          featureType: 'transit.station',
+          elementType: 'labels.text.fill',
+          stylers: [{
+            color: '#8A8A8A'
+          }]
+        },
+        {
+          featureType: 'water',
+          elementType: 'geometry',
+          stylers: [{
+            color: '#F2F6FF'
+          }]
+        },
+        {
+          featureType: 'water',
+          elementType: 'labels.text.fill',
+          stylers: [{
+            color: '#BCBCBC'
+          }]
+        },
+        {
+          featureType: 'water',
+          elementType: 'labels.text.stroke',
+          stylers: [{
+            color: '#F2F6FF'
+          }]
+        }
+      ]
+    });
+    var contentString = '<div id="content">' +
+      '<div id="bodyContent">' +
+      '<div class="card card-list"><a href="#"><span class="badge badge-danger">For Sale</span><img class="card-img-top" src="img/list/1.png" alt="Card image cap"><div class="card-body"><h5 class="card-title">House in Kent Street</h5><h6 class="card-subtitle mb-2 text-muted"><i class="mdi mdi-home-map-marker"></i> 127 Kent Sreet, Sydny, NEW 2000</h6><h2 class="text-success mb-0 mt-3">$130,000 <small>/month</small></h2></div><div class="card-footer"><span><i class="mdi mdi-sofa"></i> Beds : <strong>3</strong></span><span><i class="mdi mdi-scale-bathroom"></i> Baths : <strong>2</strong></span><span><i class="mdi mdi-move-resize-variant"></i> Area : <strong>587 sq ft</strong></span></div></a> </div>' +
+      '</div>' +
+      '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString,
+      maxWidth: 300
+    });
+    var image = 'img/marker.png';
+    var marker = new google.maps.Marker({
+      position: Warsaw,
+      map: map,
+      icon: image
+    });
+    marker.addListener('click', function () {
+      infowindow.open(map, marker);
+    });
+  }
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUsOUkZbTEwLxeUN5Qfag6Vr5BjngCGMY&callback=initMap"></script>
+
