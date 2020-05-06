@@ -414,9 +414,9 @@ if (content.locals) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\joann\source\repos\Advanced\TW_1\ShinyBooking\ClientApp\src\styles.css */"./src/styles.css");
-__webpack_require__(/*! C:\Users\joann\source\repos\Advanced\TW_1\ShinyBooking\ClientApp\node_modules\font-awesome\css\font-awesome.css */"./node_modules/font-awesome/css/font-awesome.css");
-module.exports = __webpack_require__(/*! C:\Users\joann\source\repos\Advanced\TW_1\ShinyBooking\ClientApp\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+__webpack_require__(/*! C:\Users\xiehu_000\source\repos\ShinyBooking\ClientApp\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! C:\Users\xiehu_000\source\repos\ShinyBooking\ClientApp\node_modules\font-awesome\css\font-awesome.css */"./node_modules/font-awesome/css/font-awesome.css");
+module.exports = __webpack_require__(/*! C:\Users\xiehu_000\source\repos\ShinyBooking\ClientApp\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
 
 
 /***/ })
