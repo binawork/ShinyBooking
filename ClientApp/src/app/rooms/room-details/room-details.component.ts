@@ -13,17 +13,16 @@ export class RoomDetailsComponent implements OnInit {
   room: RoomForDetails;
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
-  equipmentColumnsForView: Array<Array<String>>;
 
-  constructor(private roomService: RoomService, private router: ActivatedRoute, private routerr: Router) {
+  constructor(private roomService: RoomService,
+              private route: ActivatedRoute,
+              private router: Router,
+              ) {
   }
 
   ngOnInit(): void {
-    this.router.data.subscribe(data => {
+    this.route.data.subscribe(data => {
       this.room = data.room;
-      this.equipmentColumnsForView = this.createEquipmentRowsForView();
-      console.log(this.equipmentColumnsForView[0][0]);
-      console.log('CHECK!');
     });
 
     this.galleryOptions = [
@@ -49,7 +48,7 @@ export class RoomDetailsComponent implements OnInit {
         description: photo.id
       });
     }
-    console.log(imageUrls);
+    // console.log(imageUrls);
     return imageUrls;
   }
 
@@ -63,19 +62,4 @@ export class RoomDetailsComponent implements OnInit {
   //     })
   // }
 
-  createEquipmentRowsForView() {
-    const columnsArray = Array<Array<String>>(3);
-    columnsArray[0] = new Array<String>();
-    columnsArray[1] = new Array<String>();
-    columnsArray[2] = new Array<String>();
-    const eqs = this.room.equipments;
-    for (let i = 0; i < columnsArray.length; i++) {
-      let counter = i;
-      while (counter < eqs.length) {
-        columnsArray[i].push(eqs[counter].name);
-        counter += 3;
-      }
-    }
-    return columnsArray;
-  }
 }
