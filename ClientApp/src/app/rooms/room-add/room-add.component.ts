@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RoomService} from '../room.service';
 import {RoomForDetails} from '../../shared/room-for-details.model';
 import {RoomAddress} from '../../shared/room-address.model';
+import {DataStorageService} from '../../shared/data-storage.service';
 
 @Component({
   selector: 'app-room-add',
@@ -18,7 +19,8 @@ export class RoomAddComponent implements OnInit {
   addressForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private roomService: RoomService) {
+              private roomService: RoomService,
+              private dataStorageService: DataStorageService) {
   }
 
   ngOnInit(): void {
@@ -89,6 +91,8 @@ export class RoomAddComponent implements OnInit {
     );
     console.log('New room:');
     console.log(newRoom);
+
+    this.dataStorageService.storeRoom(newRoom);
     this.resetForm();
   }
 
