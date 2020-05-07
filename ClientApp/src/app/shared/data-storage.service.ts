@@ -17,8 +17,7 @@ export class DataStorageService {
   storeRoom(room: RoomForDetails) {
     console.log('storeRoom()');
     this.http
-      // todo below url requires correction
-      .post('https://localhost:5001/api/rooms', room)
+      .post('/api/rooms', room)
       // .pipe(
       //   catchError(this.handleError('addRoom', room))
       // )
