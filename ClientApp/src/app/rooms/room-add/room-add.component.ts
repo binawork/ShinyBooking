@@ -61,7 +61,6 @@ export class RoomAddComponent implements OnInit {
   }
 
   // todo nagłówek dla amenities i eq i zrozdzielenie sekcji
-  // todo pln na euro
   onSubmit() {
     console.log('Form submitted');
     // filter amenities and equipment, so there will be only checked ones
