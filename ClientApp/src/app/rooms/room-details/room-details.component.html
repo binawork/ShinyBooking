@@ -26,25 +26,27 @@
     </a>
   </div>-->
 <section class="osahan-slider">
-  <div id="osahanslider" class="carousel slide" data-ride="carousel">
+  <div class="carousel slide" data-ride="carousel" id="osahanslider">
     <ol class="carousel-indicators">
-      <li data-target="#osahanslider" data-slide-to="0" class="active"></li>
-      <li data-target="#osahanslider" data-slide-to="1"></li>
+      <li class="active" data-slide-to="0" data-target="#osahanslider"></li>
+      <li data-slide-to="1" data-target="#osahanslider"></li>
     </ol>
     <div class="carousel-inner" role="listbox">
-      <div class="carousel-item active" style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/L1010935.jpg')">
+      <div class="carousel-item active"
+           style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/L1010935.jpg')">
         <div class=""></div>
       </div>
-      <div class="carousel-item" style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/XT1X1882.jpg')">
+      <div class="carousel-item"
+           style="background-image: url('http://tamco.pl/wp-content/uploads/2019/09/XT1X1882.jpg')">
         <div class=""></div>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#osahanslider" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <a class="carousel-control-prev" data-slide="prev" href="#osahanslider" role="button">
+      <span aria-hidden="true" class="carousel-control-prev-icon"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#osahanslider" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <a class="carousel-control-next" data-slide="next" href="#osahanslider" role="button">
+      <span aria-hidden="true" class="carousel-control-next-icon"></span>
       <span class="sr-only">Next</span>
     </a>
   </div>
@@ -139,8 +141,8 @@
                 <div class="list-icon">
                   <i class="mdi mdi-car-convertible"></i>
                   <strong>Parking Space:</strong>
-                  <p class="mb-0" *ngIf="!room.parkingSpace">No</p>
-                  <p class="mb-0" *ngIf="room.parkingSpace">Yes</p>
+                  <p *ngIf="!room.parkingSpace" class="mb-0">No</p>
+                  <p *ngIf="room.parkingSpace" class="mb-0">Yes</p>
                 </div>
               </div>
 
@@ -153,44 +155,12 @@
         </div>
         <div class="card padding-card">
           <div class="card-body">
-            <h5 class="card-title mb-3">Equipment</h5>
-            <ng-container *ngFor="let equipmentItem of room.equipments; let i=index">
-              <div *ngIf="i%3 == 0" class="row">
-
-                <div class="sidebar-card-list">
-                  <span class="col-lg-3 col-md-3 col-sm-2"><span
-                    class="mdi mdi-checkbox-marked-outline text-success"></span>{{room.equipments[i].name}}</span>
-                  <span class="col-lg-3 col-md-3 col-sm-2"><span class="mdi mdi-checkbox-marked-outline text-success"
-                                                                 *ngIf="i+1 < room.equipments.length"></span>{{ room.equipments[i + 1].name }}</span>
-                  <span class="col-lg-3 col-md-3 col-sm-2"><span class="mdi mdi-checkbox-marked-outline text-success"
-                                                                 *ngIf="i+2 < room.equipments.length"></span>{{ room.equipments[i + 2].name }}</span>
-                </div>
-
-              </div>
-            </ng-container>
-          </div>
-        </div>
-        <div class="card padding-card">
-          <div class="card-body">
-            <h5 class="card-title mb-3">Eqiupment {{equipmentColumnsForView[0][0]}}</h5>
+            <h5 class="card-title mb-3">Eqiupment</h5>
             <div class="row">
-              <div class="col-lg-4 col-md-4">
+              <div *ngFor="let equipment of room.equipments; index as i" class="col-lg-4 col-md-4">
                 <ul class="sidebar-card-list">
-                  <li *ngFor="let equipment of equipmentColumnsForView[0]; index as i"><a href="#">
-                    <i class="mdi mdi-checkbox-marked-outline text-success"></i>{{equipmentColumnsForView[0][i]}}</a></li>
-                </ul>
-              </div>
-              <div class="col-lg-4 col-md-4">
-                <ul class="sidebar-card-list">
-                  <li *ngFor="let equipment of equipmentColumnsForView[1]"><a href="#">
-                    <i class="mdi mdi-checkbox-marked-outline text-success"></i>AAA</a></li>
-                </ul>
-              </div>
-              <div class="col-lg-4 col-md-4">
-                <ul class="sidebar-card-list">
-                  <li *ngFor="let equipment of equipmentColumnsForView[2]"><a href="#">
-                    <i class="mdi mdi-checkbox-marked-outline text-success"></i>{{ equipment }}</a>
-                  </li>
+                  <li>
+                    <i class="mdi mdi-checkbox-marked-outline text-success"></i>{{equipment.name|titlecase}}</li>
                 </ul>
               </div>
             </div>
@@ -374,9 +344,9 @@
                 <div class="carousel-item active">
                   <div class="card card-list">
                     <a href="#">
-                      <img class="card-img-top"
-                           src="https://lh3.googleusercontent.com/V1tdIDQwQVJWx0Of77pNMn6HWFUvogLmMISileNBvaIeugYw-082P6VSFPcxV7lO8ycZnemBWsGIkEO-QtnigQoea9YJ2K7og0b8AWbmt7D6Y3y0bj9K3hhAEu9eq-Xr3lmPkOBlHWo7Vl6B0n6Xl_ALAbgfczeQT8NBtb1OpMITaV3UVXW3rImxmPEX7HRNZRizqtpymGFCZLiLcjtd7_3IfxwHN9B_FSOamuk262fXh-gDn1pt17XXYaNyPYfu4qxjfFdsNEmD28ga9d-Ij04YlTXHUcNQOV8C1_z0OQgAA4Y2FlKDHQkCO8rPgVEdJ_h5K8JUu-SL7svL6kb4CE0wuqeyk3xs5dxOt5qlUBSEiEcsvICjacK0f3pJ-ezrDGaFvzh1C3Zl1NnSdACI1rAzIK_BxTEdlVobzsOMQ_w7u04Xq-TaKSPtHti0vCA7avdSZKF013WW1J_Pe_0WGZ3GN2h17gjgJwWlkkqvfdK0ZjgKKa2AfRp1fmVUda5FsmpqLamG8-xBYC2LS33iqZVhYOUbbyBmGyupOW1ZJeKpIl0lkoekJLrPpstG7wm3foXb_lCVpFGwAoEWmtfmnaT-Z3UeJGix7vZDsLbQcCQ2XjR260-7DhRJkjGfmeRPEwYHiFhmf4zu2p5cfA_b5yRbYKyE7dmWyUPkgk6gopFqmMdMqlvnO2odKzOnp1CdmlQG=w1538-h797-ft"
-                           alt="Card image cap">
+                      <img alt="Card image cap"
+                           class="card-img-top"
+                           src="https://lh3.googleusercontent.com/V1tdIDQwQVJWx0Of77pNMn6HWFUvogLmMISileNBvaIeugYw-082P6VSFPcxV7lO8ycZnemBWsGIkEO-QtnigQoea9YJ2K7og0b8AWbmt7D6Y3y0bj9K3hhAEu9eq-Xr3lmPkOBlHWo7Vl6B0n6Xl_ALAbgfczeQT8NBtb1OpMITaV3UVXW3rImxmPEX7HRNZRizqtpymGFCZLiLcjtd7_3IfxwHN9B_FSOamuk262fXh-gDn1pt17XXYaNyPYfu4qxjfFdsNEmD28ga9d-Ij04YlTXHUcNQOV8C1_z0OQgAA4Y2FlKDHQkCO8rPgVEdJ_h5K8JUu-SL7svL6kb4CE0wuqeyk3xs5dxOt5qlUBSEiEcsvICjacK0f3pJ-ezrDGaFvzh1C3Zl1NnSdACI1rAzIK_BxTEdlVobzsOMQ_w7u04Xq-TaKSPtHti0vCA7avdSZKF013WW1J_Pe_0WGZ3GN2h17gjgJwWlkkqvfdK0ZjgKKa2AfRp1fmVUda5FsmpqLamG8-xBYC2LS33iqZVhYOUbbyBmGyupOW1ZJeKpIl0lkoekJLrPpstG7wm3foXb_lCVpFGwAoEWmtfmnaT-Z3UeJGix7vZDsLbQcCQ2XjR260-7DhRJkjGfmeRPEwYHiFhmf4zu2p5cfA_b5yRbYKyE7dmWyUPkgk6gopFqmMdMqlvnO2odKzOnp1CdmlQG=w1538-h797-ft">
                       <div class="card-body pb-0">
                         <h5 class="card-title mb-4">Wiktor Świątkowski</h5>
                         <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-phone"></i> +48 796187210</h6>
@@ -558,7 +528,7 @@
   <p class="mt-0 mb-0">© Copyright 2020 Shiny Booking Team & Bina. All Rights Reserved</p>
   <small class="mt-0 mb-0">
     Made with <i class="mdi mdi-heart text-danger"></i> by
-    <a class="text-dark" target="_blank" href="http://pizzadreamssoftware.com//">Bina</a>
+    <a class="text-dark" href="http://pizzadreamssoftware.com//" target="_blank">Bina</a>
   </small>
 </section>
 <!-- End Copyright -->
