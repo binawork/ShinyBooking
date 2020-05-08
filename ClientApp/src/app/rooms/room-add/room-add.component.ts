@@ -34,13 +34,12 @@ export class RoomAddComponent implements OnInit {
     }));
 
     this.addressForm = this.fb.group({
-      apartmentNumber: [44, [Validators.pattern, Validators.min(1)]],
+      apartmentNumber: [44, [Validators.required, Validators.pattern, Validators.min(1)]],
       buildingNumber: [3, [Validators.required, Validators.pattern, Validators.min(1)]],
       city: ['Warsaw', [Validators.required]],
       country: ['Poland', [Validators.required]],
-      postalCode: ['89-530', [
+      postalCode: [89530, [
         Validators.required,
-        Validators.pattern(this.postalCodeRegex)
       ]],
       street: ['Bar'],
     });
@@ -76,12 +75,15 @@ export class RoomAddComponent implements OnInit {
       value.city,
       value.country,
       value.postalCode,
+      value.apartmentNumber,
+      value.street,
     );
     value = this.roomForm.value;
     const newRoom = new RoomForDetails(
       value.amenities,
       value.area,
       value.capacity,
+      value.id,
       value.name,
       value.description,
       value.equipment,

@@ -35,5 +35,13 @@
       <_ContentIncludedByDefault Remove="ClientApp\dist\appsettings.json" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Update="ClientApp\src\app\shared\roomDTOexapmle.json">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
 
 </Project>

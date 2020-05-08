@@ -5,7 +5,6 @@ import {RoomAddress} from './room-address.model';
 
 
 export class RoomForDetails {
-  id?: string;
   // amenitiesForDisabled?: Array<AmenityForDisabled>;
   // area?: number;
   // capacity?: number;
@@ -23,6 +22,7 @@ export class RoomForDetails {
     public amenitiesForDisabled: AmenityForDisabled[],
     public area: number,
     public capacity: number,
+    public id: string,
     public name: string,
     public description: string,
     public equipments: Equipment[],

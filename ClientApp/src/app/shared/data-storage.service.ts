@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {RoomForDetails} from './room-for-details.model';
-import {catchError} from 'rxjs/operators';
 import {Observable} from 'rxjs';
+import {RoomToAddDto} from './room-to-add-dto.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +14,29 @@ export class DataStorageService {
   ) {
   }
 
+  private static convert(room: RoomForDetails): RoomToAddDto {
+    return new RoomToAddDto(
+      room.id,
+      room.name,
+      room.description,
+      room.roomArrangementsCapabilitiesDescription,
+      room.price,
+      room.area,
+      room.capacity,
+      room.parkingSpace,
+      room.photos,
+      room.roomAddress,
+    );
+  }
+
   storeRoom(room: RoomForDetails) {
     console.log('storeRoom()');
+    // todo convert RoomForDetails to DTO version
+    const roomDto = DataStorageService.convert(room);
+    console.log(roomDto);
+    // and send DTO version through API
     this.http
-      .post('/api/rooms', room)
+      .post('/api/rooms', roomDto)
       // .pipe(
       //   catchError(this.handleError('addRoom', room))
       // )
