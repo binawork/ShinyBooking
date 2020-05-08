@@ -95,6 +95,7 @@ export class RoomAddComponent implements OnInit {
     console.log(newRoom);
 
     this.dataStorageService.storeRoom(newRoom);
+    // todo when successfully added redirect to /rooms
     this.resetForm();
   }
 
