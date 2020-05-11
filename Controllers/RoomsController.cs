@@ -34,7 +34,7 @@ namespace ShinyBooking.Controllers
                 .Include(r => r.RoomAddress)
                 .Include(r => r.RoomEquipments)
                 .ThenInclude(re => re.Equipment).ToListAsync();
-            
+
             var roomsForReturn = new List<RoomForReturnListOfRoomsDto>();
 
             foreach (var room in rooms)
@@ -49,7 +49,7 @@ namespace ShinyBooking.Controllers
                     PostalCode = room.RoomAddress.PostalCode,
                     Street = room.RoomAddress.Street
                 };
-                
+
                 var roomForReturn = new RoomForReturnListOfRoomsDto
                 {
                     Id = room.Id,
@@ -58,12 +58,12 @@ namespace ShinyBooking.Controllers
                     Price = room.Price,
                     Area = room.Area,
                     Capacity = room.Capacity,
-                    MainPhotoUrl = room.Photos.FirstOrDefault( p => p.IsMain)?.PhotoUrl,
+                    MainPhotoUrl = room.Photos.FirstOrDefault(p => p.IsMain)?.PhotoUrl,
                     RoomAddress = address
                 };
 
 
-                
+
                 var equipments = room.RoomEquipments.Select(re => re.Equipment);
                 foreach (var equipment in equipments)
                 {
@@ -88,7 +88,7 @@ namespace ShinyBooking.Controllers
                 .Include(r => r.RoomAddress)
                 .Include(r => r.RoomEquipments)
                 .ThenInclude(re => re.Equipment)
-                .Include( r => r.RoomActivities)
+                .Include(r => r.RoomActivities)
                 .ThenInclude(ra => ra.Activities)
                 .Include(r => r.RoomAmenitiesForDisabled)
                 .ThenInclude(ram => ram.AmenitiesForDisabled)
@@ -98,9 +98,9 @@ namespace ShinyBooking.Controllers
             {
                 return NotFound();
             }
-            
+
             var roomToReturn = _mapper.Map<RoomForReturnDetailsDto>(room);
-            
+
             return Ok(roomToReturn);
         }
 
@@ -113,41 +113,41 @@ namespace ShinyBooking.Controllers
             if (id != room.Id)
             {
                 return BadRequest();
-            } 
-            
+            }
+
             var existingRoom = _context.Rooms.FirstOrDefault(r => r.Id == id);
             var existingAddress = _context.RoomAddresses.FirstOrDefault(ra => ra.RoomId == id);
-           
-                if (existingRoom != null)
-                {
-                    existingRoom.Name = room.Name;
-                    existingRoom.Description = room.Description;
-                    existingRoom.Capacity = room.Capacity;
-                    existingRoom.Area = room.Area;
-                    existingRoom.RoomArrangementsCapabilitiesDescription = room.RoomArrangementsCapabilitiesDescription;
-                    existingRoom.Price = room.Price;
-                    existingRoom.ParkingSpace = room.ParkingSpace;
-                    existingRoom.Photos = room.Photos;
-                    existingRoom.RoomEquipments = room.RoomEquipments;
-                    existingRoom.RoomAmenitiesForDisabled = room.RoomAmenitiesForDisabled;
-                    existingRoom.RoomActivities = room.RoomActivities;
-                
-                    existingAddress.PhoneNumber1 = room.RoomAddress.PhoneNumber1;
+
+            if (existingRoom != null)
+            {
+                existingRoom.Name = room.Name;
+                existingRoom.Description = room.Description;
+                existingRoom.Capacity = room.Capacity;
+                existingRoom.Area = room.Area;
+                existingRoom.RoomArrangementsCapabilitiesDescription = room.RoomArrangementsCapabilitiesDescription;
+                existingRoom.Price = room.Price;
+                existingRoom.ParkingSpace = room.ParkingSpace;
+                existingRoom.Photos = room.Photos;
+                existingRoom.RoomEquipments = room.RoomEquipments;
+                existingRoom.RoomAmenitiesForDisabled = room.RoomAmenitiesForDisabled;
+                existingRoom.RoomActivities = room.RoomActivities;
+
+                existingAddress.PhoneNumber1 = room.RoomAddress.PhoneNumber1;
                 existingAddress.PhoneNumber2 = room.RoomAddress.PhoneNumber2;
                 existingAddress.PostalCode = room.RoomAddress.PostalCode;
                 existingAddress.Street = room.RoomAddress.Street;
                 existingAddress.BuildingNumber = room.RoomAddress.BuildingNumber;
                 existingAddress.ApartmentNumber = room.RoomAddress.ApartmentNumber;
                 existingAddress.EmailAddress = room.RoomAddress.EmailAddress;
-              
-                    
-                    _context.SaveChanges();
-                }
-                else
-                { 
-                    return NotFound();
-                }
-                
+
+
+                _context.SaveChanges();
+            }
+            else
+            {
+                return NotFound();
+            }
+
             _context.Entry(existingRoom).State = EntityState.Modified;
 
             try
@@ -176,6 +176,24 @@ namespace ShinyBooking.Controllers
         [HttpPost]
         public async Task<ActionResult<RoomToAddDto>> PostRoom(RoomToAddDto roomToAdd)
         {
+            foreach (var photo in roomToAdd.Photos)
+            {
+                photo.RoomId = roomToAdd.Id;
+            }
+            foreach (var equipment in roomToAdd.RoomEquipments)
+            {
+                equipment.RoomId = roomToAdd.Id;
+            }
+            foreach (var amenitie in roomToAdd.RoomAmenitiesForDisabled)
+            {
+                amenitie.RoomId = roomToAdd.Id;
+            }
+            foreach (var activitie in roomToAdd.RoomActivities)
+            {
+                activitie.RoomId = roomToAdd.Id;
+            }
+            roomToAdd.RoomAddress.RoomId = roomToAdd.Id;
+
 
 
             var newRoom = new Room()
@@ -186,7 +204,11 @@ namespace ShinyBooking.Controllers
                 Capacity = roomToAdd.Capacity,
                 Description = roomToAdd.Description,
                 ParkingSpace = roomToAdd.ParkingSpace,
-                Photos = roomToAdd.Photos,
+                Photos = roomToAdd.Photos
+                        .Select(x => new Photo() { PhotoUrl = x.PhotoUrl, Id = x.Id, IsMain = x.IsMain, RoomId = x.RoomId })
+                        .ToList(),
+
+
                 Price = roomToAdd.Price,
                 Rating = 1,
                 RoomActivities = roomToAdd.RoomActivities,
@@ -194,7 +216,7 @@ namespace ShinyBooking.Controllers
                 RoomEquipments = roomToAdd.RoomEquipments,
                 RoomAmenitiesForDisabled = roomToAdd.RoomAmenitiesForDisabled
             };
-                if (!ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return BadRequest("Invalid data");
 
             _context.Rooms.Add(newRoom);
