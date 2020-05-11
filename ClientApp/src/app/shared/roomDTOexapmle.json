@@ -1,0 +1,61 @@
+{
+  "id": "asdasd",
+  "name": "room 3012",
+  "description": "Grea room for conference",
+  "roomArrangementsCapabilitiesDescription": "movable walls, floor power sockets",
+  "price": 510.0,
+  "area": 150,
+  "capacity": 50,
+  "parkingSpace": true,
+  "photos": [
+    {
+      "id": "photo30asd",
+      "photoUrl": "https://res.cloudinary.com/abbw/image/upload/v1584643642/room3/oi73xpwohpok2yno9tst.jpg"
+    }
+  ],
+  "roomequipments": [
+    {
+      "equipmentid": "equipment1",
+      "roomid": "asdasd"
+    },
+    {
+      "equipmentid": "equipment3",
+      "roomid": "asdasd"
+    }
+  ],
+  "roomAddress": {
+    "id": "address31231",
+    "street": "Marszałkowska",
+    "buildingNumber": 100,
+    "apartmentNumber": 2,
+    "otherAddressInformation": null,
+    "city": "Warsaw",
+    "country": "Poland",
+    "postalCode": 10100,
+    "directions": "just around the corner",
+    "phoneNumber1": "500014125",
+    "phoneNumber2": null,
+    "emailAddress": "room@gmail.com",
+    "webPage": null
+  },
+  "roomactivities": [
+    {
+      "activitiesid": "activity1",
+      "roomid": "asdasd"
+    },
+    {
+      "activitiesid": "activity2",
+      "roomid": "asdasd"
+    }
+  ],
+  "roomamenitiesForDisabled": [
+    {
+      "amenitiesfordisabledid": "amenity1",
+      "roomid": "asdasd"
+    },
+    {
+      "amenitiesfordisabledid": "amenity2",
+      "roomid": "asdasd"
+    }
+  ]
+}
