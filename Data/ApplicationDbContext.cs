@@ -1,16 +1,17 @@
 ﻿using ShinyBooking.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace ShinyBooking.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(
             DbContextOptions options) : base(options)
         {
         }
-
+        public DbSet<Customer> Customers {get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Equipment> Equipments { get; set; }
         public DbSet<RoomEquipment> RoomEquipments { get; set; }

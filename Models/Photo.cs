@@ -8,10 +8,7 @@ namespace ShinyBooking.Models
 {
     public class Photo
     {
-        public Photo()
-        {
-            Id = Guid.NewGuid().ToString();
-        }
+        
 
         public string Id { get; set; }
         [Required]

@@ -1,0 +1,192 @@
+<section class="section-padding">
+  <div class="container">
+    Value: {{roomForm.value | json}}
+    <hr>
+    <div class="row">
+      <div class="col-lg-8 col-md-8 mx-auto">
+        <form (ngSubmit)="onSubmit()" [formGroup]="roomForm">
+          <div class="card padding-card">
+            <div class="card-body">
+              <h5 class="card-title mb-4">Property Description</h5>
+              <div class="form-group">
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <label for="propertyId">Property ID <span class="text-danger">*</span></label>
+                    <input class="form-control"
+                           formControlName="id"
+                           id="propertyId"
+                           placeholder="Enter Property ID"
+                           type="text"
+                    >
+                  </div>
+                  <div class="form-group col-md-8">
+                    <label for="title">Property Title <span class="text-danger">*</span></label>
+                    <input class="form-control"
+                           formControlName="name"
+                           id="title"
+                           placeholder="This title will be shown in the rooms list"
+                           type="text"
+                    >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <label>Area <span class="text-danger">*</span>
+                      <input
+                        class="form-control"
+                        formControlName="area"
+                        placeholder="&#x33A1;"
+                        type="text"
+                      >
+                    </label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label>Capacity <span class="text-danger">*</span>
+                      <input class="form-control"
+                             formControlName="capacity"
+                             placeholder="Number of people"
+                             type="text"
+                      >
+                    </label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label>Price per day <span class="text-danger">*</span>
+                      <input class="form-control"
+                             formControlName="price"
+                             min="0"
+                             placeholder="EUR"
+                             step="10"
+                             type="number"
+                      >
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="col-md-12">Property Description <span class="text-danger">*</span>
+                        <textarea
+                          class="form-control"
+                          formControlName="description"
+                          style="min-width: 100%; max-width: 100%;"
+                        ></textarea>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="card property-features-add padding-card">
+                  <div class="card-body">
+                    <h5 class="card-title mb-4">Property Features</h5>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="custom-control custom-checkbox">
+                          <input class="custom-control-input"
+                                 formControlName="parkingSpace"
+                                 id="parkingSpaceCheckbox"
+                                 type="checkbox">
+                          <label class="custom-control-label" for="parkingSpaceCheckbox">Parking Space</label>
+                        </div>
+                      </div>
+                      <div *ngFor="let amenity of this.amenitiesCheckboxData" class="col-md-4">
+                        <div class="custom-control custom-checkbox">
+                          <input [(ngModel)]="amenity.isChecked"
+                                 [ngModelOptions]="{standalone: true}"
+                                 class="custom-control-input"
+                                 id="{{amenity.id}}"
+                                 type="checkbox">
+                          <label class="custom-control-label" for="{{amenity.id}}">{{amenity.name | titlecase}}</label>
+                        </div>
+                      </div>
+                      <div *ngFor="let equipment of this.equipmentCheckboxData" class="col-md-4">
+                        <div class="custom-control custom-checkbox">
+                          <input [(ngModel)]="equipment.isChecked"
+                                 [ngModelOptions]="{standalone: true}"
+                                 class="custom-control-input"
+                                 id="{{equipment.id}}"
+                                 type="checkbox">
+                          <label class="custom-control-label" for="{{equipment.id}}">{{equipment.name | titlecase}}</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="col-md-12">Room Arrangement Capabilities<span class="text-danger">*</span>
+                        <textarea
+                          class="form-control"
+                          formControlName="roomArrangementsCapabilitiesDescription"
+                          placeholder="Please describe how room can be arranged"
+                          style="min-width: 100%; max-width: 100%;"
+                        ></textarea>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card padding-card" formGroupName="roomAddress">
+            <div class="card-body">
+              <h5 class="card-title mb-4">Property Location</h5>
+              <div class="row">
+                <div class="form-group col-md-4">
+                  <label>Country<span class="text-danger">*</span>
+                    <select class="form-control custom-select" formControlName="country">
+                      <option hidden selected value="null">Select Country</option>
+                      <option>Country 1</option>
+                      <option>Country 2</option>
+                      <option>Country 3</option>
+                      <option>Poland</option>
+                      <option>Countries</option>
+                      <option>are</option>
+                      <option>just</option>
+                      <option>hardcoded</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="form-group col-md-4">
+                  <label>City <span class="text-danger">*</span>
+                    <input class="form-control" formControlName="city" placeholder="Enter City" type="text">
+                  </label>
+                </div>
+                <div class="form-group col-md-4">
+                  <label>Zip/Postal Code <span class="text-danger">*</span>
+                    <input class="form-control" formControlName="postalCode" placeholder="XXXXX" type="number">
+                  </label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label>Street
+                    <input class="form-control" formControlName="street" placeholder="Enter Street" type="text">
+                  </label>
+                </div>
+                <div class="form-group col-md-3">
+                  <label>Building Number <span class="text-danger">*</span>
+                    <input class="form-control" formControlName="buildingNumber" placeholder="Building Number"
+                           type="text">
+                  </label>
+                </div>
+                <div class="form-group col-md-3">
+                  <label>Apartment Number <span class="text-danger">*</span>
+                    <input class="form-control" formControlName="apartmentNumber" placeholder="Apartment Number"
+                           type="text">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button [class.btn-secondary]="roomForm.invalid"
+                  [class.btn-success]="roomForm.valid"
+                  [disabled]="roomForm.invalid"
+                  class="btn"
+                  type="submit">ADD PROPERTY
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -6,10 +6,7 @@ namespace ShinyBooking.Models
 {
     public class Room
     {
-        public Room()
-        {
-            Id = Guid.NewGuid().ToString();
-        }
+        
 
         public string Id { get; set; }
 
