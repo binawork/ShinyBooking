@@ -108,14 +108,47 @@ namespace ShinyBooking.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRoom(string id, Room room)
+        public async Task<IActionResult> PutRoom(string id, RoomFromEditFormDto room)
         {
             if (id != room.Id)
             {
                 return BadRequest();
-            }
-
-            _context.Entry(room).State = EntityState.Modified;
+            } 
+            
+            var existingRoom = _context.Rooms.FirstOrDefault(r => r.Id == id);
+            var existingAddress = _context.RoomAddresses.FirstOrDefault(ra => ra.RoomId == id);
+           
+                if (existingRoom != null)
+                {
+                    existingRoom.Name = room.Name;
+                    existingRoom.Description = room.Description;
+                    existingRoom.Capacity = room.Capacity;
+                    existingRoom.Area = room.Area;
+                    existingRoom.RoomArrangementsCapabilitiesDescription = room.RoomArrangementsCapabilitiesDescription;
+                    existingRoom.Price = room.Price;
+                    existingRoom.ParkingSpace = room.ParkingSpace;
+                    existingRoom.Photos = room.Photos;
+                    existingRoom.RoomEquipments = room.RoomEquipments;
+                    existingRoom.RoomAmenitiesForDisabled = room.RoomAmenitiesForDisabled;
+                    existingRoom.RoomActivities = room.RoomActivities;
+                
+                    existingAddress.PhoneNumber1 = room.RoomAddress.PhoneNumber1;
+                existingAddress.PhoneNumber2 = room.RoomAddress.PhoneNumber2;
+                existingAddress.PostalCode = room.RoomAddress.PostalCode;
+                existingAddress.Street = room.RoomAddress.Street;
+                existingAddress.BuildingNumber = room.RoomAddress.BuildingNumber;
+                existingAddress.ApartmentNumber = room.RoomAddress.ApartmentNumber;
+                existingAddress.EmailAddress = room.RoomAddress.EmailAddress;
+              
+                    
+                    _context.SaveChanges();
+                }
+                else
+                { 
+                    return NotFound();
+                }
+                
+            _context.Entry(existingRoom).State = EntityState.Modified;
 
             try
             {
@@ -133,23 +166,45 @@ namespace ShinyBooking.Controllers
                 }
             }
 
-            return NoContent();
+            return CreatedAtAction("GetRoom", new { id = room.Id }, room);
         }
+
 
         // POST: api/Rooms
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Room>> PostRoom(Room room)
+        public async Task<ActionResult<RoomToAddDto>> PostRoom(RoomToAddDto roomToAdd)
         {
-            _context.Rooms.Add(room);
+
+
+            var newRoom = new Room()
+            {
+                Id = roomToAdd.Id,
+                Name = roomToAdd.Name,
+                Area = roomToAdd.Area,
+                Capacity = roomToAdd.Capacity,
+                Description = roomToAdd.Description,
+                ParkingSpace = roomToAdd.ParkingSpace,
+                Photos = roomToAdd.Photos,
+                Price = roomToAdd.Price,
+                Rating = 1,
+                RoomActivities = roomToAdd.RoomActivities,
+                RoomAddress = roomToAdd.RoomAddress,
+                RoomEquipments = roomToAdd.RoomEquipments,
+                RoomAmenitiesForDisabled = roomToAdd.RoomAmenitiesForDisabled
+            };
+                if (!ModelState.IsValid)
+                return BadRequest("Invalid data");
+
+            _context.Rooms.Add(newRoom);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (RoomExists(room.Id))
+                if (RoomExists(newRoom.Id))
                 {
                     return Conflict();
                 }
@@ -159,7 +214,7 @@ namespace ShinyBooking.Controllers
                 }
             }
 
-            return CreatedAtAction("GetRoom", new { id = room.Id }, room);
+            return CreatedAtAction("GetRoom", new { id = newRoom.Id }, newRoom);
         }
 
         // DELETE: api/Rooms/5
