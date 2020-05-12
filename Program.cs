@@ -8,7 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ShinyBooking;
 
-namespace shinyBooking3
+namespace shinyBooking
 {
     public class Program
     {
