@@ -70,26 +70,27 @@ export class RoomAddComponent implements OnInit {
     // remove field "isChecked"
     this.roomForm.value.amenities.map(amenity => delete amenity.isChecked);
     this.roomForm.value.equipment.map(equipment => delete equipment.isChecked);
-    let value = this.addressForm.value;
-    const address = new RoomAddress(value.buildingNumber,
-      value.city,
-      value.country,
-      value.postalCode,
-      value.apartmentNumber,
-      value.street,
+    let submittedAdressFormValue = this.addressForm.value;
+    const address = new RoomAddress(submittedAdressFormValue.buildingNumber,
+      submittedAdressFormValue.city,
+      submittedAdressFormValue.country,
+      submittedAdressFormValue.postalCode,
+      submittedAdressFormValue.apartmentNumber,
+      submittedAdressFormValue.street,
     );
-    value = this.roomForm.value;
+    let submittedRoomFormValue = this.roomForm.value;
+    //TODO od razu tworzyć roomToAddDto i wysyłać bezpośrednio na backend, bo tu service przetwarza rfd na rtad przed wysłaniem
     const newRoom = new RoomForDetails(
-      value.amenities,
-      value.area,
-      value.capacity,
-      value.id,
-      value.name,
-      value.description,
-      value.equipment,
-      value.parkingSpace,
+      submittedRoomFormValue.amenities,
+      submittedRoomFormValue.area,
+      submittedRoomFormValue.capacity,
+      submittedRoomFormValue.id,
+      submittedRoomFormValue.name,
+      submittedRoomFormValue.description,
+      submittedRoomFormValue.equipment,
+      submittedRoomFormValue.parkingSpace,
       address,
-      value.roomArrangementsCapabilitiesDescription,
+      submittedRoomFormValue.roomArrangementsCapabilitiesDescription,
     );
     console.log('New room:');
     console.log(newRoom);
