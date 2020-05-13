@@ -5,8 +5,6 @@ import {RoomAddress} from './room-address.model';
 
 export class RoomToAddDto {
 
-
-
   constructor(
     public id: string,
     public name: string,

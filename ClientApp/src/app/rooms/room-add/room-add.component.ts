@@ -56,6 +56,7 @@ export class RoomAddComponent implements OnInit {
       roomAddress: this.addressForm,
       amenities: [this.amenitiesCheckboxData],
       equipment: [this.equipmentCheckboxData],
+      photos: []
     });
 
     this.roomForm.valueChanges.subscribe(console.log);
