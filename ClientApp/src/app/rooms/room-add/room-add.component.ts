@@ -8,7 +8,7 @@ import {DataStorageService} from '../../shared/data-storage.service';
 @Component({
   selector: 'app-room-add',
   templateUrl: './room-add.component.html',
-  styleUrls: ['./room-add.component.css']
+  styleUrls: ['./room-add.component.css', './styles.css']
 })
 export class RoomAddComponent implements OnInit {
   readonly postalCodeRegex: RegExp = /^[0-9]{2}-[0-9]{3}$/;
