@@ -4,6 +4,7 @@ import {RoomService} from '../room.service';
 import {RoomForDetails} from '../../shared/room-for-details.model';
 import {RoomAddress} from '../../shared/room-address.model';
 import {DataStorageService} from '../../shared/data-storage.service';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-room-add',
@@ -20,7 +21,8 @@ export class RoomAddComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private roomService: RoomService,
-              private dataStorageService: DataStorageService) {
+              private dataStorageService: DataStorageService,
+              private http: HttpClient) {
   }
 
   ngOnInit(): void {
@@ -65,6 +67,7 @@ export class RoomAddComponent implements OnInit {
   // todo nagłówek dla amenities i eq i zrozdzielenie sekcji
   onSubmit() {
     console.log('Form submitted');
+    this.photosUpload(this.roomForm.value.photos.target.files);
     // filter amenities and equipment, so there will be only checked ones
     this.roomForm.value.amenities = this.roomForm.value.amenities.filter(amenity => amenity.isChecked === true);
     this.roomForm.value.equipment = this.roomForm.value.equipment.filter(equipment => equipment.isChecked === true);
@@ -104,5 +107,29 @@ export class RoomAddComponent implements OnInit {
   resetForm() {
     this.roomForm.value.amenities = this.amenitiesCheckboxData.slice();
     this.roomForm.value.equipment = this.equipmentCheckboxData.slice();
+  }
+
+  onFileSelected(event) {
+    console.log(event);
+  }
+
+  photosUpload(photos: File[]) {
+    for (let photo of photos) {
+      if (this.isImage(photo)) {
+        const fd = new FormData();
+        fd.append('image', photo);
+        fd.append('api_key', '124GJOST273d586da801d9c0568b281d484b27a3');
+        this.http.post(
+          'https://api.imageshack.com/v2/images', fd)
+          .subscribe(res => {
+            //fetch URL from reponse and save in photoURLs array
+          })
+      }
+    }
+  }
+
+  //check if file is an image
+  isImage(file){
+    return file && file['type'].split('/')[0] === 'image';
   }
 }
