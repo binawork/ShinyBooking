@@ -74,59 +74,86 @@
                     </div>
                   </div>
                 </div>
-                <div class="card property-features-add padding-card">
-                  <div class="card-body">
-                    <h5 class="card-title mb-4">Property Features</h5>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="custom-control custom-checkbox">
-                          <input class="custom-control-input"
-                                 formControlName="parkingSpace"
-                                 id="parkingSpaceCheckbox"
-                                 type="checkbox">
-                          <label class="custom-control-label" for="parkingSpaceCheckbox">Parking Space</label>
-                        </div>
-                      </div>
-                      <div *ngFor="let amenity of this.amenitiesCheckboxData" class="col-md-4">
-                        <div class="custom-control custom-checkbox">
-                          <input [(ngModel)]="amenity.isChecked"
-                                 [ngModelOptions]="{standalone: true}"
-                                 class="custom-control-input"
-                                 id="{{amenity.id}}"
-                                 type="checkbox">
-                          <label class="custom-control-label" for="{{amenity.id}}">{{amenity.name | titlecase}}</label>
-                        </div>
-                      </div>
-                      <div *ngFor="let equipment of this.equipmentCheckboxData" class="col-md-4">
-                        <div class="custom-control custom-checkbox">
-                          <input [(ngModel)]="equipment.isChecked"
-                                 [ngModelOptions]="{standalone: true}"
-                                 class="custom-control-input"
-                                 id="{{equipment.id}}"
-                                 type="checkbox">
-                          <label class="custom-control-label" for="{{equipment.id}}">{{equipment.name | titlecase}}</label>
-                        </div>
-                      </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card property-features-add padding-card">
+            <div class="card-body">
+              <h5 class="card-title mb-4">Property Features</h5>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input"
+                           formControlName="parkingSpace"
+                           id="parkingSpaceCheckbox"
+                           type="checkbox">
+                    <label class="custom-control-label" for="parkingSpaceCheckbox">Parking Space</label>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label class="col-md-12">Room Arrangement Capabilities<span class="text-danger">*</span>
+                <div *ngFor="let amenity of this.amenitiesCheckboxData" class="col-md-4">
+                  <div class="custom-control custom-checkbox">
+                    <input [(ngModel)]="amenity.isChecked"
+                           [ngModelOptions]="{standalone: true}"
+                           class="custom-control-input"
+                           id="{{amenity.id}}"
+                           type="checkbox">
+                    <label class="custom-control-label" for="{{amenity.id}}">{{amenity.name | titlecase}}</label>
+                  </div>
+                </div>
+                <div *ngFor="let equipment of this.equipmentCheckboxData" class="col-md-4">
+                  <div class="custom-control custom-checkbox">
+                    <input [(ngModel)]="equipment.isChecked"
+                           [ngModelOptions]="{standalone: true}"
+                           class="custom-control-input"
+                           id="{{equipment.id}}"
+                           type="checkbox">
+                    <label class="custom-control-label"
+                           for="{{equipment.id}}">{{equipment.name | titlecase}}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card padding-card">
+            <div class="card-body">
+              <h5 class="card-title mb-4">Room Arrangement Capabilities<span class="text-danger">*</span></h5>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="col-md-12">
                         <textarea
                           class="form-control"
                           formControlName="roomArrangementsCapabilitiesDescription"
                           placeholder="Please describe how room can be arranged"
                           style="min-width: 100%; max-width: 100%;"
                         ></textarea>
-                      </label>
-                    </div>
+                    </label>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <div class="card photos-add padding-card">
+            <div class="card-body">
+              <h5 class="card-title mb-4">Photos</h5>
+              <div class="row">
+                <div class="col-md-12">
+                  <input
+                    type="file"
+                    multiple
+                    accept='image/*'
+                    (change)="onFileSelected($event)"
+                    formControlName="photos"
+                    placeholder="Select photos">
+<!--                  <p>Placeholder for adding photos</p>-->
+                </div>
+              </div>
+            </div>
+          </div>
+
+
           <div class="card padding-card" formGroupName="roomAddress">
             <div class="card-body">
               <h5 class="card-title mb-4">Property Location</h5>
