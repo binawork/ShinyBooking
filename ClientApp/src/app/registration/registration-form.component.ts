@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {RegistrationModel} from '../shared/Registration.model';
+import {DataStorageService} from '../shared/data-storage.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-registration-form',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationFormComponent implements OnInit {
 
-  constructor() { }
+  registrationForm:FormGroup;
+
+  constructor(dataStorageService:DataStorageService) { }
 
   ngOnInit(){
+  }
+  onSubmit() {
   }
 
 }
