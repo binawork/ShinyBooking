@@ -5,8 +5,6 @@ import {RoomAddress} from './room-address.model';
 
 export class RoomToAddDto {
 
-
-
   constructor(
     public id: string,
     public name: string,
@@ -17,11 +15,13 @@ export class RoomToAddDto {
     public capacity: number,
     public parkingSpace: boolean,
     public photos: Photo[],
+    //TODO make Asia and Wojtek correct backend to receive equipmentId and equipmentName (same fields for amenities)
     // public roomequipments: Equipment[],
     // public roomamenitiesForDisabled: AmenityForDisabled[],
     public roomAddress: RoomAddress,
     // public roomactivities = null,
   ) {
+    //TODO unhardcode this two fields - user data need to be made for this
     this.roomAddress.emailAddress = 'room@gmail.com';
     this.roomAddress.phoneNumber1 = '500014125';
   }

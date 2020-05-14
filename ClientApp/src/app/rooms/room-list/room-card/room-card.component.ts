@@ -4,7 +4,7 @@ import {RoomForList} from '../../../shared/room-for-list.model';
 @Component({
   selector: 'app-room-card',
   templateUrl: './room-card.component.html',
-  styleUrls: ['./room-card.component.css']
+  styleUrls: ['./styles.css']
 })
 export class RoomCardComponent implements OnInit {
   @Input()

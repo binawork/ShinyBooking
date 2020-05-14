@@ -28,7 +28,7 @@ export class DataStorageService {
       room.roomAddress,
     );
   }
-
+//TODO metoda ma oczekiwać roomToAddDTO i ten obiekt wysyłać na serwer
   storeRoom(room: RoomForDetails) {
     console.log('storeRoom()');
     // todo convert RoomForDetails to DTO version
