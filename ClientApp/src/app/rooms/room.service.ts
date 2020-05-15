@@ -5,6 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 import {RoomForList} from '../shared/room-for-list.model';
 import {AmenityForDisabled} from './amenity-for-disabled.model';
 import {Equipment} from './equipment.model';
+import {Activity} from "./activity.model";
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,13 @@ export class RoomService {
     new Equipment('coffee machine'),
   ];
 
+  private readonly activities = [
+    new Activity('conference room'),
+    new Activity('quarantine room'),
+    new Activity('living room'),
+    new Activity('office')
+  ]
+
   private readonly baseUrl: string;
 
   constructor(private http: HttpClient,
@@ -50,6 +58,10 @@ export class RoomService {
 
   getEquipment(): Equipment[] {
     return this.equipment.slice();
+  }
+
+  getActivities(): Activity[] {
+    return this.activities.slice();
   }
 }
 

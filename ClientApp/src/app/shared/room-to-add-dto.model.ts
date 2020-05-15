@@ -2,6 +2,7 @@ import {Photo} from './photo.model';
 import {Equipment} from '../rooms/equipment.model';
 import {AmenityForDisabled} from '../rooms/amenity-for-disabled.model';
 import {RoomAddress} from './room-address.model';
+import {Activity} from "../rooms/activity.model";
 
 export class RoomToAddDto {
 
@@ -18,7 +19,7 @@ export class RoomToAddDto {
     public roomequipments: Equipment[],
     public roomamenitiesForDisabled: AmenityForDisabled[],
     public roomAddress: RoomAddress,
-    public roomactivities = null
+    public roomactivities: Activity[]
   ) {
     //TODO unhardcode this two fields - user data need to be made for this
     this.roomAddress.emailAddress = 'room@gmail.com';

@@ -19,6 +19,7 @@ export class RoomAddComponent implements OnInit {
   readonly numberRegex: RegExp = /^[1-9]+[0-9]*$/;
   amenitiesCheckboxData: { name: string; id: string; isChecked: boolean }[];
   equipmentCheckboxData: { name: string; id: string; isChecked: boolean }[];
+  activitiesCheckboxData: { name: string; id: string; isChecked: boolean }[];
   roomForm: FormGroup;
   addressForm: FormGroup;
 
@@ -36,6 +37,10 @@ export class RoomAddComponent implements OnInit {
     }));
     this.equipmentCheckboxData = this.roomService.getEquipment().map(equipment => ({
       ...equipment,
+      isChecked: false
+    }));
+    this.activitiesCheckboxData = this.roomService.getActivities().map(activity => ({
+      ...activity,
       isChecked: false
     }));
 
@@ -62,6 +67,7 @@ export class RoomAddComponent implements OnInit {
       roomAddress: this.addressForm,
       amenities: [this.amenitiesCheckboxData],
       equipment: [this.equipmentCheckboxData],
+      activities: [this.activitiesCheckboxData],
       photos: []
     });
 
@@ -112,7 +118,8 @@ export class RoomAddComponent implements OnInit {
       this.photosUploadService.generatePhotosAsObjects(),
       submittedRoomFormValue.equipment,
       submittedRoomFormValue.amenities,
-      address
+      address,
+      submittedRoomFormValue.activities
     );
     // newRoom.photos = this.photosUploadService.generatePhotosAsObjects();
     this.photosUploadService.clearAddedPhotos();
