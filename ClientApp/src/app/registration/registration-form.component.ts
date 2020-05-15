@@ -17,10 +17,10 @@ export class RegistrationFormComponent implements OnInit {
 
   ngOnInit(): void{
     this.registrationForm = this.fb.group({
-      UserName: ['Please enter user name'],
-      Email: ['Please enter email address'],
-      PhoneNumber: ['Please enter phone number'],
-      Password: ['Please enter password']
+      UserName: [''],
+      Email: [''],
+      PhoneNumber: [''],
+      Password: ['']
       });
     this.registrationForm.valueChanges.subscribe(console.log);
     console.log('form loaded');

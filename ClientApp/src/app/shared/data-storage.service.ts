@@ -4,6 +4,7 @@ import {RoomForDetails} from './room-for-details.model';
 import {Observable} from 'rxjs';
 import {RoomToAddDto} from './room-to-add-dto.model';
 import { RegistrationModel } from './Registration.model';
+import { LoginModel } from './Login.model';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +44,17 @@ export class DataStorageService {
       });
   }
 
+  storeLogin(login: LoginModel) {
+    console.log(login);
 
+    this.http
+      .post('/api/auth/login', login)
+
+      .subscribe(response => {
+        console.log('response:');
+        console.log(response);
+      });
+  }
 
   storeRoom(room: RoomForDetails) {
     console.log('storeRoom()');

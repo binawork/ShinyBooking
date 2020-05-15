@@ -1,19 +1,20 @@
 
   <section class="section-padding">
     <div class="container">
+      Value: {{loginForm.value | json}}
       <div class="row">
         <div class="col-lg-4 col-md-4 mx-auto">
           <div class="card padding-card">
             <div class="card-body">
               <h5 class="card-title mb-4">Login</h5>
-              <form>
+              <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
                 <div class="form-group">
-                  <label>Email address <span class="text-danger">*</span></label>
-                  <input type="email" class="form-control" placeholder="Enter Email address">
+                  <label for="UserName">User Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="User Name"id="userNameId" formControlName="UserName" name="UserName" required>
                 </div>
                 <div class="form-group">
-                  <label>Password <span class="text-danger">*</span></label>
-                  <input type="password" class="form-control" placeholder="Enter Password">
+                  <label for="Password">Password <span class="text-danger">*</span></label>
+                  <input type="password" class="form-control" placeholder="Enter Password"id="PasswordId" formControlName="Password" name="Password" required>
                 </div>
                 <div class="form-group">
                   <div class="custom-control custom-checkbox">
@@ -21,7 +22,10 @@
                     <label class="custom-control-label" for="customControlAutosizing">Remember Me</label>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-success btn-block">SIGN IN</button>
+                <button class="btn btn-success btn-block"
+                        type="submit">
+                  SIGN IN
+                </button>
               </form>
               <div class="mt-4 text-center login-with-social">
                 <button type="button" class="btn btn-facebook btn-block"><i class="mdi mdi-facebook"></i> Login With Facebook</button>
