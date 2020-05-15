@@ -144,10 +144,9 @@
                     type="file"
                     multiple
                     accept='image/*'
-                    (change)="onFileSelected($event)"
                     formControlName="photos"
-                    placeholder="Select photos">
-<!--                  <p>Placeholder for adding photos</p>-->
+                    placeholder="Select photos"
+                    (change)="photosUploadService.uploadPhotos($event)">
                 </div>
               </div>
             </div>
