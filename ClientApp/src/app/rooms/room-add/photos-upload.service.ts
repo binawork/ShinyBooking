@@ -40,11 +40,6 @@ export class PhotosUploadService {
     for(let photoURL of this.addedPhotosURLs) {
       this.addedPhotos.push(new Photo(photoURL));
     }
-
-    for (let i = 0; i < this.addedPhotos.length; i++) {
-      console.log("Photo" + i + " URL: " + this.addedPhotos[i].photoUrl);
-    }
-
     return this.addedPhotos;
   }
 
