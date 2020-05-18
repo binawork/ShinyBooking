@@ -98,10 +98,10 @@
                     <input [(ngModel)]="equipment.isChecked"
                            [ngModelOptions]="{standalone: true}"
                            class="custom-control-input"
-                           id="{{equipment.id}}"
+                           id="{{equipment.EquipmentsId}}"
                            type="checkbox">
                     <label class="custom-control-label"
-                           for="{{equipment.id}}">{{equipment.name | titlecase}}</label>
+                           for="{{equipment.EquipmentsId}}">{{equipment.name | titlecase}}</label>
                   </div>
                 </div>
               </div>
@@ -117,9 +117,9 @@
                     <input [(ngModel)]="amenity.isChecked"
                            [ngModelOptions]="{standalone: true}"
                            class="custom-control-input"
-                           id="{{amenity.id}}"
+                           id="{{amenity.AmenitiesForDisabledId}}"
                            type="checkbox">
-                    <label class="custom-control-label" for="{{amenity.id}}">{{amenity.name | titlecase}}</label>
+                    <label class="custom-control-label" for="{{amenity.AmenitiesForDisabledId}}">{{amenity.name | titlecase}}</label>
                   </div>
                 </div>
               </div>
@@ -135,9 +135,9 @@
                     <input [(ngModel)]="activity.isChecked"
                            [ngModelOptions]="{standalone: true}"
                            class="custom-control-input"
-                           id="{{activity.id}}"
+                           id="{{activity.ActivitiesId}}"
                            type="checkbox">
-                    <label class="custom-control-label" for="{{activity.id}}">{{activity.name | titlecase}}</label>
+                    <label class="custom-control-label" for="{{activity.ActivitiesId}}">{{activity.name | titlecase}}</label>
                   </div>
                 </div>
               </div>
