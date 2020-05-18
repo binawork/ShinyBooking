@@ -1,9 +1,12 @@
 export class Activity {
-  public id: string;
+  public ActivitiesId: string;
+  public name: string;
 
   constructor(
-    public name: string,
+    ActivitiesId: string,
+    name: string
   ) {
-    this.id = name;
+    this.ActivitiesId = ActivitiesId;
+    this.name = name;
   }
 }

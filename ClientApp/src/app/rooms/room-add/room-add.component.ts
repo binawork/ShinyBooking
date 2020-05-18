@@ -17,9 +17,9 @@ import {RoomToAddDto} from "../../shared/room-to-add-dto.model";
 export class RoomAddComponent implements OnInit {
   readonly postalCodeRegex: RegExp = /^[0-9]{2}-[0-9]{3}$/;
   readonly numberRegex: RegExp = /^[1-9]+[0-9]*$/;
-  amenitiesCheckboxData: { name: string; id: string; isChecked: boolean }[];
-  equipmentCheckboxData: { name: string; id: string; isChecked: boolean }[];
-  activitiesCheckboxData: { name: string; id: string; isChecked: boolean }[];
+  amenitiesCheckboxData: { name: string; AmenitiesForDisabledId: string; isChecked: boolean }[];
+  equipmentCheckboxData: { name: string; EquipmentsId: string; isChecked: boolean }[];
+  activitiesCheckboxData: { name: string; ActivitiesId: string; isChecked: boolean }[];
   roomForm: FormGroup;
   addressForm: FormGroup;
 
