@@ -85760,14 +85760,14 @@ function not(pred, thisArg) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pipe", function() { return pipe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pipeFromArray", function() { return pipeFromArray; });
-/* harmony import */ var _noop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./noop */ "./node_modules/rxjs/_esm2015/internal/util/noop.js");
+/* harmony import */ var _identity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./identity */ "./node_modules/rxjs/_esm2015/internal/util/identity.js");
 
 function pipe(...fns) {
     return pipeFromArray(fns);
 }
 function pipeFromArray(fns) {
-    if (!fns) {
-        return _noop__WEBPACK_IMPORTED_MODULE_0__["noop"];
+    if (fns.length === 0) {
+        return _identity__WEBPACK_IMPORTED_MODULE_0__["identity"];
     }
     if (fns.length === 1) {
         return fns[0];

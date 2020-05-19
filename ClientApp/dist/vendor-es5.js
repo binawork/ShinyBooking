@@ -126311,9 +126311,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _noop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! ./noop */
-    "./node_modules/rxjs/_esm2015/internal/util/noop.js");
+    var _identity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! ./identity */
+    "./node_modules/rxjs/_esm2015/internal/util/identity.js");
 
     function pipe() {
       for (var _len48 = arguments.length, fns = new Array(_len48), _key41 = 0; _key41 < _len48; _key41++) {
@@ -126324,8 +126324,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function pipeFromArray(fns) {
-      if (!fns) {
-        return _noop__WEBPACK_IMPORTED_MODULE_0__["noop"];
+      if (fns.length === 0) {
+        return _identity__WEBPACK_IMPORTED_MODULE_0__["identity"];
       }
 
       if (fns.length === 1) {
