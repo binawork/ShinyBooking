@@ -8,7 +8,7 @@
   // zachowywanie danych po przeładowanie strony (session/localstorage)
   constructor(
     public photoUrl: string,
-    // public isMain: boolean = false,
+    public isMain: boolean = false,
   ) {
   }
 }

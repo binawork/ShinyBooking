@@ -43,6 +43,10 @@ export class PhotosUploadService {
     return this.addedPhotos;
   }
 
+  getPhotosURLs() {
+    return this.addedPhotosURLs;
+  }
+
   clearAddedPhotos() {
     this.addedPhotosURLs = [];
     this.addedPhotos = [];
