@@ -18,7 +18,7 @@ export class RoomAddComponent implements OnInit {
   readonly postalCodeRegex: RegExp = /^[0-9]{2}-[0-9]{3}$/;
   readonly numberRegex: RegExp = /^[1-9]+[0-9]*$/;
   amenitiesCheckboxData: { name: string; AmenitiesForDisabledId: string; isChecked: boolean }[];
-  equipmentCheckboxData: { name: string; EquipmentsId: string; isChecked: boolean }[];
+  equipmentCheckboxData: { name: string; EquipmentId: string; isChecked: boolean }[];
   activitiesCheckboxData: { name: string; ActivitiesId: string; isChecked: boolean }[];
   roomForm: FormGroup;
   addressForm: FormGroup;
