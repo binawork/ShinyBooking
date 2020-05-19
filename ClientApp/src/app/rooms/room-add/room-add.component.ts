@@ -93,19 +93,7 @@ export class RoomAddComponent implements OnInit {
       submittedAddressFormValue.street,
     );
     let submittedRoomFormValue = this.roomForm.value;
-    //TODO od razu tworzyć roomToAddDto i wysyłać bezpośrednio na backend, bo tu service przetwarza rfd na rtad przed wysłaniem
-    // let newRoom = new RoomForDetails(
-    //   submittedRoomFormValue.amenities,
-    //   submittedRoomFormValue.area,
-    //   submittedRoomFormValue.capacity,
-    //   submittedRoomFormValue.id,
-    //   submittedRoomFormValue.name,
-    //   submittedRoomFormValue.description,
-    //   submittedRoomFormValue.equipment,
-    //   submittedRoomFormValue.parkingSpace,
-    //   address,
-    //   submittedRoomFormValue.roomArrangementsCapabilitiesDescription,
-    // );
+
     let newRoom = new RoomToAddDto(
       submittedRoomFormValue.id,
       submittedRoomFormValue.name,
