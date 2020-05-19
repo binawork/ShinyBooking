@@ -2,6 +2,7 @@ import {Photo} from './photo.model';
 import {AmenityForDisabled} from '../rooms/amenity-for-disabled.model';
 import {Equipment} from '../rooms/equipment.model';
 import {RoomAddress} from './room-address.model';
+import {Activity} from "../rooms/activity.model";
 
 
 export class RoomForDetails {
@@ -29,6 +30,7 @@ export class RoomForDetails {
     public parkingSpace: boolean,
     public roomAddress: RoomAddress,
     public roomArrangementsCapabilitiesDescription: string,
+    public activities: Activity[]
   ) {
   }
 }
