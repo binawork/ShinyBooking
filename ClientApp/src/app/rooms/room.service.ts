@@ -5,6 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 import {RoomForList} from '../shared/room-for-list.model';
 import {AmenityForDisabled} from './amenity-for-disabled.model';
 import {Equipment} from './equipment.model';
+import {Activity} from "./activity.model";
 
 @Injectable({
   providedIn: 'root'
@@ -12,21 +13,28 @@ import {Equipment} from './equipment.model';
 export class RoomService {
 
   private readonly amenitiesForDisabled = [
-    new AmenityForDisabled('reserved parking'),
-    new AmenityForDisabled('zero-step entries'),
-    new AmenityForDisabled('width doors'),
-    new AmenityForDisabled('virtual keyboard'),
-    new AmenityForDisabled('refreshable braille display'),
-    new AmenityForDisabled('screen reader'),
+    new AmenityForDisabled('amenity1', 'no stairs entrance'),
+    new AmenityForDisabled('amenity2', 'wide doors'),
+    new AmenityForDisabled('amenity3', 'accessible toilet'),
+    new AmenityForDisabled('amenity4', 'easy access parking'),
+    new AmenityForDisabled('amenity5', 'elevator')
   ];
+
   private readonly equipment = [
-    new Equipment('dryer'),
-    new Equipment('dish washer'),
-    new Equipment('projector'),
-    new Equipment('whiteboard'),
-    new Equipment('sewing machine'),
-    new Equipment('coffee machine'),
+    new Equipment('equipment1', 'fax machine'),
+    new Equipment('equipment2', 'coffee machine'),
+    new Equipment('equipment3', 'PS4'),
+    new Equipment('equipment4', 'Marshall amplification'),
+    new Equipment('equipment5', 'kitchen')
   ];
+
+  private readonly activities = [
+    new Activity('activity1', 'corporate meetings'),
+    new Activity('activity2', 'role playing games'),
+    new Activity('activity3', 'co-working'),
+    new Activity('activity4', 'music bands'),
+    new Activity('activity5', 'relaxation'),
+  ]
 
   private readonly baseUrl: string;
 
@@ -50,6 +58,10 @@ export class RoomService {
 
   getEquipment(): Equipment[] {
     return this.equipment.slice();
+  }
+
+  getActivities(): Activity[] {
+    return this.activities.slice();
   }
 }
 

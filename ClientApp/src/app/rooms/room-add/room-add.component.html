@@ -1,6 +1,7 @@
 <section class="section-padding">
   <div class="container">
-    Value: {{roomForm.value | json}}
+<!--    Value: {{roomForm.value | json}}-->
+    <h1 style="text-align:center">Add New Room</h1>
     <hr>
     <div class="row">
       <div class="col-lg-8 col-md-8 mx-auto">
@@ -78,9 +79,10 @@
             </div>
           </div>
 
+
           <div class="card property-features-add padding-card">
             <div class="card-body">
-              <h5 class="card-title mb-4">Property Features</h5>
+              <h5 class="card-title mb-4">Equipments</h5>
               <div class="row">
                 <div class="col-md-4">
                   <div class="custom-control custom-checkbox">
@@ -89,16 +91,6 @@
                            id="parkingSpaceCheckbox"
                            type="checkbox">
                     <label class="custom-control-label" for="parkingSpaceCheckbox">Parking Space</label>
-                  </div>
-                </div>
-                <div *ngFor="let amenity of this.amenitiesCheckboxData" class="col-md-4">
-                  <div class="custom-control custom-checkbox">
-                    <input [(ngModel)]="amenity.isChecked"
-                           [ngModelOptions]="{standalone: true}"
-                           class="custom-control-input"
-                           id="{{amenity.id}}"
-                           type="checkbox">
-                    <label class="custom-control-label" for="{{amenity.id}}">{{amenity.name | titlecase}}</label>
                   </div>
                 </div>
                 <div *ngFor="let equipment of this.equipmentCheckboxData" class="col-md-4">
@@ -115,6 +107,44 @@
               </div>
             </div>
           </div>
+
+          <div class="card property-features-add padding-card">
+            <div class="card-body">
+              <h5 class="card-title mb-4">Amenities For Disabled</h5>
+              <div class="row">
+                <div *ngFor="let amenity of this.amenitiesCheckboxData" class="col-md-4">
+                  <div class="custom-control custom-checkbox">
+                    <input [(ngModel)]="amenity.isChecked"
+                           [ngModelOptions]="{standalone: true}"
+                           class="custom-control-input"
+                           id="{{amenity.id}}"
+                           type="checkbox">
+                    <label class="custom-control-label" for="{{amenity.id}}">{{amenity.name | titlecase}}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card property-features-add padding-card">
+            <div class="card-body">
+              <h5 class="card-title mb-4">Activities</h5>
+              <div class="row">
+                <div *ngFor="let activity of this.activitiesCheckboxData" class="col-md-4">
+                  <div class="custom-control custom-checkbox">
+                    <input [(ngModel)]="activity.isChecked"
+                           [ngModelOptions]="{standalone: true}"
+                           class="custom-control-input"
+                           id="{{activity.id}}"
+                           type="checkbox">
+                    <label class="custom-control-label" for="{{activity.id}}">{{activity.name | titlecase}}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
           <div class="card padding-card">
             <div class="card-body">
               <h5 class="card-title mb-4">Room Arrangement Capabilities<span class="text-danger">*</span></h5>
@@ -144,10 +174,9 @@
                     type="file"
                     multiple
                     accept='image/*'
-                    (change)="onFileSelected($event)"
                     formControlName="photos"
-                    placeholder="Select photos">
-<!--                  <p>Placeholder for adding photos</p>-->
+                    placeholder="Select photos"
+                    (change)="photosUploadService.uploadPhotos($event)">
                 </div>
               </div>
             </div>

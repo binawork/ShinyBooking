@@ -1,9 +1,12 @@
 ﻿export class AmenityForDisabled {
-  public id: string;
+  public AmenitiesForDisabledId: string;
+  public name: string;
 
   constructor(
-    public name: string,
+    AmenitiesForDisabledId: string,
+    name: string
   ) {
-    this.id = name;
+    this.AmenitiesForDisabledId = AmenitiesForDisabledId;
+    this.name = name;
   }
 }

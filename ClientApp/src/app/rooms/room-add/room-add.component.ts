@@ -5,6 +5,9 @@ import {RoomForDetails} from '../../shared/room-for-details.model';
 import {RoomAddress} from '../../shared/room-address.model';
 import {DataStorageService} from '../../shared/data-storage.service';
 import {HttpClient} from "@angular/common/http";
+import {PhotosUploadService} from "./photos-upload.service";
+import {Router} from "@angular/router";
+import {RoomToAddDto} from "../../shared/room-to-add-dto.model";
 
 @Component({
   selector: 'app-room-add',
@@ -14,15 +17,17 @@ import {HttpClient} from "@angular/common/http";
 export class RoomAddComponent implements OnInit {
   readonly postalCodeRegex: RegExp = /^[0-9]{2}-[0-9]{3}$/;
   readonly numberRegex: RegExp = /^[1-9]+[0-9]*$/;
-  amenitiesCheckboxData: { name: string; id: string; isChecked: boolean }[];
-  equipmentCheckboxData: { name: string; id: string; isChecked: boolean }[];
+  amenitiesCheckboxData: { name: string; AmenitiesForDisabledId: string; isChecked: boolean }[];
+  equipmentCheckboxData: { name: string; EquipmentsId: string; isChecked: boolean }[];
+  activitiesCheckboxData: { name: string; ActivitiesId: string; isChecked: boolean }[];
   roomForm: FormGroup;
   addressForm: FormGroup;
 
   constructor(private fb: FormBuilder,
               private roomService: RoomService,
               private dataStorageService: DataStorageService,
-              private http: HttpClient) {
+              public photosUploadService: PhotosUploadService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -32,6 +37,10 @@ export class RoomAddComponent implements OnInit {
     }));
     this.equipmentCheckboxData = this.roomService.getEquipment().map(equipment => ({
       ...equipment,
+      isChecked: false
+    }));
+    this.activitiesCheckboxData = this.roomService.getActivities().map(activity => ({
+      ...activity,
       isChecked: false
     }));
 
@@ -58,6 +67,7 @@ export class RoomAddComponent implements OnInit {
       roomAddress: this.addressForm,
       amenities: [this.amenitiesCheckboxData],
       equipment: [this.equipmentCheckboxData],
+      activities: [this.activitiesCheckboxData],
       photos: []
     });
 
@@ -67,40 +77,58 @@ export class RoomAddComponent implements OnInit {
   // todo nagłówek dla amenities i eq i zrozdzielenie sekcji
   onSubmit() {
     console.log('Form submitted');
-    this.photosUpload(this.roomForm.value.photos.target.files);
+    // this.photosUploadService.uploadPhotos(this.roomForm.value.photos.target.files);
     // filter amenities and equipment, so there will be only checked ones
     this.roomForm.value.amenities = this.roomForm.value.amenities.filter(amenity => amenity.isChecked === true);
     this.roomForm.value.equipment = this.roomForm.value.equipment.filter(equipment => equipment.isChecked === true);
     // remove field "isChecked"
     this.roomForm.value.amenities.map(amenity => delete amenity.isChecked);
     this.roomForm.value.equipment.map(equipment => delete equipment.isChecked);
-    let submittedAdressFormValue = this.addressForm.value;
-    const address = new RoomAddress(submittedAdressFormValue.buildingNumber,
-      submittedAdressFormValue.city,
-      submittedAdressFormValue.country,
-      submittedAdressFormValue.postalCode,
-      submittedAdressFormValue.apartmentNumber,
-      submittedAdressFormValue.street,
+    let submittedAddressFormValue = this.addressForm.value;
+    const address = new RoomAddress(submittedAddressFormValue.buildingNumber,
+      submittedAddressFormValue.city,
+      submittedAddressFormValue.country,
+      submittedAddressFormValue.postalCode,
+      submittedAddressFormValue.apartmentNumber,
+      submittedAddressFormValue.street,
     );
     let submittedRoomFormValue = this.roomForm.value;
     //TODO od razu tworzyć roomToAddDto i wysyłać bezpośrednio na backend, bo tu service przetwarza rfd na rtad przed wysłaniem
-    const newRoom = new RoomForDetails(
-      submittedRoomFormValue.amenities,
-      submittedRoomFormValue.area,
-      submittedRoomFormValue.capacity,
+    // let newRoom = new RoomForDetails(
+    //   submittedRoomFormValue.amenities,
+    //   submittedRoomFormValue.area,
+    //   submittedRoomFormValue.capacity,
+    //   submittedRoomFormValue.id,
+    //   submittedRoomFormValue.name,
+    //   submittedRoomFormValue.description,
+    //   submittedRoomFormValue.equipment,
+    //   submittedRoomFormValue.parkingSpace,
+    //   address,
+    //   submittedRoomFormValue.roomArrangementsCapabilitiesDescription,
+    // );
+    let newRoom = new RoomToAddDto(
       submittedRoomFormValue.id,
       submittedRoomFormValue.name,
       submittedRoomFormValue.description,
-      submittedRoomFormValue.equipment,
-      submittedRoomFormValue.parkingSpace,
-      address,
       submittedRoomFormValue.roomArrangementsCapabilitiesDescription,
+      submittedRoomFormValue.price,
+      submittedRoomFormValue.area,
+      submittedRoomFormValue.capacity,
+      submittedRoomFormValue.parkingSpace,
+      this.photosUploadService.generatePhotosAsObjects(),
+      submittedRoomFormValue.equipment,
+      submittedRoomFormValue.amenities,
+      address,
+      submittedRoomFormValue.activities
     );
+    // newRoom.photos = this.photosUploadService.generatePhotosAsObjects();
+    this.photosUploadService.clearAddedPhotos();
     console.log('New room:');
     console.log(newRoom);
 
     this.dataStorageService.storeRoom(newRoom);
-    // todo when successfully added redirect to /rooms
+    // when successfully added redirect to /rooms
+    this.router.navigate(['rooms']);
     this.resetForm();
   }
 
@@ -109,27 +137,4 @@ export class RoomAddComponent implements OnInit {
     this.roomForm.value.equipment = this.equipmentCheckboxData.slice();
   }
 
-  onFileSelected(event) {
-    console.log(event);
-  }
-
-  photosUpload(photos: File[]) {
-    for (let photo of photos) {
-      if (this.isImage(photo)) {
-        const fd = new FormData();
-        fd.append('image', photo);
-        fd.append('api_key', '124GJOST273d586da801d9c0568b281d484b27a3');
-        this.http.post(
-          'https://api.imageshack.com/v2/images', fd)
-          .subscribe(res => {
-            //fetch URL from reponse and save in photoURLs array
-          })
-      }
-    }
-  }
-
-  //check if file is an image
-  isImage(file){
-    return file && file['type'].split('/')[0] === 'image';
-  }
 }
