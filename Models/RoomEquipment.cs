@@ -2,7 +2,7 @@
 {
     public class RoomEquipment
     {
-        public string EquipmentsId { get; set; }
+        public string EquipmentId { get; set; }
 
         public Equipment Equipment { get; set; }
 
