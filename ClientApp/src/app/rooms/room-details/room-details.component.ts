@@ -42,9 +42,9 @@ export class RoomDetailsComponent implements OnInit {
     const imageUrls = [];
     for (const photo of this.room.photos) {
       imageUrls.push({
-        small: photo.photoUrl,
-        medium: photo.photoUrl,
-        big: photo.photoUrl,
+        small: photo.PhotoUrl,
+        medium: photo.PhotoUrl,
+        big: photo.PhotoUrl,
         description: photo.id
       });
     }
