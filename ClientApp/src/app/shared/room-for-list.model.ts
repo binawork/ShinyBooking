@@ -6,7 +6,7 @@ export class RoomForList {
   area?: number;
   capacity?: number;
   equipments?: Array<Equipment>;
-  mainPhotoUrl?: number;
+  mainPhotoUrl?: string;
   name?: string;
   price?: number;
   rating?: number;

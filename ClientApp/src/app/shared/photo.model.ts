@@ -1,6 +1,6 @@
 ﻿export class Photo {
   id?: string;
-  //photoUrl?: string;
+  photoUrl?: string;
   roomId?: string;
   // isMain?: boolean;
   // todo link do zdjęć
