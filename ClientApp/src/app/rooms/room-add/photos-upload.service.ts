@@ -39,6 +39,11 @@ export class PhotosUploadService {
 
   generatePhotosAsObjects() {
     for(let photoURL of this.addedPhotosURLs) {
+
+      if (photoURL.substring(0, 7) !== 'http://' || photoURL.substring(0, 8) !== 'https://') {
+        photoURL = 'http://' + photoURL;
+      }
+
       this.addedPhotos.push(new Photo(photoURL));
     }
     this.addedPhotos[0].IsMain = true;

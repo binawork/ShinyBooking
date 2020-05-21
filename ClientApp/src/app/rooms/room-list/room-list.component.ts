@@ -16,9 +16,6 @@ export class RoomListComponent implements OnInit {
   ngOnInit() {
     this.roomService.getRooms().subscribe(rooms => {
       this.roomList = rooms;
-      for(let room of this.roomList) {
-        room.mainPhotoUrl = "http://" + room.mainPhotoUrl;
-      }
       console.log(rooms);
     });
   }
