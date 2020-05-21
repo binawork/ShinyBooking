@@ -26,6 +26,7 @@ export class PhotosUploadService {
           'https://cors-anywhere.herokuapp.com/https://api.imageshack.com/v2/images', fd)
           .subscribe((res: ImageshackResponse) => {
             this.addedPhotosURLs.push(res.result.images[0].direct_link);
+            console.log("Link: " + res.result.images[0].direct_link);
           });
       }
     }
@@ -38,9 +39,20 @@ export class PhotosUploadService {
 
   generatePhotosAsObjects() {
     for(let photoURL of this.addedPhotosURLs) {
+
+      if (photoURL.substring(0, 7) !== 'http://' || photoURL.substring(0, 8) !== 'https://') {
+        photoURL = 'http://' + photoURL;
+      }
+
       this.addedPhotos.push(new Photo(photoURL));
     }
+    this.addedPhotos[0].IsMain = true;
+
     return this.addedPhotos;
+  }
+
+  getPhotosURLs() {
+    return this.addedPhotosURLs;
   }
 
   clearAddedPhotos() {

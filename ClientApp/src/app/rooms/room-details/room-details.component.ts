@@ -23,6 +23,11 @@ export class RoomDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.data.subscribe(data => {
       this.room = data.room;
+      for(let photo of this.room.photos) {
+        photo.PhotoUrl = photo.photoUrl;
+      }
+
+      console.log(this.room);
     });
 
     this.galleryOptions = [
@@ -42,9 +47,9 @@ export class RoomDetailsComponent implements OnInit {
     const imageUrls = [];
     for (const photo of this.room.photos) {
       imageUrls.push({
-        small: photo.photoUrl,
-        medium: photo.photoUrl,
-        big: photo.photoUrl,
+        small: photo.PhotoUrl,
+        medium: photo.PhotoUrl,
+        big: photo.PhotoUrl,
         description: photo.id
       });
     }

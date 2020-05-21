@@ -18,7 +18,7 @@ export class RoomAddComponent implements OnInit {
   readonly postalCodeRegex: RegExp = /^[0-9]{2}-[0-9]{3}$/;
   readonly numberRegex: RegExp = /^[1-9]+[0-9]*$/;
   amenitiesCheckboxData: { name: string; AmenitiesForDisabledId: string; isChecked: boolean }[];
-  equipmentCheckboxData: { name: string; EquipmentsId: string; isChecked: boolean }[];
+  equipmentCheckboxData: { name: string; EquipmentId: string; isChecked: boolean }[];
   activitiesCheckboxData: { name: string; ActivitiesId: string; isChecked: boolean }[];
   roomForm: FormGroup;
   addressForm: FormGroup;
@@ -93,19 +93,7 @@ export class RoomAddComponent implements OnInit {
       submittedAddressFormValue.street,
     );
     let submittedRoomFormValue = this.roomForm.value;
-    //TODO od razu tworzyć roomToAddDto i wysyłać bezpośrednio na backend, bo tu service przetwarza rfd na rtad przed wysłaniem
-    // let newRoom = new RoomForDetails(
-    //   submittedRoomFormValue.amenities,
-    //   submittedRoomFormValue.area,
-    //   submittedRoomFormValue.capacity,
-    //   submittedRoomFormValue.id,
-    //   submittedRoomFormValue.name,
-    //   submittedRoomFormValue.description,
-    //   submittedRoomFormValue.equipment,
-    //   submittedRoomFormValue.parkingSpace,
-    //   address,
-    //   submittedRoomFormValue.roomArrangementsCapabilitiesDescription,
-    // );
+
     let newRoom = new RoomToAddDto(
       submittedRoomFormValue.id,
       submittedRoomFormValue.name,

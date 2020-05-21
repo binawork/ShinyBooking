@@ -1,6 +1,6 @@
 <section class="section-padding">
   <div class="container">
-<!--    Value: {{roomForm.value | json}}-->
+    <!--    Value: {{roomForm.value | json}}-->
     <h1 style="text-align:center">Add New Room</h1>
     <hr>
     <div class="row">
@@ -74,6 +74,19 @@
                       </label>
                     </div>
                   </div>
+
+                  <div class="col-md-12">
+                    <div class="custom-control custom-checkbox">
+                      <div class="form-group">
+                        <label class="col-md-12">Parking Space Availability <span class="text-danger">*</span></label>
+                        <input class="custom-control-input"
+                               formControlName="parkingSpace"
+                               id="parkingSpaceCheckbox"
+                               type="checkbox">
+                        <label class="custom-control-label" for="parkingSpaceCheckbox">Parking Space</label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -84,24 +97,15 @@
             <div class="card-body">
               <h5 class="card-title mb-4">Equipments</h5>
               <div class="row">
-                <div class="col-md-4">
-                  <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input"
-                           formControlName="parkingSpace"
-                           id="parkingSpaceCheckbox"
-                           type="checkbox">
-                    <label class="custom-control-label" for="parkingSpaceCheckbox">Parking Space</label>
-                  </div>
-                </div>
                 <div *ngFor="let equipment of this.equipmentCheckboxData" class="col-md-4">
                   <div class="custom-control custom-checkbox">
                     <input [(ngModel)]="equipment.isChecked"
                            [ngModelOptions]="{standalone: true}"
                            class="custom-control-input"
-                           id="{{equipment.EquipmentsId}}"
+                           id="{{equipment.EquipmentId}}"
                            type="checkbox">
                     <label class="custom-control-label"
-                           for="{{equipment.EquipmentsId}}">{{equipment.name | titlecase}}</label>
+                           for="{{equipment.EquipmentId}}">{{equipment.name | titlecase}}</label>
                   </div>
                 </div>
               </div>
@@ -119,7 +123,8 @@
                            class="custom-control-input"
                            id="{{amenity.AmenitiesForDisabledId}}"
                            type="checkbox">
-                    <label class="custom-control-label" for="{{amenity.AmenitiesForDisabledId}}">{{amenity.name | titlecase}}</label>
+                    <label class="custom-control-label"
+                           for="{{amenity.AmenitiesForDisabledId}}">{{amenity.name | titlecase}}</label>
                   </div>
                 </div>
               </div>
@@ -137,7 +142,8 @@
                            class="custom-control-input"
                            id="{{activity.ActivitiesId}}"
                            type="checkbox">
-                    <label class="custom-control-label" for="{{activity.ActivitiesId}}">{{activity.name | titlecase}}</label>
+                    <label class="custom-control-label"
+                           for="{{activity.ActivitiesId}}">{{activity.name | titlecase}}</label>
                   </div>
                 </div>
               </div>
