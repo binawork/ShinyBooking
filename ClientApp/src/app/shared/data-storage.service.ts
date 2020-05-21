@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {RoomForDetails} from './room-for-details.model';
 import {Observable} from 'rxjs';
 import {RoomToAddDto} from './room-to-add-dto.model';
+import { RegistrationModel } from './Registration.model';
+import { LoginModel } from './Login.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +16,47 @@ export class DataStorageService {
   ) {
   }
 
+  private static convert(room: RoomForDetails): RoomToAddDto {
+    return new RoomToAddDto(
+      room.id,
+      room.name,
+      room.description,
+      room.roomArrangementsCapabilitiesDescription,
+      room.price,
+      room.area,
+      room.capacity,
+      room.parkingSpace,
+      room.photos,
+      room.roomAddress,
+    );
+  }
+
+    storeUser(user: RegistrationModel) {
+
+    console.log(user);
+
+    this.http
+      .post('/api/accounts', user)
+
+      .subscribe(response => {
+        console.log('response:');
+        console.log(response);
+      });
+  }
+
+  storeLogin(login: LoginModel) {
+    console.log(login);
+
+    this.http
+      .post('/api/auth/login', login)
+
+      .subscribe(response => {
+        console.log('response:');
+        console.log(response);
+      });
+  }
+
+  storeRoom(room: RoomForDetails) {
   // private static convert(room: RoomForDetails): RoomToAddDto {
   //   return new RoomToAddDto(
   //     room.id,

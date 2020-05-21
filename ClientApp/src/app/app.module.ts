@@ -15,6 +15,8 @@ import {RoomDetailsComponent} from './rooms/room-details/room-details.component'
 import {RoomDetailsResolver} from './_resolvers/room-details.resolver';
 import {NgxGalleryModule} from '@kolkov/ngx-gallery';
 import {RoomAddComponent} from './rooms/room-add/room-add.component';
+import { LoginComponent } from './login/login.component';
+import {RegistrationFormComponent} from './registration/registration-form.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import {RoomAddComponent} from './rooms/room-add/room-add.component';
     FiltersBarComponent,
     RoomDetailsComponent,
     RoomAddComponent,
+    LoginComponent,
+    RegistrationFormComponent
 
   ],
   imports: [
@@ -39,6 +43,8 @@ import {RoomAddComponent} from './rooms/room-add/room-add.component';
       {path: 'rooms', component: RoomListComponent, pathMatch: 'full'},
       {path: 'rooms/new', component: RoomAddComponent},
       {path: 'rooms/:id', component: RoomDetailsComponent, resolve: {room: RoomDetailsResolver}},
+      {path: 'login', component: LoginComponent},
+      {path: 'register', component: RegistrationFormComponent},
     ]),
     ReactiveFormsModule
   ],
