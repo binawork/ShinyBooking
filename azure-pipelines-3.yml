@@ -26,7 +26,7 @@ steps:
 - task: Npm@1
   inputs:
     customCommand: 'npm update' 
-    workingDir: '/ClientApp'
+    workingDir: '$(Agent.BuildDirectory)/ClientApp'
 
 - task: VSBuild@1
   inputs:
