@@ -14,6 +14,7 @@ namespace ShinyBooking.Helpers
         var response = new
         {
           id = identity.Claims.Single(c => c.Type == "id").Value,
+          userName= identity.Name, 
           auth_token = await jwtFactory.GenerateEncodedToken(userName, identity),
           expires_in = (int)jwtOptions.ValidFor.TotalSeconds
         };

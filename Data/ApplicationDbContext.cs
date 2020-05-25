@@ -76,5 +76,7 @@ namespace ShinyBooking.Data
                 .WithMany(r => r.Photos)
                 .HasForeignKey(p => p.RoomId);
         }
+
+        public DbSet<ShinyBooking.Models.Activities> Activities { get; set; }
     }
 }
