@@ -38,9 +38,9 @@
               <a class="dropdown-item" href="blog-single.html">Blog Single</a>
             </div>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown" *ngIf="loggedIn">
             <a class="nav-link dropdown-toggle" href="#" id="5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              PLACEHOLDER
+              Logged in
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
               <a class="dropdown-item" href="user-profile.html">User Profile</a>

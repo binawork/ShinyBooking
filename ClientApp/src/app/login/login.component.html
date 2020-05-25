@@ -4,17 +4,34 @@
       Value: {{loginForm.value | json}}
       <div class="row">
         <div class="col-lg-4 col-md-4 mx-auto">
+          <div class="alert alert-danger" *ngIf="this.dataStorageService.error">
+            <h5 style="text-align: center;">{{this.dataStorageService.error}}</h5></div>
           <div class="card padding-card">
             <div class="card-body">
               <h5 class="card-title mb-4">Login</h5>
               <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
                 <div class="form-group">
                   <label for="UserName">User Name <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" placeholder="User Name"id="userNameId" formControlName="UserName" name="UserName" required>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="User Name"
+                    id="userNameId"
+                    formControlName="UserName"
+                    name="UserName"
+                    required>
                 </div>
                 <div class="form-group">
                   <label for="Password">Password <span class="text-danger">*</span></label>
-                  <input type="password" class="form-control" placeholder="Enter Password"id="PasswordId" formControlName="Password" name="Password" required>
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Enter Password"
+                    id="PasswordId"
+                    formControlName="Password"
+                    name="Password"
+                    minlength="6"
+                    required>
                 </div>
                 <div class="form-group">
                   <div class="custom-control custom-checkbox">
@@ -23,7 +40,8 @@
                   </div>
                 </div>
                 <button class="btn btn-success btn-block"
-                        type="submit">
+                        type="submit"
+                        [disabled]="!loginForm.valid">
                   SIGN IN
                 </button>
               </form>

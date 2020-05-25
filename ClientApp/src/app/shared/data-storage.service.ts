@@ -5,14 +5,17 @@ import {Observable} from 'rxjs';
 import {RoomToAddDto} from './room-to-add-dto.model';
 import { RegistrationModel } from './Registration.model';
 import { LoginModel } from './Login.model';
+import {NavMenuComponent} from "../nav-menu/nav-menu.component";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataStorageService {
+  error: string = null;
 
   constructor(
     private http: HttpClient,
+    private navMenuComponent: NavMenuComponent
   ) {
   }
 
@@ -28,17 +31,20 @@ export class DataStorageService {
         console.log(response);
       });
   }
-// todo zmienić nazwę funkcji
-  storeLogin(login: LoginModel) {
+
+  login(login: LoginModel) {
     console.log(login);
 
     this.http
-      .post('/api/auth/login', login)
-
-      .subscribe(response => {
-        console.log('response:');
-        console.log(response);
-      });
+      .post('/api/auth/login', login).subscribe(
+      responseData => {
+        console.log(responseData);
+        this.navMenuComponent.loggedIn = true;
+      }, error => {
+        console.log(error);
+        this.error=error.error.login_failure[0];
+      }
+    )
   }
 
 
