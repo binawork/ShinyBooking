@@ -2,8 +2,7 @@ import {Component, Injectable, OnInit} from '@angular/core';
 import {LoginModel} from '../shared/Login.model';
 import {DataStorageService} from '../shared/data-storage.service';
 import {FormGroup, FormBuilder, NgForm} from '@angular/forms';
-import {NavMenuComponent} from "../nav-menu/nav-menu.component";
-
+import {NgModel} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -13,6 +12,8 @@ import {NavMenuComponent} from "../nav-menu/nav-menu.component";
 
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  password: string;
+  passwordLengthValid: boolean = true;
 
   constructor(public dataStorageService: DataStorageService,
               private fb: FormBuilder) {
@@ -39,4 +40,9 @@ export class LoginComponent implements OnInit {
     console.log(loginUser);
     this.dataStorageService.login(loginUser);
   };
+
+  onPasswordChange() {
+    this.password.length > 5 ? this.passwordLengthValid = true : this.passwordLengthValid = false;
+  }
 }
+

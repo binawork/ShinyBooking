@@ -36,6 +36,7 @@ import {RegistrationFormComponent} from './registration/registration-form.compon
     HttpClientModule,
     NgxGalleryModule,
     FormsModule,
+    ReactiveFormsModule,
 
 
     RouterModule.forRoot([
@@ -45,8 +46,7 @@ import {RegistrationFormComponent} from './registration/registration-form.compon
       {path: 'rooms/:id', component: RoomDetailsComponent, resolve: {room: RoomDetailsResolver}},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegistrationFormComponent},
-    ]),
-    ReactiveFormsModule
+    ])
   ],
   providers: [
     RoomService,
