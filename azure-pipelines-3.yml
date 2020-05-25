@@ -26,7 +26,7 @@ steps:
 - task: Npm@1
   inputs:
     customCommand: 'npm update' 
-    workingDir: '$(Agent.BuildDirectory)/ShinyBooking/ClientApp'
+    workingDir: './ShinyBooking/ClientApp'
 
 - task: VSBuild@1
   inputs:
