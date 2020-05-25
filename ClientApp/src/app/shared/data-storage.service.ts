@@ -16,21 +16,6 @@ export class DataStorageService {
   ) {
   }
 
-  private static convert(room: RoomForDetails): RoomToAddDto {
-    return new RoomToAddDto(
-      room.id,
-      room.name,
-      room.description,
-      room.roomArrangementsCapabilitiesDescription,
-      room.price,
-      room.area,
-      room.capacity,
-      room.parkingSpace,
-      room.photos,
-      room.roomAddress,
-    );
-  }
-
     storeUser(user: RegistrationModel) {
 
     console.log(user);
@@ -43,7 +28,7 @@ export class DataStorageService {
         console.log(response);
       });
   }
-
+// todo zmienić nazwę funkcji
   storeLogin(login: LoginModel) {
     console.log(login);
 
@@ -56,26 +41,8 @@ export class DataStorageService {
       });
   }
 
-  storeRoom(room: RoomForDetails) {
-  // private static convert(room: RoomForDetails): RoomToAddDto {
-  //   return new RoomToAddDto(
-  //     room.id,
-  //     room.name,
-  //     room.description,
-  //     room.roomArrangementsCapabilitiesDescription,
-  //     room.price,
-  //     room.area,
-  //     room.capacity,
-  //     room.parkingSpace,
-  //     room.photos,
-  //     room.roomAddress,
-  //   );
-  // }
-//TODO metoda ma oczekiwać roomToAddDTO i ten obiekt wysyłać na serwer
+
   storeRoom(room: RoomToAddDto) {
-    console.log('storeRoom()');
-    // todo convert RoomForDetails to DTO version
-    //const roomDto = DataStorageService.convert(room);
     console.log(room);
     // and send DTO version through API
     this.http
