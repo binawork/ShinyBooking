@@ -25,7 +25,8 @@ steps:
 
 - task: Npm@1
   inputs:
-    customCommand: 'npm install --save-dev @types/node' 
+    customCommand: 'npm update' 
+    workingDir: '/ClientApp'
 
 - task: VSBuild@1
   inputs:
