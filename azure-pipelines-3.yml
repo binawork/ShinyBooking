@@ -27,21 +27,25 @@ steps:
   inputs:
     customCommand: 'npm update'
     workingDir: './ClientApp'
+    command: 'custom'
 
 - task: Npm@1
   inputs:
     customCommand: 'npm install -g @angular/cli' 
     workingDir: './ClientApp'
+    command: 'custom'
 
 - task: Npm@1
   inputs:
     customCommand: 'npm install' 
     workingDir: './ClientApp'
+    command: 'custom'
 
 - task: Npm@1
   inputs:
     customCommand: 'npm run build ' 
     workingDir: './ClientApp'
+    command: 'custom'
 
 
 
