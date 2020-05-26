@@ -12,8 +12,7 @@ import {NgModel} from "@angular/forms";
 
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  password: string;
-  passwordLengthValid: boolean = true;
+  password: string = '';
 
   constructor(public dataStorageService: DataStorageService,
               private fb: FormBuilder) {
@@ -41,8 +40,6 @@ export class LoginComponent implements OnInit {
     this.dataStorageService.login(loginUser);
   };
 
-  onPasswordChange() {
-    this.password.length > 5 ? this.passwordLengthValid = true : this.passwordLengthValid = false;
-  }
+
 }
 

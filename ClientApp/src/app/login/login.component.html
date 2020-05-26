@@ -32,10 +32,9 @@
                     name="Password"
                     minlength="6"
                     required
-                    (ngModelChange)="onPasswordChange()"
                     [(ngModel)]="password">
 <!--                #password="ngModel"> -->
-                  <span class="help-block text-danger border-danger" *ngIf="!passwordLengthValid">Password must contain at least 6 characters!</span>
+                  <span class="help-block text-danger border-danger" *ngIf="password.length<6">Password must contain at least 6 characters!</span>
                 </div>
                 <div class="form-group">
                   <div class="custom-control custom-checkbox">

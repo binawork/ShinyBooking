@@ -6,6 +6,7 @@ import {RoomToAddDto} from './room-to-add-dto.model';
 import { RegistrationModel } from './Registration.model';
 import { LoginModel } from './Login.model';
 import {NavMenuComponent} from "../nav-menu/nav-menu.component";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class DataStorageService {
 
   constructor(
     private http: HttpClient,
-    private navMenuComponent: NavMenuComponent
+    private navMenuComponent: NavMenuComponent,
+    private router: Router
   ) {
   }
 
@@ -40,13 +42,13 @@ export class DataStorageService {
       responseData => {
         console.log(responseData);
         this.navMenuComponent.loggedIn = true;
+        this.router.navigate(["/rooms"]);
       }, error => {
         console.log(error);
         this.error=error.error.login_failure[0];
       }
     )
   }
-
 
   storeRoom(room: RoomToAddDto) {
     console.log(room);
