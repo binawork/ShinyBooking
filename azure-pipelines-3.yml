@@ -50,7 +50,7 @@ steps:
 
 - task: Npm@1
   inputs:
-    customCommand: 'npm run build ' 
+    customCommand: 'npm run buildProd' 
     workingDir: '$(Agent.BuildDirectory)/ShinyBooking/ClientApp'
     command: 'custom'
 
