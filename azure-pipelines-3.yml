@@ -24,29 +24,29 @@ steps:
     restoreSolution: '$(solution)'
 
 
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    workingDir: '/folder'
-    customCommand: 'whateva'
+# - task: Npm@1
+#   inputs:
+#     command: 'custom'
+#     workingDir: '/folder'
+#     customCommand: 'whateva'
 
-- task: Npm@1
-  inputs:
-    customCommand: 'npm update'
-    workingDir: '$(Agent.BuildDirectory)/ShinyBooking/ClientApp'
-    command: 'custom'
+# - task: Npm@1
+#   inputs:
+#     customCommand: 'npm update'
+#     workingDir: '$(Agent.BuildDirectory)/ShinyBooking/ClientApp'
+#     command: 'custom'
 
-- task: Npm@1
-  inputs:
-    customCommand: 'npm install -g @angular/cli' 
-    workingDir: '$(Agent.BuildDirectory)/ShinyBooking/ClientApp'
-    command: 'custom'
+# - task: Npm@1
+#   inputs:
+#     customCommand: 'npm install -g @angular/cli' 
+#     workingDir: '$(Agent.BuildDirectory)/ShinyBooking/ClientApp'
+#     command: 'custom'
 
-- task: Npm@1
-  inputs:
-    customCommand: 'npm install' 
-    workingDir: '$(Agent.BuildDirectory)/ShinyBooking/ClientApp'
-    command: 'custom'
+# - task: Npm@1
+#   inputs:
+#     customCommand: 'npm install' 
+#     workingDir: '$(Agent.BuildDirectory)/ShinyBooking/ClientApp'
+#     command: 'custom'
 
 - task: Npm@1
   inputs:
