@@ -26,7 +26,7 @@ steps:
 - task: Npm@1
   inputs:
     customCommand: 'npm update' 
-    workingDir: './ShinyBooking/ClientApp'
+    workingDir: './ClientApp'
 
 - task: VSBuild@1
   inputs:
@@ -39,3 +39,5 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: PublishBuildArtifacts@1
