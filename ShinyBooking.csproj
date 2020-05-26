@@ -34,7 +34,7 @@
     </ItemGroup>
 
 	<ItemGroup>
-      <Content Include="ClientApp/**" CopyToPublishDirectory="PreserveNewest"  />
+      <None Include="ClientApp/**" CopyToPublishDirectory="PreserveNewest"  />
     </ItemGroup>
 
 
