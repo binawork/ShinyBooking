@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
       formValue.UserName,
       formValue.Password
     );
-    console.log(loginUser);
     this.dataStorageService.login(loginUser);
   };
 
