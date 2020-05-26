@@ -33,17 +33,11 @@
       <PackageReference Include="ServiceStack" Version="5.8.0" />
     </ItemGroup>
 
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="ClientApp\dist\appsettings.json" />
+	<ItemGroup>
+      <Content Include="ClientApp/**" CopyToPublishDirectory="PreserveNewest"  />
     </ItemGroup>
 
-    <ItemGroup>
-      <Content Update="ClientApp\src\app\shared\roomDTOexapmle.json">
-        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      </Content>
-    </ItemGroup>
+
 
 
 </Project>
