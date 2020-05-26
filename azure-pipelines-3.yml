@@ -23,10 +23,10 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-# - task: Npm@1
-#   inputs:
-#     customCommand: 'npm update' 
-#     workingDir: './ClientApp'
+- task: Npm@1
+  inputs:
+    customCommand: 'npm update' 
+    workingDir: './ClientApp'
 
 - task: VSBuild@1
   inputs:
