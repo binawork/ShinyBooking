@@ -36,11 +36,11 @@ steps:
 #     workingDir: '$(Agent.BuildDirectory)/ShinyBooking/ClientApp'
 #     command: 'custom'
 
-# - task: Npm@1
-#   inputs:
-#     customCommand: 'npm install -g @angular/cli' 
-#     workingDir: '$(Agent.BuildDirectory)/ShinyBooking/ClientApp'
-#     command: 'custom'
+- task: Npm@1
+  inputs:
+    customCommand: 'npm install -g @angular/cli' 
+    workingDir: '$(Build.Repository.LocalPath)/ClientApp'
+    command: 'custom'
 
 - task: Npm@1
   inputs:
