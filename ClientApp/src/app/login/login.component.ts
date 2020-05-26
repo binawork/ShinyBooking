@@ -12,7 +12,7 @@ import {NgModel} from "@angular/forms";
 
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  password: string = '';
+  password: string = 'exampleNotEmptyPassword';
 
   constructor(public dataStorageService: DataStorageService,
               private fb: FormBuilder) {

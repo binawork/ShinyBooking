@@ -9,8 +9,11 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./registration-form.component.css', './styles.css']
 })
 export class RegistrationFormComponent implements OnInit {
-
   registrationForm:FormGroup;
+  password: string = 'exampleNotEmptyPassword';
+  email: string = "example@email.com"
+  isEmailValid: boolean = true;
+
   //TODO add separate service to communicate with backend
   constructor(private dataStorageService: DataStorageService,
     private fb: FormBuilder) { }
@@ -26,9 +29,9 @@ export class RegistrationFormComponent implements OnInit {
     console.log('form loaded');
   }
   onSubmit() {
-   
+
     let value = this.registrationForm.value;
-   
+
     const registeredUser = new RegistrationModel(
       value.UserName,
       value.Email,
@@ -42,7 +45,10 @@ export class RegistrationFormComponent implements OnInit {
     //this.resetForm();
 
   };
-      
+
     // todo when successfully added redirect to /rooms
- 
+
+  validateEmail(mail) {
+    this.isEmailValid = (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+  }
 }
