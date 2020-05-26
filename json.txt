@@ -1,0 +1,34 @@
+{
+"name":"new room without id",
+"description":"super extra room",
+"roomArrangementsCapabilitiesDescription":"movable walls, floor power sockets",
+"price":10.0,
+"area":50,
+"capacity":20,
+"parkingSpace":true,
+"photos":[
+	{
+		"photoUrl":"https://res.cloudinary.com/abbw/image/upload/v1584643642/room3/oi73xpwohpok2yno9tst.jpg"}],
+"roomequipments":[
+	{"equipmentid":"equipment1"},
+	{"equipmentid":"equipment2"}],
+"roomAddress":
+	{
+		"street":"Grojecka",
+		"buildingNumber":10,
+		"apartmentNumber":22,
+		"otherAddressInformation":null,
+		"city":"Warsaw",
+		"country":"Poland",
+		"postalCode":12100,
+		"directions":"just around the corner",
+		"phoneNumber1":"500014125",
+		"phoneNumber2":null,
+		"emailAddress":"room@gmail.com",
+		"webPage":null},
+"roomactivities":[
+	{"activitiesid":"activity3"},
+	{"activitiesid":"activity4"}],
+"roomamenitiesForDisabled":[
+	{"amenitiesfordisabledid":"amenity3"},
+	{"amenitiesfordisabledid":"amenity5"}]}
