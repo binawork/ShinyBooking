@@ -51,7 +51,7 @@ steps:
 - task: Npm@1
   inputs:
     customCommand: 'npm run buildProd' 
-    workingDir: '$(Agent.BuildDirectory)/ClientApp'
+    workingDir: '$(Agent.BuildDirectory)/s/ClientApp'
     command: 'custom'
 
 
