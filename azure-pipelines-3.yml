@@ -25,8 +25,25 @@ steps:
 
 - task: Npm@1
   inputs:
-    customCommand: 'npm update' 
+    customCommand: 'npm update'
     workingDir: './ClientApp'
+
+- task: Npm@1
+  inputs:
+    customCommand: 'npm install -g @angular/cli' 
+    workingDir: './ClientApp'
+
+- task: Npm@1
+  inputs:
+    customCommand: 'npm install' 
+    workingDir: './ClientApp'
+
+- task: Npm@1
+  inputs:
+    customCommand: 'npm run build ' 
+    workingDir: './ClientApp'
+
+
 
 - task: VSBuild@1
   inputs:
@@ -34,6 +51,10 @@ steps:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: CmdLine@2
+  inputs:
+    script: 'ng build'
+    workingDirectory: './ClientApp'
 
 - task: VSTest@2
   inputs:
