@@ -49,7 +49,7 @@ steps:
 
 - task: Npm@1
   inputs:
-    customCommand: 'run buildProd' 
+    customCommand: 'run build' 
     workingDir: '$(Build.Repository.LocalPath)/ClientApp'
     command: 'custom'
 
