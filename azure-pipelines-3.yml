@@ -42,16 +42,15 @@ steps:
 #     workingDir: '$(Agent.BuildDirectory)/ShinyBooking/ClientApp'
 #     command: 'custom'
 
-# - task: Npm@1
-#   inputs:
-#     customCommand: 'npm install' 
-#     workingDir: '$(Agent.BuildDirectory)/ShinyBooking/ClientApp'
-#     command: 'custom'
+- task: Npm@1
+  inputs:
+    workingDir: '$(Build.Repository.LocalPath)/ClientApp'
+    command: 'install'
 
 - task: Npm@1
   inputs:
     customCommand: 'run buildProd' 
-    workingDir: '$(Agent.BuildDirectory)/s/ClientApp'
+    workingDir: '$(Build.Repository.LocalPath)/ClientApp'
     command: 'custom'
 
 
