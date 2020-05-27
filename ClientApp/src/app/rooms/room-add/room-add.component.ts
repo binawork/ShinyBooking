@@ -77,7 +77,6 @@ export class RoomAddComponent implements OnInit {
   // todo nagłówek dla amenities i eq i zrozdzielenie sekcji
   onSubmit() {
     console.log('Form submitted');
-    // this.photosUploadService.uploadPhotos(this.roomForm.value.photos.target.files);
     // filter amenities and equipment, so there will be only checked ones
     this.roomForm.value.amenities = this.roomForm.value.amenities.filter(amenity => amenity.isChecked === true);
     this.roomForm.value.equipment = this.roomForm.value.equipment.filter(equipment => equipment.isChecked === true);
@@ -109,7 +108,6 @@ export class RoomAddComponent implements OnInit {
       address,
       submittedRoomFormValue.activities
     );
-    // newRoom.photos = this.photosUploadService.generatePhotosAsObjects();
     this.photosUploadService.clearAddedPhotos();
     console.log('New room:');
     console.log(newRoom);

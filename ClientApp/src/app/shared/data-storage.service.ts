@@ -25,12 +25,8 @@ export class DataStorageService {
   }
 
   storeUser(user: RegistrationModel) {
-
-    console.log(user);
-
     this.http
       .post('/api/accounts', user)
-
       .subscribe(response => {
         console.log('response:');
         console.log(response);
@@ -48,6 +44,10 @@ export class DataStorageService {
           this.error = error.error.login_failure[0];
         }
       )
+  }
+
+  logout() {
+    this.user.next(null);
   }
 
   private handleAuthentication(userId: string, userName: string, authToken: string, expiresIn: number) {

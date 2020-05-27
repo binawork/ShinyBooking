@@ -38,6 +38,10 @@ export class NavMenuComponent implements OnInit, OnDestroy {
     this.isExpanded = !this.isExpanded;
   }
 
+  onLogout() {
+    this.dataStorageService.logout();
+  }
+
   ngOnDestroy() {
     this.userSub.unsubscribe();
   }

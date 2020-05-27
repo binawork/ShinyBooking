@@ -1,8 +1,9 @@
 <section class="section-padding">
   <div class="container">
-    Value: {{registrationForm.value | json}}
     <div class="row">
       <div class="col-lg-5 col-md-5 mx-auto">
+        <div class="alert alert-danger" *ngIf="this.somethingWentWrong">
+          <h5 style="text-align: center;">Something went wrong...<br/> Try again</h5></div>
         <div class="card padding-card">
           <div class="card-body">
             <h5 class="card-title mb-4">Register</h5>
@@ -21,14 +22,16 @@
               <div class="form-group">
                 <label for="MobileNumber">Phone Number <span class="text-danger">*</span></label>
                 <input
-                  type="number"
+                  type="tel"
                   class="form-control"
-                  placeholder="Enter Phone Number"
+                  placeholder="012345678"
                   id="PhoneNumberId"
                   formControlName="PhoneNumber"
                   name="PhoneNumber"
                   required
-                  minlength="7">
+                  pattern="[0-9]{9}"
+                  [(ngModel)]="phoneNumber">
+                <span class="help-block text-danger border-danger" *ngIf="phoneNumber.length!=9 || !isNumber(phoneNumber)">Phone Number must be exactly 9 digits long!</span>
               </div>
               <div class="form-group">
                 <label for="Email">Email Address <span class="text-danger">*</span></label>
@@ -42,7 +45,7 @@
                   required
                   email
                   [(ngModel)]="email"
-                  (ngModelChange)="validateEmail(email)">
+                  (ngModelChange)="isEmailValidCheck(email)">
                 <span class="help-block text-danger border-danger" *ngIf="!isEmailValid">This is not a valid email address!</span>
               </div>
               <div class="form-group">
@@ -77,6 +80,7 @@
 
               </button>
             </form>
+            <h5 style="text-align: center;" *ngIf="submitted && !somethingWentWrong" class="text-info">Please wait...</h5>
             <div class="mt-4 text-center login-with-social">
               <button type="button" class="btn btn-facebook btn-block"><i class="mdi mdi-facebook"></i> Login With
                 Facebook

@@ -63,7 +63,7 @@
               <a class="btn btn-success btn-sm" style="cursor: default;">Logged in as {{ loggedUserName }}</a>
             </li>
             <li class="list-inline-item" *ngIf="isLoggedIn">
-              <a class="btn btn-outline-warning btn-sm" [routerLink]="['/register']">Logout</a>
+              <a class="btn btn-outline-warning btn-sm" (click)="onLogout()" [routerLink]="['/rooms']">Logout</a>
             </li>
           </ul>
         </div>
