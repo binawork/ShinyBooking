@@ -11,10 +11,10 @@ import {LoginModel} from "../shared/Login.model";
 })
 export class RegistrationFormComponent implements OnInit {
   registrationForm:FormGroup;
-  password: string = 'exampleNotEmptyPassword';
-  email: string = "example@email.com"
+  password: string = '';
+  email: string = '';
   isEmailValid: boolean = true;
-  phoneNumber: string;
+  phoneNumber: string = '';
   somethingWentWrong = false;
   submitted: boolean = false;
 
@@ -51,7 +51,7 @@ export class RegistrationFormComponent implements OnInit {
       registeredUser.password
     )
      setTimeout(()=>this.dataStorageService.login(loginRegisteredUser), 5000);
-    setTimeout(()=>{this.somethingWentWrong = true;},2000);
+     setTimeout(()=>{this.somethingWentWrong = true;},10000);
   };
 
     // todo when successfully added redirect to /rooms

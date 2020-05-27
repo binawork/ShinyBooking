@@ -32,9 +32,10 @@ export class DataStorageService {
     this.http
       .post('/api/accounts', user)
       .subscribe(response => {
-        console.log('response:');
-        console.log(response);
-      });
+          console.log('response:');
+          console.log(response);
+        }
+      );
   }
 
   storeRoom(room: RoomToAddDto) {
@@ -80,7 +81,7 @@ export class DataStorageService {
       userData._token,
       new Date(userData._tokenExpirationDate));
 
-    if(loadedUser.token) {
+    if (loadedUser.token) {
       this.user.next(loadedUser);
       const expirationDuration = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime();
       this.autoLogout(expirationDuration);
@@ -103,7 +104,7 @@ export class DataStorageService {
   autoLogout(expirationDuration: number) {
     this.tokenExpirationTimer = setTimeout(() => {
       this.logout();
-    },expirationDuration)
+    }, expirationDuration)
   }
 
   private handleAuthentication(userId: string, userName: string, authToken: string, expiresIn: number) {
