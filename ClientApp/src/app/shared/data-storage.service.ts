@@ -15,8 +15,11 @@ import {BackendLoginResponse} from "../login/backend-login-response.model";
   providedIn: 'root'
 })
 export class DataStorageService {
+
   error: string = null;
   user = new Subject<User>();
+  private _isLoggedIn = false;
+  private _loggedUserName: string;
 
   constructor(
     private http: HttpClient,
@@ -46,14 +49,43 @@ export class DataStorageService {
       )
   }
 
+  autoLogin() {
+    const userData: {
+      id: string;
+      userName: string;
+      _token: string;
+      _tokenExpirationDate: string;
+    } = JSON.parse(localStorage.getItem('userData'));
+    if (!userData) {
+      return;
+    }
+    const loadedUser = new User(
+      userData.id,
+      userData.userName,
+      userData._token,
+      new Date(userData._tokenExpirationDate));
+
+    if(loadedUser.token) {
+      this.user.next(loadedUser);
+      this.isLoggedIn = true;
+      this.loggedUserName = loadedUser.userName;
+    }
+  }
+
   logout() {
     this.user.next(null);
+    this.isLoggedIn = false;
+    this.loggedUserName = null;
+    localStorage.removeItem('userData');
   }
 
   private handleAuthentication(userId: string, userName: string, authToken: string, expiresIn: number) {
     const expirationDate = new Date(new Date().getTime() + +expiresIn * 1000);
     const user = new User(userId, userName, authToken, expirationDate);
     this.user.next(user);
+    localStorage.setItem('userData', JSON.stringify(user));
+    this.isLoggedIn = true;
+    this.loggedUserName = user.userName;
   }
 
   storeRoom(room: RoomToAddDto) {
@@ -77,5 +109,21 @@ export class DataStorageService {
     return (p1: any, p2: Observable<any>) => {
       return undefined;
     };
+  }
+
+  get isLoggedIn(): boolean {
+    return this._isLoggedIn;
+  }
+
+  set isLoggedIn(value: boolean) {
+    this._isLoggedIn = value;
+  }
+
+  get loggedUserName(): string {
+    return this._loggedUserName;
+  }
+
+  set loggedUserName(value: string) {
+    this._loggedUserName = value;
   }
 }

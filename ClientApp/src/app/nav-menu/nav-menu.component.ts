@@ -14,7 +14,6 @@ import {User} from "../login/user.model";
   providedIn: 'root'
 })
 export class NavMenuComponent implements OnInit, OnDestroy {
-  isLoggedIn = false;
   public userSub: Subscription;
   loggedUserName: string;
 
@@ -23,8 +22,8 @@ export class NavMenuComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.userSub = this.dataStorageService.user.subscribe((user: User) => {
-      this.isLoggedIn = !!user;
-      this.loggedUserName = user.userName;
+      this.setLoggedIn(!!user);
+      this.setLoggedUserName(user.userName);
     });
   }
 
@@ -44,6 +43,22 @@ export class NavMenuComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.userSub.unsubscribe();
+  }
+
+  isLoggedIn() {
+    return this.dataStorageService.isLoggedIn;
+  }
+
+  setLoggedIn(value: boolean) {
+    this.dataStorageService.isLoggedIn = value;
+  }
+
+  getLoggedUserName() {
+    return this.dataStorageService.loggedUserName;
+  }
+
+  setLoggedUserName(userName: string) {
+    this.dataStorageService.loggedUserName = userName;
   }
 
 }

@@ -13,7 +13,7 @@
               Rooms
             </a>
           </li>
-          <li class="nav-item" *ngIf="isLoggedIn">
+          <li class="nav-item" *ngIf="isLoggedIn()">
             <a class="nav-link" [routerLink]="['/rooms/new']">
               Add New Room
             </a>
@@ -39,7 +39,7 @@
             </div>
           </li>
           <li class="nav-item dropdown" >
-            <a class="nav-link dropdown-toggle" *ngIf="isLoggedIn" href="#" id="5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" *ngIf="isLoggedIn()" href="#" id="5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Logged in
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
@@ -53,16 +53,16 @@
         </ul>
         <div class="my-2 my-lg-0">
           <ul class="list-inline main-nav-right">
-            <li class="list-inline-item" *ngIf="!isLoggedIn">
+            <li class="list-inline-item" *ngIf="!isLoggedIn()">
               <a class="btn btn-link btn-sm" [routerLink]="['/login']">Sign In</a>
             </li>
-            <li class="list-inline-item" *ngIf="!isLoggedIn">
+            <li class="list-inline-item" *ngIf="!isLoggedIn()">
               <a class="btn btn-success btn-sm" [routerLink]="['/register']">Sign Up</a>
             </li>
-            <li class="list-inline-item" *ngIf="isLoggedIn">
-              <a class="btn btn-success btn-sm" style="cursor: default;">Logged in as {{ loggedUserName }}</a>
+            <li class="list-inline-item" *ngIf="isLoggedIn()">
+              <a class="btn btn-success btn-sm" style="cursor: default;">Logged in as {{ getLoggedUserName() }}</a>
             </li>
-            <li class="list-inline-item" *ngIf="isLoggedIn">
+            <li class="list-inline-item" *ngIf="isLoggedIn()">
               <a class="btn btn-outline-warning btn-sm" (click)="onLogout()" [routerLink]="['/rooms']">Logout</a>
             </li>
           </ul>
