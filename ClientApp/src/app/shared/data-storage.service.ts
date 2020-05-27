@@ -20,6 +20,7 @@ export class DataStorageService {
   user = new Subject<User>();
   private _isLoggedIn = false;
   private _loggedUserName: string;
+  private tokenExpirationTimer: any;
 
   constructor(
     private http: HttpClient,
@@ -30,6 +31,20 @@ export class DataStorageService {
   storeUser(user: RegistrationModel) {
     this.http
       .post('/api/accounts', user)
+      .subscribe(response => {
+        console.log('response:');
+        console.log(response);
+      });
+  }
+
+  storeRoom(room: RoomToAddDto) {
+    console.log(room);
+    // and send DTO version through API
+    this.http
+      .post('/api/rooms', room)
+      // .pipe(
+      //   catchError(this.handleError('addRoom', room))
+      // )
       .subscribe(response => {
         console.log('response:');
         console.log(response);
@@ -67,6 +82,8 @@ export class DataStorageService {
 
     if(loadedUser.token) {
       this.user.next(loadedUser);
+      const expirationDuration = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime();
+      this.autoLogout(expirationDuration);
       this.isLoggedIn = true;
       this.loggedUserName = loadedUser.userName;
     }
@@ -77,38 +94,26 @@ export class DataStorageService {
     this.isLoggedIn = false;
     this.loggedUserName = null;
     localStorage.removeItem('userData');
+    if (this.tokenExpirationTimer) {
+      clearTimeout(this.tokenExpirationTimer);
+    }
+    this.tokenExpirationTimer = null;
+  }
+
+  autoLogout(expirationDuration: number) {
+    this.tokenExpirationTimer = setTimeout(() => {
+      this.logout();
+    },expirationDuration)
   }
 
   private handleAuthentication(userId: string, userName: string, authToken: string, expiresIn: number) {
     const expirationDate = new Date(new Date().getTime() + +expiresIn * 1000);
     const user = new User(userId, userName, authToken, expirationDate);
     this.user.next(user);
+    this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));
     this.isLoggedIn = true;
     this.loggedUserName = user.userName;
-  }
-
-  storeRoom(room: RoomToAddDto) {
-    console.log(room);
-    // and send DTO version through API
-    this.http
-      .post('/api/rooms', room)
-      // .pipe(
-      //   catchError(this.handleError('addRoom', room))
-      // )
-      .subscribe(response => {
-        console.log('response:');
-        console.log(response);
-      });
-  }
-
-  // I have no idea what this method should really do and return
-  private handleError(action: string, room: RoomForDetails) {
-    console.log(`Failed to add room:`);
-    console.table(room);
-    return (p1: any, p2: Observable<any>) => {
-      return undefined;
-    };
   }
 
   get isLoggedIn(): boolean {
