@@ -17,6 +17,7 @@ import {NgxGalleryModule} from '@kolkov/ngx-gallery';
 import {RoomAddComponent} from './rooms/room-add/room-add.component';
 import { LoginComponent } from './login/login.component';
 import {RegistrationFormComponent} from './registration/registration-form.component';
+import {LoginGuard} from "./login/login.guard";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import {RegistrationFormComponent} from './registration/registration-form.compon
     RouterModule.forRoot([
       {path: '', component: RoomListComponent, pathMatch: 'full'},
       {path: 'rooms', component: RoomListComponent, pathMatch: 'full'},
-      {path: 'rooms/new', component: RoomAddComponent},
+      {path: 'rooms/new', component: RoomAddComponent}, //canActivate: [LoginGuard]},
       {path: 'rooms/:id', component: RoomDetailsComponent, resolve: {room: RoomDetailsResolver}},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegistrationFormComponent},

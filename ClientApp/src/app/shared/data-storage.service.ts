@@ -1,14 +1,12 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {RoomForDetails} from './room-for-details.model';
-import {Observable, Subject} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Subject} from 'rxjs';
 import {RoomToAddDto} from './room-to-add-dto.model';
 import {RegistrationModel} from './Registration.model';
 import {LoginModel} from './Login.model';
-import {NavMenuComponent} from "../nav-menu/nav-menu.component";
+
 import {Router} from "@angular/router";
 import {User} from "../login/user.model";
-import {catchError, tap} from "rxjs/operators";
 import {BackendLoginResponse} from "../login/backend-login-response.model";
 
 @Injectable({
