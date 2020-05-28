@@ -14,7 +14,7 @@ namespace ShinyBooking.Dto
             Id = Guid.NewGuid().ToString();
            
         }
-
+        public string Token {get; set;}
         public string Id { get; set; }
         public string Name { get; set; }
 

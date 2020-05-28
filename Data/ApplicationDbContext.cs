@@ -79,12 +79,13 @@ namespace ShinyBooking.Data
                 .WithMany(r => r.Photos)
                 .HasForeignKey(p => p.RoomId);
 
+
             //modelBuilder.Entity<Room>()
             //    .HasOne<Customer>(r => r.Customer)
             //    .WithMany(c => c.Rooms)
-            //    .HasForeignKey(r => r.CustomerIdentityId);
+            //    .HasForeignKey(r => r.Customer.Id);
 
-            
+
         }
 
 

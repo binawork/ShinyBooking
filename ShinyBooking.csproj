@@ -43,6 +43,8 @@
       <Compile Remove="Migrations\20200527134053_RelationRoomCustomer_part1.Designer.cs" />
       <Compile Remove="Migrations\20200527134659_RelationRoomCustomer_part1.cs" />
       <Compile Remove="Migrations\20200527134659_RelationRoomCustomer_part1.Designer.cs" />
+      <Compile Remove="Migrations\20200528100353_RelationRoomCustomerPart1.cs" />
+      <Compile Remove="Migrations\20200528100353_RelationRoomCustomerPart1.Designer.cs" />
     </ItemGroup>
 
     <ItemGroup>

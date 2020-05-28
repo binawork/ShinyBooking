@@ -50,7 +50,7 @@ namespace ShinyBooking.Models
         
         public RoomAddress RoomAddress { get; set; }
 
-        //public Customer Customer {get; set; }
+        public Customer Customer {get; set; }
 
         //public string? CustomerId {get; set;}
 

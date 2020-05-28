@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ShinyBooking.Models;
+using System.Collections.Generic;
 
 namespace ShinyBooking.Dto
 {
@@ -18,5 +19,6 @@ namespace ShinyBooking.Dto
         public string MainPhotoUrl { get; set; }
         public IList<EquipmentForReturnDto> Equipments { get; set; }
         public RoomAddressForReturnDto RoomAddress { get; set; }
+        public Customer Customer {get; set;}
     }
 }
