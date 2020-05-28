@@ -1,35 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {LoginModel} from '../shared/Login.model';
 import {DataStorageService} from '../shared/data-storage.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
-
+import {FormGroup, FormBuilder, NgForm} from '@angular/forms';
+import {NgModel} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css', './styles.css']
 })
+
 export class LoginComponent implements OnInit {
-  loginForm:FormGroup;
+  loginForm: FormGroup;
+  password: string = 'exampleNotEmptyPassword';
 
-  constructor( private dataStorageService: DataStorageService,
-              private fb: FormBuilder) { }
+  constructor(public dataStorageService: DataStorageService,
+              private fb: FormBuilder) {
+  }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.loginForm = this.fb.group({
-      UserName:[''],
+      UserName: [''],
       Password: ['']
     });
     this.loginForm.valueChanges.subscribe(console.log);
     console.log('form loaded');
   }
+
   onSubmit() {
-    let value = this.loginForm.value;
+    if (!this.loginForm.valid) {
+      return;
+    }
+    const formValue = this.loginForm.value;
     const loginUser = new LoginModel(
-      value.UserName,
-      value.Password
-      );
-    console.log(loginUser);
-    this.dataStorageService.storeLogin(loginUser);
+      formValue.UserName,
+      formValue.Password
+    );
+    this.dataStorageService.login(loginUser);
   };
+
+
 }
+
