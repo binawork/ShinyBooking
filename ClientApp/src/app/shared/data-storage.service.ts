@@ -8,6 +8,7 @@ import {LoginModel} from './Login.model';
 import {Router} from "@angular/router";
 import {User} from "../login/user.model";
 import {BackendLoginResponse} from "../login/backend-login-response.model";
+import {take} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -26,12 +27,11 @@ export class DataStorageService {
   ) {
   }
 
-  storeUser(user: RegistrationModel) {
+  registerUser(user: RegistrationModel) {
     this.http
       .post('/api/accounts', user)
       .subscribe(response => {
-          console.log('response:');
-          console.log(response);
+          console.log("Resp" + response);
         }
       );
   }
@@ -41,9 +41,6 @@ export class DataStorageService {
     // and send DTO version through API
     this.http
       .post('/api/rooms', room)
-      // .pipe(
-      //   catchError(this.handleError('addRoom', room))
-      // )
       .subscribe(response => {
         console.log('response:');
         console.log(response);
