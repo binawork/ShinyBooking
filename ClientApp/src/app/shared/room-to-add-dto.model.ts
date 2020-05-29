@@ -7,7 +7,6 @@ import {Activity} from "../rooms/activity.model";
 export class RoomToAddDto {
 
   constructor(
-    public id: string,
     public name: string,
     public description: string,
     public roomArrangementsCapabilitiesDescription: string,
@@ -20,7 +19,7 @@ export class RoomToAddDto {
     public roomamenitiesForDisabled: AmenityForDisabled[],
     public roomAddress: RoomAddress,
     public roomactivities: Activity[],
-    public token: string
+    public Token: string
   ) {
     //TODO unhardcode this two fields - user data need to be made for this
     this.roomAddress.emailAddress = 'room@gmail.com';
