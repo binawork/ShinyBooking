@@ -47,7 +47,9 @@ export class PhotosUploadService {
 
       this.addedPhotos.push(new Photo(photoURL));
     }
-    console.log(this.addedPhotos);
+    if(this.addedPhotos.length ==0) {
+      return null;
+    }
     this.addedPhotos[0].IsMain = true;
 
     return this.addedPhotos;
