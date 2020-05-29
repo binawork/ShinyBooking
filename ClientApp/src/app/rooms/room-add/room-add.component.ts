@@ -106,7 +106,8 @@ export class RoomAddComponent implements OnInit {
       submittedRoomFormValue.equipment,
       submittedRoomFormValue.amenities,
       address,
-      submittedRoomFormValue.activities
+      submittedRoomFormValue.activities,
+      JSON.parse(localStorage.getItem('userData'))._token
     );
     this.photosUploadService.clearAddedPhotos();
     console.log('New room:');

@@ -45,7 +45,7 @@ export class RegistrationFormComponent implements OnInit {
 
       );
 
-    this.dataStorageService.storeUser(registeredUser);
+    this.dataStorageService.registerUser(registeredUser);
     const loginRegisteredUser = new LoginModel(
       registeredUser.userName,
       registeredUser.password
