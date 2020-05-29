@@ -94,7 +94,6 @@ export class RoomAddComponent implements OnInit {
     let submittedRoomFormValue = this.roomForm.value;
 
     let newRoom = new RoomToAddDto(
-      submittedRoomFormValue.id,
       submittedRoomFormValue.name,
       submittedRoomFormValue.description,
       submittedRoomFormValue.roomArrangementsCapabilitiesDescription,

@@ -7,7 +7,6 @@ import {Activity} from "../rooms/activity.model";
 export class RoomToAddDto {
 
   constructor(
-    public id: string,
     public name: string,
     public description: string,
     public roomArrangementsCapabilitiesDescription: string,
