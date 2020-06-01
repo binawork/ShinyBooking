@@ -178,8 +178,8 @@ namespace ShinyBooking.Controllers
         [HttpPost]
         public async Task<ActionResult<RoomToAddDto>> PostRoom(RoomToAddDto roomToAdd)
         {
-            var token = Tokens.DeGenerateJwt(roomToAdd.Token);
-            var currentCustomer = _context.Customers.FirstOrDefault(c=> c.IdentityId == token.Id );
+            ResponseToken token = Tokens.DeGenerateJwt(roomToAdd.Token);
+            Customer currentCustomer = _context.Customers.FirstOrDefault(c=> c.IdentityId == token.Id );
             
             foreach (var photo in roomToAdd.Photos)
             {

@@ -5,6 +5,7 @@ namespace ShinyBooking.Models
 {
     public class RoomAddress
     {
+        
         public RoomAddress()
         {
             Id = Guid.NewGuid().ToString();

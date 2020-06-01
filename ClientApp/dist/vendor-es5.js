@@ -34,10 +34,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
@@ -47,6 +43,10 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -103419,22 +103419,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function NgxGalleryPreviewComponent_ngx_gallery_arrows_0_Template(rf, ctx) {
       if (rf & 1) {
-        var _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-arrows", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-arrows", 15);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("prevClick", function NgxGalleryPreviewComponent_ngx_gallery_arrows_0_Template_ngx_gallery_arrows_prevClick_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r12);
 
-          var ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r12.showPrev();
+          return ctx_r11.showPrev();
         })("nextClick", function NgxGalleryPreviewComponent_ngx_gallery_arrows_0_Template_ngx_gallery_arrows_nextClick_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r12);
 
-          var ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r14.showNext();
+          return ctx_r13.showNext();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -103449,33 +103449,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function NgxGalleryPreviewComponent_ngx_gallery_action_3_Template(rf, ctx) {
       if (rf & 1) {
-        var _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 16);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("closeClick", function NgxGalleryPreviewComponent_ngx_gallery_action_3_Template_ngx_gallery_action_closeClick_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r16);
 
-          var action_r15 = ctx.$implicit;
+          var action_r14 = ctx.$implicit;
 
-          var ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return action_r15.onClick($event, ctx_r16.index);
+          return action_r14.onClick($event, ctx_r15.index);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var action_r15 = ctx.$implicit;
+        var action_r14 = ctx.$implicit;
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("icon", action_r15.icon)("disabled", action_r15.disabled)("titleText", action_r15.titleText);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("icon", action_r14.icon)("disabled", action_r14.disabled)("titleText", action_r14.titleText);
       }
     }
 
     function NgxGalleryPreviewComponent_a_4_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "a", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "a", 17);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "i");
 
@@ -103495,16 +103495,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function NgxGalleryPreviewComponent_ngx_gallery_action_5_Template(rf, ctx) {
       if (rf & 1) {
-        var _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 18);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("closeClick", function NgxGalleryPreviewComponent_ngx_gallery_action_5_Template_ngx_gallery_action_closeClick_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r18);
 
-          var ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r18.zoomOut();
+          return ctx_r17.zoomOut();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -103519,16 +103519,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function NgxGalleryPreviewComponent_ngx_gallery_action_6_Template(rf, ctx) {
       if (rf & 1) {
-        var _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 18);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("closeClick", function NgxGalleryPreviewComponent_ngx_gallery_action_6_Template_ngx_gallery_action_closeClick_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r20);
 
-          var ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r20.zoomIn();
+          return ctx_r19.zoomIn();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -103543,16 +103543,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function NgxGalleryPreviewComponent_ngx_gallery_action_7_Template(rf, ctx) {
       if (rf & 1) {
-        var _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 7);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("closeClick", function NgxGalleryPreviewComponent_ngx_gallery_action_7_Template_ngx_gallery_action_closeClick_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r23);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r22);
 
-          var ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r22.rotateLeft();
+          return ctx_r21.rotateLeft();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -103567,16 +103567,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function NgxGalleryPreviewComponent_ngx_gallery_action_8_Template(rf, ctx) {
       if (rf & 1) {
-        var _r25 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 7);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("closeClick", function NgxGalleryPreviewComponent_ngx_gallery_action_8_Template_ngx_gallery_action_closeClick_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r24);
 
-          var ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r24.rotateRight();
+          return ctx_r23.rotateRight();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -103591,16 +103591,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function NgxGalleryPreviewComponent_ngx_gallery_action_9_Template(rf, ctx) {
       if (rf & 1) {
-        var _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r26 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 7);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("closeClick", function NgxGalleryPreviewComponent_ngx_gallery_action_9_Template_ngx_gallery_action_closeClick_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r27);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r26);
 
-          var ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r26.manageFullscreen();
+          return ctx_r25.manageFullscreen();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -103615,38 +103615,38 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function NgxGalleryPreviewComponent_img_15_Template(rf, ctx) {
       if (rf & 1) {
-        var _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r29 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "img", 20, 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "img", 19, 20);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NgxGalleryPreviewComponent_img_15_Template_img_click_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r29);
 
           return $event.stopPropagation();
         })("mouseenter", function NgxGalleryPreviewComponent_img_15_Template_img_mouseenter_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r29);
+
+          var ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+
+          return ctx_r30.imageMouseEnter();
+        })("mouseleave", function NgxGalleryPreviewComponent_img_15_Template_img_mouseleave_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r29);
 
           var ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r31.imageMouseEnter();
-        })("mouseleave", function NgxGalleryPreviewComponent_img_15_Template_img_mouseleave_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r30);
+          return ctx_r31.imageMouseLeave();
+        })("mousedown", function NgxGalleryPreviewComponent_img_15_Template_img_mousedown_0_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r29);
 
           var ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r32.imageMouseLeave();
-        })("mousedown", function NgxGalleryPreviewComponent_img_15_Template_img_mousedown_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r30);
+          return ctx_r32.mouseDownHandler($event);
+        })("touchstart", function NgxGalleryPreviewComponent_img_15_Template_img_touchstart_0_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r29);
 
           var ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
           return ctx_r33.mouseDownHandler($event);
-        })("touchstart", function NgxGalleryPreviewComponent_img_15_Template_img_touchstart_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r30);
-
-          var ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-          return ctx_r34.mouseDownHandler($event);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -103663,45 +103663,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function NgxGalleryPreviewComponent_video_16_Template(rf, ctx) {
+    function NgxGalleryPreviewComponent_ngx_gallery_bullets_16_Template(rf, ctx) {
       if (rf & 1) {
-        var _r37 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r35 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "video", 22, 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-bullets", 21);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NgxGalleryPreviewComponent_video_16_Template_video_click_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r37);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("bulletChange", function NgxGalleryPreviewComponent_ngx_gallery_bullets_16_Template_ngx_gallery_bullets_bulletChange_0_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r35);
 
-          return $event.stopPropagation();
-        })("mouseenter", function NgxGalleryPreviewComponent_video_16_Template_video_mouseenter_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r37);
+          var ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          var ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-          return ctx_r38.imageMouseEnter();
-        })("mouseleave", function NgxGalleryPreviewComponent_video_16_Template_video_mouseleave_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r37);
-
-          var ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-          return ctx_r39.imageMouseLeave();
-        })("mousedown", function NgxGalleryPreviewComponent_video_16_Template_video_mousedown_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r37);
-
-          var ctx_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-          return ctx_r40.mouseDownHandler($event);
-        })("touchstart", function NgxGalleryPreviewComponent_video_16_Template_video_touchstart_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r37);
-
-          var ctx_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-          return ctx_r41.mouseDownHandler($event);
+          return ctx_r34.showAtIndex($event);
         });
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](2, "source", 23);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, " Your browser does not support the video tag. ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
@@ -103709,28 +103683,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       if (rf & 2) {
         var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("transform", ctx_r9.getTransform())("left", ctx_r9.positionLeft + "px")("top", ctx_r9.positionTop + "px");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("ngx-gallery-active", !ctx_r9.loading)("animation", ctx_r9.animation)("ngx-gallery-grab", ctx_r9.canDragOnZoom());
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("src", ctx_r9.src, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("count", ctx_r9.images.length)("active", ctx_r9.index);
       }
     }
 
-    function NgxGalleryPreviewComponent_ngx_gallery_bullets_17_Template(rf, ctx) {
+    function NgxGalleryPreviewComponent_div_17_Template(rf, ctx) {
       if (rf & 1) {
-        var _r43 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r37 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-bullets", 24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 22);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("bulletChange", function NgxGalleryPreviewComponent_ngx_gallery_bullets_17_Template_ngx_gallery_bullets_bulletChange_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r43);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NgxGalleryPreviewComponent_div_17_Template_div_click_0_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r37);
 
-          var ctx_r42 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-          return ctx_r42.showAtIndex($event);
+          return $event.stopPropagation();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -103739,18 +103705,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       if (rf & 2) {
         var ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("count", ctx_r10.images.length)("active", ctx_r10.index);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("innerHTML", ctx_r10.description, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeHtml"]);
       }
     }
 
-    function NgxGalleryPreviewComponent_div_18_Template(rf, ctx) {
+    function NgxGalleryImageComponent_div_1_ngx_gallery_action_2_Template(rf, ctx) {
       if (rf & 1) {
-        var _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r47 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 25);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 7);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NgxGalleryPreviewComponent_div_18_Template_div_click_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r45);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("closeClick", function NgxGalleryImageComponent_div_1_ngx_gallery_action_2_Template_ngx_gallery_action_closeClick_0_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r47);
+
+          var action_r45 = ctx.$implicit;
+
+          var image_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
+
+          return action_r45.onClick($event, image_r41.index);
+        });
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var action_r45 = ctx.$implicit;
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("icon", action_r45.icon)("disabled", action_r45.disabled)("titleText", action_r45.titleText);
+      }
+    }
+
+    function NgxGalleryImageComponent_div_1_div_3_Template(rf, ctx) {
+      if (rf & 1) {
+        var _r50 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 8);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NgxGalleryImageComponent_div_1_div_3_Template_div_click_0_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r50);
 
           return $event.stopPropagation();
         });
@@ -103759,59 +103751,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+        var image_r41 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("innerHTML", ctx_r11.description, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeHtml"]);
-      }
-    }
+        var ctx_r44 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-    function NgxGalleryImageComponent_div_1_div_1_ngx_gallery_action_2_Template(rf, ctx) {
-      if (rf & 1) {
-        var _r57 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 8);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("closeClick", function NgxGalleryImageComponent_div_1_div_1_ngx_gallery_action_2_Template_ngx_gallery_action_closeClick_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r57);
-
-          var action_r55 = ctx.$implicit;
-
-          var image_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2).$implicit;
-
-          return action_r55.onClick($event, image_r50.index);
-        });
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      }
-
-      if (rf & 2) {
-        var action_r55 = ctx.$implicit;
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("icon", action_r55.icon)("disabled", action_r55.disabled)("titleText", action_r55.titleText);
-      }
-    }
-
-    function NgxGalleryImageComponent_div_1_div_1_div_3_Template(rf, ctx) {
-      if (rf & 1) {
-        var _r60 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 9);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NgxGalleryImageComponent_div_1_div_1_div_3_Template_div_click_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r60);
-
-          return $event.stopPropagation();
-        });
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      }
-
-      if (rf & 2) {
-        var image_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2).$implicit;
-
-        var ctx_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("innerHTML", ctx_r54.descriptions[image_r50.index], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeHtml"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("innerHTML", ctx_r44.descriptions[image_r41.index], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeHtml"]);
       }
     }
 
@@ -103824,247 +103768,153 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       };
     };
 
-    function NgxGalleryImageComponent_div_1_div_1_Template(rf, ctx) {
-      if (rf & 1) {
-        var _r63 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 4);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NgxGalleryImageComponent_div_1_div_1_Template_div_click_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r63);
-
-          var image_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-
-          var ctx_r62 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-          return ctx_r62.handleClick($event, image_r50.index);
-        });
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 5);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, NgxGalleryImageComponent_div_1_div_1_ngx_gallery_action_2_Template, 1, 3, "ngx-gallery-action", 6);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, NgxGalleryImageComponent_div_1_div_1_div_3_Template, 1, 1, "div", 7);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      }
-
-      if (rf & 2) {
-        var image_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-
-        var ctx_r52 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("background-image", ctx_r52.getSafeUrl(image_r50.src), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefaultStyleSanitizer"]);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction4"](5, _c1, ctx_r52.selectedIndex == image_r50.index, ctx_r52.selectedIndex > image_r50.index, ctx_r52.selectedIndex < image_r50.index, ctx_r52.clickable));
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r52.actions);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r52.showDescription && ctx_r52.descriptions[image_r50.index]);
-      }
-    }
-
     function NgxGalleryImageComponent_div_1_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
+        var _r53 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, NgxGalleryImageComponent_div_1_div_1_Template, 4, 10, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 3);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      }
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NgxGalleryImageComponent_div_1_Template_div_click_0_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r53);
 
-      if (rf & 2) {
-        var image_r50 = ctx.$implicit;
+          var image_r41 = ctx.$implicit;
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+          var ctx_r52 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", image_r50.type === "image");
-      }
-    }
-
-    function NgxGalleryImageComponent_div_2_div_1_ngx_gallery_action_5_Template(rf, ctx) {
-      if (rf & 1) {
-        var _r73 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 8);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("closeClick", function NgxGalleryImageComponent_div_2_div_1_ngx_gallery_action_5_Template_ngx_gallery_action_closeClick_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r73);
-
-          var action_r71 = ctx.$implicit;
-
-          var image_r66 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2).$implicit;
-
-          return action_r71.onClick($event, image_r66.index);
+          return ctx_r52.handleClick($event, image_r41.index);
         });
 
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 4);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, NgxGalleryImageComponent_div_1_ngx_gallery_action_2_Template, 1, 3, "ngx-gallery-action", 5);
+
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      }
 
-      if (rf & 2) {
-        var action_r71 = ctx.$implicit;
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("icon", action_r71.icon)("disabled", action_r71.disabled)("titleText", action_r71.titleText);
-      }
-    }
-
-    function NgxGalleryImageComponent_div_2_div_1_div_6_Template(rf, ctx) {
-      if (rf & 1) {
-        var _r76 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 9);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NgxGalleryImageComponent_div_2_div_1_div_6_Template_div_click_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r76);
-
-          return $event.stopPropagation();
-        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, NgxGalleryImageComponent_div_1_div_3_Template, 1, 1, "div", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var image_r66 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2).$implicit;
+        var image_r41 = ctx.$implicit;
 
-        var ctx_r70 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+        var ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("innerHTML", ctx_r70.descriptions[image_r66.index], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeHtml"]);
-      }
-    }
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("background-image", ctx_r38.getSafeUrl(image_r41.src), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefaultStyleSanitizer"]);
 
-    function NgxGalleryImageComponent_div_2_div_1_Template(rf, ctx) {
-      if (rf & 1) {
-        var _r79 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 4);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NgxGalleryImageComponent_div_2_div_1_Template_div_click_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r79);
-
-          var image_r66 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-
-          var ctx_r78 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-          return ctx_r78.handleClick($event, image_r66.index);
-        });
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "video", 11);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](2, "source", 12);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, " Your browser does not support the video tag. ");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 5);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](5, NgxGalleryImageComponent_div_2_div_1_ngx_gallery_action_5_Template, 1, 3, "ngx-gallery-action", 6);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, NgxGalleryImageComponent_div_2_div_1_div_6_Template, 1, 1, "div", 7);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      }
-
-      if (rf & 2) {
-        var image_r66 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-
-        var ctx_r68 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction4"](4, _c1, ctx_r68.selectedIndex == image_r66.index, ctx_r68.selectedIndex > image_r66.index, ctx_r68.selectedIndex < image_r66.index, ctx_r68.clickable));
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction4"](5, _c1, ctx_r38.selectedIndex == image_r41.index, ctx_r38.selectedIndex > image_r41.index, ctx_r38.selectedIndex < image_r41.index, ctx_r38.clickable));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("src", image_r66.src, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeUrl"]);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r68.actions);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r38.actions);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r68.showDescription && ctx_r68.descriptions[image_r66.index]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r38.showDescription && ctx_r38.descriptions[image_r41.index]);
       }
     }
 
-    function NgxGalleryImageComponent_div_2_Template(rf, ctx) {
+    function NgxGalleryImageComponent_ngx_gallery_bullets_2_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
+        var _r55 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, NgxGalleryImageComponent_div_2_div_1_Template, 7, 9, "div", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-bullets", 9);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      }
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("bulletChange", function NgxGalleryImageComponent_ngx_gallery_bullets_2_Template_ngx_gallery_bullets_bulletChange_0_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r55);
 
-      if (rf & 2) {
-        var image_r66 = ctx.$implicit;
+          var ctx_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", image_r66.type === "video");
-      }
-    }
-
-    function NgxGalleryImageComponent_ngx_gallery_bullets_3_Template(rf, ctx) {
-      if (rf & 1) {
-        var _r83 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-bullets", 13);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("bulletChange", function NgxGalleryImageComponent_ngx_gallery_bullets_3_Template_ngx_gallery_bullets_bulletChange_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r83);
-
-          var ctx_r82 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-          return ctx_r82.show($event);
+          return ctx_r54.show($event);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+        var ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("count", ctx_r48.images.length)("active", ctx_r48.selectedIndex);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("count", ctx_r39.images.length)("active", ctx_r39.selectedIndex);
       }
     }
 
-    function NgxGalleryImageComponent_ngx_gallery_arrows_4_Template(rf, ctx) {
+    function NgxGalleryImageComponent_ngx_gallery_arrows_3_Template(rf, ctx) {
       if (rf & 1) {
-        var _r85 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r57 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-arrows", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-arrows", 10);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("prevClick", function NgxGalleryImageComponent_ngx_gallery_arrows_4_Template_ngx_gallery_arrows_prevClick_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r85);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("prevClick", function NgxGalleryImageComponent_ngx_gallery_arrows_3_Template_ngx_gallery_arrows_prevClick_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r57);
 
-          var ctx_r84 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r56 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r84.showPrev();
-        })("nextClick", function NgxGalleryImageComponent_ngx_gallery_arrows_4_Template_ngx_gallery_arrows_nextClick_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r85);
+          return ctx_r56.showPrev();
+        })("nextClick", function NgxGalleryImageComponent_ngx_gallery_arrows_3_Template_ngx_gallery_arrows_nextClick_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r57);
 
-          var ctx_r86 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r58 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r86.showNext();
+          return ctx_r58.showNext();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+        var ctx_r40 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("ngx-gallery-image-size-", ctx_r49.size, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("ngx-gallery-image-size-", ctx_r40.size, "");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("prevDisabled", !ctx_r49.canShowPrev())("nextDisabled", !ctx_r49.canShowNext())("arrowPrevIcon", ctx_r49.arrowPrevIcon)("arrowNextIcon", ctx_r49.arrowNextIcon);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("prevDisabled", !ctx_r40.canShowPrev())("nextDisabled", !ctx_r40.canShowNext())("arrowPrevIcon", ctx_r40.arrowPrevIcon)("arrowNextIcon", ctx_r40.arrowNextIcon);
+      }
+    }
+
+    function NgxGalleryThumbnailsComponent_a_2_ngx_gallery_action_2_Template(rf, ctx) {
+      if (rf & 1) {
+        var _r67 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 7);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("closeClick", function NgxGalleryThumbnailsComponent_a_2_ngx_gallery_action_2_Template_ngx_gallery_action_closeClick_0_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r67);
+
+          var action_r65 = ctx.$implicit;
+
+          var i_r62 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().index;
+
+          return action_r65.onClick($event, i_r62);
+        });
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var action_r65 = ctx.$implicit;
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("icon", action_r65.icon)("disabled", action_r65.disabled)("titleText", action_r65.titleText);
+      }
+    }
+
+    function NgxGalleryThumbnailsComponent_a_2_div_3_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 8);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "span", 9);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var ctx_r64 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("+", ctx_r64.remainingCountValue, "");
       }
     }
 
@@ -104075,226 +103925,114 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       };
     };
 
-    function NgxGalleryThumbnailsComponent_a_2_div_1_Template(rf, ctx) {
-      if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "div", 9);
-      }
-
-      if (rf & 2) {
-        var ctx_r95 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-        var image_r89 = ctx_r95.$implicit;
-        var i_r90 = ctx_r95.index;
-
-        var ctx_r91 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("background-image", ctx_r91.getSafeUrl(image_r89), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefaultStyleSanitizer"]);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction2"](3, _c2, i_r90 == ctx_r91.selectedIndex, ctx_r91.clickable));
-      }
-    }
-
-    function NgxGalleryThumbnailsComponent_a_2_div_2_Template(rf, ctx) {
-      if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 10);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "video", 11);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](2, "source", 12);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, " Your browser does not support the video tag. ");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      }
-
-      if (rf & 2) {
-        var ctx_r96 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-        var i_r90 = ctx_r96.index;
-        var image_r89 = ctx_r96.$implicit;
-
-        var ctx_r92 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction2"](2, _c2, i_r90 == ctx_r92.selectedIndex, ctx_r92.clickable));
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("src", image_r89, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeUrl"]);
-      }
-    }
-
-    function NgxGalleryThumbnailsComponent_a_2_ngx_gallery_action_4_Template(rf, ctx) {
-      if (rf & 1) {
-        var _r99 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-action", 13);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("closeClick", function NgxGalleryThumbnailsComponent_a_2_ngx_gallery_action_4_Template_ngx_gallery_action_closeClick_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r99);
-
-          var action_r97 = ctx.$implicit;
-
-          var i_r90 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().index;
-
-          return action_r97.onClick($event, i_r90);
-        });
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      }
-
-      if (rf & 2) {
-        var action_r97 = ctx.$implicit;
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("icon", action_r97.icon)("disabled", action_r97.disabled)("titleText", action_r97.titleText);
-      }
-    }
-
-    function NgxGalleryThumbnailsComponent_a_2_div_5_Template(rf, ctx) {
-      if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 14);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "span", 15);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      }
-
-      if (rf & 2) {
-        var ctx_r94 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("+", ctx_r94.remainingCountValue, "");
-      }
-    }
-
     function NgxGalleryThumbnailsComponent_a_2_Template(rf, ctx) {
       if (rf & 1) {
-        var _r102 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r70 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "a", 3);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NgxGalleryThumbnailsComponent_a_2_Template_a_click_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r102);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r70);
 
-          var i_r90 = ctx.index;
+          var i_r62 = ctx.index;
 
-          var ctx_r101 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r69 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r101.handleClick($event, i_r90);
+          return ctx_r69.handleClick($event, i_r62);
         });
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, NgxGalleryThumbnailsComponent_a_2_div_1_Template, 1, 6, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 4);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, NgxGalleryThumbnailsComponent_a_2_div_2_Template, 4, 5, "div", 5);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 6);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](4, NgxGalleryThumbnailsComponent_a_2_ngx_gallery_action_4_Template, 1, 3, "ngx-gallery-action", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, NgxGalleryThumbnailsComponent_a_2_ngx_gallery_action_2_Template, 1, 3, "ngx-gallery-action", 5);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](5, NgxGalleryThumbnailsComponent_a_2_div_5_Template, 3, 1, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, NgxGalleryThumbnailsComponent_a_2_div_3_Template, 3, 1, "div", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var image_r89 = ctx.$implicit;
-        var i_r90 = ctx.index;
+        var image_r61 = ctx.$implicit;
+        var i_r62 = ctx.index;
 
-        var ctx_r87 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+        var ctx_r59 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("width", ctx_r87.getThumbnailWidth())("height", ctx_r87.getThumbnailHeight())("left", ctx_r87.getThumbnailLeft(i_r90))("top", ctx_r87.getThumbnailTop(i_r90));
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("background-image", ctx_r59.getSafeUrl(image_r61), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefaultStyleSanitizer"])("width", ctx_r59.getThumbnailWidth())("height", ctx_r59.getThumbnailHeight())("left", ctx_r59.getThumbnailLeft(i_r62))("top", ctx_r59.getThumbnailTop(i_r62));
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("href", ctx_r87.hasLink(i_r90) ? ctx_r87.links[i_r90] : "#", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeUrl"])("target", ctx_r87.linkTarget)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction2"](16, _c2, i_r90 == ctx_r87.selectedIndex, ctx_r87.clickable));
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("href", ctx_r59.hasLink(i_r62) ? ctx_r59.links[i_r62] : "#", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeUrl"])("target", ctx_r59.linkTarget)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction2"](16, _c2, i_r62 == ctx_r59.selectedIndex, ctx_r59.clickable));
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx_r87.labels[i_r90]);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r87.getFileType(image_r89) == "image");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r87.getFileType(image_r89) == "video");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx_r59.labels[i_r62]);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r87.actions);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r59.actions);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r87.remainingCount && ctx_r87.remainingCountValue && i_r90 == ctx_r87.rows * ctx_r87.columns - 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r59.remainingCount && ctx_r59.remainingCountValue && i_r62 == ctx_r59.rows * ctx_r59.columns - 1);
       }
     }
 
     function NgxGalleryThumbnailsComponent_ngx_gallery_arrows_3_Template(rf, ctx) {
       if (rf & 1) {
-        var _r104 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r72 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-arrows", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-arrows", 10);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("prevClick", function NgxGalleryThumbnailsComponent_ngx_gallery_arrows_3_Template_ngx_gallery_arrows_prevClick_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r104);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r72);
 
-          var ctx_r103 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r71 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r103.moveLeft();
+          return ctx_r71.moveLeft();
         })("nextClick", function NgxGalleryThumbnailsComponent_ngx_gallery_arrows_3_Template_ngx_gallery_arrows_nextClick_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r104);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r72);
 
-          var ctx_r105 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r73 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r105.moveRight();
+          return ctx_r73.moveRight();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var ctx_r88 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+        var ctx_r60 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("prevDisabled", !ctx_r88.canMoveLeft())("nextDisabled", !ctx_r88.canMoveRight())("arrowPrevIcon", ctx_r88.arrowPrevIcon)("arrowNextIcon", ctx_r88.arrowNextIcon);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("prevDisabled", !ctx_r60.canMoveLeft())("nextDisabled", !ctx_r60.canMoveRight())("arrowPrevIcon", ctx_r60.arrowPrevIcon)("arrowNextIcon", ctx_r60.arrowNextIcon);
       }
     }
 
     function NgxGalleryComponent_ngx_gallery_image_1_Template(rf, ctx) {
       if (rf & 1) {
-        var _r109 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r77 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-image", 3);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("imageClick", function NgxGalleryComponent_ngx_gallery_image_1_Template_ngx_gallery_image_imageClick_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r109);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r77);
 
-          var ctx_r108 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r76 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r108.openPreview($event);
+          return ctx_r76.openPreview($event);
         })("activeChange", function NgxGalleryComponent_ngx_gallery_image_1_Template_ngx_gallery_image_activeChange_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r109);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r77);
 
-          var ctx_r110 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r78 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r110.selectFromImage($event);
+          return ctx_r78.selectFromImage($event);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var ctx_r106 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+        var ctx_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("height", ctx_r106.getImageHeight());
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("height", ctx_r74.getImageHeight());
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("images", ctx_r106.mediumImages)("clickable", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.preview)("selectedIndex", ctx_r106.selectedIndex)("arrows", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.imageArrows)("arrowsAutoHide", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.imageArrowsAutoHide)("arrowPrevIcon", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.arrowPrevIcon)("arrowNextIcon", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.arrowNextIcon)("swipe", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.imageSwipe)("animation", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.imageAnimation)("size", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.imageSize)("autoPlay", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.imageAutoPlay)("autoPlayInterval", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.imageAutoPlayInterval)("autoPlayPauseOnHover", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.imageAutoPlayPauseOnHover)("infinityMove", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.imageInfinityMove)("lazyLoading", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.lazyLoading)("actions", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.imageActions)("descriptions", ctx_r106.descriptions)("showDescription", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.imageDescription)("bullets", ctx_r106.currentOptions == null ? null : ctx_r106.currentOptions.imageBullets);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("images", ctx_r74.mediumImages)("clickable", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.preview)("selectedIndex", ctx_r74.selectedIndex)("arrows", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.imageArrows)("arrowsAutoHide", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.imageArrowsAutoHide)("arrowPrevIcon", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.arrowPrevIcon)("arrowNextIcon", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.arrowNextIcon)("swipe", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.imageSwipe)("animation", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.imageAnimation)("size", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.imageSize)("autoPlay", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.imageAutoPlay)("autoPlayInterval", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.imageAutoPlayInterval)("autoPlayPauseOnHover", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.imageAutoPlayPauseOnHover)("infinityMove", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.imageInfinityMove)("lazyLoading", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.lazyLoading)("actions", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.imageActions)("descriptions", ctx_r74.descriptions)("showDescription", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.imageDescription)("bullets", ctx_r74.currentOptions == null ? null : ctx_r74.currentOptions.imageBullets);
       }
     }
 
@@ -104304,27 +104042,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function NgxGalleryComponent_ngx_gallery_thumbnails_2_Template(rf, ctx) {
       if (rf & 1) {
-        var _r112 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r80 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ngx-gallery-thumbnails", 4);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("activeChange", function NgxGalleryComponent_ngx_gallery_thumbnails_2_Template_ngx_gallery_thumbnails_activeChange_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r112);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r80);
 
-          var ctx_r111 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r79 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r111.selectFromThumbnails($event);
+          return ctx_r79.selectFromThumbnails($event);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var ctx_r107 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+        var ctx_r75 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("margin-top", ctx_r107.getThumbnailsMarginTop())("margin-bottom", ctx_r107.getThumbnailsMarginBottom())("height", ctx_r107.getThumbnailsHeight());
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("margin-top", ctx_r75.getThumbnailsMarginTop())("margin-bottom", ctx_r75.getThumbnailsMarginBottom())("height", ctx_r75.getThumbnailsHeight());
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("images", ctx_r107.smallImages)("links", (ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.thumbnailsAsLinks) ? ctx_r107.links : _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction0"](27, _c3))("labels", ctx_r107.labels)("linkTarget", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.linkTarget)("selectedIndex", ctx_r107.selectedIndex)("columns", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.thumbnailsColumns)("rows", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.thumbnailsRows)("margin", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.thumbnailMargin)("arrows", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.thumbnailsArrows)("arrowsAutoHide", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.thumbnailsArrowsAutoHide)("arrowPrevIcon", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.arrowPrevIcon)("arrowNextIcon", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.arrowNextIcon)("clickable", (ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.image) || (ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.preview))("swipe", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.thumbnailsSwipe)("size", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.thumbnailSize)("moveSize", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.thumbnailsMoveSize)("order", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.thumbnailsOrder)("remainingCount", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.thumbnailsRemainingCount)("lazyLoading", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.lazyLoading)("actions", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.thumbnailActions)("ngClass", ctx_r107.currentOptions == null ? null : ctx_r107.currentOptions.thumbnailClasses);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("images", ctx_r75.smallImages)("links", (ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.thumbnailsAsLinks) ? ctx_r75.links : _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction0"](27, _c3))("labels", ctx_r75.labels)("linkTarget", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.linkTarget)("selectedIndex", ctx_r75.selectedIndex)("columns", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.thumbnailsColumns)("rows", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.thumbnailsRows)("margin", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.thumbnailMargin)("arrows", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.thumbnailsArrows)("arrowsAutoHide", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.thumbnailsArrowsAutoHide)("arrowPrevIcon", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.arrowPrevIcon)("arrowNextIcon", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.arrowNextIcon)("clickable", (ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.image) || (ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.preview))("swipe", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.thumbnailsSwipe)("size", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.thumbnailSize)("moveSize", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.thumbnailsMoveSize)("order", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.thumbnailsOrder)("remainingCount", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.thumbnailsRemainingCount)("lazyLoading", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.lazyLoading)("actions", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.thumbnailActions)("ngClass", ctx_r75.currentOptions == null ? null : ctx_r75.currentOptions.thumbnailClasses);
       }
     }
 
@@ -104336,29 +104074,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function NgxGalleryBulletsComponent_div_0_Template(rf, ctx) {
       if (rf & 1) {
-        var _r117 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+        var _r85 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 1);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NgxGalleryBulletsComponent_div_0_Template_div_click_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r117);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r85);
 
-          var i_r115 = ctx.index;
+          var i_r83 = ctx.index;
 
-          var ctx_r116 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+          var ctx_r84 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r116.handleChange($event, i_r115);
+          return ctx_r84.handleChange($event, i_r83);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var i_r115 = ctx.index;
+        var i_r83 = ctx.index;
 
-        var ctx_r113 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+        var ctx_r81 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction1"](1, _c4, i_r115 == ctx_r113.active));
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction1"](1, _c4, i_r83 == ctx_r81.active));
       }
     }
 
@@ -104405,23 +104143,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "getBackgroundUrl",
         value: function getBackgroundUrl(image) {
           return 'url(\'' + this.validateUrl(image) + '\')';
-        }
-      }, {
-        key: "getFileType",
-        value: function getFileType(fileSource) {
-          if (fileSource.startsWith('data:')) {
-            return fileSource.substr(5, Math.min(fileSource.indexOf(';'), fileSource.indexOf('/')) - 5);
-          }
-
-          var fileExtension = fileSource.split('.').pop().toLowerCase();
-
-          if (!fileExtension || fileExtension === 'jpeg' || fileExtension === 'jpg' || fileExtension === 'png' || fileExtension === 'bmp' || fileExtension === 'gif') {
-            return 'image';
-          } else if (fileExtension === 'avi' || fileExtension === 'flv' || fileExtension === 'wmv' || fileExtension === 'mov' || fileExtension === 'mp4') {
-            return 'video';
-          }
-
-          return 'unknown';
         }
       }, {
         key: "getSwipeHandlers",
@@ -104686,11 +104407,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return this.sanitization.bypassSecurityTrustUrl(image);
         }
       }, {
-        key: "getFileType",
-        value: function getFileType(fileSource) {
-          return this.helperService.getFileType(fileSource);
-        }
-      }, {
         key: "zoomIn",
         value: function zoomIn() {
           if (this.canZoomIn()) {
@@ -104869,18 +104585,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.rotateValue = 0;
           this.resetPosition();
           this.src = this.getSafeUrl(this.images[this.index]);
-          this.type = this.getFileType(this.images[this.index]);
           this.srcIndex = this.index;
           this.description = this.descriptions[this.index];
           this.changeDetectorRef.markForCheck();
           setTimeout(function () {
-            if (_this162.isLoaded(_this162.previewImage.nativeElement) || _this162.type === 'video') {
+            if (_this162.isLoaded(_this162.previewImage.nativeElement)) {
               _this162.loading = false;
 
               _this162.startAutoPlay();
 
               _this162.changeDetectorRef.markForCheck();
-            } else if (_this162.type === 'video') {} else {
+            } else {
               setTimeout(function () {
                 if (_this162.loading) {
                   _this162.showSpinner = true;
@@ -104984,9 +104699,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         activeChange: "activeChange"
       },
       features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]],
-      decls: 19,
-      vars: 18,
-      consts: [[3, "prevDisabled", "nextDisabled", "arrowPrevIcon", "arrowNextIcon", "prevClick", "nextClick", 4, "ngIf"], [1, "ngx-gallery-preview-top"], [1, "ngx-gallery-preview-icons"], [3, "icon", "disabled", "titleText", "closeClick", 4, "ngFor", "ngForOf"], ["class", "ngx-gallery-icon", "aria-hidden", "true", "download", "", 3, "href", 4, "ngIf"], [3, "icon", "disabled", "closeClick", 4, "ngIf"], [3, "icon", "closeClick", 4, "ngIf"], [3, "icon", "closeClick"], [1, "ngx-spinner-wrapper", "ngx-gallery-center"], ["aria-hidden", "true"], [1, "ngx-gallery-preview-wrapper", 3, "click", "mouseup", "mousemove", "touchend", "touchmove"], [1, "ngx-gallery-preview-img-wrapper"], ["class", "ngx-gallery-preview-img ngx-gallery-center", 3, "src", "ngx-gallery-active", "animation", "ngx-gallery-grab", "transform", "left", "top", "click", "mouseenter", "mouseleave", "mousedown", "touchstart", 4, "ngIf"], ["controls", "", "style", "width: 100%; height: 100%;", "class", "ngx-gallery-preview-img ngx-gallery-center", 3, "ngx-gallery-active", "animation", "ngx-gallery-grab", "transform", "left", "top", "click", "mouseenter", "mouseleave", "mousedown", "touchstart", 4, "ngIf"], [3, "count", "active", "bulletChange", 4, "ngIf"], ["class", "ngx-gallery-preview-text", 3, "innerHTML", "click", 4, "ngIf"], [3, "prevDisabled", "nextDisabled", "arrowPrevIcon", "arrowNextIcon", "prevClick", "nextClick"], [3, "icon", "disabled", "titleText", "closeClick"], ["aria-hidden", "true", "download", "", 1, "ngx-gallery-icon", 3, "href"], [3, "icon", "disabled", "closeClick"], [1, "ngx-gallery-preview-img", "ngx-gallery-center", 3, "src", "click", "mouseenter", "mouseleave", "mousedown", "touchstart"], ["previewImage", ""], ["controls", "", 1, "ngx-gallery-preview-img", "ngx-gallery-center", 2, "width", "100%", "height", "100%", 3, "click", "mouseenter", "mouseleave", "mousedown", "touchstart"], [3, "src"], [3, "count", "active", "bulletChange"], [1, "ngx-gallery-preview-text", 3, "innerHTML", "click"]],
+      decls: 18,
+      vars: 17,
+      consts: [[3, "prevDisabled", "nextDisabled", "arrowPrevIcon", "arrowNextIcon", "prevClick", "nextClick", 4, "ngIf"], [1, "ngx-gallery-preview-top"], [1, "ngx-gallery-preview-icons"], [3, "icon", "disabled", "titleText", "closeClick", 4, "ngFor", "ngForOf"], ["class", "ngx-gallery-icon", "aria-hidden", "true", "download", "", 3, "href", 4, "ngIf"], [3, "icon", "disabled", "closeClick", 4, "ngIf"], [3, "icon", "closeClick", 4, "ngIf"], [3, "icon", "closeClick"], [1, "ngx-spinner-wrapper", "ngx-gallery-center"], ["aria-hidden", "true"], [1, "ngx-gallery-preview-wrapper", 3, "click", "mouseup", "mousemove", "touchend", "touchmove"], [1, "ngx-gallery-preview-img-wrapper"], ["class", "ngx-gallery-preview-img ngx-gallery-center", 3, "src", "ngx-gallery-active", "animation", "ngx-gallery-grab", "transform", "left", "top", "click", "mouseenter", "mouseleave", "mousedown", "touchstart", 4, "ngIf"], [3, "count", "active", "bulletChange", 4, "ngIf"], ["class", "ngx-gallery-preview-text", 3, "innerHTML", "click", 4, "ngIf"], [3, "prevDisabled", "nextDisabled", "arrowPrevIcon", "arrowNextIcon", "prevClick", "nextClick"], [3, "icon", "disabled", "titleText", "closeClick"], ["aria-hidden", "true", "download", "", 1, "ngx-gallery-icon", 3, "href"], [3, "icon", "disabled", "closeClick"], [1, "ngx-gallery-preview-img", "ngx-gallery-center", 3, "src", "click", "mouseenter", "mouseleave", "mousedown", "touchstart"], ["previewImage", ""], [3, "count", "active", "bulletChange"], [1, "ngx-gallery-preview-text", 3, "innerHTML", "click"]],
       template: function NgxGalleryPreviewComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](0, NgxGalleryPreviewComponent_ngx_gallery_arrows_0_Template, 1, 4, "ngx-gallery-arrows", 0);
@@ -105045,13 +104760,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](15, NgxGalleryPreviewComponent_img_15_Template, 2, 13, "img", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](16, NgxGalleryPreviewComponent_video_16_Template, 4, 13, "video", 13);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](17, NgxGalleryPreviewComponent_ngx_gallery_bullets_17_Template, 1, 2, "ngx-gallery-bullets", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](16, NgxGalleryPreviewComponent_ngx_gallery_bullets_16_Template, 1, 2, "ngx-gallery-bullets", 13);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](18, NgxGalleryPreviewComponent_div_18_Template, 1, 1, "div", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](17, NgxGalleryPreviewComponent_div_17_Template, 1, 1, "div", 14);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -105101,11 +104814,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.src && ctx.type == "image");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.src && ctx.type == "video");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.src);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
@@ -105393,11 +105102,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getSafeUrl(image) {
           return this.sanitization.bypassSecurityTrustStyle(this.helperService.getBackgroundUrl(image));
         }
-      }, {
-        key: "getFileType",
-        value: function getFileType(fileSource) {
-          return this.helperService.getFileType(fileSource);
-        }
       }]);
 
       return NgxGalleryImageComponent;
@@ -105445,30 +105149,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         activeChange: "activeChange"
       },
       features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]],
-      decls: 5,
-      vars: 8,
-      consts: [[4, "ngFor", "ngForOf"], [3, "count", "active", "bulletChange", 4, "ngIf"], [3, "class", "prevDisabled", "nextDisabled", "arrowPrevIcon", "arrowNextIcon", "prevClick", "nextClick", 4, "ngIf"], ["class", "ngx-gallery-image", 3, "ngClass", "background-image", "click", 4, "ngIf"], [1, "ngx-gallery-image", 3, "ngClass", "click"], [1, "ngx-gallery-icons-wrapper"], [3, "icon", "disabled", "titleText", "closeClick", 4, "ngFor", "ngForOf"], ["class", "ngx-gallery-image-text", 3, "innerHTML", "click", 4, "ngIf"], [3, "icon", "disabled", "titleText", "closeClick"], [1, "ngx-gallery-image-text", 3, "innerHTML", "click"], ["class", "ngx-gallery-image", 3, "ngClass", "click", 4, "ngIf"], ["controls", "", 2, "width", "100%", "height", "100%", "background", "#000"], [3, "src"], [3, "count", "active", "bulletChange"], [3, "prevDisabled", "nextDisabled", "arrowPrevIcon", "arrowNextIcon", "prevClick", "nextClick"]],
+      decls: 4,
+      vars: 7,
+      consts: [["class", "ngx-gallery-image", 3, "ngClass", "background-image", "click", 4, "ngFor", "ngForOf"], [3, "count", "active", "bulletChange", 4, "ngIf"], [3, "class", "prevDisabled", "nextDisabled", "arrowPrevIcon", "arrowNextIcon", "prevClick", "nextClick", 4, "ngIf"], [1, "ngx-gallery-image", 3, "ngClass", "click"], [1, "ngx-gallery-icons-wrapper"], [3, "icon", "disabled", "titleText", "closeClick", 4, "ngFor", "ngForOf"], ["class", "ngx-gallery-image-text", 3, "innerHTML", "click", 4, "ngIf"], [3, "icon", "disabled", "titleText", "closeClick"], [1, "ngx-gallery-image-text", 3, "innerHTML", "click"], [3, "count", "active", "bulletChange"], [3, "prevDisabled", "nextDisabled", "arrowPrevIcon", "arrowNextIcon", "prevClick", "nextClick"]],
       template: function NgxGalleryImageComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, NgxGalleryImageComponent_div_1_Template, 2, 1, "div", 0);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, NgxGalleryImageComponent_div_2_Template, 2, 1, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, NgxGalleryImageComponent_div_1_Template, 4, 10, "div", 0);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, NgxGalleryImageComponent_ngx_gallery_bullets_3_Template, 1, 2, "ngx-gallery-bullets", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, NgxGalleryImageComponent_ngx_gallery_bullets_2_Template, 1, 2, "ngx-gallery-bullets", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](4, NgxGalleryImageComponent_ngx_gallery_arrows_4_Template, 1, 7, "ngx-gallery-arrows", 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, NgxGalleryImageComponent_ngx_gallery_arrows_3_Template, 1, 7, "ngx-gallery-arrows", 2);
         }
 
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate2"]("ngx-gallery-image-wrapper ngx-gallery-animation-", ctx.animation, " ngx-gallery-image-size-", ctx.size, "");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.getImages());
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
@@ -105486,7 +105184,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       directives: function directives() {
         return [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"], NgxGalleryActionComponent, NgxGalleryBulletsComponent, NgxGalleryArrowsComponent];
       },
-      styles: ["[_nghost-%COMP%]{width:100%;display:inline-block;position:relative;font-size:25px}.ngx-gallery-image-wrapper[_ngcontent-%COMP%]{width:100%;height:100%;position:absolute;left:0;top:0;overflow:hidden}.ngx-gallery-image[_ngcontent-%COMP%]{background-position:center;background-repeat:no-repeat;height:100%;width:100%;position:absolute;top:0}.ngx-gallery-image-size-cover[_ngcontent-%COMP%]   .ngx-gallery-image[_ngcontent-%COMP%]{background-size:cover}.ngx-gallery-image-size-contain[_ngcontent-%COMP%]   .ngx-gallery-image[_ngcontent-%COMP%]{background-size:contain}.ngx-gallery-animation-fade[_ngcontent-%COMP%]   .ngx-gallery-image[_ngcontent-%COMP%]{left:0;opacity:0;transition:.5s ease-in-out}.ngx-gallery-animation-fade[_ngcontent-%COMP%]   .ngx-gallery-image.ngx-gallery-active[_ngcontent-%COMP%]{opacity:1}.ngx-gallery-animation-slide[_ngcontent-%COMP%]   .ngx-gallery-image[_ngcontent-%COMP%]{transition:.5s ease-in-out}.ngx-gallery-animation-slide[_ngcontent-%COMP%]   .ngx-gallery-image.ngx-gallery-active[_ngcontent-%COMP%]{transform:translateX(0)}.ngx-gallery-animation-slide[_ngcontent-%COMP%]   .ngx-gallery-image.ngx-gallery-inactive-left[_ngcontent-%COMP%]{transform:translateX(-100%)}.ngx-gallery-animation-slide[_ngcontent-%COMP%]   .ngx-gallery-image.ngx-gallery-inactive-right[_ngcontent-%COMP%]{transform:translateX(100%)}.ngx-gallery-animation-rotate[_ngcontent-%COMP%]   .ngx-gallery-image[_ngcontent-%COMP%]{transition:1s;transform:scale(3.5,3.5) rotate(90deg);left:0;opacity:0}.ngx-gallery-animation-rotate[_ngcontent-%COMP%]   .ngx-gallery-image.ngx-gallery-active[_ngcontent-%COMP%]{transform:scale(1,1) rotate(0);opacity:1}.ngx-gallery-animation-zoom[_ngcontent-%COMP%]   .ngx-gallery-image[_ngcontent-%COMP%]{transition:1s;transform:scale(2.5,2.5);left:0;opacity:0}.ngx-gallery-animation-zoom[_ngcontent-%COMP%]   .ngx-gallery-image.ngx-gallery-active[_ngcontent-%COMP%]{transform:scale(1,1);opacity:1}.ngx-gallery-image-text[_ngcontent-%COMP%]{width:100%;background:rgba(0,0,0,.7);padding:10px;text-align:center;color:#fff;font-size:16px;position:absolute;bottom:0;z-index:10}"],
+      styles: ["[_nghost-%COMP%]{width:100%;display:inline-block;position:relative;font-size:25px}.ngx-gallery-image-wrapper[_ngcontent-%COMP%]{width:100%;height:100%;position:absolute;left:0;top:0;overflow:hidden}.ngx-gallery-image[_ngcontent-%COMP%]{background-position:center;background-repeat:no-repeat;height:100%;width:100%;position:absolute;top:0}.ngx-gallery-image-size-cover[_ngcontent-%COMP%]   .ngx-gallery-image[_ngcontent-%COMP%]{background-size:cover}.ngx-gallery-image-size-contain[_ngcontent-%COMP%]   .ngx-gallery-image[_ngcontent-%COMP%]{background-size:contain}.ngx-gallery-animation-fade[_ngcontent-%COMP%]   .ngx-gallery-image[_ngcontent-%COMP%]{left:0;opacity:0;transition:.5s ease-in-out}.ngx-gallery-animation-fade[_ngcontent-%COMP%]   .ngx-gallery-image.ngx-gallery-active[_ngcontent-%COMP%]{opacity:1}.ngx-gallery-animation-slide[_ngcontent-%COMP%]   .ngx-gallery-image[_ngcontent-%COMP%]{transition:.5s ease-in-out}.ngx-gallery-animation-slide[_ngcontent-%COMP%]   .ngx-gallery-image.ngx-gallery-active[_ngcontent-%COMP%]{left:0}.ngx-gallery-animation-slide[_ngcontent-%COMP%]   .ngx-gallery-image.ngx-gallery-inactive-left[_ngcontent-%COMP%]{left:-100%}.ngx-gallery-animation-slide[_ngcontent-%COMP%]   .ngx-gallery-image.ngx-gallery-inactive-right[_ngcontent-%COMP%]{left:100%}.ngx-gallery-animation-rotate[_ngcontent-%COMP%]   .ngx-gallery-image[_ngcontent-%COMP%]{transition:1s;transform:scale(3.5,3.5) rotate(90deg);left:0;opacity:0}.ngx-gallery-animation-rotate[_ngcontent-%COMP%]   .ngx-gallery-image.ngx-gallery-active[_ngcontent-%COMP%]{transform:scale(1,1) rotate(0);opacity:1}.ngx-gallery-animation-zoom[_ngcontent-%COMP%]   .ngx-gallery-image[_ngcontent-%COMP%]{transition:1s;transform:scale(2.5,2.5);left:0;opacity:0}.ngx-gallery-animation-zoom[_ngcontent-%COMP%]   .ngx-gallery-image.ngx-gallery-active[_ngcontent-%COMP%]{transform:scale(1,1);opacity:1}.ngx-gallery-image-text[_ngcontent-%COMP%]{width:100%;background:rgba(0,0,0,.7);padding:10px;text-align:center;color:#fff;font-size:16px;position:absolute;bottom:0;z-index:10}"],
       changeDetection: 0
     });
 
@@ -105765,11 +105463,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return this.sanitization.bypassSecurityTrustStyle(this.helperService.getBackgroundUrl(image));
         }
       }, {
-        key: "getFileType",
-        value: function getFileType(fileSource) {
-          return this.helperService.getFileType(fileSource);
-        }
-      }, {
         key: "getThumbnailPosition",
         value: function getThumbnailPosition(index, count) {
           return this.getSafeStyle('calc(' + 100 / count * index + '% + ' + (this.margin - (count - 1) * this.margin / count) * index + 'px)');
@@ -105859,14 +105552,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]],
       decls: 4,
       vars: 9,
-      consts: [[1, "ngx-gallery-thumbnails"], ["class", "ngx-gallery-thumbnail", 3, "href", "target", "width", "height", "left", "top", "ngClass", "click", 4, "ngFor", "ngForOf"], [3, "prevDisabled", "nextDisabled", "arrowPrevIcon", "arrowNextIcon", "prevClick", "nextClick", 4, "ngIf"], [1, "ngx-gallery-thumbnail", 3, "href", "target", "ngClass", "click"], ["class", "ngx-gallery-thumbnail", "style", "width: 100%; height: 100%; position:absolute;", 3, "background-image", "ngClass", 4, "ngIf"], ["class", "ngx-gallery-thumbnail-video", 4, "ngIf"], [1, "ngx-gallery-icons-wrapper"], [3, "icon", "disabled", "titleText", "closeClick", 4, "ngFor", "ngForOf"], ["class", "ngx-gallery-remaining-count-overlay", 4, "ngIf"], [1, "ngx-gallery-thumbnail", 2, "width", "100%", "height", "100%", "position", "absolute", 3, "ngClass"], [1, "ngx-gallery-thumbnail-video"], [1, "ngx-gallery-thumbnail", 2, "width", "100%", "height", "100%", "position", "absolute", "left", "0", "background", "#000", 3, "ngClass"], [3, "src"], [3, "icon", "disabled", "titleText", "closeClick"], [1, "ngx-gallery-remaining-count-overlay"], [1, "ngx-gallery-remaining-count"], [3, "prevDisabled", "nextDisabled", "arrowPrevIcon", "arrowNextIcon", "prevClick", "nextClick"]],
+      consts: [[1, "ngx-gallery-thumbnails"], ["class", "ngx-gallery-thumbnail", 3, "href", "target", "background-image", "width", "height", "left", "top", "ngClass", "click", 4, "ngFor", "ngForOf"], [3, "prevDisabled", "nextDisabled", "arrowPrevIcon", "arrowNextIcon", "prevClick", "nextClick", 4, "ngIf"], [1, "ngx-gallery-thumbnail", 3, "href", "target", "ngClass", "click"], [1, "ngx-gallery-icons-wrapper"], [3, "icon", "disabled", "titleText", "closeClick", 4, "ngFor", "ngForOf"], ["class", "ngx-gallery-remaining-count-overlay", 4, "ngIf"], [3, "icon", "disabled", "titleText", "closeClick"], [1, "ngx-gallery-remaining-count-overlay"], [1, "ngx-gallery-remaining-count"], [3, "prevDisabled", "nextDisabled", "arrowPrevIcon", "arrowNextIcon", "prevClick", "nextClick"]],
       template: function NgxGalleryThumbnailsComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, NgxGalleryThumbnailsComponent_a_2_Template, 6, 19, "a", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, NgxGalleryThumbnailsComponent_a_2_Template, 4, 19, "a", 1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -105894,7 +105587,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       directives: function directives() {
         return [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"], NgxGalleryActionComponent, NgxGalleryArrowsComponent];
       },
-      styles: ["@charset \"UTF-8\";[_nghost-%COMP%]{width:100%;display:inline-block;position:relative;font-size:25px}.ngx-gallery-thumbnails-wrapper[_ngcontent-%COMP%]{width:100%;height:100%;position:absolute;overflow:hidden}.ngx-gallery-thumbnails[_ngcontent-%COMP%]{height:100%;width:100%;position:absolute;left:0;transform:translateX(0);transition:transform .5s ease-in-out;will-change:transform}.ngx-gallery-thumbnails[_ngcontent-%COMP%]   .ngx-gallery-thumbnail[_ngcontent-%COMP%]{position:absolute;height:100%;background-position:center;background-repeat:no-repeat;text-decoration:none;border:1px double #000}.ngx-gallery-thumbnails[_ngcontent-%COMP%]   .ngx-gallery-thumbnail[_ngcontent-%COMP%]   .ngx-gallery-thumbnail-video[_ngcontent-%COMP%]::after{content:\"\uF144\";display:block;position:absolute;background:#0000;height:100%;width:100%;left:0;top:calc(50% - 20px);font-size:40px;color:#fff;margin:0;padding:0;font-family:fontawesome;text-shadow:0 4px 3px rgba(0,0,0,.4),0 8px 13px rgba(0,0,0,.1),0 18px 23px rgba(0,0,0,.1)}.ngx-gallery-thumbnails[_ngcontent-%COMP%]   .ngx-gallery-thumbnail[_ngcontent-%COMP%]   .img[_ngcontent-%COMP%]{background-size:cover;height:100%}.ngx-gallery-thumbnails[_ngcontent-%COMP%]   .ngx-gallery-thumbnail.ngx-gallery-active[_ngcontent-%COMP%]{border:1px double #cc4548}.ngx-gallery-thumbnail-size-cover[_ngcontent-%COMP%]   .ngx-gallery-thumbnails[_ngcontent-%COMP%]   .ngx-gallery-thumbnail[_ngcontent-%COMP%]{background-size:cover}.ngx-gallery-thumbnail-size-contain[_ngcontent-%COMP%]   .ngx-gallery-thumbnails[_ngcontent-%COMP%]   .ngx-gallery-thumbnail[_ngcontent-%COMP%]{background-size:contain}.ngx-gallery-remaining-count-overlay[_ngcontent-%COMP%]{width:100%;height:100%;position:absolute;left:0;top:0;background-color:rgba(0,0,0,.4)}.ngx-gallery-remaining-count[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:30px}"],
+      styles: ["@charset \"UTF-8\";[_nghost-%COMP%]{width:100%;display:inline-block;position:relative;font-size:25px}.ngx-gallery-thumbnails-wrapper[_ngcontent-%COMP%]{width:100%;height:100%;position:absolute;overflow:hidden}.ngx-gallery-thumbnails[_ngcontent-%COMP%]{height:100%;width:100%;position:absolute;left:0;transform:translateX(0);transition:transform .5s ease-in-out;will-change:transform}.ngx-gallery-thumbnails[_ngcontent-%COMP%]   .ngx-gallery-thumbnail[_ngcontent-%COMP%]{position:absolute;height:100%;background-position:center;background-repeat:no-repeat;text-decoration:none;border:1px double #000}.ngx-gallery-thumbnails[_ngcontent-%COMP%]   .ngx-gallery-thumbnail[_ngcontent-%COMP%]   .img[_ngcontent-%COMP%]{background-size:cover;height:100%}.ngx-gallery-thumbnails[_ngcontent-%COMP%]   .ngx-gallery-thumbnail.ngx-gallery-active[_ngcontent-%COMP%]{border:1px double #cc4548}.ngx-gallery-thumbnail-size-cover[_ngcontent-%COMP%]   .ngx-gallery-thumbnails[_ngcontent-%COMP%]   .ngx-gallery-thumbnail[_ngcontent-%COMP%]{background-size:cover}.ngx-gallery-thumbnail-size-contain[_ngcontent-%COMP%]   .ngx-gallery-thumbnails[_ngcontent-%COMP%]   .ngx-gallery-thumbnail[_ngcontent-%COMP%]{background-size:contain}.ngx-gallery-remaining-count-overlay[_ngcontent-%COMP%]{width:100%;height:100%;position:absolute;left:0;top:0;background-color:rgba(0,0,0,.4)}.ngx-gallery-remaining-count[_ngcontent-%COMP%]{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:30px}"],
       changeDetection: 0
     });
 
@@ -106064,18 +105757,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, NgxGalleryOrderedImage);
 
       this.src = obj.src;
-      this.type = obj.type;
       this.index = obj.index;
     };
 
     var NgxGalleryComponent =
     /*#__PURE__*/
     function () {
-      function NgxGalleryComponent(myElement, helperService) {
+      function NgxGalleryComponent(myElement) {
         _classCallCheck(this, NgxGalleryComponent);
 
         this.myElement = myElement;
-        this.helperService = helperService;
         this.options = [{}];
         this.imagesReady = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"](); // tslint:disable-next-line:no-output-native
 
@@ -106313,24 +106004,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function checkFullWidth() {
           if (this.currentOptions && this.currentOptions.fullWidth) {
             this.width = document.body.clientWidth + 'px';
-            this.left = 'translateX(' + -(document.body.clientWidth - this.myElement.nativeElement.parentNode.innerWidth) / 2 + 'px)';
+            this.left = -(document.body.clientWidth - this.myElement.nativeElement.parentNode.innerWidth) / 2 + 'px';
           }
         }
       }, {
         key: "setImages",
         value: function setImages() {
-          var _this168 = this;
-
-          this.images.forEach(function (img) {
-            return img.type = _this168.helperService.getFileType(img.url || img.big || img.medium || img.small || '');
-          });
           this.smallImages = this.images.map(function (img) {
             return img.small;
           });
           this.mediumImages = this.images.map(function (img, i) {
             return new NgxGalleryOrderedImage({
               src: img.medium,
-              type: img.type,
               index: i
             });
           });
@@ -106381,13 +106066,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "setOptions",
         value: function setOptions() {
-          var _this169 = this;
+          var _this168 = this;
 
           this.currentOptions = new NgxGalleryOptions({});
           this.options.filter(function (opt) {
-            return opt.breakpoint === undefined || opt.breakpoint >= _this169.breakpoint;
+            return opt.breakpoint === undefined || opt.breakpoint >= _this168.breakpoint;
           }).map(function (opt) {
-            return _this169.combineOptions(_this169.currentOptions, opt);
+            return _this168.combineOptions(_this168.currentOptions, opt);
           });
           this.width = this.currentOptions.width;
           this.height = this.currentOptions.height;
@@ -106405,7 +106090,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     NgxGalleryComponent.ɵfac = function NgxGalleryComponent_Factory(t) {
-      return new (t || NgxGalleryComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](NgxGalleryService));
+      return new (t || NgxGalleryComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]));
     };
 
     NgxGalleryComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
@@ -106437,7 +106122,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("width", ctx.width)("transform", ctx.left)("height", ctx.height);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("width", ctx.width)("left", ctx.left)("height", ctx.height);
         }
       },
       inputs: {
@@ -106505,8 +106190,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     NgxGalleryComponent.ctorParameters = function () {
       return [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]
-      }, {
-        type: NgxGalleryService
       }];
     };
 
@@ -106522,7 +106205,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(NgxGalleryThumbnailsComponent)], NgxGalleryComponent.prototype, "thumbnails", void 0);
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('style.width')], NgxGalleryComponent.prototype, "width", void 0);
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('style.height')], NgxGalleryComponent.prototype, "height", void 0);
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('style.transform')], NgxGalleryComponent.prototype, "left", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('style.left')], NgxGalleryComponent.prototype, "left", void 0);
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('window:resize')], NgxGalleryComponent.prototype, "onResize", null);
 
     var NgxGalleryArrowsComponent =
@@ -106780,12 +106463,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super69 = _createSuper(CustomHammerConfig);
 
       function CustomHammerConfig() {
-        var _this170;
+        var _this169;
 
         _classCallCheck(this, CustomHammerConfig);
 
-        _this170 = _super69.apply(this, arguments);
-        _this170.overrides = {
+        _this169 = _super69.apply(this, arguments);
+        _this169.overrides = {
           pinch: {
             enable: false
           },
@@ -106793,7 +106476,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             enable: false
           }
         };
-        return _this170;
+        return _this169;
       }
 
       return CustomHammerConfig;
@@ -106847,7 +106530,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
         args: [{
           selector: 'ngx-gallery-preview',
-          template: "<ngx-gallery-arrows *ngIf=\"arrows\" (prevClick)=\"showPrev()\" (nextClick)=\"showNext()\" [prevDisabled]=\"!canShowPrev()\"\n                    [nextDisabled]=\"!canShowNext()\" [arrowPrevIcon]=\"arrowPrevIcon\"\n                    [arrowNextIcon]=\"arrowNextIcon\"></ngx-gallery-arrows>\n<div class=\"ngx-gallery-preview-top\">\n  <div class=\"ngx-gallery-preview-icons\">\n    <ngx-gallery-action *ngFor=\"let action of actions\" [icon]=\"action.icon\" [disabled]=\"action.disabled\"\n                        [titleText]=\"action.titleText\" (closeClick)=\"action.onClick($event, index)\"></ngx-gallery-action>\n    <a *ngIf=\"download && src\" [href]=\"src\" class=\"ngx-gallery-icon\" aria-hidden=\"true\" download>\n      <i class=\"ngx-gallery-icon-content {{ downloadIcon }}\"></i>\n    </a>\n    <ngx-gallery-action *ngIf=\"zoom\" [icon]=\"zoomOutIcon\" [disabled]=\"!canZoomOut()\"\n                        (closeClick)=\"zoomOut()\"></ngx-gallery-action>\n    <ngx-gallery-action *ngIf=\"zoom\" [icon]=\"zoomInIcon\" [disabled]=\"!canZoomIn()\"\n                        (closeClick)=\"zoomIn()\"></ngx-gallery-action>\n    <ngx-gallery-action *ngIf=\"rotate\" [icon]=\"rotateLeftIcon\" (closeClick)=\"rotateLeft()\"></ngx-gallery-action>\n    <ngx-gallery-action *ngIf=\"rotate\" [icon]=\"rotateRightIcon\" (closeClick)=\"rotateRight()\"></ngx-gallery-action>\n    <ngx-gallery-action *ngIf=\"fullscreen\" [icon]=\"'ngx-gallery-fullscreen ' + fullscreenIcon\"\n                        (closeClick)=\"manageFullscreen()\"></ngx-gallery-action>\n    <ngx-gallery-action [icon]=\"'ngx-gallery-close ' + closeIcon\" (closeClick)=\"close()\"></ngx-gallery-action>\n  </div>\n</div>\n<div class=\"ngx-spinner-wrapper ngx-gallery-center\" [class.ngx-gallery-active]=\"showSpinner\">\n  <i class=\"ngx-gallery-icon ngx-gallery-spinner {{spinnerIcon}}\" aria-hidden=\"true\"></i>\n</div>\n<div class=\"ngx-gallery-preview-wrapper\" (click)=\"closeOnClick && close()\" (mouseup)=\"mouseUpHandler($event)\"\n     (mousemove)=\"mouseMoveHandler($event)\" (touchend)=\"mouseUpHandler($event)\" (touchmove)=\"mouseMoveHandler($event)\">\n  <div class=\"ngx-gallery-preview-img-wrapper\">\n    <img *ngIf=\"src && type == 'image'\" #previewImage class=\"ngx-gallery-preview-img ngx-gallery-center\" [src]=\"src\"\n         (click)=\"$event.stopPropagation()\" (mouseenter)=\"imageMouseEnter()\" (mouseleave)=\"imageMouseLeave()\"\n         (mousedown)=\"mouseDownHandler($event)\" (touchstart)=\"mouseDownHandler($event)\"\n         [class.ngx-gallery-active]=\"!loading\" [class.animation]=\"animation\" [class.ngx-gallery-grab]=\"canDragOnZoom()\"\n         [style.transform]=\"getTransform()\" [style.left]=\"positionLeft + 'px'\" [style.top]=\"positionTop + 'px'\"/>\n    <video *ngIf=\"src && type == 'video'\"  #previewImage controls style=\"width: 100%; height: 100%;\"\n    class=\"ngx-gallery-preview-img ngx-gallery-center\"\n    (click)=\"$event.stopPropagation()\" (mouseenter)=\"imageMouseEnter()\" (mouseleave)=\"imageMouseLeave()\" (mousedown)=\"mouseDownHandler($event)\" (touchstart)=\"mouseDownHandler($event)\"\n    [class.ngx-gallery-active]=\"!loading\" [class.animation]=\"animation\" [class.ngx-gallery-grab]=\"canDragOnZoom()\" [style.transform]=\"getTransform()\" [style.left]=\"positionLeft + 'px'\" [style.top]=\"positionTop + 'px'\">\n      <source [src]=\"src\">\n      Your browser does not support the video tag.\n    </video>\n    <ngx-gallery-bullets *ngIf=\"bullets\" [count]=\"images.length\" [active]=\"index\"\n                         (bulletChange)=\"showAtIndex($event)\"></ngx-gallery-bullets>\n  </div>\n  <div class=\"ngx-gallery-preview-text\" *ngIf=\"showDescription && description\" [innerHTML]=\"description\"\n       (click)=\"$event.stopPropagation()\"></div>\n</div>\n",
+          template: "<ngx-gallery-arrows *ngIf=\"arrows\" (prevClick)=\"showPrev()\" (nextClick)=\"showNext()\" [prevDisabled]=\"!canShowPrev()\"\n                    [nextDisabled]=\"!canShowNext()\" [arrowPrevIcon]=\"arrowPrevIcon\"\n                    [arrowNextIcon]=\"arrowNextIcon\"></ngx-gallery-arrows>\n<div class=\"ngx-gallery-preview-top\">\n  <div class=\"ngx-gallery-preview-icons\">\n    <ngx-gallery-action *ngFor=\"let action of actions\" [icon]=\"action.icon\" [disabled]=\"action.disabled\"\n                        [titleText]=\"action.titleText\" (closeClick)=\"action.onClick($event, index)\"></ngx-gallery-action>\n    <a *ngIf=\"download && src\" [href]=\"src\" class=\"ngx-gallery-icon\" aria-hidden=\"true\" download>\n      <i class=\"ngx-gallery-icon-content {{ downloadIcon }}\"></i>\n    </a>\n    <ngx-gallery-action *ngIf=\"zoom\" [icon]=\"zoomOutIcon\" [disabled]=\"!canZoomOut()\"\n                        (closeClick)=\"zoomOut()\"></ngx-gallery-action>\n    <ngx-gallery-action *ngIf=\"zoom\" [icon]=\"zoomInIcon\" [disabled]=\"!canZoomIn()\"\n                        (closeClick)=\"zoomIn()\"></ngx-gallery-action>\n    <ngx-gallery-action *ngIf=\"rotate\" [icon]=\"rotateLeftIcon\" (closeClick)=\"rotateLeft()\"></ngx-gallery-action>\n    <ngx-gallery-action *ngIf=\"rotate\" [icon]=\"rotateRightIcon\" (closeClick)=\"rotateRight()\"></ngx-gallery-action>\n    <ngx-gallery-action *ngIf=\"fullscreen\" [icon]=\"'ngx-gallery-fullscreen ' + fullscreenIcon\"\n                        (closeClick)=\"manageFullscreen()\"></ngx-gallery-action>\n    <ngx-gallery-action [icon]=\"'ngx-gallery-close ' + closeIcon\" (closeClick)=\"close()\"></ngx-gallery-action>\n  </div>\n</div>\n<div class=\"ngx-spinner-wrapper ngx-gallery-center\" [class.ngx-gallery-active]=\"showSpinner\">\n  <i class=\"ngx-gallery-icon ngx-gallery-spinner {{spinnerIcon}}\" aria-hidden=\"true\"></i>\n</div>\n<div class=\"ngx-gallery-preview-wrapper\" (click)=\"closeOnClick && close()\" (mouseup)=\"mouseUpHandler($event)\"\n     (mousemove)=\"mouseMoveHandler($event)\" (touchend)=\"mouseUpHandler($event)\" (touchmove)=\"mouseMoveHandler($event)\">\n  <div class=\"ngx-gallery-preview-img-wrapper\">\n    <img *ngIf=\"src\" #previewImage class=\"ngx-gallery-preview-img ngx-gallery-center\" [src]=\"src\"\n         (click)=\"$event.stopPropagation()\" (mouseenter)=\"imageMouseEnter()\" (mouseleave)=\"imageMouseLeave()\"\n         (mousedown)=\"mouseDownHandler($event)\" (touchstart)=\"mouseDownHandler($event)\"\n         [class.ngx-gallery-active]=\"!loading\" [class.animation]=\"animation\" [class.ngx-gallery-grab]=\"canDragOnZoom()\"\n         [style.transform]=\"getTransform()\" [style.left]=\"positionLeft + 'px'\" [style.top]=\"positionTop + 'px'\"/>\n    <ngx-gallery-bullets *ngIf=\"bullets\" [count]=\"images.length\" [active]=\"index\"\n                         (bulletChange)=\"showAtIndex($event)\"></ngx-gallery-bullets>\n  </div>\n  <div class=\"ngx-gallery-preview-text\" *ngIf=\"showDescription && description\" [innerHTML]=\"description\"\n       (click)=\"$event.stopPropagation()\"></div>\n</div>\n",
           // encapsulation: ViewEncapsulation.None,
           changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
           styles: [":host.ngx-gallery-active{width:100%;height:100%;position:fixed;left:0;top:0;background:rgba(0,0,0,.7);z-index:10000;display:inline-block;font-size:50px!important}:host{display:none;font-size:50px!important}:host .ngx-gallery-arrow{font-size:50px!important}ngx-gallery-bullets{height:5%;align-items:center;padding:0}.ngx-gallery-preview-img{opacity:0;max-width:90%;max-height:90%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;transition:transform .5s}.ngx-gallery-preview-img.animation{transition:opacity .5s linear,transform .5s}.ngx-gallery-preview-img.ngx-gallery-active{opacity:1}.ngx-gallery-preview-img.ngx-gallery-grab{cursor:-webkit-grab;cursor:grab}.ngx-gallery-icon.ngx-gallery-spinner{font-size:50px;left:0;display:inline-block}:host .ngx-gallery-preview-top{position:absolute;width:100%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-size:25px}.ngx-gallery-preview-icons{float:right}.ngx-gallery-preview-icons .ngx-gallery-icon{position:relative;margin-right:10px;margin-top:10px;font-size:25px;cursor:pointer;text-decoration:none}.ngx-gallery-preview-icons .ngx-gallery-icon.ngx-gallery-icon-disabled{cursor:default;opacity:.4}.ngx-spinner-wrapper{width:50px;height:50px;display:none}.ngx-spinner-wrapper.ngx-gallery-active{display:inline-block}.ngx-gallery-center{position:absolute;left:0;right:0;bottom:0;margin:auto;top:0}.ngx-gallery-preview-text{width:100%;background:rgba(0,0,0,.7);padding:10px;text-align:center;color:#fff;font-size:16px;flex:0 1 auto;z-index:10}.ngx-gallery-preview-wrapper{width:100%;height:100%;display:flex;flex-flow:column}.ngx-gallery-preview-img-wrapper{flex:1 1 auto;position:relative}"]
@@ -106998,9 +106681,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
         args: [{
           selector: 'ngx-gallery-image',
-          template: "<div class=\"ngx-gallery-image-wrapper ngx-gallery-animation-{{animation}} ngx-gallery-image-size-{{size}}\">\n  <div *ngFor=\"let image of getImages(); let i = index;\">\n\n    \n    <div *ngIf=\"image.type === 'image'\" class=\"ngx-gallery-image\"\n        [ngClass]=\"{ 'ngx-gallery-active': selectedIndex == image.index,\n          'ngx-gallery-inactive-left': selectedIndex > image.index,\n          'ngx-gallery-inactive-right': selectedIndex < image.index,\n            'ngx-gallery-clickable': clickable }\"\n        [style.background-image]=\"getSafeUrl(image.src)\" (click)=\"handleClick($event, image.index)\">\n      <div class=\"ngx-gallery-icons-wrapper\">\n        <ngx-gallery-action *ngFor=\"let action of actions\" [icon]=\"action.icon\" [disabled]=\"action.disabled\"\n                            [titleText]=\"action.titleText\"\n                            (closeClick)=\"action.onClick($event, image.index)\"></ngx-gallery-action>\n      </div>\n      <div class=\"ngx-gallery-image-text\" *ngIf=\"showDescription && descriptions[image.index]\"\n          [innerHTML]=\"descriptions[image.index]\" (click)=\"$event.stopPropagation()\"></div>\n    </div>\n  </div>\n  <div *ngFor=\"let image of getImages(); let i = index;\">\n    <div *ngIf=\"image.type === 'video'\" class=\"ngx-gallery-image\" \n    [ngClass]=\"{ 'ngx-gallery-active': selectedIndex == image.index,\n    'ngx-gallery-inactive-left': selectedIndex > image.index,\n      'ngx-gallery-inactive-right': selectedIndex < image.index,\n      'ngx-gallery-clickable': clickable }\"\n    (click)=\"handleClick($event, image.index)\">\n      <video controls style=\"width:100%; height:100%; background: #000;\">\n        <source [src]=\"image.src\">\n          Your browser does not support the video tag.\n      </video>\n      <div class=\"ngx-gallery-icons-wrapper\">\n      <ngx-gallery-action *ngFor=\"let action of actions\" [icon]=\"action.icon\" [disabled]=\"action.disabled\"\n                          [titleText]=\"action.titleText\"\n                          (closeClick)=\"action.onClick($event, image.index)\"></ngx-gallery-action>\n      </div>\n      <div class=\"ngx-gallery-image-text\" *ngIf=\"showDescription && descriptions[image.index]\"\n          [innerHTML]=\"descriptions[image.index]\" (click)=\"$event.stopPropagation()\"></div>\n      </div>\n    </div>\n  </div>\n<ngx-gallery-bullets *ngIf=\"bullets\" [count]=\"images.length\" [active]=\"selectedIndex\"\n                     (bulletChange)=\"show($event)\"></ngx-gallery-bullets>\n<ngx-gallery-arrows class=\"ngx-gallery-image-size-{{size}}\" *ngIf=\"arrows\" (prevClick)=\"showPrev()\"\n                    (nextClick)=\"showNext()\" [prevDisabled]=\"!canShowPrev()\" [nextDisabled]=\"!canShowNext()\"\n                    [arrowPrevIcon]=\"arrowPrevIcon\" [arrowNextIcon]=\"arrowNextIcon\"></ngx-gallery-arrows>\n",
+          template: "<div class=\"ngx-gallery-image-wrapper ngx-gallery-animation-{{animation}} ngx-gallery-image-size-{{size}}\">\n  <div class=\"ngx-gallery-image\" *ngFor=\"let image of getImages(); let i = index;\"\n       [ngClass]=\"{ 'ngx-gallery-active': selectedIndex == image.index,\n        'ngx-gallery-inactive-left': selectedIndex > image.index,\n         'ngx-gallery-inactive-right': selectedIndex < image.index,\n          'ngx-gallery-clickable': clickable }\"\n       [style.background-image]=\"getSafeUrl(image.src)\" (click)=\"handleClick($event, image.index)\">\n    <div class=\"ngx-gallery-icons-wrapper\">\n      <ngx-gallery-action *ngFor=\"let action of actions\" [icon]=\"action.icon\" [disabled]=\"action.disabled\"\n                          [titleText]=\"action.titleText\"\n                          (closeClick)=\"action.onClick($event, image.index)\"></ngx-gallery-action>\n    </div>\n    <div class=\"ngx-gallery-image-text\" *ngIf=\"showDescription && descriptions[image.index]\"\n         [innerHTML]=\"descriptions[image.index]\" (click)=\"$event.stopPropagation()\"></div>\n  </div>\n</div>\n<ngx-gallery-bullets *ngIf=\"bullets\" [count]=\"images.length\" [active]=\"selectedIndex\"\n                     (bulletChange)=\"show($event)\"></ngx-gallery-bullets>\n<ngx-gallery-arrows class=\"ngx-gallery-image-size-{{size}}\" *ngIf=\"arrows\" (prevClick)=\"showPrev()\"\n                    (nextClick)=\"showNext()\" [prevDisabled]=\"!canShowPrev()\" [nextDisabled]=\"!canShowNext()\"\n                    [arrowPrevIcon]=\"arrowPrevIcon\" [arrowNextIcon]=\"arrowNextIcon\"></ngx-gallery-arrows>\n",
           changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
-          styles: [":host{width:100%;display:inline-block;position:relative;font-size:25px}.ngx-gallery-image-wrapper{width:100%;height:100%;position:absolute;left:0;top:0;overflow:hidden}.ngx-gallery-image{background-position:center;background-repeat:no-repeat;height:100%;width:100%;position:absolute;top:0}.ngx-gallery-image-size-cover .ngx-gallery-image{background-size:cover}.ngx-gallery-image-size-contain .ngx-gallery-image{background-size:contain}.ngx-gallery-animation-fade .ngx-gallery-image{left:0;opacity:0;transition:.5s ease-in-out}.ngx-gallery-animation-fade .ngx-gallery-image.ngx-gallery-active{opacity:1}.ngx-gallery-animation-slide .ngx-gallery-image{transition:.5s ease-in-out}.ngx-gallery-animation-slide .ngx-gallery-image.ngx-gallery-active{transform:translateX(0)}.ngx-gallery-animation-slide .ngx-gallery-image.ngx-gallery-inactive-left{transform:translateX(-100%)}.ngx-gallery-animation-slide .ngx-gallery-image.ngx-gallery-inactive-right{transform:translateX(100%)}.ngx-gallery-animation-rotate .ngx-gallery-image{transition:1s;transform:scale(3.5,3.5) rotate(90deg);left:0;opacity:0}.ngx-gallery-animation-rotate .ngx-gallery-image.ngx-gallery-active{transform:scale(1,1) rotate(0);opacity:1}.ngx-gallery-animation-zoom .ngx-gallery-image{transition:1s;transform:scale(2.5,2.5);left:0;opacity:0}.ngx-gallery-animation-zoom .ngx-gallery-image.ngx-gallery-active{transform:scale(1,1);opacity:1}.ngx-gallery-image-text{width:100%;background:rgba(0,0,0,.7);padding:10px;text-align:center;color:#fff;font-size:16px;position:absolute;bottom:0;z-index:10}"]
+          styles: [":host{width:100%;display:inline-block;position:relative;font-size:25px}.ngx-gallery-image-wrapper{width:100%;height:100%;position:absolute;left:0;top:0;overflow:hidden}.ngx-gallery-image{background-position:center;background-repeat:no-repeat;height:100%;width:100%;position:absolute;top:0}.ngx-gallery-image-size-cover .ngx-gallery-image{background-size:cover}.ngx-gallery-image-size-contain .ngx-gallery-image{background-size:contain}.ngx-gallery-animation-fade .ngx-gallery-image{left:0;opacity:0;transition:.5s ease-in-out}.ngx-gallery-animation-fade .ngx-gallery-image.ngx-gallery-active{opacity:1}.ngx-gallery-animation-slide .ngx-gallery-image{transition:.5s ease-in-out}.ngx-gallery-animation-slide .ngx-gallery-image.ngx-gallery-active{left:0}.ngx-gallery-animation-slide .ngx-gallery-image.ngx-gallery-inactive-left{left:-100%}.ngx-gallery-animation-slide .ngx-gallery-image.ngx-gallery-inactive-right{left:100%}.ngx-gallery-animation-rotate .ngx-gallery-image{transition:1s;transform:scale(3.5,3.5) rotate(90deg);left:0;opacity:0}.ngx-gallery-animation-rotate .ngx-gallery-image.ngx-gallery-active{transform:scale(1,1) rotate(0);opacity:1}.ngx-gallery-animation-zoom .ngx-gallery-image{transition:1s;transform:scale(2.5,2.5);left:0;opacity:0}.ngx-gallery-animation-zoom .ngx-gallery-image.ngx-gallery-active{transform:scale(1,1);opacity:1}.ngx-gallery-image-text{width:100%;background:rgba(0,0,0,.7);padding:10px;text-align:center;color:#fff;font-size:16px;position:absolute;bottom:0;z-index:10}"]
         }]
       }], function () {
         return [{
@@ -107092,9 +106775,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
         args: [{
           selector: 'ngx-gallery-thumbnails',
-          template: "<div class=\"ngx-gallery-thumbnails-wrapper ngx-gallery-thumbnail-size-{{size}}\">\n  <div class=\"ngx-gallery-thumbnails\" [style.transform]=\"'translateX(' + thumbnailsLeft + ')'\"\n       [style.marginLeft]=\"thumbnailsMarginLeft\">\n    <a [href]=\"hasLink(i) ? links[i] : '#'\" [target]=\"linkTarget\" class=\"ngx-gallery-thumbnail\"\n       *ngFor=\"let image of getImages(); let i = index;\"\n       (click)=\"handleClick($event, i)\" [style.width]=\"getThumbnailWidth()\" [style.height]=\"getThumbnailHeight()\"\n       [style.left]=\"getThumbnailLeft(i)\" [style.top]=\"getThumbnailTop(i)\"\n       [ngClass]=\"{ 'ngx-gallery-active': i == selectedIndex, 'ngx-gallery-clickable': clickable }\"\n       [attr.aria-label]=\"labels[i]\">\n       <div *ngIf=\"getFileType(image) == 'image'\" [style.background-image]=\"getSafeUrl(image)\" class=\"ngx-gallery-thumbnail\"\n       [ngClass]=\"{ 'ngx-gallery-active': i == selectedIndex, 'ngx-gallery-clickable': clickable }\"\n       style=\"width: 100%; height: 100%; position:absolute;\"></div>\n       <div *ngIf=\"getFileType(image) == 'video'\" class=\"ngx-gallery-thumbnail-video\">\n        <video  class=\"ngx-gallery-thumbnail\" [ngClass]=\"{ 'ngx-gallery-active': i == selectedIndex, 'ngx-gallery-clickable': clickable }\" \n        style=\"width: 100%; height: 100%; position:absolute; left:0; background:#000;\">\n        <source [src]=\"image\">\n          Your browser does not support the video tag.\n       </video>\n      </div>\n       <div class=\"ngx-gallery-icons-wrapper\">\n        <ngx-gallery-action *ngFor=\"let action of actions\" [icon]=\"action.icon\" [disabled]=\"action.disabled\"\n                            [titleText]=\"action.titleText\" (closeClick)=\"action.onClick($event, i)\"></ngx-gallery-action>\n      </div>\n      <div class=\"ngx-gallery-remaining-count-overlay\"\n           *ngIf=\"remainingCount && remainingCountValue && (i == (rows * columns) - 1)\">\n        <span class=\"ngx-gallery-remaining-count\">+{{remainingCountValue}}</span>\n      </div>\n    </a>\n  </div>\n</div>\n<ngx-gallery-arrows *ngIf=\"canShowArrows()\" (prevClick)=\"moveLeft()\" (nextClick)=\"moveRight()\"\n                    [prevDisabled]=\"!canMoveLeft()\" [nextDisabled]=\"!canMoveRight()\" [arrowPrevIcon]=\"arrowPrevIcon\"\n                    [arrowNextIcon]=\"arrowNextIcon\"></ngx-gallery-arrows>\n",
+          template: "<div class=\"ngx-gallery-thumbnails-wrapper ngx-gallery-thumbnail-size-{{size}}\">\n  <div class=\"ngx-gallery-thumbnails\" [style.transform]=\"'translateX(' + thumbnailsLeft + ')'\"\n       [style.marginLeft]=\"thumbnailsMarginLeft\">\n    <a [href]=\"hasLink(i) ? links[i] : '#'\" [target]=\"linkTarget\" class=\"ngx-gallery-thumbnail\"\n       *ngFor=\"let image of getImages(); let i = index;\" [style.background-image]=\"getSafeUrl(image)\"\n       (click)=\"handleClick($event, i)\" [style.width]=\"getThumbnailWidth()\" [style.height]=\"getThumbnailHeight()\"\n       [style.left]=\"getThumbnailLeft(i)\" [style.top]=\"getThumbnailTop(i)\"\n       [ngClass]=\"{ 'ngx-gallery-active': i == selectedIndex, 'ngx-gallery-clickable': clickable }\"\n       [attr.aria-label]=\"labels[i]\">\n      <div class=\"ngx-gallery-icons-wrapper\">\n        <ngx-gallery-action *ngFor=\"let action of actions\" [icon]=\"action.icon\" [disabled]=\"action.disabled\"\n                            [titleText]=\"action.titleText\" (closeClick)=\"action.onClick($event, i)\"></ngx-gallery-action>\n      </div>\n      <div class=\"ngx-gallery-remaining-count-overlay\"\n           *ngIf=\"remainingCount && remainingCountValue && (i == (rows * columns) - 1)\">\n        <span class=\"ngx-gallery-remaining-count\">+{{remainingCountValue}}</span>\n      </div>\n    </a>\n  </div>\n</div>\n<ngx-gallery-arrows *ngIf=\"canShowArrows()\" (prevClick)=\"moveLeft()\" (nextClick)=\"moveRight()\"\n                    [prevDisabled]=\"!canMoveLeft()\" [nextDisabled]=\"!canMoveRight()\" [arrowPrevIcon]=\"arrowPrevIcon\"\n                    [arrowNextIcon]=\"arrowNextIcon\"></ngx-gallery-arrows>\n",
           changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
-          styles: ["@charset \"UTF-8\";:host{width:100%;display:inline-block;position:relative;font-size:25px}.ngx-gallery-thumbnails-wrapper{width:100%;height:100%;position:absolute;overflow:hidden}.ngx-gallery-thumbnails{height:100%;width:100%;position:absolute;left:0;transform:translateX(0);transition:transform .5s ease-in-out;will-change:transform}.ngx-gallery-thumbnails .ngx-gallery-thumbnail{position:absolute;height:100%;background-position:center;background-repeat:no-repeat;text-decoration:none;border:1px double #000}.ngx-gallery-thumbnails .ngx-gallery-thumbnail .ngx-gallery-thumbnail-video::after{content:\"\uF144\";display:block;position:absolute;background:#0000;height:100%;width:100%;left:0;top:calc(50% - 20px);font-size:40px;color:#fff;margin:0;padding:0;font-family:fontawesome;text-shadow:0 4px 3px rgba(0,0,0,.4),0 8px 13px rgba(0,0,0,.1),0 18px 23px rgba(0,0,0,.1)}.ngx-gallery-thumbnails .ngx-gallery-thumbnail .img{background-size:cover;height:100%}.ngx-gallery-thumbnails .ngx-gallery-thumbnail.ngx-gallery-active{border:1px double #cc4548}.ngx-gallery-thumbnail-size-cover .ngx-gallery-thumbnails .ngx-gallery-thumbnail{background-size:cover}.ngx-gallery-thumbnail-size-contain .ngx-gallery-thumbnails .ngx-gallery-thumbnail{background-size:contain}.ngx-gallery-remaining-count-overlay{width:100%;height:100%;position:absolute;left:0;top:0;background-color:rgba(0,0,0,.4)}.ngx-gallery-remaining-count{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:30px}"]
+          styles: ["@charset \"UTF-8\";:host{width:100%;display:inline-block;position:relative;font-size:25px}.ngx-gallery-thumbnails-wrapper{width:100%;height:100%;position:absolute;overflow:hidden}.ngx-gallery-thumbnails{height:100%;width:100%;position:absolute;left:0;transform:translateX(0);transition:transform .5s ease-in-out;will-change:transform}.ngx-gallery-thumbnails .ngx-gallery-thumbnail{position:absolute;height:100%;background-position:center;background-repeat:no-repeat;text-decoration:none;border:1px double #000}.ngx-gallery-thumbnails .ngx-gallery-thumbnail .img{background-size:cover;height:100%}.ngx-gallery-thumbnails .ngx-gallery-thumbnail.ngx-gallery-active{border:1px double #cc4548}.ngx-gallery-thumbnail-size-cover .ngx-gallery-thumbnails .ngx-gallery-thumbnail{background-size:cover}.ngx-gallery-thumbnail-size-contain .ngx-gallery-thumbnails .ngx-gallery-thumbnail{background-size:contain}.ngx-gallery-remaining-count-overlay{width:100%;height:100%;position:absolute;left:0;top:0;background-color:rgba(0,0,0,.4)}.ngx-gallery-remaining-count{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:30px}"]
         }]
       }], function () {
         return [{
@@ -107195,8 +106878,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }], function () {
         return [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]
-        }, {
-          type: NgxGalleryService
         }];
       }, {
         options: [{
@@ -107227,7 +106908,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }],
         left: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"],
-          args: ['style.transform']
+          args: ['style.left']
         }],
         height: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"],
@@ -107390,7 +107071,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.big = obj.big;
       this.description = obj.description;
       this.url = obj.url;
-      this.type = obj.type;
       this.label = obj.label;
     };
     /*
@@ -108124,15 +107804,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super70 = _createSuper(AsyncSubject);
 
       function AsyncSubject() {
-        var _this171;
+        var _this170;
 
         _classCallCheck(this, AsyncSubject);
 
-        _this171 = _super70.apply(this, arguments);
-        _this171.value = null;
-        _this171.hasNext = false;
-        _this171.hasCompleted = false;
-        return _this171;
+        _this170 = _super70.apply(this, arguments);
+        _this170.value = null;
+        _this170.hasNext = false;
+        _this170.hasCompleted = false;
+        return _this170;
       }
 
       _createClass2(AsyncSubject, [{
@@ -108224,13 +107904,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super71 = _createSuper(BehaviorSubject);
 
       function BehaviorSubject(_value) {
-        var _this172;
+        var _this171;
 
         _classCallCheck(this, BehaviorSubject);
 
-        _this172 = _super71.call(this);
-        _this172._value = _value;
-        return _this172;
+        _this171 = _super71.call(this);
+        _this171._value = _value;
+        return _this171;
       }
 
       _createClass2(BehaviorSubject, [{
@@ -108308,16 +107988,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super72 = _createSuper(InnerSubscriber);
 
       function InnerSubscriber(parent, outerValue, outerIndex) {
-        var _this173;
+        var _this172;
 
         _classCallCheck(this, InnerSubscriber);
 
-        _this173 = _super72.call(this);
-        _this173.parent = parent;
-        _this173.outerValue = outerValue;
-        _this173.outerIndex = outerIndex;
-        _this173.index = 0;
-        return _this173;
+        _this172 = _super72.call(this);
+        _this172.parent = parent;
+        _this172.outerValue = outerValue;
+        _this172.outerIndex = outerIndex;
+        _this172.index = 0;
+        return _this172;
       }
 
       _createClass2(InnerSubscriber, [{
@@ -108613,12 +108293,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "forEach",
         value: function forEach(next, promiseCtor) {
-          var _this174 = this;
+          var _this173 = this;
 
           promiseCtor = getPromiseCtor(promiseCtor);
           return new promiseCtor(function (resolve, reject) {
             var subscription;
-            subscription = _this174.subscribe(function (value) {
+            subscription = _this173.subscribe(function (value) {
               try {
                 next(value);
               } catch (err) {
@@ -108658,13 +108338,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toPromise",
         value: function toPromise(promiseCtor) {
-          var _this175 = this;
+          var _this174 = this;
 
           promiseCtor = getPromiseCtor(promiseCtor);
           return new promiseCtor(function (resolve, reject) {
             var value;
 
-            _this175.subscribe(function (x) {
+            _this174.subscribe(function (x) {
               return value = x;
             }, function (err) {
               return reject(err);
@@ -108873,7 +108553,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super74 = _createSuper(ReplaySubject);
 
       function ReplaySubject() {
-        var _this176;
+        var _this175;
 
         var bufferSize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Number.POSITIVE_INFINITY;
         var windowTime = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Number.POSITIVE_INFINITY;
@@ -108881,21 +108561,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _classCallCheck(this, ReplaySubject);
 
-        _this176 = _super74.call(this);
-        _this176.scheduler = scheduler;
-        _this176._events = [];
-        _this176._infiniteTimeWindow = false;
-        _this176._bufferSize = bufferSize < 1 ? 1 : bufferSize;
-        _this176._windowTime = windowTime < 1 ? 1 : windowTime;
+        _this175 = _super74.call(this);
+        _this175.scheduler = scheduler;
+        _this175._events = [];
+        _this175._infiniteTimeWindow = false;
+        _this175._bufferSize = bufferSize < 1 ? 1 : bufferSize;
+        _this175._windowTime = windowTime < 1 ? 1 : windowTime;
 
         if (windowTime === Number.POSITIVE_INFINITY) {
-          _this176._infiniteTimeWindow = true;
-          _this176.next = _this176.nextInfiniteTimeWindow;
+          _this175._infiniteTimeWindow = true;
+          _this175.next = _this175.nextInfiniteTimeWindow;
         } else {
-          _this176.next = _this176.nextTimeWindow;
+          _this175.next = _this175.nextTimeWindow;
         }
 
-        return _this176;
+        return _this175;
       }
 
       _createClass2(ReplaySubject, [{
@@ -109140,13 +108820,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super75 = _createSuper(SubjectSubscriber);
 
       function SubjectSubscriber(destination) {
-        var _this177;
+        var _this176;
 
         _classCallCheck(this, SubjectSubscriber);
 
-        _this177 = _super75.call(this, destination);
-        _this177.destination = destination;
-        return _this177;
+        _this176 = _super75.call(this, destination);
+        _this176.destination = destination;
+        return _this176;
       }
 
       return SubjectSubscriber;
@@ -109160,17 +108840,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super76 = _createSuper(Subject);
 
       function Subject() {
-        var _this178;
+        var _this177;
 
         _classCallCheck(this, Subject);
 
-        _this178 = _super76.call(this);
-        _this178.observers = [];
-        _this178.closed = false;
-        _this178.isStopped = false;
-        _this178.hasError = false;
-        _this178.thrownError = null;
-        return _this178;
+        _this177 = _super76.call(this);
+        _this177.observers = [];
+        _this177.closed = false;
+        _this177.isStopped = false;
+        _this177.hasError = false;
+        _this177.thrownError = null;
+        return _this177;
       }
 
       _createClass2(Subject, [{
@@ -109296,14 +108976,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super77 = _createSuper(AnonymousSubject);
 
       function AnonymousSubject(destination, source) {
-        var _this179;
+        var _this178;
 
         _classCallCheck(this, AnonymousSubject);
 
-        _this179 = _super77.call(this);
-        _this179.destination = destination;
-        _this179.source = source;
-        return _this179;
+        _this178 = _super77.call(this);
+        _this178.destination = destination;
+        _this178.source = source;
+        return _this178;
       }
 
       _createClass2(AnonymousSubject, [{
@@ -109387,15 +109067,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super78 = _createSuper(SubjectSubscription);
 
       function SubjectSubscription(subject, subscriber) {
-        var _this180;
+        var _this179;
 
         _classCallCheck(this, SubjectSubscription);
 
-        _this180 = _super78.call(this);
-        _this180.subject = subject;
-        _this180.subscriber = subscriber;
-        _this180.closed = false;
-        return _this180;
+        _this179 = _super78.call(this);
+        _this179.subject = subject;
+        _this179.subscriber = subscriber;
+        _this179.closed = false;
+        return _this179;
       }
 
       _createClass2(SubjectSubscription, [{
@@ -109499,47 +109179,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super79 = _createSuper(Subscriber);
 
       function Subscriber(destinationOrNext, error, complete) {
-        var _this181;
+        var _this180;
 
         _classCallCheck(this, Subscriber);
 
-        _this181 = _super79.call(this);
-        _this181.syncErrorValue = null;
-        _this181.syncErrorThrown = false;
-        _this181.syncErrorThrowable = false;
-        _this181.isStopped = false;
+        _this180 = _super79.call(this);
+        _this180.syncErrorValue = null;
+        _this180.syncErrorThrown = false;
+        _this180.syncErrorThrowable = false;
+        _this180.isStopped = false;
 
         switch (arguments.length) {
           case 0:
-            _this181.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
+            _this180.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
             break;
 
           case 1:
             if (!destinationOrNext) {
-              _this181.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
+              _this180.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
               break;
             }
 
             if (typeof destinationOrNext === 'object') {
               if (destinationOrNext instanceof Subscriber) {
-                _this181.syncErrorThrowable = destinationOrNext.syncErrorThrowable;
-                _this181.destination = destinationOrNext;
-                destinationOrNext.add(_assertThisInitialized(_this181));
+                _this180.syncErrorThrowable = destinationOrNext.syncErrorThrowable;
+                _this180.destination = destinationOrNext;
+                destinationOrNext.add(_assertThisInitialized(_this180));
               } else {
-                _this181.syncErrorThrowable = true;
-                _this181.destination = new SafeSubscriber(_assertThisInitialized(_this181), destinationOrNext);
+                _this180.syncErrorThrowable = true;
+                _this180.destination = new SafeSubscriber(_assertThisInitialized(_this180), destinationOrNext);
               }
 
               break;
             }
 
           default:
-            _this181.syncErrorThrowable = true;
-            _this181.destination = new SafeSubscriber(_assertThisInitialized(_this181), destinationOrNext, error, complete);
+            _this180.syncErrorThrowable = true;
+            _this180.destination = new SafeSubscriber(_assertThisInitialized(_this180), destinationOrNext, error, complete);
             break;
         }
 
-        return _this181;
+        return _this180;
       }
 
       _createClass2(Subscriber, [{
@@ -109631,15 +109311,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super80 = _createSuper(SafeSubscriber);
 
       function SafeSubscriber(_parentSubscriber, observerOrNext, error, complete) {
-        var _this182;
+        var _this181;
 
         _classCallCheck(this, SafeSubscriber);
 
-        _this182 = _super80.call(this);
-        _this182._parentSubscriber = _parentSubscriber;
+        _this181 = _super80.call(this);
+        _this181._parentSubscriber = _parentSubscriber;
         var next;
 
-        var context = _assertThisInitialized(_this182);
+        var context = _assertThisInitialized(_this181);
 
         if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_0__["isFunction"])(observerOrNext)) {
           next = observerOrNext;
@@ -109652,18 +109332,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             context = Object.create(observerOrNext);
 
             if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_0__["isFunction"])(context.unsubscribe)) {
-              _this182.add(context.unsubscribe.bind(context));
+              _this181.add(context.unsubscribe.bind(context));
             }
 
-            context.unsubscribe = _this182.unsubscribe.bind(_assertThisInitialized(_this182));
+            context.unsubscribe = _this181.unsubscribe.bind(_assertThisInitialized(_this181));
           }
         }
 
-        _this182._context = context;
-        _this182._next = next;
-        _this182._error = error;
-        _this182._complete = complete;
-        return _this182;
+        _this181._context = context;
+        _this181._next = next;
+        _this181._error = error;
+        _this181._complete = complete;
+        return _this181;
       }
 
       _createClass2(SafeSubscriber, [{
@@ -109719,14 +109399,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "complete",
         value: function complete() {
-          var _this183 = this;
+          var _this182 = this;
 
           if (!this.isStopped) {
             var _parentSubscriber = this._parentSubscriber;
 
             if (this._complete) {
               var wrappedComplete = function wrappedComplete() {
-                return _this183._complete.call(_this183._context);
+                return _this182._complete.call(_this182._context);
               };
 
               if (!_config__WEBPACK_IMPORTED_MODULE_4__["config"].useDeprecatedSynchronousErrorHandling || !_parentSubscriber.syncErrorThrowable) {
@@ -110119,16 +109799,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super81 = _createSuper(ConnectableObservable);
 
       function ConnectableObservable(source, subjectFactory) {
-        var _this184;
+        var _this183;
 
         _classCallCheck(this, ConnectableObservable);
 
-        _this184 = _super81.call(this);
-        _this184.source = source;
-        _this184.subjectFactory = subjectFactory;
-        _this184._refCount = 0;
-        _this184._isComplete = false;
-        return _this184;
+        _this183 = _super81.call(this);
+        _this183.source = source;
+        _this183.subjectFactory = subjectFactory;
+        _this183._refCount = 0;
+        _this183._isComplete = false;
+        return _this183;
       }
 
       _createClass2(ConnectableObservable, [{
@@ -110220,13 +109900,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super82 = _createSuper(ConnectableSubscriber);
 
       function ConnectableSubscriber(destination, connectable) {
-        var _this185;
+        var _this184;
 
         _classCallCheck(this, ConnectableSubscriber);
 
-        _this185 = _super82.call(this, destination);
-        _this185.connectable = connectable;
-        return _this185;
+        _this184 = _super82.call(this, destination);
+        _this184.connectable = connectable;
+        return _this184;
       }
 
       _createClass2(ConnectableSubscriber, [{
@@ -110303,13 +109983,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super83 = _createSuper(RefCountSubscriber);
 
       function RefCountSubscriber(destination, connectable) {
-        var _this186;
+        var _this185;
 
         _classCallCheck(this, RefCountSubscriber);
 
-        _this186 = _super83.call(this, destination);
-        _this186.connectable = connectable;
-        return _this186;
+        _this185 = _super83.call(this, destination);
+        _this185.connectable = connectable;
+        return _this185;
       }
 
       _createClass2(RefCountSubscriber, [{
@@ -110400,27 +110080,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super84 = _createSuper(SubscribeOnObservable);
 
       function SubscribeOnObservable(source) {
-        var _this187;
+        var _this186;
 
         var delayTime = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
         var scheduler = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _scheduler_asap__WEBPACK_IMPORTED_MODULE_1__["asap"];
 
         _classCallCheck(this, SubscribeOnObservable);
 
-        _this187 = _super84.call(this);
-        _this187.source = source;
-        _this187.delayTime = delayTime;
-        _this187.scheduler = scheduler;
+        _this186 = _super84.call(this);
+        _this186.source = source;
+        _this186.delayTime = delayTime;
+        _this186.scheduler = scheduler;
 
         if (!Object(_util_isNumeric__WEBPACK_IMPORTED_MODULE_2__["isNumeric"])(delayTime) || delayTime < 0) {
-          _this187.delayTime = 0;
+          _this186.delayTime = 0;
         }
 
         if (!scheduler || typeof scheduler.schedule !== 'function') {
-          _this187.scheduler = _scheduler_asap__WEBPACK_IMPORTED_MODULE_1__["asap"];
+          _this186.scheduler = _scheduler_asap__WEBPACK_IMPORTED_MODULE_1__["asap"];
         }
 
-        return _this187;
+        return _this186;
       }
 
       _createClass2(SubscribeOnObservable, [{
@@ -110578,7 +110258,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function dispatch(state) {
-      var _this188 = this;
+      var _this187 = this;
 
       var self = this;
       var args = state.args,
@@ -110599,7 +110279,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var value = innerArgs.length <= 1 ? innerArgs[0] : innerArgs;
 
-          _this188.add(scheduler.schedule(dispatchNext, 0, {
+          _this187.add(scheduler.schedule(dispatchNext, 0, {
             value: value,
             subject: subject
           }));
@@ -110761,7 +110441,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function dispatch(state) {
-      var _this189 = this;
+      var _this188 = this;
 
       var params = state.params,
           subscriber = state.subscriber,
@@ -110782,14 +110462,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var err = innerArgs.shift();
 
           if (err) {
-            _this189.add(scheduler.schedule(dispatchError, 0, {
+            _this188.add(scheduler.schedule(dispatchError, 0, {
               err: err,
               subject: subject
             }));
           } else {
             var value = innerArgs.length <= 1 ? innerArgs[0] : innerArgs;
 
-            _this189.add(scheduler.schedule(dispatchNext, 0, {
+            _this188.add(scheduler.schedule(dispatchNext, 0, {
               value: value,
               subject: subject
             }));
@@ -110940,16 +110620,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super85 = _createSuper(CombineLatestSubscriber);
 
       function CombineLatestSubscriber(destination, resultSelector) {
-        var _this190;
+        var _this189;
 
         _classCallCheck(this, CombineLatestSubscriber);
 
-        _this190 = _super85.call(this, destination);
-        _this190.resultSelector = resultSelector;
-        _this190.active = 0;
-        _this190.values = [];
-        _this190.observables = [];
-        return _this190;
+        _this189 = _super85.call(this, destination);
+        _this189.resultSelector = resultSelector;
+        _this189.active = 0;
+        _this189.values = [];
+        _this189.observables = [];
+        return _this189;
       }
 
       _createClass2(CombineLatestSubscriber, [{
@@ -112423,15 +112103,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super86 = _createSuper(RaceSubscriber);
 
       function RaceSubscriber(destination) {
-        var _this191;
+        var _this190;
 
         _classCallCheck(this, RaceSubscriber);
 
-        _this191 = _super86.call(this, destination);
-        _this191.hasFirst = false;
-        _this191.observables = [];
-        _this191.subscriptions = [];
-        return _this191;
+        _this190 = _super86.call(this, destination);
+        _this190.hasFirst = false;
+        _this190.observables = [];
+        _this190.subscriptions = [];
+        return _this190;
       }
 
       _createClass2(RaceSubscriber, [{
@@ -112911,18 +112591,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super87 = _createSuper(ZipSubscriber);
 
       function ZipSubscriber(destination, resultSelector) {
-        var _this192;
+        var _this191;
 
         var values = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Object.create(null);
 
         _classCallCheck(this, ZipSubscriber);
 
-        _this192 = _super87.call(this, destination);
-        _this192.iterators = [];
-        _this192.active = 0;
-        _this192.resultSelector = typeof resultSelector === 'function' ? resultSelector : null;
-        _this192.values = values;
-        return _this192;
+        _this191 = _super87.call(this, destination);
+        _this191.iterators = [];
+        _this191.active = 0;
+        _this191.resultSelector = typeof resultSelector === 'function' ? resultSelector : null;
+        _this191.values = values;
+        return _this191;
       }
 
       _createClass2(ZipSubscriber, [{
@@ -113122,17 +112802,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super88 = _createSuper(ZipBufferIterator);
 
       function ZipBufferIterator(destination, parent, observable) {
-        var _this193;
+        var _this192;
 
         _classCallCheck(this, ZipBufferIterator);
 
-        _this193 = _super88.call(this, destination);
-        _this193.parent = parent;
-        _this193.observable = observable;
-        _this193.stillUnsubscribed = true;
-        _this193.buffer = [];
-        _this193.isComplete = false;
-        return _this193;
+        _this192 = _super88.call(this, destination);
+        _this192.parent = parent;
+        _this192.observable = observable;
+        _this192.stillUnsubscribed = true;
+        _this192.buffer = [];
+        _this192.isComplete = false;
+        return _this192;
       }
 
       _createClass2(ZipBufferIterator, [{
@@ -113262,14 +112942,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super89 = _createSuper(AuditSubscriber);
 
       function AuditSubscriber(destination, durationSelector) {
-        var _this194;
+        var _this193;
 
         _classCallCheck(this, AuditSubscriber);
 
-        _this194 = _super89.call(this, destination);
-        _this194.durationSelector = durationSelector;
-        _this194.hasValue = false;
-        return _this194;
+        _this193 = _super89.call(this, destination);
+        _this193.durationSelector = durationSelector;
+        _this193.hasValue = false;
+        return _this193;
       }
 
       _createClass2(AuditSubscriber, [{
@@ -113449,16 +113129,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super90 = _createSuper(BufferSubscriber);
 
       function BufferSubscriber(destination, closingNotifier) {
-        var _this195;
+        var _this194;
 
         _classCallCheck(this, BufferSubscriber);
 
-        _this195 = _super90.call(this, destination);
-        _this195.buffer = [];
+        _this194 = _super90.call(this, destination);
+        _this194.buffer = [];
 
-        _this195.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this195), closingNotifier));
+        _this194.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this194), closingNotifier));
 
-        return _this195;
+        return _this194;
       }
 
       _createClass2(BufferSubscriber, [{
@@ -113549,14 +113229,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super91 = _createSuper(BufferCountSubscriber);
 
       function BufferCountSubscriber(destination, bufferSize) {
-        var _this196;
+        var _this195;
 
         _classCallCheck(this, BufferCountSubscriber);
 
-        _this196 = _super91.call(this, destination);
-        _this196.bufferSize = bufferSize;
-        _this196.buffer = [];
-        return _this196;
+        _this195 = _super91.call(this, destination);
+        _this195.bufferSize = bufferSize;
+        _this195.buffer = [];
+        return _this195;
       }
 
       _createClass2(BufferCountSubscriber, [{
@@ -113594,16 +113274,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super92 = _createSuper(BufferSkipCountSubscriber);
 
       function BufferSkipCountSubscriber(destination, bufferSize, startBufferEvery) {
-        var _this197;
+        var _this196;
 
         _classCallCheck(this, BufferSkipCountSubscriber);
 
-        _this197 = _super92.call(this, destination);
-        _this197.bufferSize = bufferSize;
-        _this197.startBufferEvery = startBufferEvery;
-        _this197.buffers = [];
-        _this197.count = 0;
-        return _this197;
+        _this196 = _super92.call(this, destination);
+        _this196.bufferSize = bufferSize;
+        _this196.startBufferEvery = startBufferEvery;
+        _this196.buffers = [];
+        _this196.count = 0;
+        return _this196;
       }
 
       _createClass2(BufferSkipCountSubscriber, [{
@@ -113754,47 +113434,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super93 = _createSuper(BufferTimeSubscriber);
 
       function BufferTimeSubscriber(destination, bufferTimeSpan, bufferCreationInterval, maxBufferSize, scheduler) {
-        var _this198;
+        var _this197;
 
         _classCallCheck(this, BufferTimeSubscriber);
 
-        _this198 = _super93.call(this, destination);
-        _this198.bufferTimeSpan = bufferTimeSpan;
-        _this198.bufferCreationInterval = bufferCreationInterval;
-        _this198.maxBufferSize = maxBufferSize;
-        _this198.scheduler = scheduler;
-        _this198.contexts = [];
+        _this197 = _super93.call(this, destination);
+        _this197.bufferTimeSpan = bufferTimeSpan;
+        _this197.bufferCreationInterval = bufferCreationInterval;
+        _this197.maxBufferSize = maxBufferSize;
+        _this197.scheduler = scheduler;
+        _this197.contexts = [];
 
-        var context = _this198.openContext();
+        var context = _this197.openContext();
 
-        _this198.timespanOnly = bufferCreationInterval == null || bufferCreationInterval < 0;
+        _this197.timespanOnly = bufferCreationInterval == null || bufferCreationInterval < 0;
 
-        if (_this198.timespanOnly) {
+        if (_this197.timespanOnly) {
           var timeSpanOnlyState = {
-            subscriber: _assertThisInitialized(_this198),
+            subscriber: _assertThisInitialized(_this197),
             context: context,
             bufferTimeSpan: bufferTimeSpan
           };
 
-          _this198.add(context.closeAction = scheduler.schedule(dispatchBufferTimeSpanOnly, bufferTimeSpan, timeSpanOnlyState));
+          _this197.add(context.closeAction = scheduler.schedule(dispatchBufferTimeSpanOnly, bufferTimeSpan, timeSpanOnlyState));
         } else {
           var closeState = {
-            subscriber: _assertThisInitialized(_this198),
+            subscriber: _assertThisInitialized(_this197),
             context: context
           };
           var creationState = {
             bufferTimeSpan: bufferTimeSpan,
             bufferCreationInterval: bufferCreationInterval,
-            subscriber: _assertThisInitialized(_this198),
+            subscriber: _assertThisInitialized(_this197),
             scheduler: scheduler
           };
 
-          _this198.add(context.closeAction = scheduler.schedule(dispatchBufferClose, bufferTimeSpan, closeState));
+          _this197.add(context.closeAction = scheduler.schedule(dispatchBufferClose, bufferTimeSpan, closeState));
 
-          _this198.add(scheduler.schedule(dispatchBufferCreation, bufferCreationInterval, creationState));
+          _this197.add(scheduler.schedule(dispatchBufferCreation, bufferCreationInterval, creationState));
         }
 
-        return _this198;
+        return _this197;
       }
 
       _createClass2(BufferTimeSubscriber, [{
@@ -113998,18 +113678,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super94 = _createSuper(BufferToggleSubscriber);
 
       function BufferToggleSubscriber(destination, openings, closingSelector) {
-        var _this199;
+        var _this198;
 
         _classCallCheck(this, BufferToggleSubscriber);
 
-        _this199 = _super94.call(this, destination);
-        _this199.openings = openings;
-        _this199.closingSelector = closingSelector;
-        _this199.contexts = [];
+        _this198 = _super94.call(this, destination);
+        _this198.openings = openings;
+        _this198.closingSelector = closingSelector;
+        _this198.contexts = [];
 
-        _this199.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this199), openings));
+        _this198.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this198), openings));
 
-        return _this199;
+        return _this198;
       }
 
       _createClass2(BufferToggleSubscriber, [{
@@ -114194,17 +113874,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super95 = _createSuper(BufferWhenSubscriber);
 
       function BufferWhenSubscriber(destination, closingSelector) {
-        var _this200;
+        var _this199;
 
         _classCallCheck(this, BufferWhenSubscriber);
 
-        _this200 = _super95.call(this, destination);
-        _this200.closingSelector = closingSelector;
-        _this200.subscribing = false;
+        _this199 = _super95.call(this, destination);
+        _this199.closingSelector = closingSelector;
+        _this199.subscribing = false;
 
-        _this200.openBuffer();
+        _this199.openBuffer();
 
-        return _this200;
+        return _this199;
       }
 
       _createClass2(BufferWhenSubscriber, [{
@@ -114358,14 +114038,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super96 = _createSuper(CatchSubscriber);
 
       function CatchSubscriber(destination, selector, caught) {
-        var _this201;
+        var _this200;
 
         _classCallCheck(this, CatchSubscriber);
 
-        _this201 = _super96.call(this, destination);
-        _this201.selector = selector;
-        _this201.caught = caught;
-        return _this201;
+        _this200 = _super96.call(this, destination);
+        _this200.selector = selector;
+        _this200.caught = caught;
+        return _this200;
       }
 
       _createClass2(CatchSubscriber, [{
@@ -114706,16 +114386,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super97 = _createSuper(CountSubscriber);
 
       function CountSubscriber(destination, predicate, source) {
-        var _this202;
+        var _this201;
 
         _classCallCheck(this, CountSubscriber);
 
-        _this202 = _super97.call(this, destination);
-        _this202.predicate = predicate;
-        _this202.source = source;
-        _this202.count = 0;
-        _this202.index = 0;
-        return _this202;
+        _this201 = _super97.call(this, destination);
+        _this201.predicate = predicate;
+        _this201.source = source;
+        _this201.count = 0;
+        _this201.index = 0;
+        return _this201;
       }
 
       _createClass2(CountSubscriber, [{
@@ -114823,15 +114503,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super98 = _createSuper(DebounceSubscriber);
 
       function DebounceSubscriber(destination, durationSelector) {
-        var _this203;
+        var _this202;
 
         _classCallCheck(this, DebounceSubscriber);
 
-        _this203 = _super98.call(this, destination);
-        _this203.durationSelector = durationSelector;
-        _this203.hasValue = false;
-        _this203.durationSubscription = null;
-        return _this203;
+        _this202 = _super98.call(this, destination);
+        _this202.durationSelector = durationSelector;
+        _this202.hasValue = false;
+        _this202.durationSubscription = null;
+        return _this202;
       }
 
       _createClass2(DebounceSubscriber, [{
@@ -114976,17 +114656,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super99 = _createSuper(DebounceTimeSubscriber);
 
       function DebounceTimeSubscriber(destination, dueTime, scheduler) {
-        var _this204;
+        var _this203;
 
         _classCallCheck(this, DebounceTimeSubscriber);
 
-        _this204 = _super99.call(this, destination);
-        _this204.dueTime = dueTime;
-        _this204.scheduler = scheduler;
-        _this204.debouncedSubscription = null;
-        _this204.lastValue = null;
-        _this204.hasValue = false;
-        return _this204;
+        _this203 = _super99.call(this, destination);
+        _this203.dueTime = dueTime;
+        _this203.scheduler = scheduler;
+        _this203.debouncedSubscription = null;
+        _this203.lastValue = null;
+        _this203.hasValue = false;
+        return _this203;
       }
 
       _createClass2(DebounceTimeSubscriber, [{
@@ -115099,14 +114779,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super100 = _createSuper(DefaultIfEmptySubscriber);
 
       function DefaultIfEmptySubscriber(destination, defaultValue) {
-        var _this205;
+        var _this204;
 
         _classCallCheck(this, DefaultIfEmptySubscriber);
 
-        _this205 = _super100.call(this, destination);
-        _this205.defaultValue = defaultValue;
-        _this205.isEmpty = true;
-        return _this205;
+        _this204 = _super100.call(this, destination);
+        _this204.defaultValue = defaultValue;
+        _this204.isEmpty = true;
+        return _this204;
       }
 
       _createClass2(DefaultIfEmptySubscriber, [{
@@ -115214,17 +114894,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super101 = _createSuper(DelaySubscriber);
 
       function DelaySubscriber(destination, delay, scheduler) {
-        var _this206;
+        var _this205;
 
         _classCallCheck(this, DelaySubscriber);
 
-        _this206 = _super101.call(this, destination);
-        _this206.delay = delay;
-        _this206.scheduler = scheduler;
-        _this206.queue = [];
-        _this206.active = false;
-        _this206.errored = false;
-        return _this206;
+        _this205 = _super101.call(this, destination);
+        _this205.delay = delay;
+        _this205.scheduler = scheduler;
+        _this205.queue = [];
+        _this205.active = false;
+        _this205.errored = false;
+        return _this205;
       }
 
       _createClass2(DelaySubscriber, [{
@@ -115392,16 +115072,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super102 = _createSuper(DelayWhenSubscriber);
 
       function DelayWhenSubscriber(destination, delayDurationSelector) {
-        var _this207;
+        var _this206;
 
         _classCallCheck(this, DelayWhenSubscriber);
 
-        _this207 = _super102.call(this, destination);
-        _this207.delayDurationSelector = delayDurationSelector;
-        _this207.completed = false;
-        _this207.delayNotifierSubscriptions = [];
-        _this207.index = 0;
-        return _this207;
+        _this206 = _super102.call(this, destination);
+        _this206.delayDurationSelector = delayDurationSelector;
+        _this206.completed = false;
+        _this206.delayNotifierSubscriptions = [];
+        _this206.index = 0;
+        return _this206;
       }
 
       _createClass2(DelayWhenSubscriber, [{
@@ -115492,14 +115172,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super103 = _createSuper(SubscriptionDelayObservable);
 
       function SubscriptionDelayObservable(source, subscriptionDelay) {
-        var _this208;
+        var _this207;
 
         _classCallCheck(this, SubscriptionDelayObservable);
 
-        _this208 = _super103.call(this);
-        _this208.source = source;
-        _this208.subscriptionDelay = subscriptionDelay;
-        return _this208;
+        _this207 = _super103.call(this);
+        _this207.source = source;
+        _this207.subscriptionDelay = subscriptionDelay;
+        return _this207;
       }
 
       _createClass2(SubscriptionDelayObservable, [{
@@ -115520,15 +115200,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super104 = _createSuper(SubscriptionDelaySubscriber);
 
       function SubscriptionDelaySubscriber(parent, source) {
-        var _this209;
+        var _this208;
 
         _classCallCheck(this, SubscriptionDelaySubscriber);
 
-        _this209 = _super104.call(this);
-        _this209.parent = parent;
-        _this209.source = source;
-        _this209.sourceSubscribed = false;
-        return _this209;
+        _this208 = _super104.call(this);
+        _this208.parent = parent;
+        _this208.source = source;
+        _this208.sourceSubscribed = false;
+        return _this208;
       }
 
       _createClass2(SubscriptionDelaySubscriber, [{
@@ -115714,19 +115394,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super106 = _createSuper(DistinctSubscriber);
 
       function DistinctSubscriber(destination, keySelector, flushes) {
-        var _this210;
+        var _this209;
 
         _classCallCheck(this, DistinctSubscriber);
 
-        _this210 = _super106.call(this, destination);
-        _this210.keySelector = keySelector;
-        _this210.values = new Set();
+        _this209 = _super106.call(this, destination);
+        _this209.keySelector = keySelector;
+        _this209.values = new Set();
 
         if (flushes) {
-          _this210.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this210), flushes));
+          _this209.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this209), flushes));
         }
 
-        return _this210;
+        return _this209;
       }
 
       _createClass2(DistinctSubscriber, [{
@@ -115842,19 +115522,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super107 = _createSuper(DistinctUntilChangedSubscriber);
 
       function DistinctUntilChangedSubscriber(destination, compare, keySelector) {
-        var _this211;
+        var _this210;
 
         _classCallCheck(this, DistinctUntilChangedSubscriber);
 
-        _this211 = _super107.call(this, destination);
-        _this211.keySelector = keySelector;
-        _this211.hasKey = false;
+        _this210 = _super107.call(this, destination);
+        _this210.keySelector = keySelector;
+        _this210.hasKey = false;
 
         if (typeof compare === 'function') {
-          _this211.compare = compare;
+          _this210.compare = compare;
         }
 
-        return _this211;
+        return _this210;
       }
 
       _createClass2(DistinctUntilChangedSubscriber, [{
@@ -116113,17 +115793,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super108 = _createSuper(EverySubscriber);
 
       function EverySubscriber(destination, predicate, thisArg, source) {
-        var _this212;
+        var _this211;
 
         _classCallCheck(this, EverySubscriber);
 
-        _this212 = _super108.call(this, destination);
-        _this212.predicate = predicate;
-        _this212.thisArg = thisArg;
-        _this212.source = source;
-        _this212.index = 0;
-        _this212.thisArg = thisArg || _assertThisInitialized(_this212);
-        return _this212;
+        _this211 = _super108.call(this, destination);
+        _this211.predicate = predicate;
+        _this211.thisArg = thisArg;
+        _this211.source = source;
+        _this211.index = 0;
+        _this211.thisArg = thisArg || _assertThisInitialized(_this211);
+        return _this211;
       }
 
       _createClass2(EverySubscriber, [{
@@ -116225,14 +115905,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super109 = _createSuper(SwitchFirstSubscriber);
 
       function SwitchFirstSubscriber(destination) {
-        var _this213;
+        var _this212;
 
         _classCallCheck(this, SwitchFirstSubscriber);
 
-        _this213 = _super109.call(this, destination);
-        _this213.hasCompleted = false;
-        _this213.hasSubscription = false;
-        return _this213;
+        _this212 = _super109.call(this, destination);
+        _this212.hasCompleted = false;
+        _this212.hasSubscription = false;
+        return _this212;
       }
 
       _createClass2(SwitchFirstSubscriber, [{
@@ -116364,16 +116044,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super110 = _createSuper(ExhaustMapSubscriber);
 
       function ExhaustMapSubscriber(destination, project) {
-        var _this214;
+        var _this213;
 
         _classCallCheck(this, ExhaustMapSubscriber);
 
-        _this214 = _super110.call(this, destination);
-        _this214.project = project;
-        _this214.hasSubscription = false;
-        _this214.hasCompleted = false;
-        _this214.index = 0;
-        return _this214;
+        _this213 = _super110.call(this, destination);
+        _this213.project = project;
+        _this213.hasSubscription = false;
+        _this213.hasCompleted = false;
+        _this213.index = 0;
+        return _this213;
       }
 
       _createClass2(ExhaustMapSubscriber, [{
@@ -116535,23 +116215,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super111 = _createSuper(ExpandSubscriber);
 
       function ExpandSubscriber(destination, project, concurrent, scheduler) {
-        var _this215;
+        var _this214;
 
         _classCallCheck(this, ExpandSubscriber);
 
-        _this215 = _super111.call(this, destination);
-        _this215.project = project;
-        _this215.concurrent = concurrent;
-        _this215.scheduler = scheduler;
-        _this215.index = 0;
-        _this215.active = 0;
-        _this215.hasCompleted = false;
+        _this214 = _super111.call(this, destination);
+        _this214.project = project;
+        _this214.concurrent = concurrent;
+        _this214.scheduler = scheduler;
+        _this214.index = 0;
+        _this214.active = 0;
+        _this214.hasCompleted = false;
 
         if (concurrent < Number.POSITIVE_INFINITY) {
-          _this215.buffer = [];
+          _this214.buffer = [];
         }
 
-        return _this215;
+        return _this214;
       }
 
       _createClass2(ExpandSubscriber, [{
@@ -116711,15 +116391,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super112 = _createSuper(FilterSubscriber);
 
       function FilterSubscriber(destination, predicate, thisArg) {
-        var _this216;
+        var _this215;
 
         _classCallCheck(this, FilterSubscriber);
 
-        _this216 = _super112.call(this, destination);
-        _this216.predicate = predicate;
-        _this216.thisArg = thisArg;
-        _this216.count = 0;
-        return _this216;
+        _this215 = _super112.call(this, destination);
+        _this215.predicate = predicate;
+        _this215.thisArg = thisArg;
+        _this215.count = 0;
+        return _this215;
       }
 
       _createClass2(FilterSubscriber, [{
@@ -116812,15 +116492,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super113 = _createSuper(FinallySubscriber);
 
       function FinallySubscriber(destination, callback) {
-        var _this217;
+        var _this216;
 
         _classCallCheck(this, FinallySubscriber);
 
-        _this217 = _super113.call(this, destination);
+        _this216 = _super113.call(this, destination);
 
-        _this217.add(new _Subscription__WEBPACK_IMPORTED_MODULE_1__["Subscription"](callback));
+        _this216.add(new _Subscription__WEBPACK_IMPORTED_MODULE_1__["Subscription"](callback));
 
-        return _this217;
+        return _this216;
       }
 
       return FinallySubscriber;
@@ -116908,17 +116588,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super114 = _createSuper(FindValueSubscriber);
 
       function FindValueSubscriber(destination, predicate, source, yieldIndex, thisArg) {
-        var _this218;
+        var _this217;
 
         _classCallCheck(this, FindValueSubscriber);
 
-        _this218 = _super114.call(this, destination);
-        _this218.predicate = predicate;
-        _this218.source = source;
-        _this218.yieldIndex = yieldIndex;
-        _this218.thisArg = thisArg;
-        _this218.index = 0;
-        return _this218;
+        _this217 = _super114.call(this, destination);
+        _this217.predicate = predicate;
+        _this217.source = source;
+        _this217.yieldIndex = yieldIndex;
+        _this217.thisArg = thisArg;
+        _this217.index = 0;
+        return _this217;
       }
 
       _createClass2(FindValueSubscriber, [{
@@ -117153,19 +116833,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super115 = _createSuper(GroupBySubscriber);
 
       function GroupBySubscriber(destination, keySelector, elementSelector, durationSelector, subjectSelector) {
-        var _this219;
+        var _this218;
 
         _classCallCheck(this, GroupBySubscriber);
 
-        _this219 = _super115.call(this, destination);
-        _this219.keySelector = keySelector;
-        _this219.elementSelector = elementSelector;
-        _this219.durationSelector = durationSelector;
-        _this219.subjectSelector = subjectSelector;
-        _this219.groups = null;
-        _this219.attemptedToUnsubscribe = false;
-        _this219.count = 0;
-        return _this219;
+        _this218 = _super115.call(this, destination);
+        _this218.keySelector = keySelector;
+        _this218.elementSelector = elementSelector;
+        _this218.durationSelector = durationSelector;
+        _this218.subjectSelector = subjectSelector;
+        _this218.groups = null;
+        _this218.attemptedToUnsubscribe = false;
+        _this218.count = 0;
+        return _this218;
       }
 
       _createClass2(GroupBySubscriber, [{
@@ -117285,15 +116965,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super116 = _createSuper(GroupDurationSubscriber);
 
       function GroupDurationSubscriber(key, group, parent) {
-        var _this220;
+        var _this219;
 
         _classCallCheck(this, GroupDurationSubscriber);
 
-        _this220 = _super116.call(this, group);
-        _this220.key = key;
-        _this220.group = group;
-        _this220.parent = parent;
-        return _this220;
+        _this219 = _super116.call(this, group);
+        _this219.key = key;
+        _this219.group = group;
+        _this219.parent = parent;
+        return _this219;
       }
 
       _createClass2(GroupDurationSubscriber, [{
@@ -117325,15 +117005,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super117 = _createSuper(GroupedObservable);
 
       function GroupedObservable(key, groupSubject, refCountSubscription) {
-        var _this221;
+        var _this220;
 
         _classCallCheck(this, GroupedObservable);
 
-        _this221 = _super117.call(this);
-        _this221.key = key;
-        _this221.groupSubject = groupSubject;
-        _this221.refCountSubscription = refCountSubscription;
-        return _this221;
+        _this220 = _super117.call(this);
+        _this220.key = key;
+        _this220.groupSubject = groupSubject;
+        _this220.refCountSubscription = refCountSubscription;
+        return _this220;
       }
 
       _createClass2(GroupedObservable, [{
@@ -117363,14 +117043,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super118 = _createSuper(InnerRefCountSubscription);
 
       function InnerRefCountSubscription(parent) {
-        var _this222;
+        var _this221;
 
         _classCallCheck(this, InnerRefCountSubscription);
 
-        _this222 = _super118.call(this);
-        _this222.parent = parent;
+        _this221 = _super118.call(this);
+        _this221.parent = parent;
         parent.count++;
-        return _this222;
+        return _this221;
       }
 
       _createClass2(InnerRefCountSubscription, [{
@@ -117700,15 +117380,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super121 = _createSuper(MapSubscriber);
 
       function MapSubscriber(destination, project, thisArg) {
-        var _this223;
+        var _this222;
 
         _classCallCheck(this, MapSubscriber);
 
-        _this223 = _super121.call(this, destination);
-        _this223.project = project;
-        _this223.count = 0;
-        _this223.thisArg = thisArg || _assertThisInitialized(_this223);
-        return _this223;
+        _this222 = _super121.call(this, destination);
+        _this222.project = project;
+        _this222.count = 0;
+        _this222.thisArg = thisArg || _assertThisInitialized(_this222);
+        return _this222;
       }
 
       _createClass2(MapSubscriber, [{
@@ -117793,13 +117473,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super122 = _createSuper(MapToSubscriber);
 
       function MapToSubscriber(destination, value) {
-        var _this224;
+        var _this223;
 
         _classCallCheck(this, MapToSubscriber);
 
-        _this224 = _super122.call(this, destination);
-        _this224.value = value;
-        return _this224;
+        _this223 = _super122.call(this, destination);
+        _this223.value = value;
+        return _this223;
       }
 
       _createClass2(MapToSubscriber, [{
@@ -118144,20 +117824,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super124 = _createSuper(MergeMapSubscriber);
 
       function MergeMapSubscriber(destination, project) {
-        var _this225;
+        var _this224;
 
         var concurrent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Number.POSITIVE_INFINITY;
 
         _classCallCheck(this, MergeMapSubscriber);
 
-        _this225 = _super124.call(this, destination);
-        _this225.project = project;
-        _this225.concurrent = concurrent;
-        _this225.hasCompleted = false;
-        _this225.buffer = [];
-        _this225.active = 0;
-        _this225.index = 0;
-        return _this225;
+        _this224 = _super124.call(this, destination);
+        _this224.project = project;
+        _this224.concurrent = concurrent;
+        _this224.hasCompleted = false;
+        _this224.buffer = [];
+        _this224.active = 0;
+        _this224.index = 0;
+        return _this224;
       }
 
       _createClass2(MergeMapSubscriber, [{
@@ -118370,20 +118050,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super125 = _createSuper(MergeScanSubscriber);
 
       function MergeScanSubscriber(destination, accumulator, acc, concurrent) {
-        var _this226;
+        var _this225;
 
         _classCallCheck(this, MergeScanSubscriber);
 
-        _this226 = _super125.call(this, destination);
-        _this226.accumulator = accumulator;
-        _this226.acc = acc;
-        _this226.concurrent = concurrent;
-        _this226.hasValue = false;
-        _this226.hasCompleted = false;
-        _this226.buffer = [];
-        _this226.active = 0;
-        _this226.index = 0;
-        return _this226;
+        _this225 = _super125.call(this, destination);
+        _this225.accumulator = accumulator;
+        _this225.acc = acc;
+        _this225.concurrent = concurrent;
+        _this225.hasValue = false;
+        _this225.hasCompleted = false;
+        _this225.buffer = [];
+        _this225.active = 0;
+        _this225.index = 0;
+        return _this225;
       }
 
       _createClass2(MergeScanSubscriber, [{
@@ -118679,16 +118359,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super126 = _createSuper(ObserveOnSubscriber);
 
       function ObserveOnSubscriber(destination, scheduler) {
-        var _this227;
+        var _this226;
 
         var delay = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
         _classCallCheck(this, ObserveOnSubscriber);
 
-        _this227 = _super126.call(this, destination);
-        _this227.scheduler = scheduler;
-        _this227.delay = delay;
-        return _this227;
+        _this226 = _super126.call(this, destination);
+        _this226.scheduler = scheduler;
+        _this226.delay = delay;
+        return _this226;
       }
 
       _createClass2(ObserveOnSubscriber, [{
@@ -118850,14 +118530,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super127 = _createSuper(OnErrorResumeNextSubscriber);
 
       function OnErrorResumeNextSubscriber(destination, nextSources) {
-        var _this228;
+        var _this227;
 
         _classCallCheck(this, OnErrorResumeNextSubscriber);
 
-        _this228 = _super127.call(this, destination);
-        _this228.destination = destination;
-        _this228.nextSources = nextSources;
-        return _this228;
+        _this227 = _super127.call(this, destination);
+        _this227.destination = destination;
+        _this227.nextSources = nextSources;
+        return _this227;
       }
 
       _createClass2(OnErrorResumeNextSubscriber, [{
@@ -118966,13 +118646,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super128 = _createSuper(PairwiseSubscriber);
 
       function PairwiseSubscriber(destination) {
-        var _this229;
+        var _this228;
 
         _classCallCheck(this, PairwiseSubscriber);
 
-        _this229 = _super128.call(this, destination);
-        _this229.hasPrev = false;
-        return _this229;
+        _this228 = _super128.call(this, destination);
+        _this228.hasPrev = false;
+        return _this228;
       }
 
       _createClass2(PairwiseSubscriber, [{
@@ -119465,13 +119145,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super129 = _createSuper(RefCountSubscriber);
 
       function RefCountSubscriber(destination, connectable) {
-        var _this230;
+        var _this229;
 
         _classCallCheck(this, RefCountSubscriber);
 
-        _this230 = _super129.call(this, destination);
-        _this230.connectable = connectable;
-        return _this230;
+        _this229 = _super129.call(this, destination);
+        _this229.connectable = connectable;
+        return _this229;
       }
 
       _createClass2(RefCountSubscriber, [{
@@ -119589,14 +119269,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super130 = _createSuper(RepeatSubscriber);
 
       function RepeatSubscriber(destination, count, source) {
-        var _this231;
+        var _this230;
 
         _classCallCheck(this, RepeatSubscriber);
 
-        _this231 = _super130.call(this, destination);
-        _this231.count = count;
-        _this231.source = source;
-        return _this231;
+        _this230 = _super130.call(this, destination);
+        _this230.count = count;
+        _this230.source = source;
+        return _this230;
       }
 
       _createClass2(RepeatSubscriber, [{
@@ -119695,15 +119375,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super131 = _createSuper(RepeatWhenSubscriber);
 
       function RepeatWhenSubscriber(destination, notifier, source) {
-        var _this232;
+        var _this231;
 
         _classCallCheck(this, RepeatWhenSubscriber);
 
-        _this232 = _super131.call(this, destination);
-        _this232.notifier = notifier;
-        _this232.source = source;
-        _this232.sourceIsBeingSubscribedTo = true;
-        return _this232;
+        _this231 = _super131.call(this, destination);
+        _this231.notifier = notifier;
+        _this231.source = source;
+        _this231.sourceIsBeingSubscribedTo = true;
+        return _this231;
       }
 
       _createClass2(RepeatWhenSubscriber, [{
@@ -119853,14 +119533,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super132 = _createSuper(RetrySubscriber);
 
       function RetrySubscriber(destination, count, source) {
-        var _this233;
+        var _this232;
 
         _classCallCheck(this, RetrySubscriber);
 
-        _this233 = _super132.call(this, destination);
-        _this233.count = count;
-        _this233.source = source;
-        return _this233;
+        _this232 = _super132.call(this, destination);
+        _this232.count = count;
+        _this232.source = source;
+        return _this232;
       }
 
       _createClass2(RetrySubscriber, [{
@@ -119960,14 +119640,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super133 = _createSuper(RetryWhenSubscriber);
 
       function RetryWhenSubscriber(destination, notifier, source) {
-        var _this234;
+        var _this233;
 
         _classCallCheck(this, RetryWhenSubscriber);
 
-        _this234 = _super133.call(this, destination);
-        _this234.notifier = notifier;
-        _this234.source = source;
-        return _this234;
+        _this233 = _super133.call(this, destination);
+        _this233.notifier = notifier;
+        _this233.source = source;
+        return _this233;
       }
 
       _createClass2(RetryWhenSubscriber, [{
@@ -120108,13 +119788,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super134 = _createSuper(SampleSubscriber);
 
       function SampleSubscriber() {
-        var _this235;
+        var _this234;
 
         _classCallCheck(this, SampleSubscriber);
 
-        _this235 = _super134.apply(this, arguments);
-        _this235.hasValue = false;
-        return _this235;
+        _this234 = _super134.apply(this, arguments);
+        _this234.hasValue = false;
+        return _this234;
       }
 
       _createClass2(SampleSubscriber, [{
@@ -120217,21 +119897,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super135 = _createSuper(SampleTimeSubscriber);
 
       function SampleTimeSubscriber(destination, period, scheduler) {
-        var _this236;
+        var _this235;
 
         _classCallCheck(this, SampleTimeSubscriber);
 
-        _this236 = _super135.call(this, destination);
-        _this236.period = period;
-        _this236.scheduler = scheduler;
-        _this236.hasValue = false;
+        _this235 = _super135.call(this, destination);
+        _this235.period = period;
+        _this235.scheduler = scheduler;
+        _this235.hasValue = false;
 
-        _this236.add(scheduler.schedule(dispatchNotification, period, {
-          subscriber: _assertThisInitialized(_this236),
+        _this235.add(scheduler.schedule(dispatchNotification, period, {
+          subscriber: _assertThisInitialized(_this235),
           period: period
         }));
 
-        return _this236;
+        return _this235;
       }
 
       _createClass2(SampleTimeSubscriber, [{
@@ -120333,16 +120013,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super136 = _createSuper(ScanSubscriber);
 
       function ScanSubscriber(destination, accumulator, _seed, hasSeed) {
-        var _this237;
+        var _this236;
 
         _classCallCheck(this, ScanSubscriber);
 
-        _this237 = _super136.call(this, destination);
-        _this237.accumulator = accumulator;
-        _this237._seed = _seed;
-        _this237.hasSeed = hasSeed;
-        _this237.index = 0;
-        return _this237;
+        _this236 = _super136.call(this, destination);
+        _this236.accumulator = accumulator;
+        _this236._seed = _seed;
+        _this236.hasSeed = hasSeed;
+        _this236.index = 0;
+        return _this236;
       }
 
       _createClass2(ScanSubscriber, [{
@@ -120460,20 +120140,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super137 = _createSuper(SequenceEqualSubscriber);
 
       function SequenceEqualSubscriber(destination, compareTo, comparator) {
-        var _this238;
+        var _this237;
 
         _classCallCheck(this, SequenceEqualSubscriber);
 
-        _this238 = _super137.call(this, destination);
-        _this238.compareTo = compareTo;
-        _this238.comparator = comparator;
-        _this238._a = [];
-        _this238._b = [];
-        _this238._oneComplete = false;
+        _this237 = _super137.call(this, destination);
+        _this237.compareTo = compareTo;
+        _this237.comparator = comparator;
+        _this237._a = [];
+        _this237._b = [];
+        _this237._oneComplete = false;
 
-        _this238.destination.add(compareTo.subscribe(new SequenceEqualCompareToSubscriber(destination, _assertThisInitialized(_this238))));
+        _this237.destination.add(compareTo.subscribe(new SequenceEqualCompareToSubscriber(destination, _assertThisInitialized(_this237))));
 
-        return _this238;
+        return _this237;
       }
 
       _createClass2(SequenceEqualSubscriber, [{
@@ -120563,13 +120243,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super138 = _createSuper(SequenceEqualCompareToSubscriber);
 
       function SequenceEqualCompareToSubscriber(destination, parent) {
-        var _this239;
+        var _this238;
 
         _classCallCheck(this, SequenceEqualCompareToSubscriber);
 
-        _this239 = _super138.call(this, destination);
-        _this239.parent = parent;
-        return _this239;
+        _this238 = _super138.call(this, destination);
+        _this238.parent = parent;
+        return _this238;
       }
 
       _createClass2(SequenceEqualCompareToSubscriber, [{
@@ -120813,16 +120493,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super139 = _createSuper(SingleSubscriber);
 
       function SingleSubscriber(destination, predicate, source) {
-        var _this240;
+        var _this239;
 
         _classCallCheck(this, SingleSubscriber);
 
-        _this240 = _super139.call(this, destination);
-        _this240.predicate = predicate;
-        _this240.source = source;
-        _this240.seenValue = false;
-        _this240.index = 0;
-        return _this240;
+        _this239 = _super139.call(this, destination);
+        _this239.predicate = predicate;
+        _this239.source = source;
+        _this239.seenValue = false;
+        _this239.index = 0;
+        return _this239;
       }
 
       _createClass2(SingleSubscriber, [{
@@ -120937,14 +120617,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super140 = _createSuper(SkipSubscriber);
 
       function SkipSubscriber(destination, total) {
-        var _this241;
+        var _this240;
 
         _classCallCheck(this, SkipSubscriber);
 
-        _this241 = _super140.call(this, destination);
-        _this241.total = total;
-        _this241.count = 0;
-        return _this241;
+        _this240 = _super140.call(this, destination);
+        _this240.total = total;
+        _this240.count = 0;
+        return _this240;
       }
 
       _createClass2(SkipSubscriber, [{
@@ -121036,15 +120716,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super141 = _createSuper(SkipLastSubscriber);
 
       function SkipLastSubscriber(destination, _skipCount) {
-        var _this242;
+        var _this241;
 
         _classCallCheck(this, SkipLastSubscriber);
 
-        _this242 = _super141.call(this, destination);
-        _this242._skipCount = _skipCount;
-        _this242._count = 0;
-        _this242._ring = new Array(_skipCount);
-        return _this242;
+        _this241 = _super141.call(this, destination);
+        _this241._skipCount = _skipCount;
+        _this241._count = 0;
+        _this241._ring = new Array(_skipCount);
+        return _this241;
       }
 
       _createClass2(SkipLastSubscriber, [{
@@ -121143,26 +120823,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super142 = _createSuper(SkipUntilSubscriber);
 
       function SkipUntilSubscriber(destination, notifier) {
-        var _this243;
+        var _this242;
 
         _classCallCheck(this, SkipUntilSubscriber);
 
-        _this243 = _super142.call(this, destination);
-        _this243.hasValue = false;
-        var innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](_assertThisInitialized(_this243), undefined, undefined);
+        _this242 = _super142.call(this, destination);
+        _this242.hasValue = false;
+        var innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](_assertThisInitialized(_this242), undefined, undefined);
 
-        _this243.add(innerSubscriber);
+        _this242.add(innerSubscriber);
 
-        _this243.innerSubscription = innerSubscriber;
-        var innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(_assertThisInitialized(_this243), notifier, undefined, undefined, innerSubscriber);
+        _this242.innerSubscription = innerSubscriber;
+        var innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(_assertThisInitialized(_this242), notifier, undefined, undefined, innerSubscriber);
 
         if (innerSubscription !== innerSubscriber) {
-          _this243.add(innerSubscription);
+          _this242.add(innerSubscription);
 
-          _this243.innerSubscription = innerSubscription;
+          _this242.innerSubscription = innerSubscription;
         }
 
-        return _this243;
+        return _this242;
       }
 
       _createClass2(SkipUntilSubscriber, [{
@@ -121252,15 +120932,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super143 = _createSuper(SkipWhileSubscriber);
 
       function SkipWhileSubscriber(destination, predicate) {
-        var _this244;
+        var _this243;
 
         _classCallCheck(this, SkipWhileSubscriber);
 
-        _this244 = _super143.call(this, destination);
-        _this244.predicate = predicate;
-        _this244.skipping = true;
-        _this244.index = 0;
-        return _this244;
+        _this243 = _super143.call(this, destination);
+        _this243.predicate = predicate;
+        _this243.skipping = true;
+        _this243.index = 0;
+        return _this243;
       }
 
       _createClass2(SkipWhileSubscriber, [{
@@ -121540,14 +121220,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super144 = _createSuper(SwitchMapSubscriber);
 
       function SwitchMapSubscriber(destination, project) {
-        var _this245;
+        var _this244;
 
         _classCallCheck(this, SwitchMapSubscriber);
 
-        _this245 = _super144.call(this, destination);
-        _this245.project = project;
-        _this245.index = 0;
-        return _this245;
+        _this244 = _super144.call(this, destination);
+        _this244.project = project;
+        _this244.index = 0;
+        return _this244;
       }
 
       _createClass2(SwitchMapSubscriber, [{
@@ -121741,14 +121421,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super145 = _createSuper(TakeSubscriber);
 
       function TakeSubscriber(destination, total) {
-        var _this246;
+        var _this245;
 
         _classCallCheck(this, TakeSubscriber);
 
-        _this246 = _super145.call(this, destination);
-        _this246.total = total;
-        _this246.count = 0;
-        return _this246;
+        _this245 = _super145.call(this, destination);
+        _this245.total = total;
+        _this245.count = 0;
+        return _this245;
       }
 
       _createClass2(TakeSubscriber, [{
@@ -121854,15 +121534,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super146 = _createSuper(TakeLastSubscriber);
 
       function TakeLastSubscriber(destination, total) {
-        var _this247;
+        var _this246;
 
         _classCallCheck(this, TakeLastSubscriber);
 
-        _this247 = _super146.call(this, destination);
-        _this247.total = total;
-        _this247.ring = new Array();
-        _this247.count = 0;
-        return _this247;
+        _this246 = _super146.call(this, destination);
+        _this246.total = total;
+        _this246.ring = new Array();
+        _this246.count = 0;
+        return _this246;
       }
 
       _createClass2(TakeLastSubscriber, [{
@@ -121979,13 +121659,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super147 = _createSuper(TakeUntilSubscriber);
 
       function TakeUntilSubscriber(destination) {
-        var _this248;
+        var _this247;
 
         _classCallCheck(this, TakeUntilSubscriber);
 
-        _this248 = _super147.call(this, destination);
-        _this248.seenValue = false;
-        return _this248;
+        _this247 = _super147.call(this, destination);
+        _this247.seenValue = false;
+        return _this247;
       }
 
       _createClass2(TakeUntilSubscriber, [{
@@ -122067,15 +121747,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super148 = _createSuper(TakeWhileSubscriber);
 
       function TakeWhileSubscriber(destination, predicate, inclusive) {
-        var _this249;
+        var _this248;
 
         _classCallCheck(this, TakeWhileSubscriber);
 
-        _this249 = _super148.call(this, destination);
-        _this249.predicate = predicate;
-        _this249.inclusive = inclusive;
-        _this249.index = 0;
-        return _this249;
+        _this248 = _super148.call(this, destination);
+        _this248.predicate = predicate;
+        _this248.inclusive = inclusive;
+        _this248.index = 0;
+        return _this248;
       }
 
       _createClass2(TakeWhileSubscriber, [{
@@ -122190,28 +121870,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super149 = _createSuper(TapSubscriber);
 
       function TapSubscriber(destination, observerOrNext, error, complete) {
-        var _this250;
+        var _this249;
 
         _classCallCheck(this, TapSubscriber);
 
-        _this250 = _super149.call(this, destination);
-        _this250._tapNext = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this250._tapError = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this250._tapComplete = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this250._tapError = error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this250._tapComplete = complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this249 = _super149.call(this, destination);
+        _this249._tapNext = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this249._tapError = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this249._tapComplete = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this249._tapError = error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this249._tapComplete = complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
 
         if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_2__["isFunction"])(observerOrNext)) {
-          _this250._context = _assertThisInitialized(_this250);
-          _this250._tapNext = observerOrNext;
+          _this249._context = _assertThisInitialized(_this249);
+          _this249._tapNext = observerOrNext;
         } else if (observerOrNext) {
-          _this250._context = observerOrNext;
-          _this250._tapNext = observerOrNext.next || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-          _this250._tapError = observerOrNext.error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-          _this250._tapComplete = observerOrNext.complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+          _this249._context = observerOrNext;
+          _this249._tapNext = observerOrNext.next || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+          _this249._tapError = observerOrNext.error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+          _this249._tapComplete = observerOrNext.complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
         }
 
-        return _this250;
+        return _this249;
       }
 
       _createClass2(TapSubscriber, [{
@@ -122338,17 +122018,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super150 = _createSuper(ThrottleSubscriber);
 
       function ThrottleSubscriber(destination, durationSelector, _leading, _trailing) {
-        var _this251;
+        var _this250;
 
         _classCallCheck(this, ThrottleSubscriber);
 
-        _this251 = _super150.call(this, destination);
-        _this251.destination = destination;
-        _this251.durationSelector = durationSelector;
-        _this251._leading = _leading;
-        _this251._trailing = _trailing;
-        _this251._hasValue = false;
-        return _this251;
+        _this250 = _super150.call(this, destination);
+        _this250.destination = destination;
+        _this250.durationSelector = durationSelector;
+        _this250._leading = _leading;
+        _this250._trailing = _trailing;
+        _this250._hasValue = false;
+        return _this250;
       }
 
       _createClass2(ThrottleSubscriber, [{
@@ -122509,18 +122189,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super151 = _createSuper(ThrottleTimeSubscriber);
 
       function ThrottleTimeSubscriber(destination, duration, scheduler, leading, trailing) {
-        var _this252;
+        var _this251;
 
         _classCallCheck(this, ThrottleTimeSubscriber);
 
-        _this252 = _super151.call(this, destination);
-        _this252.duration = duration;
-        _this252.scheduler = scheduler;
-        _this252.leading = leading;
-        _this252.trailing = trailing;
-        _this252._hasTrailingValue = false;
-        _this252._trailingValue = null;
-        return _this252;
+        _this251 = _super151.call(this, destination);
+        _this251.duration = duration;
+        _this251.scheduler = scheduler;
+        _this251.leading = leading;
+        _this251.trailing = trailing;
+        _this251._hasTrailingValue = false;
+        _this251._trailingValue = null;
+        return _this251;
       }
 
       _createClass2(ThrottleTimeSubscriber, [{
@@ -122651,14 +122331,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super152 = _createSuper(ThrowIfEmptySubscriber);
 
       function ThrowIfEmptySubscriber(destination, errorFactory) {
-        var _this253;
+        var _this252;
 
         _classCallCheck(this, ThrowIfEmptySubscriber);
 
-        _this253 = _super152.call(this, destination);
-        _this253.errorFactory = errorFactory;
-        _this253.hasValue = false;
-        return _this253;
+        _this252 = _super152.call(this, destination);
+        _this252.errorFactory = errorFactory;
+        _this252.hasValue = false;
+        return _this252;
       }
 
       _createClass2(ThrowIfEmptySubscriber, [{
@@ -122919,20 +122599,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super153 = _createSuper(TimeoutWithSubscriber);
 
       function TimeoutWithSubscriber(destination, absoluteTimeout, waitFor, withObservable, scheduler) {
-        var _this254;
+        var _this253;
 
         _classCallCheck(this, TimeoutWithSubscriber);
 
-        _this254 = _super153.call(this, destination);
-        _this254.absoluteTimeout = absoluteTimeout;
-        _this254.waitFor = waitFor;
-        _this254.withObservable = withObservable;
-        _this254.scheduler = scheduler;
-        _this254.action = null;
+        _this253 = _super153.call(this, destination);
+        _this253.absoluteTimeout = absoluteTimeout;
+        _this253.waitFor = waitFor;
+        _this253.withObservable = withObservable;
+        _this253.scheduler = scheduler;
+        _this253.action = null;
 
-        _this254.scheduleTimeout();
+        _this253.scheduleTimeout();
 
-        return _this254;
+        return _this253;
       }
 
       _createClass2(TimeoutWithSubscriber, [{
@@ -123157,14 +122837,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super154 = _createSuper(WindowSubscriber);
 
       function WindowSubscriber(destination) {
-        var _this255;
+        var _this254;
 
         _classCallCheck(this, WindowSubscriber);
 
-        _this255 = _super154.call(this, destination);
-        _this255.window = new _Subject__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
-        destination.next(_this255.window);
-        return _this255;
+        _this254 = _super154.call(this, destination);
+        _this254.window = new _Subject__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
+        destination.next(_this254.window);
+        return _this254;
       }
 
       _createClass2(WindowSubscriber, [{
@@ -123293,18 +122973,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super155 = _createSuper(WindowCountSubscriber);
 
       function WindowCountSubscriber(destination, windowSize, startWindowEvery) {
-        var _this256;
+        var _this255;
 
         _classCallCheck(this, WindowCountSubscriber);
 
-        _this256 = _super155.call(this, destination);
-        _this256.destination = destination;
-        _this256.windowSize = windowSize;
-        _this256.startWindowEvery = startWindowEvery;
-        _this256.windows = [new _Subject__WEBPACK_IMPORTED_MODULE_1__["Subject"]()];
-        _this256.count = 0;
-        destination.next(_this256.windows[0]);
-        return _this256;
+        _this255 = _super155.call(this, destination);
+        _this255.destination = destination;
+        _this255.windowSize = windowSize;
+        _this255.startWindowEvery = startWindowEvery;
+        _this255.windows = [new _Subject__WEBPACK_IMPORTED_MODULE_1__["Subject"]()];
+        _this255.count = 0;
+        destination.next(_this255.windows[0]);
+        return _this255;
       }
 
       _createClass2(WindowCountSubscriber, [{
@@ -123480,13 +123160,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super156 = _createSuper(CountedSubject);
 
       function CountedSubject() {
-        var _this257;
+        var _this256;
 
         _classCallCheck(this, CountedSubject);
 
-        _this257 = _super156.apply(this, arguments);
-        _this257._numberOfNextedValues = 0;
-        return _this257;
+        _this256 = _super156.apply(this, arguments);
+        _this256._numberOfNextedValues = 0;
+        return _this256;
       }
 
       _createClass2(CountedSubject, [{
@@ -123514,47 +123194,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super157 = _createSuper(WindowTimeSubscriber);
 
       function WindowTimeSubscriber(destination, windowTimeSpan, windowCreationInterval, maxWindowSize, scheduler) {
-        var _this258;
+        var _this257;
 
         _classCallCheck(this, WindowTimeSubscriber);
 
-        _this258 = _super157.call(this, destination);
-        _this258.destination = destination;
-        _this258.windowTimeSpan = windowTimeSpan;
-        _this258.windowCreationInterval = windowCreationInterval;
-        _this258.maxWindowSize = maxWindowSize;
-        _this258.scheduler = scheduler;
-        _this258.windows = [];
+        _this257 = _super157.call(this, destination);
+        _this257.destination = destination;
+        _this257.windowTimeSpan = windowTimeSpan;
+        _this257.windowCreationInterval = windowCreationInterval;
+        _this257.maxWindowSize = maxWindowSize;
+        _this257.scheduler = scheduler;
+        _this257.windows = [];
 
-        var window = _this258.openWindow();
+        var window = _this257.openWindow();
 
         if (windowCreationInterval !== null && windowCreationInterval >= 0) {
           var closeState = {
-            subscriber: _assertThisInitialized(_this258),
+            subscriber: _assertThisInitialized(_this257),
             window: window,
             context: null
           };
           var creationState = {
             windowTimeSpan: windowTimeSpan,
             windowCreationInterval: windowCreationInterval,
-            subscriber: _assertThisInitialized(_this258),
+            subscriber: _assertThisInitialized(_this257),
             scheduler: scheduler
           };
 
-          _this258.add(scheduler.schedule(dispatchWindowClose, windowTimeSpan, closeState));
+          _this257.add(scheduler.schedule(dispatchWindowClose, windowTimeSpan, closeState));
 
-          _this258.add(scheduler.schedule(dispatchWindowCreation, windowCreationInterval, creationState));
+          _this257.add(scheduler.schedule(dispatchWindowCreation, windowCreationInterval, creationState));
         } else {
           var timeSpanOnlyState = {
-            subscriber: _assertThisInitialized(_this258),
+            subscriber: _assertThisInitialized(_this257),
             window: window,
             windowTimeSpan: windowTimeSpan
           };
 
-          _this258.add(scheduler.schedule(dispatchWindowTimeSpanOnly, windowTimeSpan, timeSpanOnlyState));
+          _this257.add(scheduler.schedule(dispatchWindowTimeSpanOnly, windowTimeSpan, timeSpanOnlyState));
         }
 
-        return _this258;
+        return _this257;
       }
 
       _createClass2(WindowTimeSubscriber, [{
@@ -123750,18 +123430,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super158 = _createSuper(WindowToggleSubscriber);
 
       function WindowToggleSubscriber(destination, openings, closingSelector) {
-        var _this259;
+        var _this258;
 
         _classCallCheck(this, WindowToggleSubscriber);
 
-        _this259 = _super158.call(this, destination);
-        _this259.openings = openings;
-        _this259.closingSelector = closingSelector;
-        _this259.contexts = [];
+        _this258 = _super158.call(this, destination);
+        _this258.openings = openings;
+        _this258.closingSelector = closingSelector;
+        _this258.contexts = [];
 
-        _this259.add(_this259.openSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_3__["subscribeToResult"])(_assertThisInitialized(_this259), openings, openings));
+        _this258.add(_this258.openSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_3__["subscribeToResult"])(_assertThisInitialized(_this258), openings, openings));
 
-        return _this259;
+        return _this258;
       }
 
       _createClass2(WindowToggleSubscriber, [{
@@ -123974,17 +123654,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super159 = _createSuper(WindowSubscriber);
 
       function WindowSubscriber(destination, closingSelector) {
-        var _this260;
+        var _this259;
 
         _classCallCheck(this, WindowSubscriber);
 
-        _this260 = _super159.call(this, destination);
-        _this260.destination = destination;
-        _this260.closingSelector = closingSelector;
+        _this259 = _super159.call(this, destination);
+        _this259.destination = destination;
+        _this259.closingSelector = closingSelector;
 
-        _this260.openWindow();
+        _this259.openWindow();
 
-        return _this260;
+        return _this259;
       }
 
       _createClass2(WindowSubscriber, [{
@@ -124145,28 +123825,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super160 = _createSuper(WithLatestFromSubscriber);
 
       function WithLatestFromSubscriber(destination, observables, project) {
-        var _this261;
+        var _this260;
 
         _classCallCheck(this, WithLatestFromSubscriber);
 
-        _this261 = _super160.call(this, destination);
-        _this261.observables = observables;
-        _this261.project = project;
-        _this261.toRespond = [];
+        _this260 = _super160.call(this, destination);
+        _this260.observables = observables;
+        _this260.project = project;
+        _this260.toRespond = [];
         var len = observables.length;
-        _this261.values = new Array(len);
+        _this260.values = new Array(len);
 
         for (var i = 0; i < len; i++) {
-          _this261.toRespond.push(i);
+          _this260.toRespond.push(i);
         }
 
         for (var _i25 = 0; _i25 < len; _i25++) {
           var observable = observables[_i25];
 
-          _this261.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this261), observable, observable, _i25));
+          _this260.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this260), observable, observable, _i25));
         }
 
-        return _this261;
+        return _this260;
       }
 
       _createClass2(WithLatestFromSubscriber, [{
@@ -124743,14 +124423,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super162 = _createSuper(AnimationFrameAction);
 
       function AnimationFrameAction(scheduler, work) {
-        var _this262;
+        var _this261;
 
         _classCallCheck(this, AnimationFrameAction);
 
-        _this262 = _super162.call(this, scheduler, work);
-        _this262.scheduler = scheduler;
-        _this262.work = work;
-        return _this262;
+        _this261 = _super162.call(this, scheduler, work);
+        _this261.scheduler = scheduler;
+        _this261.work = work;
+        return _this261;
       }
 
       _createClass2(AnimationFrameAction, [{
@@ -124907,14 +124587,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super164 = _createSuper(AsapAction);
 
       function AsapAction(scheduler, work) {
-        var _this263;
+        var _this262;
 
         _classCallCheck(this, AsapAction);
 
-        _this263 = _super164.call(this, scheduler, work);
-        _this263.scheduler = scheduler;
-        _this263.work = work;
-        return _this263;
+        _this262 = _super164.call(this, scheduler, work);
+        _this262.scheduler = scheduler;
+        _this262.work = work;
+        return _this262;
       }
 
       _createClass2(AsapAction, [{
@@ -125064,15 +124744,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super166 = _createSuper(AsyncAction);
 
       function AsyncAction(scheduler, work) {
-        var _this264;
+        var _this263;
 
         _classCallCheck(this, AsyncAction);
 
-        _this264 = _super166.call(this, scheduler, work);
-        _this264.scheduler = scheduler;
-        _this264.work = work;
-        _this264.pending = false;
-        return _this264;
+        _this263 = _super166.call(this, scheduler, work);
+        _this263.scheduler = scheduler;
+        _this263.work = work;
+        _this263.pending = false;
+        return _this263;
       }
 
       _createClass2(AsyncAction, [{
@@ -125215,23 +124895,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super167 = _createSuper(AsyncScheduler);
 
       function AsyncScheduler(SchedulerAction) {
-        var _this265;
+        var _this264;
 
         var now = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _Scheduler__WEBPACK_IMPORTED_MODULE_0__["Scheduler"].now;
 
         _classCallCheck(this, AsyncScheduler);
 
-        _this265 = _super167.call(this, SchedulerAction, function () {
-          if (AsyncScheduler.delegate && AsyncScheduler.delegate !== _assertThisInitialized(_this265)) {
+        _this264 = _super167.call(this, SchedulerAction, function () {
+          if (AsyncScheduler.delegate && AsyncScheduler.delegate !== _assertThisInitialized(_this264)) {
             return AsyncScheduler.delegate.now();
           } else {
             return now();
           }
         });
-        _this265.actions = [];
-        _this265.active = false;
-        _this265.scheduled = undefined;
-        return _this265;
+        _this264.actions = [];
+        _this264.active = false;
+        _this264.scheduled = undefined;
+        return _this264;
       }
 
       _createClass2(AsyncScheduler, [{
@@ -125318,14 +124998,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super168 = _createSuper(QueueAction);
 
       function QueueAction(scheduler, work) {
-        var _this266;
+        var _this265;
 
         _classCallCheck(this, QueueAction);
 
-        _this266 = _super168.call(this, scheduler, work);
-        _this266.scheduler = scheduler;
-        _this266.work = work;
-        return _this266;
+        _this265 = _super168.call(this, scheduler, work);
+        _this265.scheduler = scheduler;
+        _this265.work = work;
+        return _this265;
       }
 
       _createClass2(QueueAction, [{
@@ -125459,20 +125139,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super170 = _createSuper(VirtualTimeScheduler);
 
       function VirtualTimeScheduler() {
-        var _this267;
+        var _this266;
 
         var SchedulerAction = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : VirtualAction;
         var maxFrames = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Number.POSITIVE_INFINITY;
 
         _classCallCheck(this, VirtualTimeScheduler);
 
-        _this267 = _super170.call(this, SchedulerAction, function () {
-          return _this267.frame;
+        _this266 = _super170.call(this, SchedulerAction, function () {
+          return _this266.frame;
         });
-        _this267.maxFrames = maxFrames;
-        _this267.frame = 0;
-        _this267.index = -1;
-        return _this267;
+        _this266.maxFrames = maxFrames;
+        _this266.frame = 0;
+        _this266.index = -1;
+        return _this266;
       }
 
       _createClass2(VirtualTimeScheduler, [{
@@ -125514,19 +125194,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var _super171 = _createSuper(VirtualAction);
 
       function VirtualAction(scheduler, work) {
-        var _this268;
+        var _this267;
 
         var index = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : scheduler.index += 1;
 
         _classCallCheck(this, VirtualAction);
 
-        _this268 = _super171.call(this, scheduler, work);
-        _this268.scheduler = scheduler;
-        _this268.work = work;
-        _this268.index = index;
-        _this268.active = true;
-        _this268.index = scheduler.index = index;
-        return _this268;
+        _this267 = _super171.call(this, scheduler, work);
+        _this267.scheduler = scheduler;
+        _this267.work = work;
+        _this267.index = index;
+        _this267.active = true;
+        _this267.index = scheduler.index = index;
+        return _this267;
       }
 
       _createClass2(VirtualAction, [{
@@ -128320,7 +128000,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./node_modules/tslib/tslib.es6.js ***!
     \*****************************************/
 
-  /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+  /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
 
   /***/
   function node_modulesTslibTslibEs6Js(module, __webpack_exports__, __webpack_require__) {
@@ -128374,12 +128054,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     __webpack_require__.d(__webpack_exports__, "__generator", function () {
       return __generator;
-    });
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "__createBinding", function () {
-      return __createBinding;
     });
     /* harmony export (binding) */
 
@@ -128466,18 +128140,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return __classPrivateFieldSet;
     });
     /*! *****************************************************************************
-    Copyright (c) Microsoft Corporation.
+    Copyright (c) Microsoft Corporation. All rights reserved.
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+    this file except in compliance with the License. You may obtain a copy of the
+    License at http://www.apache.org/licenses/LICENSE-2.0
     
-    Permission to use, copy, modify, and/or distribute this software for any
-    purpose with or without fee is hereby granted.
+    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+    MERCHANTABLITY OR NON-INFRINGEMENT.
     
-    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-    PERFORMANCE OF THIS SOFTWARE.
+    See the Apache Version 2.0 License for specific language governing permissions
+    and limitations under the License.
     ***************************************************************************** */
 
     /* global Reflect, Promise */
@@ -128699,14 +128373,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function __createBinding(o, m, k, k2) {
-      if (k2 === undefined) k2 = k;
-      o[k2] = m[k];
-    }
-
     function __exportStar(m, exports) {
       for (var p in m) {
-        if (p !== "default" && !exports.hasOwnProperty(p)) exports[p] = m[p];
+        if (!exports.hasOwnProperty(p)) exports[p] = m[p];
       }
     }
 

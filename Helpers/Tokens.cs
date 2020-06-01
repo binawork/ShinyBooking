@@ -9,22 +9,26 @@ namespace ShinyBooking.Helpers
 {
     public class Tokens
     {
-      public static async Task<string> GenerateJwt(ClaimsIdentity identity, IJwtFactory jwtFactory,string userName, JwtIssuerOptions jwtOptions, JsonSerializerSettings serializerSettings)
-      {
-        var response = new ResponseToken
+        public static async Task<string> GenerateJwt(ClaimsIdentity identity, IJwtFactory jwtFactory, string userName, JwtIssuerOptions jwtOptions, JsonSerializerSettings serializerSettings)
         {
-          Id = identity.Claims.Single(c => c.Type == "id").Value,
-          UserName= identity.Name, 
-          AuthToken = await jwtFactory.GenerateEncodedToken(userName, identity),
-          ExpiresIn = (int)jwtOptions.ValidFor.TotalSeconds
-        };
+            var response = new ResponseToken
+            {
+                Id = identity.Claims.Single(c => c.Type == "id").Value,
+                UserName = identity.Name,
+                AuthToken = await jwtFactory.GenerateEncodedToken(userName, identity),
+                ExpiresIn = (int)jwtOptions.ValidFor.TotalSeconds
+            };
 
-        return JsonConvert.SerializeObject(response, serializerSettings);
-      }
+            return JsonConvert.SerializeObject(response, serializerSettings);
+        }
 
         public static ResponseToken DeGenerateJwt(string token)
         {
-            return JsonConvert.DeserializeObject<ResponseToken>(token);
+            var deserialize = JsonConvert.DeserializeObject<ResponseToken>(token);
+
+            return deserialize;
+
+
         }
     }
 }
