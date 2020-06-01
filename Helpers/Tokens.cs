@@ -11,7 +11,7 @@ namespace ShinyBooking.Helpers
     {
         public static async Task<string> GenerateJwt(ClaimsIdentity identity, IJwtFactory jwtFactory, string userName, JwtIssuerOptions jwtOptions, JsonSerializerSettings serializerSettings)
         {
-            var response = new ResponseToken
+            ResponseToken response = new ResponseToken
             {
                 Id = identity.Claims.Single(c => c.Type == "id").Value,
                 UserName = identity.Name,
