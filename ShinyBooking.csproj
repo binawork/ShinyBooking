@@ -9,6 +9,42 @@
     <ItemGroup>
       <Compile Remove="Migrations\20200324131814_dupa.cs" />
       <Compile Remove="Migrations\20200324131814_dupa.Designer.cs" />
+      <Compile Remove="Migrations\20200526100800_RoomCustomerRelation2.cs" />
+      <Compile Remove="Migrations\20200526100800_RoomCustomerRelation2.Designer.cs" />
+      <Compile Remove="Migrations\20200526104655_ProblemSolving.cs" />
+      <Compile Remove="Migrations\20200526104655_ProblemSolving.Designer.cs" />
+      <Compile Remove="Migrations\20200526104928_ProblemSolving2.cs" />
+      <Compile Remove="Migrations\20200526104928_ProblemSolving2.Designer.cs" />
+      <Compile Remove="Migrations\20200526105438_ProblemSolving3.cs" />
+      <Compile Remove="Migrations\20200526105438_ProblemSolving3.Designer.cs" />
+      <Compile Remove="Migrations\20200526111749_ProblemSolving4.cs" />
+      <Compile Remove="Migrations\20200526111749_ProblemSolving4.Designer.cs" />
+      <Compile Remove="Migrations\20200526120049_ProblemSolving5.cs" />
+      <Compile Remove="Migrations\20200526120049_ProblemSolving5.Designer.cs" />
+      <Compile Remove="Migrations\20200526123120_TryToFix.cs" />
+      <Compile Remove="Migrations\20200526123120_TryToFix.Designer.cs" />
+      <Compile Remove="Migrations\20200526123912_TryToFix.cs" />
+      <Compile Remove="Migrations\20200526123912_TryToFix.Designer.cs" />
+      <Compile Remove="Migrations\20200527080647_RelationCustomerRoom.cs" />
+      <Compile Remove="Migrations\20200527080647_RelationCustomerRoom.Designer.cs" />
+      <Compile Remove="Migrations\20200527082617_RelationRoomCustomer.cs" />
+      <Compile Remove="Migrations\20200527082617_RelationRoomCustomer.Designer.cs" />
+      <Compile Remove="Migrations\20200527093626_RelationRoomCustomer.cs" />
+      <Compile Remove="Migrations\20200527093626_RelationRoomCustomer.Designer.cs" />
+      <Compile Remove="Migrations\20200527103510_RelationRoomCustomer.cs" />
+      <Compile Remove="Migrations\20200527103510_RelationRoomCustomer.Designer.cs" />
+      <Compile Remove="Migrations\20200527110417_RelationRoomCustomer.cs" />
+      <Compile Remove="Migrations\20200527110417_RelationRoomCustomer.Designer.cs" />
+      <Compile Remove="Migrations\20200527131857_RelationRoomCustomer.cs" />
+      <Compile Remove="Migrations\20200527131857_RelationRoomCustomer.Designer.cs" />
+      <Compile Remove="Migrations\20200527132500_RelationRoomCustomer_part1.cs" />
+      <Compile Remove="Migrations\20200527132500_RelationRoomCustomer_part1.Designer.cs" />
+      <Compile Remove="Migrations\20200527134053_RelationRoomCustomer_part1.cs" />
+      <Compile Remove="Migrations\20200527134053_RelationRoomCustomer_part1.Designer.cs" />
+      <Compile Remove="Migrations\20200527134659_RelationRoomCustomer_part1.cs" />
+      <Compile Remove="Migrations\20200527134659_RelationRoomCustomer_part1.Designer.cs" />
+      <Compile Remove="Migrations\20200528100353_RelationRoomCustomerPart1.cs" />
+      <Compile Remove="Migrations\20200528100353_RelationRoomCustomerPart1.Designer.cs" />
     </ItemGroup>
 
     <ItemGroup>

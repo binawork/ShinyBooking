@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShinyBooking.Data;
 using ShinyBooking.Dto;
+using ShinyBooking.Helpers;
 using ShinyBooking.Models;
 
 namespace ShinyBooking.Controllers
@@ -59,7 +60,8 @@ namespace ShinyBooking.Controllers
                     Area = room.Area,
                     Capacity = room.Capacity,
                     MainPhotoUrl = room.Photos.FirstOrDefault(p => p.IsMain)?.PhotoUrl,
-                    RoomAddress = address
+                    RoomAddress = address,
+                    Customer = room.Customer
                 };
 
 
@@ -176,6 +178,9 @@ namespace ShinyBooking.Controllers
         [HttpPost]
         public async Task<ActionResult<RoomToAddDto>> PostRoom(RoomToAddDto roomToAdd)
         {
+            var token = Tokens.DeGenerateJwt(roomToAdd.Token);
+            var currentCustomer = _context.Customers.FirstOrDefault(c=> c.IdentityId == token.Id );
+            
             foreach (var photo in roomToAdd.Photos)
             {
                 photo.RoomId = roomToAdd.Id;
@@ -214,7 +219,8 @@ namespace ShinyBooking.Controllers
                 RoomActivities = roomToAdd.RoomActivities,
                 RoomAddress = roomToAdd.RoomAddress,
                 RoomEquipments = roomToAdd.RoomEquipments,
-                RoomAmenitiesForDisabled = roomToAdd.RoomAmenitiesForDisabled
+                RoomAmenitiesForDisabled = roomToAdd.RoomAmenitiesForDisabled,
+                Customer = currentCustomer
             };
             if (!ModelState.IsValid)
                 return BadRequest("Invalid data");

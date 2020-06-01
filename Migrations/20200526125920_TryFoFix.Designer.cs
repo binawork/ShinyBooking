@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShinyBooking.Data;
 
 namespace ShinyBooking.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200526125920_TryFoFix")]
+    partial class TryFoFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -325,9 +327,6 @@ namespace ShinyBooking.Migrations
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(2000)")
@@ -352,8 +351,6 @@ namespace ShinyBooking.Migrations
                         .HasMaxLength(255);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
 
                     b.ToTable("Rooms");
                 });
@@ -522,13 +519,6 @@ namespace ShinyBooking.Migrations
                     b.HasOne("ShinyBooking.Models.Room", "Room")
                         .WithMany("Photos")
                         .HasForeignKey("RoomId");
-                });
-
-            modelBuilder.Entity("ShinyBooking.Models.Room", b =>
-                {
-                    b.HasOne("ShinyBooking.Models.Customer", "Customer")
-                        .WithMany("Rooms")
-                        .HasForeignKey("CustomerId");
                 });
 
             modelBuilder.Entity("ShinyBooking.Models.RoomActivities", b =>

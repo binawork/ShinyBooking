@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShinyBooking.Data;
 
 namespace ShinyBooking.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200526095508_RoomCustomerRelation")]
+    partial class RoomCustomerRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -255,15 +257,13 @@ namespace ShinyBooking.Migrations
 
             modelBuilder.Entity("ShinyBooking.Models.Customer", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("IdentityId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IdentityId")
+                    b.Property<string>("IdentityId1")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Locale")
@@ -272,9 +272,9 @@ namespace ShinyBooking.Migrations
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdentityId");
 
-                    b.HasIndex("IdentityId");
+                    b.HasIndex("IdentityId1");
 
                     b.ToTable("Customers");
                 });
@@ -325,8 +325,8 @@ namespace ShinyBooking.Migrations
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CustomerId")
-                        .HasColumnType("int");
+                    b.Property<string>("CustomerIdentityId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -353,7 +353,7 @@ namespace ShinyBooking.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId");
+                    b.HasIndex("CustomerIdentityId");
 
                     b.ToTable("Rooms");
                 });
@@ -514,7 +514,7 @@ namespace ShinyBooking.Migrations
                 {
                     b.HasOne("ShinyBooking.Models.ApplicationUser", "Identity")
                         .WithMany()
-                        .HasForeignKey("IdentityId");
+                        .HasForeignKey("IdentityId1");
                 });
 
             modelBuilder.Entity("ShinyBooking.Models.Photo", b =>
@@ -528,7 +528,7 @@ namespace ShinyBooking.Migrations
                 {
                     b.HasOne("ShinyBooking.Models.Customer", "Customer")
                         .WithMany("Rooms")
-                        .HasForeignKey("CustomerId");
+                        .HasForeignKey("CustomerIdentityId");
                 });
 
             modelBuilder.Entity("ShinyBooking.Models.RoomActivities", b =>

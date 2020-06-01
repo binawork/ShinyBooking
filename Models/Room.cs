@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,8 +8,7 @@ namespace ShinyBooking.Models
 {
     public class Room
     {
-        
-
+        [Key]
         public string Id { get; set; }
 
         [Required]
@@ -48,5 +49,12 @@ namespace ShinyBooking.Models
         public IList<RoomActivities> RoomActivities { get; set; }
         
         public RoomAddress RoomAddress { get; set; }
+
+        public Customer Customer {get; set; }
+
+        //public string? CustomerId {get; set;}
+
+        
+        
     }
 }

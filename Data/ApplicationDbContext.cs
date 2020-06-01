@@ -11,31 +11,34 @@ namespace ShinyBooking.Data
             DbContextOptions options) : base(options)
         {
         }
-        public DbSet<Customer> Customers {get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Equipment> Equipments { get; set; }
         public DbSet<RoomEquipment> RoomEquipments { get; set; }
 
-        public DbSet<RoomAmenitiesForDisabled> RoomAmenitiesForDisabled {get;set;}
-        public DbSet<RoomActivities> RoomActivities {get; set;}
+        public DbSet<RoomAmenitiesForDisabled> RoomAmenitiesForDisabled { get; set; }
+        public DbSet<RoomActivities> RoomActivities { get; set; }
         public DbSet<Photo> Photos { get; set; }
 
         public DbSet<RoomAddress> RoomAddresses { get; set; }
+        public DbSet<Activities> Activities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            
+
+
+
             //Modelbuilder for n to n relations Room <-> Equipment
             modelBuilder.Entity<RoomEquipment>()
-                .HasKey(re => new {re.RoomId, re.EquipmentId});
+                .HasKey(re => new { re.RoomId, re.EquipmentId });
 
             modelBuilder.Entity<RoomEquipment>()
                 .HasOne<Room>(re => re.Room)
                 .WithMany(r => r.RoomEquipments)
                 .HasForeignKey(re => re.RoomId);
-            
+
             modelBuilder.Entity<RoomEquipment>()
                 .HasOne<Equipment>(re => re.Equipment)
                 .WithMany(r => r.RoomEquipments)
@@ -43,13 +46,13 @@ namespace ShinyBooking.Data
 
             //Modelbuilder for n to n relations Room <-> Activities
             modelBuilder.Entity<RoomActivities>()
-                .HasKey(re => new {re.RoomId, re.ActivitiesId});
+                .HasKey(re => new { re.RoomId, re.ActivitiesId });
 
             modelBuilder.Entity<RoomActivities>()
                 .HasOne<Room>(re => re.Room)
                 .WithMany(r => r.RoomActivities)
                 .HasForeignKey(re => re.RoomId);
-            
+
             modelBuilder.Entity<RoomActivities>()
                 .HasOne<Activities>(re => re.Activities)
                 .WithMany(r => r.RoomActivities)
@@ -57,13 +60,13 @@ namespace ShinyBooking.Data
 
             //Modelbuilder for n to n relations Room <-> AmenitiesForDisabled
             modelBuilder.Entity<RoomAmenitiesForDisabled>()
-                .HasKey(re => new {re.RoomId, re.AmenitiesForDisabledId});
+                .HasKey(re => new { re.RoomId, re.AmenitiesForDisabledId });
 
             modelBuilder.Entity<RoomAmenitiesForDisabled>()
                 .HasOne<Room>(re => re.Room)
                 .WithMany(r => r.RoomAmenitiesForDisabled)
                 .HasForeignKey(re => re.RoomId);
-            
+
             modelBuilder.Entity<RoomAmenitiesForDisabled>()
                 .HasOne<AmenitiesForDisabled>(re => re.AmenitiesForDisabled)
                 .WithMany(r => r.RoomAmenitiesForDisabled)
@@ -75,8 +78,16 @@ namespace ShinyBooking.Data
                 .HasOne<Room>(p => p.Room)
                 .WithMany(r => r.Photos)
                 .HasForeignKey(p => p.RoomId);
+
+
+            //modelBuilder.Entity<Room>()
+            //    .HasOne<Customer>(r => r.Customer)
+            //    .WithMany(c => c.Rooms)
+            //    .HasForeignKey(r => r.Customer.Id);
+
+
         }
 
-        public DbSet<ShinyBooking.Models.Activities> Activities { get; set; }
+
     }
 }
