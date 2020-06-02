@@ -181,18 +181,13 @@ namespace ShinyBooking.Controllers
         [HttpPost]
         public async Task<ActionResult<RoomToAddDto>> PostRoom(RoomToAddDto roomToAdd)
         {
-         
-            Console.WriteLine("dupa");
-            Console.WriteLine(roomToAdd.Token);
-           
-            
-            //ResponseToken token = JsonConvert.DeserializeObject<ResponseToken>(roomToAdd.Token);//Tokens.DeGenerateJwt(roomToAdd.Token);
-            //var tokenId = Tokens.DeGenerateJwt(roomToAdd.Token);
-            var responsetoken = JsonConvert.DeserializeObject<ResponseToken>(roomToAdd.Token);
-            
 
-            Customer currentCustomer = _context.Customers.FirstOrDefault(c=> c.IdentityId == responsetoken.Id );
-            
+            var responsetoken = JsonConvert.DeserializeObject<ResponseToken>(roomToAdd.Token);
+
+            Customer currentCustomer = _context.Customers.FirstOrDefault(c => c.IdentityId == responsetoken.Id);
+
+            if(roomToAdd.Photos is null) return BadRequest("please provide a photo");
+
             foreach (var photo in roomToAdd.Photos)
             {
                 photo.RoomId = roomToAdd.Id;
