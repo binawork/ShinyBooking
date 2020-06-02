@@ -3,6 +3,7 @@ import {Equipment} from '../rooms/equipment.model';
 import {AmenityForDisabled} from '../rooms/amenity-for-disabled.model';
 import {RoomAddress} from './room-address.model';
 import {Activity} from "../rooms/activity.model";
+import {UserToken} from "../login/user.model";
 
 export class RoomToAddDto {
 
@@ -19,7 +20,7 @@ export class RoomToAddDto {
     public roomamenitiesForDisabled: AmenityForDisabled[],
     public roomAddress: RoomAddress,
     public roomactivities: Activity[],
-    public Token: string
+    public Token: UserToken
   ) {
     //TODO unhardcode this two fields - user data need to be made for this
     this.roomAddress.emailAddress = 'room@gmail.com';

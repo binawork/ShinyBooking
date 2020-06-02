@@ -2,7 +2,7 @@ import {Component, Injectable, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from "rxjs";
 
 import {DataStorageService} from "../shared/data-storage.service";
-import {User} from "../login/user.model";
+import {UserToken} from "../login/user.model";
 
 @Component({
   selector: 'app-nav-menu',
@@ -21,7 +21,7 @@ export class NavMenuComponent implements OnInit, OnDestroy {
     private dataStorageService: DataStorageService) {}
 
   ngOnInit(): void {
-    this.userSub = this.dataStorageService.user.subscribe((user: User) => {
+    this.userSub = this.dataStorageService.user.subscribe((user: UserToken) => {
       this.setLoggedIn(!!user);
       this.setLoggedUserName(user.userName);
     });

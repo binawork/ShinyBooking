@@ -6,8 +6,8 @@ import {RegistrationModel} from './Registration.model';
 import {LoginModel} from './Login.model';
 
 import {Router} from "@angular/router";
-import {User} from "../login/user.model";
-import {BackendLoginResponse} from "../login/backend-login-response.model";
+import {UserToken} from "../login/user.model";
+import {BackEndToken} from "../login/backend-login-response.model";
 import {take} from "rxjs/operators";
 
 @Injectable({
@@ -16,7 +16,7 @@ import {take} from "rxjs/operators";
 export class DataStorageService {
 
   error: string = null;
-  user = new Subject<User>();
+  user = new Subject<UserToken>();
   private _isLoggedIn = false;
   private _loggedUserName: string;
   private tokenExpirationTimer: any;
@@ -50,7 +50,7 @@ export class DataStorageService {
   login(login: LoginModel) {
     this.http
       .post('/api/auth/login', login)
-      .subscribe((resData: BackendLoginResponse) => {
+      .subscribe((resData: BackEndToken) => {
           this.handleAuthentication(resData.id, resData.userName, resData.auth_token, +resData.expires_in)
           this.router.navigate(['/rooms']);
         }, error => {
@@ -70,7 +70,7 @@ export class DataStorageService {
     if (!userData) {
       return;
     }
-    const loadedUser = new User(
+    const loadedUser = new UserToken(
       userData.id,
       userData.userName,
       userData._token,
@@ -104,7 +104,7 @@ export class DataStorageService {
 
   private handleAuthentication(userId: string, userName: string, authToken: string, expiresIn: number) {
     const expirationDate = new Date(new Date().getTime() + +expiresIn * 1000);
-    const user = new User(userId, userName, authToken, expirationDate);
+    const user = new UserToken(userId, userName, authToken, expirationDate);
     this.user.next(user);
     this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));
