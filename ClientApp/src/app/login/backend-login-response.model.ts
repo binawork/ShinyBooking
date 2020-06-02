@@ -2,8 +2,9 @@
 export class BackEndToken {
   id: string;
   userName: string;
-  auth_token: string;
-  expires_in: Date;
+  _token: string;
+  _tokenExpirationDate: number;
+  _tokenExpirationDateAsDate: Date;
 
   constructor() {
   }

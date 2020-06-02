@@ -14,10 +14,10 @@ namespace ShinyBooking.Helpers
          [JsonProperty(PropertyName = "userName")]
         public string UserName {get; set; }
 
-         [JsonProperty(PropertyName = "auth_token")]
+         [JsonProperty(PropertyName = "_token")]
         public string AuthToken {get; set; }
 
-         [JsonProperty(PropertyName = "expires_in")]
+         [JsonProperty(PropertyName = "_tokenExpirationDate")]
         public int ExpiresIn {get; set; }
 
 

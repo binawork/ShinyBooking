@@ -20,7 +20,7 @@ export class RoomToAddDto {
     public roomamenitiesForDisabled: AmenityForDisabled[],
     public roomAddress: RoomAddress,
     public roomactivities: Activity[],
-    public Token: UserToken
+    public Token: string
   ) {
     //TODO unhardcode this two fields - user data need to be made for this
     this.roomAddress.emailAddress = 'room@gmail.com';

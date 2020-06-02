@@ -8,6 +8,7 @@ import {HttpClient} from "@angular/common/http";
 import {PhotosUploadService} from "./photos-upload.service";
 import {Router} from "@angular/router";
 import {RoomToAddDto} from "../../shared/room-to-add-dto.model";
+import { UserToken } from '../../login/user.model';
 
 @Component({
   selector: 'app-room-add',
@@ -92,6 +93,8 @@ export class RoomAddComponent implements OnInit {
       submittedAddressFormValue.street,
     );
     let submittedRoomFormValue = this.roomForm.value;
+    let newToken = JSON.parse(localStorage.getItem('userData'));
+    let newToken1 = JSON.stringify(newToken);
 
     let newRoom = new RoomToAddDto(
       submittedRoomFormValue.name,
@@ -106,8 +109,9 @@ export class RoomAddComponent implements OnInit {
       submittedRoomFormValue.amenities,
       address,
       submittedRoomFormValue.activities,
-      JSON.parse(localStorage.getItem('userData'))
+      newToken1      
     );
+
     this.photosUploadService.clearAddedPhotos();
     console.log('New room:');
     console.log(newRoom);

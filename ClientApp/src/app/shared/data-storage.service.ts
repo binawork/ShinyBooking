@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Subject} from 'rxjs';
 import {RoomToAddDto} from './room-to-add-dto.model';
 import {RegistrationModel} from './Registration.model';
@@ -37,10 +37,17 @@ export class DataStorageService {
   }
 
   storeRoom(room: RoomToAddDto) {
-    console.log(room);
+    console.log(room.Token);
+
     // and send DTO version through API
+    var roomtopost = JSON.stringify(room);
+    
+    console.log(roomtopost);
     this.http
-      .post('/api/rooms', room)
+      .post('/api/rooms', roomtopost, {
+                             headers:new HttpHeaders()
+                             .set('Content-Type','application/json')
+                             })
       .subscribe(response => {
         console.log('response:');
         console.log(response);
@@ -51,7 +58,7 @@ export class DataStorageService {
     this.http
       .post('/api/auth/login', login)
       .subscribe((resData: BackEndToken) => {
-          this.handleAuthentication(resData.id, resData.userName, resData.auth_token, +resData.expires_in)
+          this.handleAuthentication(resData.id, resData.userName, resData._token,  resData._tokenExpirationDate, resData._tokenExpirationDateAsDate)
           this.router.navigate(['/rooms']);
         }, error => {
           console.log(error);
@@ -65,7 +72,8 @@ export class DataStorageService {
       id: string;
       userName: string;
       _token: string;
-      _tokenExpirationDate: string;
+      _tokenExpirationDate: number;
+      _tokenExpirationDateAsDate: string;
     } = JSON.parse(localStorage.getItem('userData'));
     if (!userData) {
       return;
@@ -74,11 +82,12 @@ export class DataStorageService {
       userData.id,
       userData.userName,
       userData._token,
-      new Date(userData._tokenExpirationDate));
+      userData._tokenExpirationDate,
+      new Date(userData._tokenExpirationDateAsDate));
 
     if (loadedUser.token) {
       this.user.next(loadedUser);
-      const expirationDuration = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime();
+      const expirationDuration = new Date(userData._tokenExpirationDateAsDate).getTime() - new Date().getTime();
       this.autoLogout(expirationDuration);
       this.isLoggedIn = true;
       this.loggedUserName = loadedUser.userName;
@@ -102,9 +111,9 @@ export class DataStorageService {
     }, expirationDuration)
   }
 
-  private handleAuthentication(userId: string, userName: string, authToken: string, expiresIn: number) {
+  private handleAuthentication(userId: string, userName: string, authToken: string, expiresIn: number, validUntil: Date ) {
     const expirationDate = new Date(new Date().getTime() + +expiresIn * 1000);
-    const user = new UserToken(userId, userName, authToken, expirationDate);
+    const user = new UserToken(userId, userName, authToken, expiresIn, expirationDate);
     this.user.next(user);
     this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));
