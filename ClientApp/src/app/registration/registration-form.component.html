@@ -22,16 +22,17 @@
               <div class="form-group">
                 <label for="MobileNumber">Phone Number <span class="text-danger">*</span></label>
                 <input
-                  type="tel"
+                  type="number"
                   class="form-control"
                   placeholder="012345678"
                   id="PhoneNumberId"
                   formControlName="PhoneNumber"
                   name="PhoneNumber"
                   required
-                  pattern="[0-9]{9}"
-                  [(ngModel)]="phoneNumber">
-                <span class="help-block text-danger border-danger" *ngIf="phoneNumber.length!=9 || !isNumber(phoneNumber)">Phone Number must be exactly 9 digits long!</span>
+                  pattern="[0-9]{9,}"
+                  [(ngModel)]="phoneNumber"
+                  >
+                <span class="help-block text-danger border-danger" *ngIf="phoneNumber.length<9 || !isNumber(phoneNumber)">Phone Number must be at least 9 digits long!</span>
               </div>
               <div class="form-group">
                 <label for="Email">Email Address <span class="text-danger">*</span></label>
@@ -58,9 +59,11 @@
                   formControlName="Password"
                   name="Password"
                   minlength="6"
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"
                   [(ngModel)]="password"
-                  required>
-                <span class="help-block text-danger border-danger" *ngIf="password.length<6">Password must contain at least 6 characters!</span>
+                  required
+                  >
+                <span class="help-block text-danger border-danger" *ngIf="!isPasswordValid(password)">Password must contain at least 6 characters and at least 1 non-alphanumeric character, 1 lowercase and uppercase letter and 1 digit!</span>
               </div>
               <div class="form-group">
                 <div class="custom-control custom-checkbox">

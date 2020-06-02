@@ -19078,7 +19078,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   /***/
   function _(module, exports, __webpack_require__) {
     __webpack_require__(
-    /*! C:\Users\joann\source\repos\Advanced\TW_1\ShinyBooking\ClientApp\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-polyfills.js */
+    /*! /home/student/codecool/Post-Advanced Module/ShinyBooking/ShinyBooking/ClientApp/node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-polyfills.js */
     "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-polyfills.js");
 
     __webpack_require__(
@@ -19086,7 +19086,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/zone.js/dist/zone-legacy.js");
 
     module.exports = __webpack_require__(
-    /*! C:\Users\joann\source\repos\Advanced\TW_1\ShinyBooking\ClientApp\src\polyfills.ts */
+    /*! /home/student/codecool/Post-Advanced Module/ShinyBooking/ShinyBooking/ClientApp/src/polyfills.ts */
     "./src/polyfills.ts");
     /***/
   }
