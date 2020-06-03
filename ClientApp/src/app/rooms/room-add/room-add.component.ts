@@ -81,9 +81,13 @@ export class RoomAddComponent implements OnInit {
     // filter amenities and equipment, so there will be only checked ones
     this.roomForm.value.amenities = this.roomForm.value.amenities.filter(amenity => amenity.isChecked === true);
     this.roomForm.value.equipment = this.roomForm.value.equipment.filter(equipment => equipment.isChecked === true);
+    this.roomForm.value.activities = this.roomForm.value.activities.filter(activity => activity.isChecked === true);
+
     // remove field "isChecked"
     this.roomForm.value.amenities.map(amenity => delete amenity.isChecked);
     this.roomForm.value.equipment.map(equipment => delete equipment.isChecked);
+    this.roomForm.value.activities.map(activity => delete activity.isChecked);
+
     let submittedAddressFormValue = this.addressForm.value;
     const address = new RoomAddress(submittedAddressFormValue.buildingNumber,
       submittedAddressFormValue.city,
@@ -125,6 +129,8 @@ export class RoomAddComponent implements OnInit {
   resetForm() {
     this.roomForm.value.amenities = this.amenitiesCheckboxData.slice();
     this.roomForm.value.equipment = this.equipmentCheckboxData.slice();
+    this.roomForm.value.activities = this.activitiesCheckboxData.slice();
+
   }
 
 }
