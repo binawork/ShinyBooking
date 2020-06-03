@@ -1,11 +1,13 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpResponse, HttpHeaders} from '@angular/common/http';
 import {Subject} from 'rxjs';
 import {RoomToAddDto} from './room-to-add-dto.model';
 import {RegistrationModel} from './Registration.model';
 import {LoginModel} from './Login.model';
 
 import {Router} from "@angular/router";
+import {User} from "../login/user.model";
+import {BackendLoginResponse} from "../login/backend-login-response.model";
 import {UserToken} from "../login/user.model";
 import {BackEndToken} from "../login/backend-login-response.model";
 import {take} from "rxjs/operators";
@@ -27,13 +29,24 @@ export class DataStorageService {
   ) {
   }
 
-  registerUser(user: RegistrationModel) {
-    this.http
-      .post('/api/accounts', user)
-      .subscribe(response => {
-          console.log("Resp" + response);
-        }
-      );
+  // registerUser(user: RegistrationModel) {
+  //   this.http
+  //     .post('/api/accounts', user, {observe: 'response'})
+  //     .subscribe(response => {
+  //         console.log("Resp" + response);
+  //       }
+  //     );
+  // }
+
+  registerUser(user: RegistrationModel){
+    this.http.post('/api/accounts', user, {observe: 'response'})
+      .subscribe((response: HttpResponse<any>) => {
+        console.log("registration backend response: ")
+        console.log(response);
+      }, errorr => {
+        console.log("registration backend error: ")
+        console.log(errorr);
+      })
   }
 
   storeRoom(room: RoomToAddDto) {
@@ -41,7 +54,7 @@ export class DataStorageService {
 
     // and send DTO version through API
     var roomtopost = JSON.stringify(room);
-    
+
     console.log(roomtopost);
     this.http
       .post('/api/rooms', roomtopost, {

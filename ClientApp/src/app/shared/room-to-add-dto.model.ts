@@ -19,7 +19,7 @@ export class RoomToAddDto {
     public roomequipments: Equipment[],
     public roomamenitiesForDisabled: AmenityForDisabled[],
     public roomAddress: RoomAddress,
-    public roomactivities: Activity[],
+    public roomActivities: Activity[],
     public Token: string
   ) {
     //TODO unhardcode this two fields - user data need to be made for this
