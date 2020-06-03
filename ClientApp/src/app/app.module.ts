@@ -44,6 +44,7 @@ import {LoginGuard} from "./login/login.guard";
       {path: '', component: RoomListComponent, pathMatch: 'full'},
       {path: 'rooms', component: RoomListComponent, pathMatch: 'full'},
       {path: 'rooms/new', component: RoomAddComponent}, //canActivate: [LoginGuard]},
+      {path: 'rooms/:addedRoom', component: RoomListComponent, pathMatch: 'full'},
       {path: 'rooms/:id', component: RoomDetailsComponent, resolve: {room: RoomDetailsResolver}},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegistrationFormComponent},

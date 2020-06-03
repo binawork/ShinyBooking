@@ -113,7 +113,7 @@ export class RoomAddComponent implements OnInit {
       submittedRoomFormValue.amenities,
       address,
       submittedRoomFormValue.activities,
-      newToken1      
+      newToken1
     );
 
     this.photosUploadService.clearAddedPhotos();
@@ -122,7 +122,7 @@ export class RoomAddComponent implements OnInit {
 
     this.dataStorageService.storeRoom(newRoom);
     // when successfully added redirect to /rooms
-    this.router.navigate(['rooms']);
+    this.router.navigate(['rooms'], {queryParams: {addedRoom: submittedRoomFormValue.name}});
     this.resetForm();
   }
 
