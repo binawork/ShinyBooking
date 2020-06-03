@@ -173,6 +173,7 @@
                     accept='image/*'
                     formControlName="photos"
                     placeholder="Select photos"
+                    required
                     (change)="photosUploadService.uploadPhotos($event)">
                 </div>
               </div>
@@ -213,7 +214,7 @@
 
               <div class="row">
                 <div class="form-group col-md-6">
-                  <label>Street
+                  <label>Street <span class="text-danger">*</span>
                     <input class="form-control" formControlName="street" placeholder="Enter Street" type="text">
                   </label>
                 </div>
@@ -232,9 +233,9 @@
               </div>
             </div>
           </div>
-          <button [class.btn-secondary]="roomForm.invalid"
+          <button [class.btn-secondary]="!roomForm.valid"
                   [class.btn-success]="roomForm.valid"
-                  [disabled]="roomForm.invalid"
+                  [disabled]="!roomForm.valid"
                   class="btn"
                   type="submit">ADD PROPERTY
           </button>
