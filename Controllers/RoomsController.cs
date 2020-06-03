@@ -227,6 +227,7 @@ namespace ShinyBooking.Controllers
                 RoomAddress = roomToAdd.RoomAddress,
                 RoomEquipments = roomToAdd.RoomEquipments,
                 RoomAmenitiesForDisabled = roomToAdd.RoomAmenitiesForDisabled,
+                RoomArrangementsCapabilitiesDescription = roomToAdd.RoomArrangementsCapabilitiesDescription,
                 Customer = currentCustomer
             };
             if (!ModelState.IsValid)
