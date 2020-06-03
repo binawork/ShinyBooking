@@ -6,8 +6,6 @@ import {RegistrationModel} from './Registration.model';
 import {LoginModel} from './Login.model';
 
 import {Router} from "@angular/router";
-import {User} from "../login/user.model";
-import {BackendLoginResponse} from "../login/backend-login-response.model";
 import {UserToken} from "../login/user.model";
 import {BackEndToken} from "../login/backend-login-response.model";
 import {take} from "rxjs/operators";
