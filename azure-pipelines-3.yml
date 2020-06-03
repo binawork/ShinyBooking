@@ -23,10 +23,37 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
+
+# - task: Npm@1
+#   inputs:
+#     command: 'custom'
+#     workingDir: '/folder'
+#     customCommand: 'whateva'
+
+# - task: Npm@1
+#   inputs:
+#     customCommand: 'npm update'
+#     workingDir: '$(Agent.BuildDirectory)/ShinyBooking/ClientApp'
+#     command: 'custom'
+
 - task: Npm@1
   inputs:
-    customCommand: 'npm update' 
-    workingDir: './ClientApp'
+    customCommand: 'install -g @angular/cli' 
+    workingDir: '$(Build.Repository.LocalPath)/ClientApp'
+    command: 'custom'
+
+- task: Npm@1
+  inputs:
+    workingDir: '$(Build.Repository.LocalPath)/ClientApp'
+    command: 'install'
+
+- task: Npm@1
+  inputs:
+    customCommand: 'run build' 
+    workingDir: '$(Build.Repository.LocalPath)/ClientApp'
+    command: 'custom'
+
+
 
 - task: VSBuild@1
   inputs:
