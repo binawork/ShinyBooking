@@ -1,14 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RoomService} from '../room.service';
-import {RoomForDetails} from '../../shared/room-for-details.model';
 import {RoomAddress} from '../../shared/room-address.model';
 import {DataStorageService} from '../../shared/data-storage.service';
-import {HttpClient} from "@angular/common/http";
 import {PhotosUploadService} from "./photos-upload.service";
 import {Router} from "@angular/router";
 import {RoomToAddDto} from "../../shared/room-to-add-dto.model";
-import { UserToken } from '../../login/user.model';
+import {UserToken} from '../../login/user.model';
 
 @Component({
   selector: 'app-room-add',
