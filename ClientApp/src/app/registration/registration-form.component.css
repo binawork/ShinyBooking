@@ -7,11 +7,12 @@ button:disabled {
 }
 
 .loader {
-  border: 4px solid #f3f3f3;
+  margin: auto;
+  border: 8px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 4px solid #3498db;
-  width: 10px;
-  height: 10px;
+  border-top: 8px solid #3498db;
+  width: 30px;
+  height: 30px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
 }

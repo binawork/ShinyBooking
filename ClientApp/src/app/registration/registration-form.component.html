@@ -86,7 +86,8 @@
 
               </button>
             </form>
-            <div *ngIf="submitted && !somethingWentWrong"><h5 style="text-align: center;" class="text-info">Please wait...</h5><div class="loader"></div></div>
+            <div *ngIf="submitted && !somethingWentWrong"><h5 style="text-align: center;" class="text-info">Please wait...</h5></div>
+              <div *ngIf="submitted && !somethingWentWrong" class="loader"></div>
             <div class="mt-4 text-center login-with-social">
               <button type="button" class="btn btn-facebook btn-block"><i class="mdi mdi-facebook"></i> Login With
                 Facebook
