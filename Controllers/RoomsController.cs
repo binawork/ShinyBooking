@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -88,6 +90,7 @@ namespace ShinyBooking.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRoom(string id)
         {
+           
             var room = await _context.Rooms
                 .Include(r => r.Photos)
                 .Include(r => r.RoomAddress)
@@ -97,8 +100,15 @@ namespace ShinyBooking.Controllers
                 .ThenInclude(ra => ra.Activities)
                 .Include(r => r.RoomAmenitiesForDisabled)
                 .ThenInclude(ram => ram.AmenitiesForDisabled)
+             
+                .Include(r=> r.Customer)
+                .ThenInclude(c=>c.Identity)
+                            
+                                
                 .FirstOrDefaultAsync(r => r.Id == id);
 
+       
+               
             if (room == null)
             {
                 return NotFound();
