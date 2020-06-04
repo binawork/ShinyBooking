@@ -18,12 +18,9 @@ namespace ShinyBooking.Helpers.Automapper
                     opt.MapFrom(r => r.RoomAmenitiesForDisabled.Select(ra => ra.AmenitiesForDisabled).ToList()))
                 .ForMember(dto => dto.Activities, opt =>
                     opt.MapFrom(r => r.RoomActivities.Select(ra => ra.Activities).ToList()))
-                .ForMember(dto => dto.Identity, opt =>
-                opt.MapFrom(r => r.Customer.Identity));
-            //.ForMember(dto => dto.CustomerDetails.FirstName, opt=> 
-            //opt.MapFrom(r=>r.Customer.Identity.FirstName))
-            //.ForMember(dto => dto.CustomerDetails.LastName, opt=> 
-            //opt.MapFrom(r=>r.Customer.Identity.LastName));
+                .ForMember(dto => dto.CustomerInformation, opt =>
+                    opt.MapFrom(r => r.Customer.Identity));
+
             CreateMap<Photo, PhotoForReturnDto>();
             CreateMap<Equipment, EquipmentForReturnDto>();
             CreateMap<AmenitiesForDisabled, AmenitiesForDisabledDto>();
@@ -31,11 +28,11 @@ namespace ShinyBooking.Helpers.Automapper
             CreateMap<RoomAddress, RoomAddressForReturnDto>();
             CreateMap<RegistrationViewModel, ApplicationUser>();
             CreateMap<ApplicationUser, CustomerDetailsForRoomReturnDto>()
-            .ForMember(dto => dto.FirstName, opt => opt.MapFrom(au => au.FirstName))
-            .ForMember(dto => dto.LastName, opt => opt.MapFrom(au => au.LastName))
-            .ForMember(dto=> dto.Email, opt => opt.MapFrom(au => au.Email))
-            .ForMember(dto => dto.PhoneNumber, opt => opt.MapFrom(au => au.PhoneNumber));
-           
+                .ForMember(dto => dto.FirstName, opt => opt.MapFrom(au => au.FirstName))
+                .ForMember(dto => dto.LastName, opt => opt.MapFrom(au => au.LastName))
+                .ForMember(dto => dto.Email, opt => opt.MapFrom(au => au.Email))
+                .ForMember(dto => dto.PhoneNumber, opt => opt.MapFrom(au => au.PhoneNumber));
+
 
 
         }

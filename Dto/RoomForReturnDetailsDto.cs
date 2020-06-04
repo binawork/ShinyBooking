@@ -34,6 +34,6 @@ namespace ShinyBooking.Dto
        
         public RoomAddressForReturnDto RoomAddress { get; set; }
        
-          public CustomerDetailsForRoomReturnDto Identity {get; set;}
+          public CustomerDetailsForRoomReturnDto CustomerInformation {get; set;}
     }
 }
