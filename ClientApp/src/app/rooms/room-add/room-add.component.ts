@@ -51,9 +51,10 @@ export class RoomAddComponent implements OnInit {
       city: ['Warsaw', [Validators.required]],
       country: ['Poland', [Validators.required]],
       postalCode: [89530, [
-        Validators.required,
+        Validators.required
       ]],
-      street: ['Bar'],
+      street: ['Bar', [Validators.required]],
+      otherAddressInformation: ['Other Address Info'],
     });
 
     this.roomForm = this.fb.group({
@@ -78,6 +79,8 @@ export class RoomAddComponent implements OnInit {
   // todo nagłówek dla amenities i eq i zrozdzielenie sekcji
   onSubmit() {
     console.log('Form submitted');
+    console.log(this.roomForm);
+    console.log(this.addressForm);
     // filter amenities and equipment, so there will be only checked ones
     this.roomForm.value.amenities = this.roomForm.value.amenities.filter(amenity => amenity.isChecked === true);
     this.roomForm.value.equipment = this.roomForm.value.equipment.filter(equipment => equipment.isChecked === true);
@@ -95,6 +98,7 @@ export class RoomAddComponent implements OnInit {
       submittedAddressFormValue.postalCode,
       submittedAddressFormValue.apartmentNumber,
       submittedAddressFormValue.street,
+      submittedAddressFormValue.otherAddressInformation,
     );
     let submittedRoomFormValue = this.roomForm.value;
     let newToken = JSON.parse(localStorage.getItem('userData'));

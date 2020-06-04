@@ -8,8 +8,9 @@ export class RoomAddress {
     public city: string,
     public country: string,
     public postalCode: number,
-    public apartmentNumber: number = null,
-    public street: string = null,
+    public apartmentNumber: number,
+    public street: string,
+    public otherAddressInformation: string
   ) {
   }
 }
