@@ -42,9 +42,9 @@ import {LoginGuard} from "./login/login.guard";
 
     RouterModule.forRoot([
       {path: '', component: RoomListComponent, pathMatch: 'full'},
+      {path: 'room/:id', component: RoomDetailsComponent, resolve: {room: RoomDetailsResolver}},
+      {path: 'add-new-room', component: RoomAddComponent}, //canActivate: [LoginGuard]},
       {path: 'rooms', component: RoomListComponent, pathMatch: 'full'},
-      {path: 'rooms/new', component: RoomAddComponent}, //canActivate: [LoginGuard]},
-      {path: 'rooms/:id', component: RoomDetailsComponent, resolve: {room: RoomDetailsResolver}},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegistrationFormComponent},
     ])

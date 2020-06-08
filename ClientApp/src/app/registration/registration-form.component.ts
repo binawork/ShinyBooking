@@ -11,12 +11,14 @@ import {LoginModel} from "../shared/Login.model";
 })
 export class RegistrationFormComponent implements OnInit {
   registrationForm:FormGroup;
+  userName: string = '';
   password: string = '';
   email: string = '';
   isEmailValid: boolean = true;
   phoneNumber: string = '';
   somethingWentWrong = false;
   submitted: boolean = false;
+  invalidForm = false;
 
   //TODO add separate service to communicate with backend
   constructor(private dataStorageService: DataStorageService,
@@ -33,6 +35,11 @@ export class RegistrationFormComponent implements OnInit {
     console.log('form loaded');
   }
   onSubmit() {
+    this.invalidForm = false;
+    if (!this.registrationForm.valid) {
+      this.invalidForm = true;
+      return;
+    }
     this.somethingWentWrong = false;
     this.submitted = true;
     let value = this.registrationForm.value;

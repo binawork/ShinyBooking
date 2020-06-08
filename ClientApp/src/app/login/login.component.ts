@@ -39,15 +39,5 @@ export class LoginComponent implements OnInit {
     this.dataStorageService.login(loginUser);
   };
 
-  //check if password contains at least: 1 non-alphanumeric,
-  // 1 lowercase and 1 uppercase letter, 1 digit and 6 characters
-  isPasswordValid(str) {
-    return !(/^[a-z0-9]+$/i.test(str))
-      && (/[a-z]/.test(str))
-      && (/[A-Z]/.test(str))
-      && (/[0-9]/.test(str))
-      && str.length > 5;
-  }
-
 }
 

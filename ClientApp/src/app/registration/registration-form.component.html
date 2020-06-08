@@ -3,7 +3,8 @@
     <div class="row">
       <div class="col-lg-5 col-md-5 mx-auto">
         <div class="alert alert-danger" *ngIf="this.somethingWentWrong">
-          <h5 style="text-align: center;">Something went wrong...<br/> Try again</h5></div>
+          <h5 style="text-align: center;">Something went wrong...<br/> Try again</h5>
+        </div>
         <div class="card padding-card">
           <div class="card-body">
             <h5 class="card-title mb-4">Register</h5>
@@ -17,12 +18,14 @@
                   id="userNameId"
                   formControlName="UserName"
                   name="UserName"
+                  [(ngModel)]="userName"
                   required>
+                <span class="help-block text-danger border-danger" *ngIf="userName.length<1 && invalidForm">Type a User Name!</span>
               </div>
               <div class="form-group">
                 <label for="MobileNumber">Phone Number <span class="text-danger">*</span></label>
                 <input
-                  type="tel"
+                  type="text"
                   class="form-control"
                   placeholder="012345678"
                   id="PhoneNumberId"
@@ -32,7 +35,7 @@
                   pattern="[0-9]{9,}"
                   [(ngModel)]="phoneNumber"
                   >
-                <span class="help-block text-danger border-danger" *ngIf="phoneNumber.length<9 || !isNumber(phoneNumber)">Phone Number must be at least 9 digits long!</span>
+                <span class="help-block text-danger border-danger" *ngIf="(phoneNumber.length<9 || !isNumber(phoneNumber)) && invalidForm">Phone Number must contain only digits and must be at least 9 characters long!</span>
               </div>
               <div class="form-group">
                 <label for="Email">Email Address <span class="text-danger">*</span></label>
@@ -47,7 +50,7 @@
                   email
                   [(ngModel)]="email"
                   (ngModelChange)="isEmailValidCheck(email)">
-                <span class="help-block text-danger border-danger" *ngIf="!isEmailValid">This is not a valid email address!</span>
+                <span class="help-block text-danger border-danger" *ngIf="!isEmailValid && invalidForm">This is not a valid email address!</span>
               </div>
               <div class="form-group">
                 <label for="Password">Password <span class="text-danger">*</span></label>
@@ -63,7 +66,7 @@
                   [(ngModel)]="password"
                   required
                   >
-                <span class="help-block text-danger border-danger" *ngIf="!isPasswordValid(password)">Password must contain at least 6 characters and at least 1 non-alphanumeric character, 1 lowercase and uppercase letter and 1 digit!</span>
+                <span class="help-block text-danger border-danger" *ngIf="!isPasswordValid(password) && invalidForm">Password must contain at least 6 characters and at least 1 non-alphanumeric character, 1 lowercase and uppercase letter and 1 digit!</span>
               </div>
               <div class="form-group">
                 <div class="custom-control custom-checkbox">
@@ -74,8 +77,8 @@
               </div>
               <button
                 class="btn btn-success btn-block"
-                type="submit"
-                [disabled]="!registrationForm.valid">
+                type="submit">
+<!--                [disabled]="!registrationForm.valid">-->
                 REGISTER
                 <!--[class.btn-secondary]="registerForm.invalid"
               [class.btn-success]="registerForm.valid"
@@ -83,7 +86,8 @@
 
               </button>
             </form>
-            <h5 style="text-align: center;" *ngIf="submitted && !somethingWentWrong" class="text-info">Please wait...</h5>
+            <div *ngIf="submitted && !somethingWentWrong"><h5 style="text-align: center;" class="text-info">Please wait...</h5></div>
+              <div *ngIf="submitted && !somethingWentWrong" class="loader"></div>
             <div class="mt-4 text-center login-with-social">
               <button type="button" class="btn btn-facebook btn-block"><i class="mdi mdi-facebook"></i> Login With
                 Facebook

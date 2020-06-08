@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RoomService} from '../room.service';
 import {RoomForList} from '../../shared/room-for-list.model';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-room-list',
@@ -9,14 +10,19 @@ import {RoomForList} from '../../shared/room-for-list.model';
 })
 export class RoomListComponent implements OnInit {
   roomList: Array<RoomForList>;
+  addedRoom: string;
 
-  constructor(private roomService: RoomService) {
+  constructor(private roomService: RoomService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.roomService.getRooms().subscribe(rooms => {
       this.roomList = rooms;
       console.log(rooms);
+    });
+
+    this.route.queryParams.subscribe(params => {
+      this.addedRoom = params['addedRoom'];
     });
   }
 

@@ -1,14 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RoomService} from '../room.service';
-import {RoomForDetails} from '../../shared/room-for-details.model';
 import {RoomAddress} from '../../shared/room-address.model';
 import {DataStorageService} from '../../shared/data-storage.service';
-import {HttpClient} from "@angular/common/http";
 import {PhotosUploadService} from "./photos-upload.service";
 import {Router} from "@angular/router";
 import {RoomToAddDto} from "../../shared/room-to-add-dto.model";
-import { UserToken } from '../../login/user.model';
+import {UserToken} from '../../login/user.model';
 
 @Component({
   selector: 'app-room-add',
@@ -51,9 +49,10 @@ export class RoomAddComponent implements OnInit {
       city: ['Warsaw', [Validators.required]],
       country: ['Poland', [Validators.required]],
       postalCode: [89530, [
-        Validators.required,
+        Validators.required
       ]],
-      street: ['Bar'],
+      street: ['Bar', [Validators.required]],
+      otherAddressInformation: ['Other Address Info'],
     });
 
     this.roomForm = this.fb.group({
@@ -78,6 +77,8 @@ export class RoomAddComponent implements OnInit {
   // todo nagłówek dla amenities i eq i zrozdzielenie sekcji
   onSubmit() {
     console.log('Form submitted');
+    console.log(this.roomForm);
+    console.log(this.addressForm);
     // filter amenities and equipment, so there will be only checked ones
     this.roomForm.value.amenities = this.roomForm.value.amenities.filter(amenity => amenity.isChecked === true);
     this.roomForm.value.equipment = this.roomForm.value.equipment.filter(equipment => equipment.isChecked === true);
@@ -95,6 +96,7 @@ export class RoomAddComponent implements OnInit {
       submittedAddressFormValue.postalCode,
       submittedAddressFormValue.apartmentNumber,
       submittedAddressFormValue.street,
+      submittedAddressFormValue.otherAddressInformation,
     );
     let submittedRoomFormValue = this.roomForm.value;
     let newToken = JSON.parse(localStorage.getItem('userData'));
@@ -113,7 +115,7 @@ export class RoomAddComponent implements OnInit {
       submittedRoomFormValue.amenities,
       address,
       submittedRoomFormValue.activities,
-      newToken1      
+      newToken1
     );
 
     this.photosUploadService.clearAddedPhotos();
@@ -122,7 +124,7 @@ export class RoomAddComponent implements OnInit {
 
     this.dataStorageService.storeRoom(newRoom);
     // when successfully added redirect to /rooms
-    this.router.navigate(['rooms']);
+    this.router.navigate(['rooms'], {queryParams: {addedRoom: submittedRoomFormValue.name}});
     this.resetForm();
   }
 
