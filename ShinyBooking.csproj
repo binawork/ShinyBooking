@@ -70,7 +70,10 @@
     </ItemGroup>
 
 	<ItemGroup>
-      <None Include="ClientApp/**" CopyToPublishDirectory="PreserveNewest"  />
+      <None Include="ClientApp/**" CopyToPublishDirectory="PreserveNewest" />
+      <None Update="ClientApp\src\app\rooms\room-add\RoomAddServerResponse.ts">
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </None>
     </ItemGroup>
 
 

@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 import {UserToken} from "../login/user.model";
 import {BackEndToken} from "../login/backend-login-response.model";
 import {take} from "rxjs/operators";
+import {RoomAddServerResponse} from "../rooms/room-add/RoomAddServerResponse";
 
 @Injectable({
   providedIn: 'root'
@@ -59,10 +60,11 @@ export class DataStorageService {
                              headers:new HttpHeaders()
                              .set('Content-Type','application/json')
                              })
-      .subscribe(response => {
+      .subscribe((response: RoomAddServerResponse) => {
         console.log('response:');
         console.log(response);
         console.log("id: " + response.id);
+        this.router.navigate(['rooms'], {queryParams: {addedRoom: response.name}});
       });
   }
 

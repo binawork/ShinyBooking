@@ -123,8 +123,6 @@ export class RoomAddComponent implements OnInit {
     console.log(newRoom);
 
     this.dataStorageService.storeRoom(newRoom);
-    // when successfully added redirect to /rooms
-    this.router.navigate(['rooms'], {queryParams: {addedRoom: submittedRoomFormValue.name}});
     this.resetForm();
   }
 
