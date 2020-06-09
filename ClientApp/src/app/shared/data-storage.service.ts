@@ -62,6 +62,7 @@ export class DataStorageService {
       .subscribe(response => {
         console.log('response:');
         console.log(response);
+        console.log("id: " + response.id);
       });
   }
 

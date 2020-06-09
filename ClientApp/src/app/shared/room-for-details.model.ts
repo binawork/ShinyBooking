@@ -30,7 +30,9 @@ export class RoomForDetails {
     public parkingSpace: boolean,
     public roomAddress: RoomAddress,
     public roomArrangementsCapabilitiesDescription: string,
-    public activities: Activity[]
+    public activities: Activity[],
+    public customerInformation: {"firstName": string, "lastName": null,
+      "phoneNumber": number, "email": string}
   ) {
   }
 }
