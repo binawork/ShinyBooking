@@ -215,7 +215,8 @@
               <div class="row">
                 <div class="form-group col-md-6">
                   <label>Street <span class="text-danger">*</span>
-                    <input class="form-control" formControlName="street" placeholder="Enter Street" type="text" size="45">
+                    <input class="form-control" formControlName="street" placeholder="Enter Street" type="text"
+                           size="45">
                   </label>
                 </div>
                 <div class="form-group col-md-3">
@@ -251,6 +252,11 @@
                   class="btn"
                   type="submit">ADD PROPERTY
           </button>
+          <div class="alert alert-danger" *ngIf="this.dataStorageService.roomAddError">
+            <h5 style="text-align: center;">Something went wrong! <br>
+              Error message: {{this.dataStorageService.roomAddError}}<br>
+              Please try again</h5>
+          </div>
         </form>
       </div>
     </div>

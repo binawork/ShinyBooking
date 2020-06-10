@@ -17,6 +17,7 @@ import {RoomAddServerResponse} from "../rooms/room-add/RoomAddServerResponse";
 export class DataStorageService {
 
   error: string = null;
+  roomAddError: string = null;
   user = new Subject<UserToken>();
   private _isLoggedIn = false;
   private _loggedUserName: string;
@@ -65,6 +66,8 @@ export class DataStorageService {
         console.log(response);
         console.log("id: " + response.id);
         this.router.navigate(['rooms'], {queryParams: {addedRoom: response.name}});
+      }, error => {
+        this.roomAddError = error;
       });
   }
 

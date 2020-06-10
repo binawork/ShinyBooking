@@ -24,7 +24,7 @@ export class RoomAddComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private roomService: RoomService,
-              private dataStorageService: DataStorageService,
+              public dataStorageService: DataStorageService,
               public photosUploadService: PhotosUploadService,
               private router: Router) {
   }
@@ -130,7 +130,6 @@ export class RoomAddComponent implements OnInit {
     this.roomForm.value.amenities = this.amenitiesCheckboxData.slice();
     this.roomForm.value.equipment = this.equipmentCheckboxData.slice();
     this.roomForm.value.activities = this.activitiesCheckboxData.slice();
-
   }
 
 }
