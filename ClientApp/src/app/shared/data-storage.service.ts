@@ -67,7 +67,9 @@ export class DataStorageService {
         console.log("id: " + response.id);
         this.router.navigate(['rooms'], {queryParams: {addedRoom: response.name}});
       }, error => {
-        this.roomAddError = error;
+        console.log("AddRoomError:")
+        console.log(error.error)
+        this.roomAddError = error.error;
       });
   }
 

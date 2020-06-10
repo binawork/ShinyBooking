@@ -252,10 +252,12 @@
                   class="btn"
                   type="submit">ADD PROPERTY
           </button>
+
+          <br><br>
           <div class="alert alert-danger" *ngIf="this.dataStorageService.roomAddError">
-            <h5 style="text-align: center;">Something went wrong! <br>
+            <h6 style="text-align: center;">Something went wrong! <br>
               Error message: {{this.dataStorageService.roomAddError}}<br>
-              Please try again</h5>
+              Please try again</h6>
           </div>
         </form>
       </div>
