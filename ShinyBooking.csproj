@@ -74,6 +74,12 @@
       <None Update="ClientApp\src\app\rooms\room-add\RoomAddServerResponse.ts">
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       </None>
+      <None Update="ClientApp\src\app\rooms\room-details\safe.pipe.ts">
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </None>
+      <None Update="ClientApp\src\app\rooms\room-details\safe-style.pipe.ts">
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </None>
     </ItemGroup>
 
 

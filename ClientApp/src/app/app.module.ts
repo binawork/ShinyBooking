@@ -18,6 +18,7 @@ import {RoomAddComponent} from './rooms/room-add/room-add.component';
 import { LoginComponent } from './login/login.component';
 import {RegistrationFormComponent} from './registration/registration-form.component';
 import {LoginGuard} from "./login/login.guard";
+import {SafeStylePipe} from "./rooms/room-details/safe-style.pipe";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {LoginGuard} from "./login/login.guard";
     RoomDetailsComponent,
     RoomAddComponent,
     LoginComponent,
-    RegistrationFormComponent
+    RegistrationFormComponent,
+    SafeStylePipe
 
   ],
   imports: [
