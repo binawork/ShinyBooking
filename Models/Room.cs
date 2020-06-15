@@ -52,7 +52,7 @@ namespace ShinyBooking.Models
 
         public Customer Customer {get; set; }
 
-        //public string? CustomerId {get; set;}
+       
 
         
         

@@ -33,5 +33,7 @@ namespace ShinyBooking.Dto
         public IList<ActivitiesForReturnDto> Activities { get; set; }
         
         public RoomAddressForReturnDto RoomAddress { get; set; }
-    }
+        public CustomerDetailsForRoomReturnDto CustomerInformation {get; set;}
+    
+        }
 }

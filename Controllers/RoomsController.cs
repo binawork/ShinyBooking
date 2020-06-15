@@ -97,6 +97,9 @@ namespace ShinyBooking.Controllers
                 .ThenInclude(ra => ra.Activities)
                 .Include(r => r.RoomAmenitiesForDisabled)
                 .ThenInclude(ram => ram.AmenitiesForDisabled)
+                .Include(r=> r.Customer)
+                .ThenInclude(c=>c.Identity)
+                            
                 .FirstOrDefaultAsync(r => r.Id == id);
 
             if (room == null)
