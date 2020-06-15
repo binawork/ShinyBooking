@@ -44,3 +44,16 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# files
+dist/main-es5.js
+dist/main-es2015.js
+dist/polyfills-es5.js
+dist/polyfills-es2015.js
+dist/runtime-es5.js
+dist/runtime-es2015.js
+dist/styles-es5.js
+dist/styles-es2015.js
+dist/vendor-es5.js
+dist/vendor-es2015.js
+
