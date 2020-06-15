@@ -21,7 +21,7 @@ export class PhotosUploadService {
       if (this.isImage(photo)) {
         const fd = new FormData();
         fd.append('image', photo);
-        fd.append('api_key', '124GJOST273d586da801d9c0568b281d484b27a3');
+        fd.append('api_key', '049BDHIXe9596020c5f7240bd1b0dea114b8d937');
         this.http.post(
           'https://cors-anywhere.herokuapp.com/https://api.imageshack.com/v2/images', fd)
           .subscribe((res: ImageshackResponse) => {
