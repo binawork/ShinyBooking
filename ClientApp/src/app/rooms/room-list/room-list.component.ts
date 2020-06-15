@@ -25,6 +25,8 @@ export class RoomListComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.addedRoom = params['addedRoom'];
     });
+
+    this.innerWidth = window.innerWidth;
   }
 
   @HostListener('window:resize', ['$event'])
