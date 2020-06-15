@@ -5,19 +5,29 @@
     <div class="text-center mb-5">
       <div class="alert alert-success" *ngIf="this.addedRoom">
         <h6 class="font-italic" style="text-align: center;">Room {{addedRoom}} successfully added!<br>
-        Wait 20 seconds and refresh page to see your newly added Room on list.</h6>
+          Wait 20 seconds and refresh page to see your newly added Room on list.</h6>
       </div>
       <h2 class="cards-list-title">Rooms for rent</h2>
       <p>Sample description</p>
     </div>
 
-      <ng-container *ngFor="let room of roomList; let i = index">
+    <ng-container *ngFor="let room of roomList; let i = index">
+      <div *ngIf="innerWidth>768">
         <div *ngIf="i%3 == 0" class="row">
           <app-room-card class="col col-lg-4 col-md-4" [room]="room"></app-room-card>
-          <app-room-card class="col col-lg-4 col-md-4" *ngIf="i + 1 < roomList.length" [room]="roomList[i + 1]"></app-room-card>
-          <app-room-card class="col col-lg-4 col-md-4" *ngIf="i + 2 < roomList.length" [room]="roomList[i + 2]"></app-room-card>
+          <app-room-card class="col col-lg-4 col-md-4" *ngIf="i + 1 < roomList.length"
+                         [room]="roomList[i + 1]"></app-room-card>
+          <app-room-card class="col col-lg-4 col-md-4" *ngIf="i + 2 < roomList.length"
+                         [room]="roomList[i + 2]"></app-room-card>
         </div>
-      </ng-container>
+      </div>
+
+      <div *ngIf="innerWidth<769">
+        <div class="row">
+          <app-room-card class="col col-lg-4 col-md-4" [room]="room"></app-room-card>
+        </div>
+      </div>
+    </ng-container>
   </section>
 </div>
 

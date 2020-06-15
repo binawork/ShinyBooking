@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {RoomService} from '../room.service';
 import {RoomForList} from '../../shared/room-for-list.model';
 import {ActivatedRoute} from "@angular/router";
@@ -11,6 +11,7 @@ import {ActivatedRoute} from "@angular/router";
 export class RoomListComponent implements OnInit {
   roomList: Array<RoomForList>;
   addedRoom: string;
+  innerWidth: any;
 
   constructor(private roomService: RoomService, private route: ActivatedRoute) {
   }
@@ -24,6 +25,11 @@ export class RoomListComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.addedRoom = params['addedRoom'];
     });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
   }
 
 }
