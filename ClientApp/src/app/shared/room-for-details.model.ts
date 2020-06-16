@@ -31,8 +31,8 @@ export class RoomForDetails {
     public roomAddress: RoomAddress,
     public roomArrangementsCapabilitiesDescription: string,
     public activities: Activity[],
-    public customerInformation: {"firstName": string, "lastName": null,
-      "phoneNumber": number, "email": string}
+    public customerInformation: {"firstName": string, "lastName": string,
+      "phoneNumber": number, "email": string, userName: string}
   ) {
   }
 }
