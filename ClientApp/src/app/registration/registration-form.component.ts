@@ -21,6 +21,7 @@ export class RegistrationFormComponent implements OnInit {
   invalidForm = false;
   firstName = '';
   lastName = '';
+  passwordMismatch = false;
 
   //TODO add separate service to communicate with backend
   constructor(private dataStorageService: DataStorageService,
@@ -33,13 +34,22 @@ export class RegistrationFormComponent implements OnInit {
       LastName: [''],
       Email: [''],
       PhoneNumber: [''],
-      Password: ['']
+      Password: [''],
+      ConfirmPassword: ['']
       });
     this.registrationForm.valueChanges.subscribe(console.log);
     console.log('form loaded');
   }
   onSubmit() {
     this.invalidForm = false;
+    this.passwordMismatch = false;
+
+    if(this.registrationForm.value.Password != this.registrationForm.value.ConfirmPassword) {
+      this.passwordMismatch = true;
+      this.invalidForm = true;
+      return;
+    }
+
     if (!this.registrationForm.valid) {
       this.invalidForm = true;
       return;

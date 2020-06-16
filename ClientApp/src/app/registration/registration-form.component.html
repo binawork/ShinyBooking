@@ -97,6 +97,23 @@
                   >
                 <span class="help-block text-danger border-danger" *ngIf="!isPasswordValid(password) && invalidForm">Password must contain at least 6 characters and at least 1 non-alphanumeric character, 1 lowercase and uppercase letter and 1 digit!</span>
               </div>
+
+              <div class="form-group">
+                <label for="ConfirmPassword">Confirm Password <span class="text-danger">*</span></label>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Confirm Password"
+                  id="ConfirmPasswordId"
+                  formControlName="ConfirmPassword"
+                  name="ConfirmPassword"
+                  minlength="6"
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"
+                  required
+                >
+                <span class="help-block text-danger border-danger" *ngIf="passwordMismatch">Passwords do not match!</span>
+              </div>
+
               <div class="form-group">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
