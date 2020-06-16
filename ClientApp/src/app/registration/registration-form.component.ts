@@ -19,6 +19,8 @@ export class RegistrationFormComponent implements OnInit {
   somethingWentWrong = false;
   submitted: boolean = false;
   invalidForm = false;
+  firstName = '';
+  lastName = '';
 
   //TODO add separate service to communicate with backend
   constructor(private dataStorageService: DataStorageService,
@@ -27,6 +29,8 @@ export class RegistrationFormComponent implements OnInit {
   ngOnInit(): void{
     this.registrationForm = this.fb.group({
       UserName: [''],
+      FirstName: [''],
+      LastName: [''],
       Email: [''],
       PhoneNumber: [''],
       Password: ['']
@@ -47,9 +51,10 @@ export class RegistrationFormComponent implements OnInit {
     const registeredUser = new RegistrationModel(
       value.UserName,
       value.Email,
+      value.Password,
       value.PhoneNumber,
-      value.Password
-
+      value.FirstName,
+      value.LastName
       );
     console.log(registeredUser);
     this.dataStorageService.registerUser(registeredUser);

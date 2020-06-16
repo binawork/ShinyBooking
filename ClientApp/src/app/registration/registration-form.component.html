@@ -22,6 +22,35 @@
                   required>
                 <span class="help-block text-danger border-danger" *ngIf="userName.length<1 && invalidForm">Type a User Name!</span>
               </div>
+
+              <div class="form-group">
+                <label for="FirstName"> First Name <span class="text-danger">*</span></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter First Name"
+                  id="firstNameId"
+                  formControlName="FirstName"
+                  name="FirstName"
+                  [(ngModel)]="firstName"
+                  required>
+                <span class="help-block text-danger border-danger" *ngIf="firstName.length<1 && invalidForm">Type a First Name!</span>
+              </div>
+
+              <div class="form-group">
+                <label for="LastName "> Last Name <span class="text-danger">*</span></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Last Name"
+                  id="lastNameId"
+                  formControlName="LastName"
+                  name="LastName"
+                  [(ngModel)]="lastName"
+                  required>
+                <span class="help-block text-danger border-danger" *ngIf="lastName.length<1 && invalidForm">Type a Last Name!</span>
+              </div>
+
               <div class="form-group">
                 <label for="MobileNumber">Phone Number <span class="text-danger">*</span></label>
                 <input
