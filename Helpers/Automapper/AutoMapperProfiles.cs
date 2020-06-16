@@ -31,7 +31,8 @@ namespace ShinyBooking.Helpers.Automapper
                 .ForMember(dto => dto.FirstName, opt => opt.MapFrom(au => au.FirstName))
                 .ForMember(dto => dto.LastName, opt => opt.MapFrom(au => au.LastName))
                 .ForMember(dto => dto.Email, opt => opt.MapFrom(au => au.Email))
-                .ForMember(dto => dto.PhoneNumber, opt => opt.MapFrom(au => au.PhoneNumber));
+                .ForMember(dto => dto.PhoneNumber, opt => opt.MapFrom(au => au.PhoneNumber))
+                .ForMember(dto => dto.UserName, opt => opt.MapFrom(au => au.UserName));
 
 
 
