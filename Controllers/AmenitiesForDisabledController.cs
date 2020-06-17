@@ -22,7 +22,7 @@ namespace ShinyBooking.Controllers
             _context = context;
         }
 
-        // GET: api/AmenitiesForDisableds
+        // GET: api/AmenitiesForDisabled
         [HttpGet]
           public async Task<IActionResult> GetAmenitiesForDisabled()
         {
@@ -44,7 +44,7 @@ namespace ShinyBooking.Controllers
 
         }
 
-        // GET: api/AmenitiesForDisableds/5
+        // GET: api/AmenitiesForDisabled/5
         [HttpGet("{id}")]
         public async Task<ActionResult<AmenitiesForDisabled>> GetAmenitiesForDisabled(string id)
         {
@@ -58,7 +58,7 @@ namespace ShinyBooking.Controllers
             return amenitiesForDisabled;
         }
 
-        // PUT: api/AmenitiesForDisableds/5
+        // PUT: api/AmenitiesForDisabled/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
