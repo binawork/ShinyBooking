@@ -88,6 +88,8 @@ namespace ShinyBooking.Data
 
         }
 
+        public DbSet<ShinyBooking.Models.AmenitiesForDisabled> AmenitiesForDisabled { get; set; }
+
 
     }
 }
