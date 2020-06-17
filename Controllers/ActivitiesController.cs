@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShinyBooking.Data;
+using ShinyBooking.Dto;
 using ShinyBooking.Models;
 
 namespace ShinyBooking.Controllers
@@ -23,10 +24,26 @@ namespace ShinyBooking.Controllers
 
         // GET: api/Activities
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Activities>>> GetActivities()
+         public async Task<IActionResult> GetActivities()
         {
-            return await _context.Activities.ToListAsync();
+
+            var activities = await _context.Activities.ToListAsync();
+            var activitiesForReturn = new List<ActivitiesForReturnDto>();
+
+            foreach (var activity in activities)
+            {
+                var activityForReturn = new ActivitiesForReturnDto
+
+                {
+                    Id = activity.Id,
+                    Name = activity.Name
+                };
+                activitiesForReturn.Add(activityForReturn);
+            }
+            return Ok(activitiesForReturn);
+
         }
+       
 
         // GET: api/Activities/5
         [HttpGet("{id}")]

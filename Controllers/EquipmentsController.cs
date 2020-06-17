@@ -24,10 +24,7 @@ namespace ShinyBooking.Controllers
 
         // GET: api/Equipments
         [HttpGet]
-        //public async Task<ActionResult<IEnumerable<Equipment>>> GetEquipments()
-        //{
-        //    return await _context.Equipments.ToListAsync();
-        //}
+      
         public async Task<IActionResult> GetEquipments()
         {
 
