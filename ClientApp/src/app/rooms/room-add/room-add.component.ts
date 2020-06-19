@@ -6,7 +6,6 @@ import {DataStorageService} from '../../shared/data-storage.service';
 import {PhotosUploadService} from "./photos-upload.service";
 import {Router} from "@angular/router";
 import {RoomToAddDto} from "../../shared/room-to-add-dto.model";
-import {UserToken} from '../../login/user.model';
 
 @Component({
   selector: 'app-room-add',
@@ -16,9 +15,9 @@ import {UserToken} from '../../login/user.model';
 export class RoomAddComponent implements OnInit {
   readonly postalCodeRegex: RegExp = /^[0-9]{2}-[0-9]{3}$/;
   readonly numberRegex: RegExp = /^[1-9]+[0-9]*$/;
-  amenitiesCheckboxData: { name: string; AmenitiesForDisabledId: string; isChecked: boolean }[];
-  equipmentCheckboxData: { name: string; EquipmentId: string; isChecked: boolean }[];
-  activitiesCheckboxData: { name: string; ActivitiesId: string; isChecked: boolean }[];
+  amenitiesCheckboxData: { id: string; name: string; isChecked: boolean }[];
+  equipmentCheckboxData: { id: string; name: string; isChecked: boolean }[];
+  activitiesCheckboxData: { id: string; name: string; isChecked: boolean }[];
   roomForm: FormGroup;
   addressForm: FormGroup;
 
@@ -30,18 +29,29 @@ export class RoomAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.amenitiesCheckboxData = this.roomService.getAmenitiesForDisabled().map(x => ({
-      ...x,
-      isChecked: false
-    }));
-    this.equipmentCheckboxData = this.roomService.getEquipment().map(equipment => ({
-      ...equipment,
-      isChecked: false
-    }));
-    this.activitiesCheckboxData = this.roomService.getActivities().map(activity => ({
-      ...activity,
-      isChecked: false
-    }));
+    this.roomService.getAmenitiesForDisabled().subscribe(amenities=> {
+      this.amenitiesCheckboxData = amenities.map(amenity => ({
+        ...amenity,
+        isChecked: false
+      }));
+    });
+
+
+    this.roomService.getEquipment().subscribe(equipments => {
+      this.equipmentCheckboxData = equipments.map(equipment => ({
+        ...equipment,
+        isChecked: false
+      }));
+    });
+
+
+    this.roomService.getActivities().subscribe(activities => {
+      this.activitiesCheckboxData = activities.map(activity => ({
+        ...activity,
+        isChecked: false
+      }));
+    });
+
 
     this.addressForm = this.fb.group({
       apartmentNumber: [44, [Validators.required, Validators.pattern, Validators.min(1)]],

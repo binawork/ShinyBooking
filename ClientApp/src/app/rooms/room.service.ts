@@ -11,6 +11,9 @@ import {Activity} from "./activity.model";
   providedIn: 'root'
 })
 export class RoomService {
+  fetchedAmenities: AmenityForDisabled[];
+  fetchedEquipments: Equipment[];
+  fetchedActivities: Activity[];
 
   private readonly amenitiesForDisabled = [
     new AmenityForDisabled('amenity1', 'no stairs entrance'),
@@ -52,16 +55,19 @@ export class RoomService {
     return this.http.get<RoomForList>(this.baseUrl + '/api/rooms/' + id);
   }
 
-  getAmenitiesForDisabled(): AmenityForDisabled[] {
-    return this.amenitiesForDisabled.slice(); // slice() so original object will be unchanged
+  getAmenitiesForDisabled(): Observable<Array<AmenityForDisabled>> {
+    return this.http.get<AmenityForDisabled[]>(this.baseUrl + '/api/AmenitiesForDisabled');
+    //return this.amenitiesForDisabled.slice(); // slice() so original object will be unchanged
   }
 
-  getEquipment(): Equipment[] {
-    return this.equipment.slice();
+  getEquipment(): Observable<Array<Equipment>> {
+    return this.http.get<Equipment[]>(this.baseUrl + '/api/Equipments');
+    //return this.equipment.slice();
   }
 
-  getActivities(): Activity[] {
-    return this.activities.slice();
+  getActivities(): Observable<Array<Activity>> {
+    return this.http.get<Activity[]>(this.baseUrl + '/api/Activities');
+    //return this.activities.slice();
   }
 }
 

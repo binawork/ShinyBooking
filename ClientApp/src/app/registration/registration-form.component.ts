@@ -76,8 +76,6 @@ export class RegistrationFormComponent implements OnInit {
      setTimeout(()=>{this.somethingWentWrong = true;},10000);
   };
 
-    // todo when successfully added redirect to /rooms
-
   isEmailValidCheck(mail) {
     this.isEmailValid = (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
   }
