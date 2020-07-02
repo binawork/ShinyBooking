@@ -167,14 +167,21 @@
               <h5 class="card-title mb-4">Photos</h5>
               <div class="row">
                 <div class="col-md-12">
+                  <p>Add many photos one after another. <br>First photo you add will be the main photo. <br>You have to add at least one photo.</p>
                   <input
                     type="file"
-                    multiple
                     accept='image/*'
                     formControlName="photos"
-                    placeholder="Select photos"
+                    placeholder="Select photo"
                     required
-                    (change)="photosUploadService.uploadPhotos($event)">
+                    #inputPhoto
+                    (change)="onPhotoInput($event)">
+                  <br><br>
+                  <button
+                    class="btn btn-success"
+                    type="button"
+                    (click)="onAddPhoto()">Add Photo</button>
+<!--                    (change)="photosUploadService.uploadPhotos($event)">-->
                 </div>
               </div>
             </div>

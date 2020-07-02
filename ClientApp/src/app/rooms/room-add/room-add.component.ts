@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RoomService} from '../room.service';
 import {RoomAddress} from '../../shared/room-address.model';
@@ -20,6 +20,8 @@ export class RoomAddComponent implements OnInit {
   activitiesCheckboxData: { id: string; name: string; isChecked: boolean }[];
   roomForm: FormGroup;
   addressForm: FormGroup;
+  @ViewChild('inputPhoto') myInputPhoto: ElementRef;
+  photoReadyToUpload: any;
 
   constructor(private fb: FormBuilder,
               private roomService: RoomService,
@@ -142,4 +144,15 @@ export class RoomAddComponent implements OnInit {
     this.roomForm.value.activities = this.activitiesCheckboxData.slice();
   }
 
+  onPhotoInput(event) {
+    this.photoReadyToUpload = event.target.files[0];
+  }
+
+  onAddPhoto() {
+    this.photosUploadService.onAddPhoto(this.photoReadyToUpload);
+    this.myInputPhoto.nativeElement.value = '';
+  }
+
 }
+
+
