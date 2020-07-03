@@ -1,12 +1,12 @@
 export class Equipment {
-  id: string;
+  EquipmentId: string;
   name: string;
 
   constructor(
-    id: string,
+    EquipmentId: string,
     name: string
   ) {
-    this.id = id;
+    this.EquipmentId = EquipmentId;
     this.name = name;
   }
 }
