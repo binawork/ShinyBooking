@@ -6,7 +6,7 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-room-list',
   templateUrl: './room-list.component.html',
-  styleUrls: ['./styles.css']
+  styleUrls: ['../../styles.css']
 })
 export class RoomListComponent implements OnInit {
   roomList: Array<RoomForList>;

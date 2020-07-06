@@ -7,7 +7,7 @@ import {RoomForDetails} from '../../shared/room-for-details.model';
 @Component({
   selector: 'app-room-details',
   templateUrl: './room-details.component.html',
-  styleUrls: ['./styles.css']
+  styleUrls: ['../../styles.css']
 })
 export class RoomDetailsComponent implements OnInit {
   room: RoomForDetails;
