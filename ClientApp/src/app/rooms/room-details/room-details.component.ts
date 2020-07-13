@@ -14,6 +14,19 @@ export class RoomDetailsComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
+/*  ccc() {
+    const API_KEY = 'zMm3X6j26T7vIcO5jBa0GfOjZGZC49bp';
+
+    const GOLDEN_GATE_BRIDGE = {lng: -122.47483, lat: 37.80776};
+
+    const map = tt.map({
+      key: API_KEY,
+      container: 'map-div',
+      center: GOLDEN_GATE_BRIDGE,
+      zoom: 12
+    });
+  }*/
+
   constructor(private roomService: RoomService,
               private route: ActivatedRoute,
               private router: Router,

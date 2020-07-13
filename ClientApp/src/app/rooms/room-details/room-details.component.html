@@ -371,6 +371,21 @@
 <!--                        <h6 class="card-subtitle text-muted"><i class="mdi mdi-link"></i> http://tamco.pl/</h6>-->
                       </div>
                     </a>
+
+                    <div id='map' class='map'></div>
+                    <link rel="stylesheet" type="text/css" href="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.59.1/maps/maps.css">
+                    <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.59.1/maps/maps-web.min.js'></script>
+
+                    <script>
+                      const map = tt.map({
+                        key: 'zMm3X6j26T7vIcO5jBa0GfOjZGZC49bp',
+                        container: 'map',
+                        style: 'tomtom://vector/1/basic-main',
+                      });
+                      map.addControl(new tt.FullscreenControl());
+                      map.addControl(new tt.NavigationControl());
+                    </script>
+
                   </div>
                 </div>
               </div>
