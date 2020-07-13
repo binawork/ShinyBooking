@@ -7,7 +7,7 @@ import {UserToken} from "../login/user.model";
 @Component({
   selector: 'app-nav-menu',
   templateUrl: './nav-menu.component.html',
-  styleUrls: ['./nav-menu.component.css', './styles.css']
+  styleUrls: ['./nav-menu.component.css', '../styles.css']
 })
 
 @Injectable({

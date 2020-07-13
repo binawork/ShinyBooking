@@ -7,7 +7,7 @@ import {NgModel} from "@angular/forms";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css', './styles.css']
+  styleUrls: ['./login.component.css', '../styles.css']
 })
 
 export class LoginComponent implements OnInit {

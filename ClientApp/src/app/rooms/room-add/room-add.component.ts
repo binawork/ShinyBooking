@@ -10,7 +10,7 @@ import {RoomToAddDto} from "../../shared/room-to-add-dto.model";
 @Component({
   selector: 'app-room-add',
   templateUrl: './room-add.component.html',
-  styleUrls: ['./room-add.component.css', './styles.css']
+  styleUrls: ['./room-add.component.css', '../../styles.css']
 })
 export class RoomAddComponent implements OnInit {
   readonly postalCodeRegex: RegExp = /^[0-9]{2}-[0-9]{3}$/;

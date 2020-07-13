@@ -7,7 +7,7 @@ import {LoginModel} from "../shared/Login.model";
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
-  styleUrls: ['./registration-form.component.css', './styles.css']
+  styleUrls: ['./registration-form.component.css', '../styles.css']
 })
 export class RegistrationFormComponent implements OnInit {
   registrationForm:FormGroup;
