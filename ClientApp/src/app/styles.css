@@ -214,10 +214,16 @@ Version: 1.0
  a.text-success:focus, a.text-success:hover {
      color: #43ebbc !important;
 }
- .btn-success {
-     background-color: #64ddba;
-     border-color: #64ddba;
-     color: #fff;
+.btn-success {
+  background-color: #64ddba;
+  border-color: #64ddba;
+  color: #fff;
+}
+
+.btn-failure {
+  background-color: #b02c15;
+  border-color: #b02c15;
+  color: #fff;
 }
  .btn-success:hover, .btn-success:focus {
      background-color: #43EBBC;
