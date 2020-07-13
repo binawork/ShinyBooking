@@ -265,9 +265,18 @@ namespace ShinyBooking.Controllers
 
         // DELETE: api/Rooms/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Room>> DeleteRoom(string id)
+         public async Task<ActionResult<Room>> DeleteRoom(string id)
         {
-            var room = await _context.Rooms.FindAsync(id);
+           var room = await _context.Rooms
+                .Include(r => r.Photos)
+                .Include(r => r.RoomAddress)
+                .Include(r => r.RoomEquipments)
+               
+                .Include(r => r.RoomActivities)
+
+                .Include(r => r.RoomAmenitiesForDisabled)
+
+                .FirstOrDefaultAsync(r => r.Id == id);
             if (room == null)
             {
                 return NotFound();
@@ -276,7 +285,7 @@ namespace ShinyBooking.Controllers
             _context.Rooms.Remove(room);
             await _context.SaveChangesAsync();
 
-            return room;
+            return Ok("Room Deleted");
         }
 
         private bool RoomExists(string id)
