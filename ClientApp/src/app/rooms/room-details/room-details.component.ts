@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from '@kolkov/ngx-gallery';
 import {RoomService} from '../room.service';
 import {RoomForDetails} from '../../shared/room-for-details.model';
+
 
 @Component({
   selector: 'app-room-details',
@@ -13,6 +14,8 @@ export class RoomDetailsComponent implements OnInit {
   room: RoomForDetails;
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
+  //@Output() notifyDelete: EventEmitter<string> = new EventEmitter<string>();
+  confirmDelete = false;
 
   constructor(private roomService: RoomService,
               private route: ActivatedRoute,
@@ -55,6 +58,13 @@ export class RoomDetailsComponent implements OnInit {
     }
     // console.log(imageUrls);
     return imageUrls;
+  }
+
+  deleteRoom() {
+    this.roomService.deleteRoom(this.room.id).subscribe(
+      () => console.log(`Room with id = ${this.room.id} deleted`),
+      (err) => console.log(err));
+    //this.notifyDelete.emit(this.room.id);
   }
 
   // loadRoom() {

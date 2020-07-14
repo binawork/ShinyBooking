@@ -1,11 +1,14 @@
 import {Inject, Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {RoomForList} from '../shared/room-for-list.model';
 import {AmenityForDisabled} from './amenity-for-disabled.model';
 import {Equipment} from './equipment.model';
 import {Activity} from "./activity.model";
+import { catchError } from 'rxjs/operators';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +51,18 @@ export class RoomService {
   }
 
   getRooms(): Observable<Array<RoomForList>> {
-    return this.http.get<Array<RoomForList>>(this.baseUrl + '/api/rooms');
+    return this.http.get<Array<RoomForList>>(this.baseUrl + '/api/rooms')
+      .pipe(catchError(this.handleError));
+  }
+
+  private handleError(errorResponce: HttpErrorResponse) {
+    if (errorResponce.error instanceof ErrorEvent) {
+      console.error('Client Side Error: ', errorResponce.error.message);
+    } else {
+      console.error('Server Side Error: ', errorResponce);
+    }
+
+    return throwError('There is a problem with the service. We are notified & working on it. Please try again later.')
   }
 
   getRoom(id): Observable<RoomForList> {
@@ -66,6 +80,11 @@ export class RoomService {
 
   getActivities(): Activity[] {
     return this.activities.slice();
+  }
+
+  deleteRoom(id: string): Observable<void> {
+    return this.http.delete<void>(this.baseUrl + '/api/rooms/' + id);
+    
   }
 
 /*  getAmenitiesForDisabled(): Observable<Array<AmenityForDisabled>> {
