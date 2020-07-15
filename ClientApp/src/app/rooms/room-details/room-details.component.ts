@@ -64,6 +64,7 @@ export class RoomDetailsComponent implements OnInit {
     this.roomService.deleteRoom(this.room.id).subscribe(
       () => console.log(`Room with id = ${this.room.id} deleted`),
       (err) => console.log(err));
+    location.reload();
     //this.notifyDelete.emit(this.room.id);
   }
 

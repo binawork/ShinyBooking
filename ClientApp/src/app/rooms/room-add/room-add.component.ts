@@ -168,6 +168,7 @@ export class RoomAddComponent implements OnInit {
 
     this.dataStorageService.storeRoom(newRoom);
     this.resetForm();
+    
   }
 
   resetForm() {

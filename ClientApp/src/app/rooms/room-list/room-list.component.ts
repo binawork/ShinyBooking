@@ -14,7 +14,9 @@ export class RoomListComponent implements OnInit {
   innerWidth: any;
 
   constructor(private roomService: RoomService, private route: ActivatedRoute) {
+
   }
+
 
   ngOnInit() {
     this.roomService.getRooms().subscribe(rooms => {
@@ -24,14 +26,17 @@ export class RoomListComponent implements OnInit {
 
     this.route.queryParams.subscribe(params => {
       this.addedRoom = params['addedRoom'];
+      console.log(this.addedRoom);
     });
 
     this.innerWidth = window.innerWidth;
+
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
   }
+
 
 }
