@@ -369,7 +369,7 @@
           <div class="card-body">
             <span *ngIf="confirmDelete">
               <span>Are you sure you want to Delete?</span><br />
-              <button class="btn btn-red btn-sm" (click)="deleteRoom()" [routerLink]="['/rooms']">YES</button>
+              <button class="btn btn-red btn-sm" (click)="deleteRoom()">YES</button>
               <button class="btn btn-success btn-sm" (click)="confirmDelete=false">NO</button>
             </span>
               <button *ngIf="!confirmDelete" class="btn btn-red btn-sm" (click)="confirmDelete=true">
