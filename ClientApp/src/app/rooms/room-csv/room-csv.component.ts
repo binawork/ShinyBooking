@@ -4,7 +4,7 @@ import { NgxCsvParser, NgxCSVParserError } from 'ngx-csv-parser';
 @Component({
   selector: 'app-root',
   templateUrl: './room-csv.component.html',
-  styleUrls: ['./room-csv.component.css']
+  styleUrls: ['./room-csv.component.css', '../../styles.css']
 })
 
 export class RoomCsvComponent {
