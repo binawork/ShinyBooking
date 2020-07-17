@@ -10,7 +10,7 @@ import { NgxCsvParser, NgxCSVParserError } from 'ngx-csv-parser';
 export class RoomCsvComponent {
 
   csvRecords: any[] = [];
-  header = false;
+  header = true;
 
   constructor(private ngxCsvParser: NgxCsvParser) {
   }
