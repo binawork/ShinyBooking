@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
+import {NgxCsvParserModule} from 'ngx-csv-parser';
 
 
 import {AppComponent} from './app.component';
@@ -19,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import {RegistrationFormComponent} from './registration/registration-form.component';
 import {LoginGuard} from "./login/login.guard";
 import {SafeStylePipe} from "./rooms/room-details/safe-style.pipe";
+import {RoomCsvComponent} from './rooms/room-csv/room-csv.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import {SafeStylePipe} from "./rooms/room-details/safe-style.pipe";
     RoomAddComponent,
     LoginComponent,
     RegistrationFormComponent,
-    SafeStylePipe
+    SafeStylePipe,
+    RoomCsvComponent,
 
   ],
   imports: [
@@ -40,6 +43,7 @@ import {SafeStylePipe} from "./rooms/room-details/safe-style.pipe";
     NgxGalleryModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxCsvParserModule,
 
 
     RouterModule.forRoot([
@@ -49,6 +53,7 @@ import {SafeStylePipe} from "./rooms/room-details/safe-style.pipe";
       {path: 'rooms', component: RoomListComponent, pathMatch: 'full'},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegistrationFormComponent},
+      {path: 'room-csv', component: RoomCsvComponent}
     ])
   ],
   providers: [
