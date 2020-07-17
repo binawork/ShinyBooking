@@ -25,36 +25,74 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                    <th>Title</th>
-                    <th>Occupation</th>
+                    <th>propertyTitle</th>
+                    <th>Area</th>
+                    <th>Capacity</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>ParkingSpace</th>
+                    <th>EquipmentFax</th>
+                    <th>EquipmentCoffe</th>
+                    <th>EquipmentPs4</th>
+                    <th>EquipmentMarshall</th>
+                    <th>EquipmentKitchen</th>
+                    <th>AmenitiesNoSrairs</th>
+                    <th>AmenietiesEasyAccessParking</th>
+                    <th>AmenitiesWideDors</th>
+                    <th>AmenitiesElevator</th>
+                    <th>AmenitiesToilet</th>
+                    <th>ActivitiesMeetings</th>
+                    <th>AcivitiesMusicBands</th>
+                    <th>ActivitiesRolePlayingGames</th>
+                    <th>ActivitiesRelaxation</th>
+                    <th>ActivitiesCoWorking</th>
+                    <th>RoomArrangementCapabilities</th>
+                    <th>Photos</th>
+                    <th>LocationCountry</th>
+                    <th>LocationCity</th>
+                    <th>LocationPostaCode</th>
+                    <th>LocationStreet</th>
+                    <th>LocationBuildingNumber</th>
+                    <th>LocationApartmentNumber</th>
+                    <th>LocationOtherInformation</th>
+
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let csvData of csvRecords;let i = index;">
 
                     <td>{{i+1}}</td>
-                    <td>
-                      <span>{{csvData.firstName}}</span>
-                    </td>
-                    <td>
-                      <span>{{csvData.lastName}}</span>
-                    </td>
-                    <td>
-                      <span>{{csvData.email}}</span>
-                    </td>
-                    <td>
-                      <span>{{csvData.phoneNumber}}</span>
-                    </td>
-                    <td>
-                      <span>{{csvData.title}}</span>
-                    </td>
-                    <td>
-                      <span>{{csvData.occupation}}</span>
-                    </td>
+                    <td><span>{{csvData.propertyTitle}}</span></td>
+                    <td><span>{{csvData.Area}}</span></td>
+                    <td><span>{{csvData.Capacity}}</span></td>
+                    <td><span>{{csvData.Price}}</span></td>
+                    <td><span>{{csvData.Description}}</span></td>
+                    <td><span>{{csvData.ParkingSpace}}</span></td>
+                    <td><span>{{csvData.EquipmentFax}}</span></td>
+                    <td><span>{{csvData.EquipmentCoffe}}</span></td>
+                    <td><span>{{csvData.EquipmentPs4}}</span></td>
+                    <td><span>{{csvData.EquipmentMarshall}}</span></td>
+                    <td><span>{{csvData.EquipmentKitchen}}</span></td>
+                    <td><span>{{csvData.AmenitiesNoSrairs}}</span></td>
+                    <td><span>{{csvData.AmenietiesEasyAccessParking}}</span></td>
+                    <td><span>{{csvData.AmenitiesWideDors}}</span></td>
+                    <td><span>{{csvData.AmenitiesElevator}}</span></td>
+                    <td><span>{{csvData.AmenitiesToilet}}</span></td>
+                    <td><span>{{csvData.ActivitiesMeetings}}</span></td>
+                    <td><span>{{csvData.AcivitiesMusicBands}}</span></td>
+                    <td><span>{{csvData.ActivitiesRolePlayingGames}}</span></td>
+                    <td><span>{{csvData.ActivitiesRelaxation}}</span></td>
+                    <td><span>{{csvData.ActivitiesCoWorking}}</span></td>
+                    <td><span>{{csvData.RoomArrangementCapabilities}}</span></td>
+                    <td><span>{{csvData.Photos}}</span></td>
+                    <td><span>{{csvData.LocationCountry}}</span></td>
+                    <td><span>{{csvData.LocationCity}}</span></td>
+                    <td><span>{{csvData.LocationPostaCode}}</span></td>
+                    <td><span>{{csvData.LocationStreet}}</span></td>
+                    <td><span>{{csvData.LocationBuildingNumber}}</span></td>
+                    <td><span>{{csvData.LocationApartmentNumber}}</span></td>
+                    <td><span>{{csvData.LocationOtherInformation}}</span></td>
+
 
                   </tr>
                 </tbody>
