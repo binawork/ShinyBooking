@@ -17,6 +17,10 @@
       <div class="col-lg-8 col-md-8 mx-auto">
         <div class="card padding-card">
           <div class="card-body">
+            <p *ngFor="let csvData of csvRecords;let i = index;">
+              
+              json{{csvData[i]}}
+            </p>
 
 
             <div class="table">

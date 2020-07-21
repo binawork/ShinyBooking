@@ -21,7 +21,7 @@ export class RoomCsvComponent {
 
     const files = $event.srcElement.files;
 
-    this.ngxCsvParser.parse(files[0], { header: this.header, delimiter: ',' })
+    this.ngxCsvParser.parse(files[0], { header: this.header, delimiter: ';' })
       .pipe().subscribe((result: Array<any>) => {
         console.log('Result', result);
         this.csvRecords = result;
