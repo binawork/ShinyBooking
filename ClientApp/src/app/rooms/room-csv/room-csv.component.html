@@ -1,7 +1,7 @@
 <section class="section-padding">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-8 mx-auto">
+      <div *ngIf="isLoggedIn()" class="col-lg-8 col-md-8 mx-auto">
 
         <input type="file" #fileImportInput name="File Upload" id="csvFileUpload" (change)="fileChangeListener($event)"
                accept=".csv" />
@@ -14,11 +14,11 @@
           <option [value]="false">No</option>
         </select>-->
       </div>
-      <div class="col-lg-8 col-md-8 mx-auto">
+      <div *ngIf="isLoggedIn()" class="col-lg-8 col-md-8 mx-auto">
         <div class="card padding-card">
           <div class="card-body">
             <p *ngFor="let csvData of csvRecords;let i = index;">
-              
+
               json{{csvData[i]}}
             </p>
 
@@ -78,12 +78,12 @@
                     <td><span>{{csvData.EquipmentMarshall}}</span></td>
                     <td><span>{{csvData.EquipmentKitchen}}</span></td>
                     <td><span>{{csvData.AmenitiesNoSrairs}}</span></td>
-                    <td><span>{{csvData.AmenietiesEasyAccessParking}}</span></td>
-                    <td><span>{{csvData.AmenitiesWideDors}}</span></td>
+                    <td><span>{{csvData.AmenitiesEasyAccessParking}}</span></td>
+                    <td><span>{{csvData.AmenitiesWideDoors}}</span></td>
                     <td><span>{{csvData.AmenitiesElevator}}</span></td>
                     <td><span>{{csvData.AmenitiesToilet}}</span></td>
                     <td><span>{{csvData.ActivitiesMeetings}}</span></td>
-                    <td><span>{{csvData.AcivitiesMusicBands}}</span></td>
+                    <td><span>{{csvData.ActivitiesMusicBands}}</span></td>
                     <td><span>{{csvData.ActivitiesRolePlayingGames}}</span></td>
                     <td><span>{{csvData.ActivitiesRelaxation}}</span></td>
                     <td><span>{{csvData.ActivitiesCoWorking}}</span></td>
@@ -102,9 +102,15 @@
                 </tbody>
               </table>
 
+              <div *ngIf="csvRecords.length > 0">
+                <button class="btn btn-light" (click)="addRooms()">Add rooms from csv to db</button>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div *ngIf="!isLoggedIn()" class="col-lg-8 col-md-8 mx-auto">
+        <h1 class="text-danger">You do not have access to get rooms from csv</h1>
       </div>
     </div>
   </div>
